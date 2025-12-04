@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no">
+<title>Glassmorphic HIDA</title>
+
+<!-- Preload the image to prevent loading delay -->
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/IMG_2570.jpg?v=1760818938" as="image">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=BBH+Sans+Bogle&family=Bebas+Neue&family=Mozilla+Text:wght@200..700&family=Staatliches&display=swap" rel="stylesheet">
+<!-- Material Icons -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward" />
+<!-- Google Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Font Awesome for LinkedIn and Facebook icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Additional Fonts for About Page -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+/* --- GENERAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+}
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- ANNOUNCEMENT BAR --- */
+.announcement-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 13px 40px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: black;
+    z-index: 1001;
+}
+
+.announcement-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: black;
+}
+
+.contact-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2c5aa0;
+    border: 1px solid #2c5aa0;
+   color: white;
+    transition: all 0.3s ease;
+}
+
+.contact-item .material-icons {
+    font-size: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2196f3;
+}
+
+.social-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2c5aa0;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover .social-icon-circle {
+    background: rgba(33, 150, 243, 0.2);
+    transform: scale(1.1);
+}
+
+.social-links .fa-brands {
+    font-size: 16px;
+}
+
+/* --- HEADER --- */
+header {
+    position: fixed;
+    top: 0; /* Changed from 53px to 0 - header now starts at very top */
+    left: 0;
+    width: 100%;
+    height: 95px;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+/* --- LOGO --- */
+.logo {
+    cursor: pointer;
+    position: relative;
+}
+.logo img {
+    height: 100px;
+    width: auto;
+    /* Shadow removed as requested */
+}
+
+/* --- NAVIGATION BAR --- */
+.nav-bar {
+    position: fixed;
+    top: 95px; /* Changed from 148px to 95px - adjusted for header only (no announcement bar) */
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(15px) saturate(200%); /* Increased blur and saturation for more "frozen" effect */
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+    border-bottom: 5px solid #2c5aa0;
+    z-index: 999;
+    display: none;
+}
+
+.nav-bar.active {
+    display: block;
+}
+
+.nav-list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-item.collapsible {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px 30px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: right;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.arrow-icon {
+    margin-left: 10px;
+    margin-right: 45px;
+    transition: transform 0.3s ease;
+    font-size: 18px;
+}
+
+.nav-item.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.nav-content {
+    display: none;
+    backdrop-filter: blur(15px) saturate(200%); /* Increased blur for consistency */
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1001;
+    width: 100%;
+}
+
+.nav-content.active {
+    display: block;
+}
+
+.nav-content ul {
+    list-style: none;
+    padding: 10px 0;
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+.nav-content li {
+    padding: 8px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: right;
+}
+
+.nav-content li:last-child {
+    border-bottom: none;
+}
+
+.nav-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    text-align: right;
+    width: 100%;
+}
+
+.nav-content a:hover {
+    color: cyan;
+}
+
+/* --- MENU ICON - MOBILE ONLY --- */
+.menu-icon {
+    width: 25px;
+    height: 17px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.menu-icon span {
+    background: white;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 8px; }
+.menu-icon span:nth-child(3) { top: 16px; }
+.menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.menu-icon.active span:nth-child(2) { opacity: 0; }
+.menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+
+/* --- DESKTOP NAV --- */
+.desktop-nav {
+    display: none;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+}
+
+.desktop-nav-item {
+    position: relative;
+}
+
+.desktop-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Mozilla Text', sans-serif;
+    white-space: nowrap;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: #2196f3;
+    border-radius: 2px;
+}
+
+.desktop-nav-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    backdrop-filter: blur(15px) saturate(200%); /* Increased blur for consistency */
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
+    min-width: 200px;
+    z-index: 1001;
+    border-top: 3px solid cyan;
+}
+
+.desktop-nav-content.active {
+    display: block;
+}
+
+.desktop-nav-content ul {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.desktop-nav-content li {
+    padding: 8px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.desktop-nav-content li:last-child {
+    border-bottom: none;
+}
+
+.desktop-nav-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+.desktop-nav-content a:hover {
+    color: cyan;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-arrow-icon {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    font-size: 18px;
+}
+
+.desktop-nav-item.active .desktop-arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Show horizontal nav + hide menu icon on larger screens */
+@media (min-width: 1024px) {
+    .menu-icon {
+        display: none;
+    }
+    .desktop-nav {
+        display: flex;
+    }
+    .announcement-bar {
+        display: block;
+    }
+    header {
+        top: 53px; /* Height of announcement bar - only on desktop */
+    }
+    .nav-bar {
+        top: 148px; /* Adjusted for header + announcement bar height - only on desktop */
+    }
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 200vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #0f0f0f;
+    margin-top: 0;
+    padding-top: 95px; /* Changed from 148px to 95px - space for header only */
+    top: 0;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0f0f;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Mobile-specific image styling */
+@media (max-width: 1199px) {
+    .hero {
+        height: 140vh; /* Reduced height for mobile */
+    }
+    
+    .image-container img {
+        transform: none !important;
+        object-fit: cover;
+        object-position: center 30%; /* Adjusted position for better composition */
+    }
+}
+
+/* Stretch horizontally on big screens only */
+@media (min-width: 1200px) {
+    .image-container img {
+        object-fit: cover;
+        object-position: center bottom;
+        transform: scaleX(1.2);
+    }
+}
+
+/* --- BIG TYPOGRAPHY --- */
+.big-typography {
+    text-align: left;
+    text-transform: normal !important;
+    font-family: 'Archivo Black', sans-serif !important;
+    color: white !important;
+    z-index: 2;
+    position: relative;
+    margin-top: 30%; /* Changed from 35% to 30% - moved up by 5% */
+    margin-left: 10%;
+    width: 80%;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: bounceIn 1.2s ease-out 0.5s forwards;
+}
+
+/* Bounce animation for the big typography */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Move text to left on large screens */
+@media (min-width: 1200px) {
+    .big-typography {
+        margin-top: 0;
+        position: absolute;
+        top: 45%; /* Changed from 50% to 45% - moved up by 5% */
+        left: 10%;
+        transform: translateY(-50%);
+        width: 40%;
+        animation: bounceInDesktop 1.2s ease-out 0.5s forwards;
+    }
+    
+    @keyframes bounceInDesktop {
+        0% {
+            opacity: 0;
+            transform: translateY(-50%) translateX(-50px);
+        }
+        60% {
+            opacity: 1;
+            transform: translateY(-50%) translateX(20px);
+        }
+        80% {
+            transform: translateY(-50%) translateX(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+    }
+}
+
+.big-typography h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+/* Mobile text size adjustment */
+@media (max-width: 767px) {
+    .big-typography h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- SCROLL DOWN BUTTON --- */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: white;
+    
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 2;
+}
+
+.scroll-down:hover { 
+    background: rgba(255,255,255,0.4); 
+    transform: translateX(-50%) translateY(3px); 
+}
+
+.scroll-down::after {
+    content: '↓';
+    font-size: 1.5rem;
+    color: #2c5aa0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* --- ABOUT PAGE STYLES --- */
+#about-page * { margin: 0; padding: 0; box-sizing: border-box; }
+#about-page body, #about-page { font-family: 'archivo', sans-serif; background-color: #f8f9fa; color: #333; line-height: 1.6; overflow-x: hidden; }
+
+/* Background text effect */
+#about-page .bg-text {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'archivo', sans-serif;
+    font-size: 250px;
+    color: rgba(128, 128, 128, 0.15);
+    letter-spacing: 10px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Content container */
+#about-page .tg-content {
+    width: 100%;
+    padding: 30px 1%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+#about-page h1, #about-page h2, #about-page h3, #about-page .tg-subtitle {
+    font-weight: 700;
+    text-transform: none;
+    font-family: 'archivo', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+#about-page p {
+    font-size: 12px;
+    text-transform: none;
+    font-family: 'archivo', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+#about-page .tg-subtitle { 
+    font-size: 16px;
+    color: #2c5aa0; 
+    margin-bottom: 6px; 
+}
+
+#about-page .tg-title { 
+    font-size: 22px;
+    color: #222; 
+    margin-bottom: 10px; 
+}
+
+/* Enhanced fog effect - whiter and extended */
+#about-page .text-content {
+    position: relative;
+    background: linear-gradient(to bottom, 
+        #f8f9fa 0%,
+        #f8f9fa 20%,
+        rgba(255, 255, 255, 0.98) 30%,
+        rgba(255, 255, 255, 0.95) 40%,
+        rgba(255, 255, 255, 0.90) 50%,
+        rgba(255, 255, 255, 0.80) 60%,
+        rgba(255, 255, 255, 0.65) 70%,
+        rgba(255, 255, 255, 0.45) 80%,
+        rgba(255, 255, 255, 0.25) 90%,
+        rgba(255, 255, 255, 0) 100%);
+    padding-bottom: 150px;
+    margin-bottom: -120px;
+    z-index: 2;
+}
+
+#about-page .tg-description {
+    font-size: 12px; 
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+/* Updated Video Preview Section */
+#about-page .tg-video-preview {
+    width: 100%;
+    height: 400px;
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    margin-top: -120px;
+}
+
+#about-page .video-preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+/* White Google-style Play Button */
+#about-page .play-button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+#about-page .play-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid white;
+}
+
+#about-page .play-button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+#about-page .play-icon {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #2c5aa0;
+    margin-left: 5px;
+}
+
+/* Video Modal/Popup */
+#about-page .video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-page .video-modal.active {
+    display: flex;
+}
+
+#about-page .modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    background: #000;
+}
+
+#about-page .modal-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#about-page .close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: Arial, sans-serif;
+}
+
+#about-page .tg-impact {
+    border-left: 6px solid #2c5aa0;
+    padding-left: 25px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 3;
+}
+
+#about-page .tg-impact-title { font-size: 22px; margin-bottom: 10px; }
+#about-page .tg-impact-text { 
+    font-size: 12px; 
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+/* Construction Image Section - Added space above */
+#about-page .construction-image-section {
+    width: 100%;
+    margin: 40px 0 0 0;
+    position: relative;
+    z-index: 2;
+}
+
+#about-page .construction-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Blue Section Styles - Reduced equal height and no margin */
+#about-page .blue-section {
+    width: 100%;
+    background-color: #2c5aa0;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-page .blue-section-title {
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-family: 'archivo', sans-serif;
+}
+
+#about-page .blue-section-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'archivo', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#about-page .blue-section-button:hover {
+    background: white;
+    color: #2c5aa0;
+}
+
+/* Image Background Section - Updated button styles */
+#about-page .image-bg-section {
+    width: 100%;
+    height: 300px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0778/5578/5184/files/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg?v=1762598629');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+}
+
+#about-page .image-bg-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+#about-page .image-bg-title {
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-family: 'archivo', sans-serif;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Updated image background button with white background and blue text */
+#about-page .image-bg-button {
+    background: white; /* Changed to white */
+    border: 2px solid white;
+    color: #2c5aa0; /* Changed to match blue section background */
+    padding: 10px 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'archivo', sans-serif;
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#about-page .image-bg-button:hover {
+    background: transparent;
+    color: white;
+}
+
+/* New Company Profile Section with subtle radial gradient background using #2c5aa0 */
+#about-page .company-profile-section {
+    width: 100%;
+    background: 
+        radial-gradient(circle at top, transparent 24%, rgba(44, 90, 160, 0.15) 25%, rgba(44, 90, 160, 0.15) 27%, transparent 28%),
+        radial-gradient(circle at bottom, transparent 24%, rgba(44, 90, 160, 0.15) 25%, rgba(44, 90, 160, 0.15) 27%, transparent 28%),
+        radial-gradient(circle at right, transparent 24%, rgba(44, 90, 160, 0.15) 25%, rgba(44, 90, 160, 0.15) 27%, transparent 28%),
+        radial-gradient(circle at left, transparent 24%, rgba(44, 90, 160, 0.15) 25%, rgba(44, 90, 160, 0.15) 27%, transparent 28%);
+    background-size: 4em 4em;
+    background-color: #ffffff;
+    padding: 60px 20px;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#about-page .company-profile-title {
+    font-size: 36px;
+    color: #222;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-family: 'archivo', sans-serif;
+}
+
+/* Updated Company Profile Button - Smaller and positioned bottom right */
+#about-page .company-profile-button {
+    background: #2c5aa0;
+    border: 2px solid #2c5aa0;
+    color: white;
+    padding: 8px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'archivo', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+#about-page .company-profile-button:hover {
+    background: transparent;
+    color: #2c5aa0;
+}
+
+/* Download icon */
+#about-page .download-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 16l4-5h-3V4h-2v7H8l4 5zm-8 2h16v2H4v-2z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#about-page .company-profile-button:hover .download-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c5aa0'%3E%3Cpath d='M12 16l4-5h-3V4h-2v7H8l4 5zm-8 2h16v2H4v-2z'/%3E%3C/svg%3E");
+}
+
+/* New Who We Are Section */
+#about-page .who-we-are-section {
+    width: 100%;
+    background-color: #2c5aa0;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-page .who-we-are-title {
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-family: 'archivo', sans-serif;
+}
+
+#about-page .who-we-are-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'archivo', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#about-page .who-we-are-button:hover {
+    background: white;
+    color: #2c5aa0;
+}
+
+/* New What We Do Section */
+#about-page .what-we-do-section {
+    width: 100%;
+    height: 300px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0778/5578/5184/files/construction-bg.jpg?v=1762598630');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+}
+
+#about-page .what-we-do-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+#about-page .what-we-do-title {
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-family: 'archivo', sans-serif;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#about-page .what-we-do-button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'archivo', sans-serif;
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#about-page .what-we-do-button:hover {
+    background: white;
+    color: #2c5aa0;
+}
+
+/* MOBILE IMAGE WITH FRAME - Frame passes under image but shows around edges */
+#about-page .mobile-image-container {
+    width: 100%;
+    margin: 0 0 15px 0;
+    position: relative;
+    transform: translateY(-15px);
+    z-index: 2;
+}
+
+#about-page .mobile-image-frame {
+    border: 16px solid #2c5aa0;
+    background: #2c5aa0;
+    width: 100%;
+    height: 900px; /* Increased height */
+    position: relative;
+    z-index: 2; /* Frame stays under image */
+}
+
+/* Updated mobile image positioning - image sits on top but frame shows around */
+#about-page .mobile-image {
+    width: calc(100% - 60px); /* Smaller than frame to show frame around edges */
+    height: calc(100% - 60px); /* Smaller than frame to show frame around edges */
+    object-fit: cover;
+    position: absolute;
+    top: 30px; /* Centered within frame */
+    left: 30px; /* Centered within frame */
+    z-index: 3; /* Image on top of frame */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* DESKTOP LAYOUT - Fixed full width */
+@media (min-width: 769px) {
+    #about-page .mobile-image-container { display: none; }
+    #about-page .tg-content { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 1%;
+    }
+
+    /* Desktop image container - Frame passes under image but shows around edges */
+    #about-page .image-content {
+        width: 100%;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 2;
+    }
+
+    #about-page .desktop-image-frame {
+        border: 16px solid #2c5aa0;
+        width: 100%;
+        height: 800px; /* Increased height */
+        position: relative;
+        background: #2c5aa0;
+        z-index: 2; /* Frame stays under image */
+    }
+
+    /* Updated desktop image positioning - image sits on top but frame shows around */
+    #about-page .desktop-image {
+        width: calc(100% - 60px); /* Smaller than frame to show frame around edges */
+        height: calc(100% - 60px); /* Smaller than frame to show frame around edges */
+        object-fit: cover;
+        position: absolute;
+        top: 30px; /* Centered within frame */
+        left: 30px; /* Centered within frame */
+        z-index: 3; /* Image on top of frame */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    #about-page .text-content { 
+        width: 100%;
+        margin-top: 0;
+        background: linear-gradient(to bottom, 
+            #f8f9fa 0%,
+            #f8f9fa 15%,
+            rgba(255, 255, 255, 0.98) 25%,
+            rgba(255, 255, 255, 0.95) 35%,
+            rgba(255, 255, 255, 0.90) 45%,
+            rgba(255, 255, 255, 0.80) 55%,
+            rgba(255, 255, 255, 0.65) 65%,
+            rgba(255, 255, 255, 0.45) 75%,
+            rgba(255, 255, 255, 0.25) 85%,
+            rgba(255, 255, 255, 0) 100%);
+        padding-bottom: 200px;
+        margin-bottom: -150px;
+    }
+
+    /* Reduced padding on desktop for paragraphs */
+    #about-page .tg-description { 
+        font-size: 18px;
+        line-height: 1.8;
+        max-width: 100%;
+        padding: 0 8%;
+    }
+
+    #about-page .tg-subtitle,
+    #about-page .tg-title {
+        padding: 0 8%;
+    }
+
+    #about-page .tg-impact {
+        padding: 0 8%;
+    }
+
+    #about-page .tg-title {
+        font-size: 22px;
+    }
+
+    #about-page .tg-video-preview { 
+        width: 100%;
+        height: 500px;
+        border-radius: 0; 
+        margin-top: -150px;
+    }
+    
+    #about-page .tg-impact { 
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    /* Desktop adjustments for new sections */
+    #about-page .construction-image {
+        height: 350px;
+    }
+
+    #about-page .blue-section,
+    #about-page .image-bg-section,
+    #about-page .company-profile-section,
+    #about-page .who-we-are-section,
+    #about-page .what-we-do-section {
+        height: 350px;
+        padding: 80px 20px;
+    }
+
+    #about-page .blue-section-title,
+    #about-page .image-bg-title,
+    #about-page .company-profile-title,
+    #about-page .who-we-are-title,
+    #about-page .what-we-do-title {
+        font-size: 42px;
+    }
+
+    #about-page .blue-section-button,
+    #about-page .image-bg-button,
+    #about-page .who-we-are-button,
+    #about-page .what-we-do-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    /* Keep company profile button smaller on desktop */
+    #about-page .company-profile-button {
+        padding: 8px 16px;
+        font-size: 12px;
+        bottom: 25px;
+        right: 25px;
+    }
+    
+    /* Desktop font size for impact text */
+    #about-page .tg-impact-text {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+    #about-page .image-content { display: none; }
+    #about-page .mobile-image-container { display: block; order: -1; margin-bottom: 15px; transform: translateY(-10px); }
+    #about-page .mobile-image-frame {
+        height: 450px; /* Increased height for mobile */
+        border: 12px solid #2c5aa0;
+        z-index: 2; /* Frame stays under image */
+    }
+    #about-page .mobile-image {
+        width: calc(100% - 40px); /* Smaller than frame to show frame around edges */
+        height: calc(100% - 40px); /* Smaller than frame to show frame around edges */
+        top: 20px; /* Centered within frame */
+        left: 20px; /* Centered within frame */
+        z-index: 3; /* Image on top of frame */
+    }
+    #about-page .text-content { 
+        display: flex; 
+        flex-direction: column; 
+        margin-top: 10px;
+        background: linear-gradient(to bottom, 
+            #f8f9fa 0%,
+            #f8f9fa 30%,
+            rgba(255, 255, 255, 0.98) 40%,
+            rgba(255, 255, 255, 0.95) 50%,
+            rgba(255, 255, 255, 0.90) 60%,
+            rgba(255, 255, 255, 0.80) 70%,
+            rgba(255, 255, 255, 0.65) 80%,
+            rgba(255, 255, 255, 0.45) 90%,
+            rgba(255, 255, 255, 0.25) 95%,
+            rgba(255, 255, 255, 0) 100%);
+        padding-bottom: 130px;
+        margin-bottom: -100px;
+    }
+    #about-page .bg-text { font-size: 90px; top: -30px; }
+    #about-page .tg-title { 
+        font-size: 22px;
+        margin-top: -5px;
+    }
+    #about-page .tg-subtitle {
+        font-size: 16px;
+    }
+    #about-page .tg-description, #about-page .tg-impact-text { font-size: 12px; }
+    #about-page .tg-description {
+        padding: 0 5%;
+    }
+    #about-page .tg-subtitle,
+    #about-page .tg-title {
+        padding: 0 5%;
+    }
+    #about-page .tg-impact {
+        padding: 0 5%;
+    }
+    #about-page .tg-video-preview { 
+        height: 260px; 
+        border-radius: 0; 
+        margin-bottom: 20px; 
+        margin-top: -100px;
+    }
+    #about-page .play-button { width: 60px; height: 60px; }
+    #about-page .play-icon {
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-left: 18px solid #2c5aa0;
+        margin-left: 4px;
+    }
+    #about-page .modal-content { width: 95%; }
+
+    /* Mobile adjustments for new sections */
+    #about-page .blue-section-title,
+    #about-page .image-bg-title,
+    #about-page .company-profile-title,
+    #about-page .who-we-are-title,
+    #about-page .what-we-do-title {
+        font-size: 24px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    #about-page .construction-image {
+        height: 250px;
+    }
+
+    #about-page .blue-section,
+    #about-page .image-bg-section,
+    #about-page .company-profile-section,
+    #about-page .who-we-are-section,
+    #about-page .what-we-do-section {
+        height: 250px;
+        padding: 40px 20px;
+    }
+
+    #about-page .tg-impact {
+        margin-bottom: 30px;
+    }
+
+    #about-page .construction-image-section {
+        margin: 30px 0 0 0;
+    }
+    
+    /* Mobile adjustment for company profile button - square and bottom right */
+    #about-page .company-profile-button {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+    }
+    
+    #about-page .company-profile-button span {
+        display: none;
+    }
+    
+    #about-page .download-icon {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #about-page .tg-title { 
+        font-size: 22px;
+        margin-top: -10px;
+    }
+    #about-page .tg-subtitle {
+        font-size: 16px;
+    }
+    #about-page .bg-text { font-size: 70px; top: -20px; }
+    #about-page .mobile-image-frame { 
+        height: 400px; /* Increased height for small mobile */
+        border: 10px solid #2c5aa0;
+        z-index: 2; /* Frame stays under image */
+    }
+    #about-page .mobile-image {
+        width: calc(100% - 30px); /* Smaller than frame to show frame around edges */
+        height: calc(100% - 30px); /* Smaller than frame to show frame around edges */
+        top: 15px; /* Centered within frame */
+        left: 15px; /* Centered within frame */
+        z-index: 3; /* Image on top of frame */
+    }
+    #about-page .text-content {
+        padding-bottom: 100px;
+        margin-bottom: -80px;
+    }
+    #about-page .tg-video-preview { 
+        margin-top: -80px;
+    }
+
+    #about-page .blue-section-title,
+    #about-page .image-bg-title,
+    #about-page .company-profile-title,
+    #about-page .who-we-are-title,
+    #about-page .what-we-do-title {
+        font-size: 20px;
+        letter-spacing: 0.5px;
+    }
+
+    #about-page .construction-image {
+        height: 200px;
+    }
+
+    #about-page .blue-section,
+    #about-page .image-bg-section,
+    #about-page .company-profile-section,
+    #about-page .who-we-are-section,
+    #about-page .what-we-do-section {
+        height: 200px;
+        padding: 30px 20px;
+    }
+
+    #about-page .tg-impact {
+        margin-bottom: 25px;
+    }
+
+    #about-page .construction-image-section {
+        margin: 25px 0 0 0;
+    }
+    
+    /* Small mobile adjustment for company profile button */
+    #about-page .company-profile-button {
+        bottom: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+#about-page .fog-overlay { display: none; }
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+    <div class="announcement-content">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">phone</i>
+                </div>
+                <span>+27 76 270 3475</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">phone_iphone</i>
+                </div>
+                <span>+27 67 619 0270</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">email</i>
+                </div>
+                <span>info@ingestionpty.co.za</span>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#">
+                <div class="social-icon-circle">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <span>Facebook</span>
+            </a>
+            <a href="#">
+                <div class="social-icon-circle">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="logo" id="logo">
+        <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <div class="desktop-nav">
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="home">Home</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="about">
+                About
+                <span class="material-symbols-outlined desktop-arrow-icon">arrow_downward</span>
+            </a>
+            <div class="desktop-nav-content" id="desktopAboutContent">
+                <ul>
+                    <li><a href="#">Our History</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Our Values</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="product">
+                Product
+                <span class="material-symbols-outlined desktop-arrow-icon">arrow_downward</span>
+            </a>
+            <div class="desktop-nav-content" id="desktopProductContent">
+                <ul>
+                    <li><a href="#">Product Line 1</a></li>
+                    <li><a href="#">Product Line 2</a></li>
+                    <li><a href="#">Product Line 3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="services">
+                Services
+                <span class="material-symbols-outlined desktop-arrow-icon">arrow_downward</span>
+            </a>
+            <div class="desktop-nav-content" id="desktopServicesContent">
+                <ul>
+                    <li><a href="#">Service 1</a></li>
+                    <li><a href="#">Service 2</a></li>
+                    <li><a href="#">Service 3</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="case-studies">Case Studies</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="news">News</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- MENU ICON - MOBILE ONLY -->
+    <div class="menu-icon" id="menuIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<!-- NAVIGATION BAR -->
+<nav class="nav-bar" id="navBar">
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a class="nav-link" id="homeLink">
+                HOME
+            </a>
+        </li>
+        <li class="nav-item collapsible">
+            <a class="nav-link" id="aboutLink">
+                ABOUT
+                <span class="material-symbols-outlined arrow-icon">arrow_downward</span>
+            </a>
+            <div class="nav-content" id="aboutContent">
+                <ul>
+                    <li><a href="#">OUR HISTORY</a></li>
+                    <li><a href="#">OUR TEAM</a></li>
+                    <li><a href="#">OUR VALUES</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item collapsible">
+            <a class="nav-link" id="productLink">
+                PRODUCT
+                <span class="material-symbols-outlined arrow-icon">arrow_downward</span>
+            </a>
+            <div class="nav-content" id="productContent">
+                <ul>
+                    <li><a href="#">PRODUCT LINE 1</a></li>
+                    <li><a href="#">PRODUCT LINE 2</a></li>
+                    <li><a href="#">PRODUCT LINE 3</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item collapsible">
+            <a class="nav-link" id="servicesLink">
+                SERVICES
+                <span class="material-symbols-outlined arrow-icon">arrow_downward</span>
+            </a>
+            <div class="nav-content" id="servicesContent">
+                <ul>
+                    <li><a href="#">SERVICE 1</a></li>
+                    <li><a href="#">SERVICE 2</a></li>
+                    <li><a href="#">SERVICE 3</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="caseStudiesLink">
+                CASE STUDIES
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="newsLink">
+                NEWS
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contactLink">
+                CONTACT
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="image-container">
+        <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/IMG_3016.jpg?v=1762625673" alt="Background Image">
+    </div>
+    
+    <div class="big-typography">
+        <h1>Building excellence <br> Delivering energy</h1>
+    </div>
+    
+    <div class="scroll-down" id="scrollDownBtn"></div>
+</section>
+
+<!-- ABOUT PAGE SECTION -->
+<div id="about-page">
+    <!-- BACKGROUND TEXT -->
+    <div style="position: relative; height: 120px; overflow: hidden;">
+        <div class="bg-text">INGESTION</div>
+    </div>
+
+    <!-- CONTENT -->
+    <section class="tg-content">
+
+        <!-- MOBILE IMAGE ABOVE TEXT -->
+        <div class="mobile-image-container">
+            <div class="mobile-image-frame"></div>
+            <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/IMG_2590.jpg?v=1760903947" alt="Construction Site" class="mobile-image">
+        </div>
+
+        <!-- DESKTOP IMAGE -->
+        <div class="image-content">
+            <div class="desktop-image-frame"></div>
+            <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/IMG_2590.jpg?v=1760903947" alt="Construction Site" class="desktop-image">
+        </div>
+
+        <!-- TEXT CONTENT with enhanced whiter fog -->
+        <div class="text-content">
+            <div class="tg-subtitle">ABOUT US</div>
+            <h1 class="tg-title">DRIVEN BY INNOVATION</h1>
+            <p class="tg-description">
+                At Ingestion Ennovation, we prioritize quality, safety and innovation in everything we do.
+                Our team is driven by a shared commitment to excellence and a passion for pioneering solutions
+                that make a real impact. We believe that every project is an opportunity to create lasting change
+                and help our clients achieve their goals with confidence. Our innovative approach enables us to
+                solve complex challenges efficiently, maximize resources, and deliver results that exceed expectations.
+                We consistently focus on sustainable practices, cutting-edge technology, and strategic planning to ensure
+                long-term success for our clients and communities.
+            </p>
+        </div>
+
+        <!-- VIDEO PREVIEW SECTION -->
+        <div class="tg-video-preview">
+            <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/scott-blake-x-ghf9LjrVg-unsplash.jpg?v=1762584455" alt="Video Preview" class="video-preview-image">
+            <div class="play-button-container">
+                <div class="play-button">
+                    <div class="play-icon"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPDATED IMPACT SECTION -->
+        <div class="tg-impact">
+            <h3 class="tg-impact-title">OUR IMPACT</h3>
+            <p class="tg-impact-text">
+                At Ingestion Ennovation, our impact extends beyond construction and fuel supply - we empower communities, 
+                create jobs, and drive sustainable growth through innovation and responsible development. Guided by integrity 
+                and excellence, we build infrastructure that connects people and deliver energy solutions that power businesses. 
+                Through strategic partnerships and modern technologies, we continue to shape a future where progress fuels 
+                opportunity and every project leaves a lasting, positive mark on society.
+            </p>
+        </div>
+
+        <!-- CONSTRUCTION IMAGE -->
+        <div class="construction-image-section">
+            <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/ej-yao-D46mXLsQRJw-unsplash.jpg?v=1762598630" alt="Construction Site" class="construction-image">
+        </div>
+
+        <!-- BLUE SECTION - THE ROOTS -->
+        <div class="blue-section">
+            <div class="blue-section-title">THE ROOTS</div>
+            <a href="/our-story" class="blue-section-button">Learn More</a>
+        </div>
+
+        <!-- IMAGE BACKGROUND SECTION - COMMITTED TO EXCELLENCE -->
+        <div class="image-bg-section">
+            <div class="image-bg-title">COMMITTED TO EXCELLENCE</div>
+            <a href="/excellence" class="image-bg-button">Discover More</a>
+        </div>
+
+        <!-- NEW COMPANY PROFILE SECTION -->
+        <div class="company-profile-section">
+            <div class="company-profile-title">COMPANY PROFILE</div>
+            <a href="YOUR_PDF_LINK_HERE" download="Company-Profile.pdf" class="company-profile-button">
+                <span>Download PDF</span>
+                <div class="download-icon"></div>
+            </a>
+        </div>
+
+        <!-- NEW WHO WE ARE SECTION -->
+        <div class="who-we-are-section">
+            <div class="who-we-are-title">WHO WE ARE</div>
+            <a href="/about" class="who-we-are-button">Learn More</a>
+        </div>
+
+        <!-- NEW WHAT WE DO SECTION -->
+        <div class="what-we-do-section">
+            <div class="what-we-do-title">WHAT WE DO</div>
+            <a href="/services" class="what-we-do-button">Discover More</a>
+        </div>
+
+    </section>
+
+    <!-- VIDEO MODAL -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <video class="modal-video" controls>
+                <source src="https://cdn.shopify.com/videos/c/o/v/46be3b6337a8404aa3448fcd0aed4c84.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+
+<script>
+const menuIcon = document.getElementById('menuIcon');
+const logo = document.getElementById('logo');
+const navBar = document.getElementById('navBar');
+const homeLink = document.getElementById('homeLink');
+const aboutLink = document.getElementById('aboutLink');
+const productLink = document.getElementById('productLink');
+const servicesLink = document.getElementById('servicesLink');
+const caseStudiesLink = document.getElementById('caseStudiesLink');
+const newsLink = document.getElementById('newsLink');
+const contactLink = document.getElementById('contactLink');
+const aboutContent = document.getElementById('aboutContent');
+const productContent = document.getElementById('productContent');
+const servicesContent = document.getElementById('servicesContent');
+const aboutItem = aboutLink.parentElement;
+const productItem = productLink.parentElement;
+const servicesItem = servicesLink.parentElement;
+
+// Desktop navigation elements
+const desktopAboutLink = document.querySelector('[data-section="about"]');
+const desktopProductLink = document.querySelector('[data-section="product"]');
+const desktopServicesLink = document.querySelector('[data-section="services"]');
+const desktopAboutContent = document.getElementById('desktopAboutContent');
+const desktopProductContent = document.getElementById('desktopProductContent');
+const desktopServicesContent = document.getElementById('desktopServicesContent');
+const desktopAboutItem = desktopAboutLink.parentElement;
+const desktopProductItem = desktopProductLink.parentElement;
+const desktopServicesItem = desktopServicesLink.parentElement;
+
+// Mobile menu toggle
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('active');
+    navBar.classList.toggle('active');
+});
+
+// Scroll down button
+const scrollDownBtn = document.getElementById('scrollDownBtn');
+scrollDownBtn.addEventListener('click', () => {
+    // Scroll to the about page section
+    const aboutPage = document.getElementById('about-page');
+    aboutPage.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Logo scroll to top functionality
+logo.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Desktop nav underline toggle
+document.querySelectorAll('.desktop-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelectorAll('.desktop-nav a').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    });
+});
+
+// Mobile navigation functionality
+aboutLink.addEventListener('click', () => {
+    aboutContent.classList.toggle('active');
+    aboutItem.classList.toggle('active');
+    // Close other open content
+    if (productContent.classList.contains('active')) {
+        productContent.classList.remove('active');
+        productItem.classList.remove('active');
+    }
+    if (servicesContent.classList.contains('active')) {
+        servicesContent.classList.remove('active');
+        servicesItem.classList.remove('active');
+    }
+});
+
+productLink.addEventListener('click', () => {
+    productContent.classList.toggle('active');
+    productItem.classList.toggle('active');
+    // Close other open content
+    if (aboutContent.classList.contains('active')) {
+        aboutContent.classList.remove('active');
+        aboutItem.classList.remove('active');
+    }
+    if (servicesContent.classList.contains('active')) {
+        servicesContent.classList.remove('active');
+        servicesItem.classList.remove('active');
+    }
+});
+
+servicesLink.addEventListener('click', () => {
+    servicesContent.classList.toggle('active');
+    servicesItem.classList.toggle('active');
+    // Close other open content
+    if (aboutContent.classList.contains('active')) {
+        aboutContent.classList.remove('active');
+        aboutItem.classList.remove('active');
+    }
+    if (productContent.classList.contains('active')) {
+        productContent.classList.remove('active');
+        productItem.classList.remove('active');
+    }
+});
+
+// Desktop navigation functionality
+desktopAboutLink.addEventListener('click', () => {
+    desktopAboutContent.classList.toggle('active');
+    desktopAboutItem.classList.toggle('active');
+    // Close other open content
+    if (desktopProductContent.classList.contains('active')) {
+        desktopProductContent.classList.remove('active');
+        desktopProductItem.classList.remove('active');
+    }
+    if (desktopServicesContent.classList.contains('active')) {
+        desktopServicesContent.classList.remove('active');
+        desktopServicesItem.classList.remove('active');
+    }
+});
+
+desktopProductLink.addEventListener('click', () => {
+    desktopProductContent.classList.toggle('active');
+    desktopProductItem.classList.toggle('active');
+    // Close other open content
+    if (desktopAboutContent.classList.contains('active')) {
+        desktopAboutContent.classList.remove('active');
+        desktopAboutItem.classList.remove('active');
+    }
+    if (desktopServicesContent.classList.contains('active')) {
+        desktopServicesContent.classList.remove('active');
+        desktopServicesItem.classList.remove('active');
+    }
+});
+
+desktopServicesLink.addEventListener('click', () => {
+    desktopServicesContent.classList.toggle('active');
+    desktopServicesItem.classList.toggle('active');
+    // Close other open content
+    if (desktopAboutContent.classList.contains('active')) {
+        desktopAboutContent.classList.remove('active');
+        desktopAboutItem.classList.remove('active');
+    }
+    if (desktopProductContent.classList.contains('active')) {
+        desktopProductContent.classList.remove('active');
+        desktopProductItem.classList.remove('active');
+    }
+});
+
+// Close navigation when clicking outside
+document.addEventListener('click', (e) => {
+    // Mobile navigation
+    if (!navBar.contains(e.target) && !menuIcon.contains(e.target)) {
+        navBar.classList.remove('active');
+        menuIcon.classList.remove('active');
+        aboutContent.classList.remove('active');
+        productContent.classList.remove('active');
+        servicesContent.classList.remove('active');
+        aboutItem.classList.remove('active');
+        productItem.classList.remove('active');
+        servicesItem.classList.remove('active');
+    }
+    
+    // Desktop navigation
+    if (!desktopAboutItem.contains(e.target) && !desktopProductItem.contains(e.target) && !desktopServicesItem.contains(e.target)) {
+        desktopAboutContent.classList.remove('active');
+        desktopProductContent.classList.remove('active');
+        desktopServicesContent.classList.remove('active');
+        desktopAboutItem.classList.remove('active');
+        desktopProductItem.classList.remove('active');
+        desktopServicesItem.classList.remove('active');
+    }
+});
+
+// Force image load
+window.addEventListener('load', function() {
+    const img = document.querySelector('.image-container img');
+    if (img.complete) img.style.opacity = '1';
+});
+
+// About page video modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const playButton = document.querySelector('#about-page .play-button');
+    const videoModal = document.getElementById('videoModal');
+    const closeModal = document.querySelector('#about-page .close-modal');
+    const modalVideo = document.querySelector('#about-page .modal-video');
+    
+    if (playButton) {
+        playButton.addEventListener('click', function() {
+            videoModal.classList.add('active');
+            modalVideo.play();
+        });
+    }
+    
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            videoModal.classList.remove('active');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        });
+    }
+    
+    if (videoModal) {
+        videoModal.addEventListener('click', function(e) {
+            if (e.target === videoModal) {
+                videoModal.classList.remove('active');
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+        });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+            videoModal.classList.remove('active');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        }
+    });
+});
+</script>
+</body>
+</html>
