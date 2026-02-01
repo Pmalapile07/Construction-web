@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no">
-<title>Transformic</title>
+<title>Header Section</title>
 <style>
 /* --- GENERAL RESET --- */
 * {
@@ -20,6 +20,94 @@ body {
     overflow-x: hidden;
 }
 
+/* --- ANNOUNCEMENT BAR --- */
+.announcement-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 13px 40px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: black;
+    z-index: 1001;
+}
+
+.announcement-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: black;
+}
+
+.contact-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2c5aa0;
+    border: 1px solid #2c5aa0;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.contact-item .material-icons {
+    font-size: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2196f3;
+}
+
+.social-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2c5aa0;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover .social-icon-circle {
+    background: rgba(33, 150, 243, 0.2);
+    transform: scale(1.1);
+}
+
+.social-links .fa-brands {
+    font-size: 16px;
+}
+
 /* --- HEADER --- */
 header {
     position: fixed;
@@ -29,8 +117,8 @@ header {
     height: 95px;
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    background-color: rgba(15,15,15,0.8);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -39,61 +127,72 @@ header {
     transition: all 0.4s ease;
 }
 
-/* HEADER SCROLL EFFECT */
-header.scrolled {
-    background-color: #fff;
-    color: #000;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
 /* --- LOGO --- */
 .logo {
     cursor: pointer;
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 2px;
+    position: relative;
 }
 .logo img {
-    height: 80px;
+    height: 120px;
     width: auto;
-    display: none; /* Using text logo for Transformic */
 }
 
-/* --- DESKTOP NAV --- */
-.desktop-nav {
+/* --- NAVIGATION BAR --- */
+.nav-bar {
+    position: fixed;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 5px solid #2c5aa0;
+    z-index: 999;
     display: none;
-    gap: 20px;
+}
+
+.nav-bar.active {
+    display: block;
+}
+
+.nav-list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
 }
 
-.desktop-nav a {
-    color: white;
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px 30px;
+    color: #333;
     text-decoration: none;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: left;
 }
 
-header.scrolled .desktop-nav a {
-    color: black;
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-.desktop-nav a:hover {
-    color: #2196f3;
-}
-
-/* Show horizontal nav + hide menu icon on larger screens */
-@media (min-width: 1024px) {
-    .desktop-nav {
-        display: flex;
-    }
-    .menu-icon {
-        display: none;
-    }
-}
-
-/* --- MOBILE MENU ICON --- */
+/* --- MENU ICON - MOBILE ONLY --- */
 .menu-icon {
     width: 25px;
     height: 17px;
@@ -102,6 +201,7 @@ header.scrolled .desktop-nav a {
     transition: transform 0.3s ease;
     display: block;
 }
+
 .menu-icon span {
     background: white;
     position: absolute;
@@ -117,59 +217,112 @@ header.scrolled .desktop-nav a {
 .menu-icon.active span:nth-child(2) { opacity: 0; }
 .menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
 
-/* --- MOBILE NAV --- */
-.nav-bar {
-    position: fixed;
-    top: 95px;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 1);
+/* --- DESKTOP NAV --- */
+.desktop-nav {
     display: none;
-    z-index: 999;
-    flex-direction: column;
-    transition: all 0.3s ease;
+    gap: 5px;
+    align-items: center;
+    position: relative;
 }
-.nav-bar.active {
-    display: flex;
+
+.desktop-nav-item {
+    position: relative;
 }
-.nav-list {
-    list-style: none;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.nav-item {
-    width: 100%;
-}
-.nav-link {
-    display: block;
-    padding: 16px 30px;
-    font-size: 0.9rem;
+
+.desktop-nav a {
+    color: white;
     text-decoration: none;
-    color: black;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 10px 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-family: 'Mozilla Text', sans-serif;
+    white-space: nowrap;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
 }
-.nav-link:hover {
-    background-color: rgba(0,0,0,0.05);
+
+.desktop-nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: #2196f3;
+    border-radius: 2px;
+}
+
+@media (min-width: 1024px) {
+    .menu-icon { display: none; }
+    .desktop-nav { display: flex; }
+    .announcement-bar { display: block; }
+    header { top: 53px; }
+    .nav-bar { top: 148px; }
 }
 </style>
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+    <div class="announcement-content">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">phone</i>
+                </div>
+                <span>+27 76 270 3475</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">phone_iphone</i>
+                </div>
+                <span>+27 67 619 0270</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">email</i>
+                </div>
+                <span>info@ingestionpty.co.za</span>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#">
+                <div class="social-icon-circle">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <span>Facebook</span>
+            </a>
+            <a href="#">
+                <div class="social-icon-circle">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </div>
+</div>
+
 <header id="header">
-    <div class="logo">Transformic</div>
+    <div class="logo" id="logo">
+        <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
+    </div>
 
     <!-- DESKTOP NAV -->
-    <nav class="desktop-nav">
-        <a class="desktop-nav-link" href="#about">About Us</a>
-        <a class="desktop-nav-link" href="#values">Values</a>
-        <a class="desktop-nav-link" href="#services">Services</a>
-        <a class="desktop-nav-link" href="#projects">Projects</a>
-        <a class="desktop-nav-link" href="#contact">Contact</a>
-    </nav>
+    <div class="desktop-nav" id="desktopNav">
+        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="about">About Us</a></div>
+        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="values">Values</a></div>
+        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="services">Services</a></div>
+        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="projects">Projects</a></div>
+        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="contact">Contact</a></div>
+    </div>
 
-    <!-- MENU ICON -->
+    <!-- MENU ICON - MOBILE ONLY -->
     <div class="menu-icon" id="menuIcon">
         <span></span>
         <span></span>
@@ -177,44 +330,69 @@ header.scrolled .desktop-nav a {
     </div>
 </header>
 
-<!-- MOBILE NAVIGATION -->
+<!-- NAVIGATION BAR - MOBILE -->
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#values">Values</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link">About Us</a></li>
+        <li class="nav-item"><a class="nav-link">Values</a></li>
+        <li class="nav-item"><a class="nav-link">Services</a></li>
+        <li class="nav-item"><a class="nav-link">Projects</a></li>
+        <li class="nav-item"><a class="nav-link">Contact</a></li>
     </ul>
 </nav>
 
 <script>
-// SCROLL HEADER EFFECT
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-    if(window.scrollY > 20){
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
-
-// MOBILE MENU TOGGLE
 const menuIcon = document.getElementById('menuIcon');
+const header = document.getElementById('header');
 const navBar = document.getElementById('navBar');
+const desktopLinks = document.querySelectorAll('.desktop-nav-link');
+const mobileLinks = document.querySelectorAll('.nav-link');
+
+// Toggle mobile menu
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('active');
     navBar.classList.toggle('active');
 });
 
-// CLOSE MOBILE MENU WHEN CLICKING LINK
-document.querySelectorAll('.nav-link').forEach(link => {
+// Scroll effect for header
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 50){
+        header.style.backgroundColor = '#fff';
+        desktopLinks.forEach(link => link.style.color = '#000');
+    } else {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
+        desktopLinks.forEach(link => link.style.color = '#fff');
+    }
+});
+
+// Logo scroll to top
+document.getElementById('logo').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Desktop nav active underline
+desktopLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        desktopLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    });
+});
+
+// Mobile link close menu
+mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
         navBar.classList.remove('active');
         menuIcon.classList.remove('active');
     });
 });
-</script>
 
+// Close nav when clicking outside
+document.addEventListener('click', e => {
+    if(!navBar.contains(e.target) && !menuIcon.contains(e.target)){
+        navBar.classList.remove('active');
+        menuIcon.classList.remove('active');
+    }
+});
+</script>
 </body>
 </html>
