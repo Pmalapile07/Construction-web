@@ -539,7 +539,7 @@ header {
 .big-typography h1 {
     font-size: 3.5rem;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
-    margin-bottom: 30px; /* Increased margin for button space */
+    margin-bottom: 50px; /* INCREASED from 30px to 50px - MORE SPACE FOR BUTTON */
     letter-spacing: 3px;
     font-weight: 900;
     line-height: 1.1;
@@ -563,6 +563,7 @@ header {
     position: relative;
     z-index: 2;
     margin-top: 10px;
+    margin-bottom: 40px; /* ADDED bottom margin to separate from features */
 }
 
 .cta-button:hover {
@@ -575,29 +576,31 @@ header {
 @media (max-width: 767px) {
     .big-typography h1 {
         font-size: 2.5rem;
-        margin-bottom: 25px;
+        margin-bottom: 40px; /* INCREASED for mobile */
     }
     .cta-button {
         padding: 15px 30px;
         font-size: 1rem;
+        margin-bottom: 30px; /* ADDED for mobile */
     }
 }
 
 @media (max-width: 480px) {
     .big-typography h1 {
         font-size: 2rem;
-        margin-bottom: 20px;
+        margin-bottom: 30px; /* INCREASED for small mobile */
     }
     .cta-button {
         padding: 12px 25px;
         font-size: 0.9rem;
+        margin-bottom: 25px; /* ADDED for small mobile */
     }
 }
 
 /* Border Top and Features Section */
 .hero-features {
     position: absolute;
-    bottom: 100px; /* Positioned above scroll down button */
+    bottom: 80px; /* ADJUSTED from 100px to 80px - less space from bottom */
     left: 0;
     width: 100%;
     z-index: 2;
@@ -631,13 +634,13 @@ header {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px; /* INCREASED gap between features */
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px; /* INCREASED gap between icon and text */
     color: white;
 }
 
@@ -655,6 +658,7 @@ header {
     color: #2c5aa0;
     border: 2px solid rgba(255, 255, 255, 0.3); /* White border for glass effect */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .feature-text {
@@ -662,6 +666,7 @@ header {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    line-height: 1.4;
 }
 
 .feature-text strong {
@@ -675,7 +680,7 @@ header {
 /* Mobile adjustments for features */
 @media (max-width: 768px) {
     .hero-features {
-        bottom: 80px; /* Adjusted for reduced height */
+        bottom: 60px; /* ADJUSTED for mobile */
         padding: 0 5%;
     }
     
@@ -686,7 +691,7 @@ header {
     }
     
     .feature-item {
-        gap: 12px;
+        gap: 15px;
     }
     
     .feature-icon {
@@ -706,7 +711,7 @@ header {
 
 @media (max-width: 480px) {
     .hero-features {
-        bottom: 70px;
+        bottom: 50px;
     }
     
     .features-container {
