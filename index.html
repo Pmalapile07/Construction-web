@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
 <title>Header Section</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,6 +20,7 @@ body {
     background: #0f0f0f;
     color: #fff;
     overflow-x: hidden;
+    font-size: 14px; /* Reduced base font size */
 }
 
 /* --- ANNOUNCEMENT BAR --- */
@@ -30,8 +31,8 @@ body {
     left: 0;
     width: 100%;
     background: white;
-    padding: 13px 40px;
-    font-size: 0.9rem;
+    padding: 10px 30px; /* Reduced padding */
+    font-size: 0.8rem; /* Reduced font size */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     color: black;
     z-index: 1001;
@@ -45,41 +46,36 @@ body {
 
 .contact-info {
     display: flex;
-    gap: 25px;
+    gap: 20px; /* Reduced gap */
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px; /* Reduced gap */
     color: black;
     text-decoration: none;
+    font-size: 0.8rem; /* Reduced font size */
 }
 
 .contact-icon-circle {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 28px; /* Reduced size */
+    height: 28px; /* Reduced size */
     border-radius: 50%;
     background: #2c5aa0;
     border: 1px solid #2c5aa0;
     color: white;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .contact-item .material-icons, 
 .contact-item .fas {
-    font-size: 16px;
+    font-size: 14px; /* Reduced icon size */
 }
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-/* Removed social links styling */
 
 /* --- HEADER --- */
 header {
@@ -87,7 +83,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 95px;
+    height: 80px; /* Reduced height */
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
     background-color: rgba(255, 255, 255, 1); /* Plain white background */
@@ -95,7 +91,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 0 20px; /* Reduced padding */
     z-index: 1000;
 }
 
@@ -103,49 +99,55 @@ header {
 .logo {
     cursor: pointer;
     position: relative;
+    margin-right: auto; /* Pushes everything else to the right */
 }
 .logo img {
-    height: 120px;
+    height: 90px; /* Reduced logo size */
     width: auto;
 }
 
-/* --- FULLSCREEN NAVIGATION MENU --- */
-.fullscreen-nav {
+/* --- HALF-SCREEN NAVIGATION MENU --- */
+.halfscreen-nav {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 50%; /* Half screen width */
     height: 100%;
-    background: rgba(255, 255, 255, 0.95); /* White glass morph background */
+    background: rgba(255, 255, 255, 0.98); /* White glass morph background */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: 2000;
     display: none;
     flex-direction: column;
-    padding: 40px;
+    padding: 25px; /* Reduced padding */
     overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
 }
 
-.fullscreen-nav.active {
+.halfscreen-nav.active {
     display: flex;
+    transform: translateX(0);
 }
 
 .close-icon {
     position: absolute;
-    top: 30px;
-    right: 40px;
-    width: 30px;
-    height: 30px;
+    top: 25px; /* Adjusted position */
+    right: 25px; /* Adjusted position */
+    width: 25px; /* Reduced size */
+    height: 25px; /* Reduced size */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2001;
 }
 
 .close-icon span {
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 2px; /* Reduced thickness */
     background: #333;
 }
 
@@ -158,19 +160,19 @@ header {
 }
 
 .nav-content-container {
-    margin-top: 80px;
+    margin-top: 60px; /* Reduced margin */
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 25px; /* Reduced gap */
 }
 
 .get-quote-btn {
     background: #2c5aa0;
     color: white;
     border: none;
-    padding: 18px 30px;
-    font-size: 1rem;
-    letter-spacing: 1px;
+    padding: 14px 25px; /* Reduced padding */
+    font-size: 0.9rem; /* Reduced font size */
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -185,58 +187,58 @@ header {
     box-shadow: 0 5px 15px rgba(44, 90, 160, 0.2);
 }
 
-.fullscreen-nav-list {
+.halfscreen-nav-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 18px; /* Reduced gap */
 }
 
-.fullscreen-nav-item {
+.halfscreen-nav-item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 25px;
+    padding-bottom: 18px; /* Reduced padding */
 }
 
-.fullscreen-nav-item:last-child {
+.halfscreen-nav-item:last-child {
     border-bottom: none;
 }
 
-.fullscreen-nav-link {
+.halfscreen-nav-link {
     color: #333;
     text-decoration: none;
-    font-size: 1.8rem;
-    letter-spacing: 1px;
+    font-size: 1.2rem; /* Reduced font size */
+    letter-spacing: 0.8px;
     transition: color 0.3s ease;
     display: block;
-    padding: 10px 0;
+    padding: 8px 0; /* Reduced padding */
 }
 
-.fullscreen-nav-link:hover {
+.halfscreen-nav-link:hover {
     color: #2c5aa0;
 }
 
 .separator-line {
     width: 100%;
-    height: 2px;
+    height: 1px; /* Reduced thickness */
     background: rgba(0, 0, 0, 0.1);
-    margin: 30px 0;
+    margin: 20px 0; /* Reduced margin */
 }
 
 .empty-space {
     flex-grow: 1;
-    min-height: 100px;
+    min-height: 50px; /* Reduced space */
 }
 
 /* --- NAVIGATION BAR --- */
 .nav-bar {
     position: fixed;
-    top: 95px;
+    top: 80px; /* Adjusted to match reduced header height */
     left: 0;
     width: 100%;
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
     background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 5px solid #2c5aa0;
+    border-bottom: 4px solid #2c5aa0; /* Reduced border */
     z-index: 999;
     display: none;
 }
@@ -269,13 +271,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 16px 30px;
+    padding: 14px 25px; /* Reduced padding */
     color: #333;
     text-decoration: none;
     font-family: 'Mozilla Text', sans-serif;
     text-transform: uppercase;
-    font-size: 0.7rem;
-    letter-spacing: 0.5px;
+    font-size: 0.65rem; /* Reduced font size */
+    letter-spacing: 0.4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
@@ -287,10 +289,10 @@ header {
 }
 
 .arrow-icon {
-    margin-left: 10px;
-    margin-right: 45px;
+    margin-left: 8px; /* Reduced margin */
+    margin-right: 35px; /* Reduced margin */
     transition: transform 0.3s ease;
-    font-size: 18px;
+    font-size: 16px; /* Reduced size */
     color: #333;
 }
 
@@ -314,13 +316,13 @@ header {
 
 .nav-content ul {
     list-style: none;
-    padding: 10px 0;
-    font-size: 0.7rem;
+    padding: 8px 0; /* Reduced padding */
+    font-size: 0.65rem; /* Reduced font size */
     text-align: left;
 }
 
 .nav-content li {
-    padding: 8px 20px;
+    padding: 6px 15px; /* Reduced padding */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: left;
 }
@@ -346,35 +348,37 @@ header {
 
 /* --- MENU ICON - MOBILE ONLY --- */
 .menu-icon {
-    width: 25px;
-    height: 17px;
+    width: 22px; /* Reduced size */
+    height: 15px; /* Reduced size */
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease;
     display: block;
+    margin-left: auto; /* Ensures it stays on the right */
 }
 
 .menu-icon span {
     background: #000; /* Black color for hamburger menu */
     position: absolute;
-    height: 3px;
+    height: 2px; /* Reduced thickness */
     width: 100%;
     left: 0;
     transition: all 0.3s ease;
 }
 .menu-icon span:nth-child(1) { top: 0; }
-.menu-icon span:nth-child(2) { top: 8px; }
-.menu-icon span:nth-child(3) { top: 16px; }
-.menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.menu-icon span:nth-child(2) { top: 6px; }
+.menu-icon span:nth-child(3) { top: 12px; }
+.menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 6px; }
 .menu-icon.active span:nth-child(2) { opacity: 0; }
-.menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+.menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 6px; }
 
 /* --- DESKTOP NAV --- */
 .desktop-nav {
     display: none;
-    gap: 5px;
+    gap: 4px; /* Reduced gap */
     align-items: center;
     position: relative;
+    margin: 0 auto; /* Centers the nav */
 }
 
 .desktop-nav-item {
@@ -384,10 +388,10 @@ header {
 .desktop-nav a {
     color: #333; /* Changed to black for better contrast on white header */
     text-decoration: none;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-size: 0.95rem; /* Reduced font size */
+    letter-spacing: 0.8px;
     position: relative;
-    padding: 10px 15px;
+    padding: 8px 12px; /* Reduced padding */
     cursor: pointer;
     font-family: 'Mozilla Text', sans-serif;
     white-space: nowrap;
@@ -403,7 +407,7 @@ header {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 4px;
+    height: 3px; /* Reduced height */
     background: #2196f3;
     border-radius: 2px;
 }
@@ -416,9 +420,9 @@ header {
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
     background-color: rgba(0, 0, 0, 0.8);
-    min-width: 200px;
+    min-width: 180px; /* Reduced width */
     z-index: 1001;
-    border-top: 3px solid cyan;
+    border-top: 2px solid cyan; /* Reduced border */
 }
 
 .desktop-nav-content.active {
@@ -427,11 +431,11 @@ header {
 
 .desktop-nav-content ul {
     list-style: none;
-    padding: 10px 0;
+    padding: 8px 0; /* Reduced padding */
 }
 
 .desktop-nav-content li {
-    padding: 8px 20px;
+    padding: 6px 15px; /* Reduced padding */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -446,8 +450,8 @@ header {
     font-family: 'Mozilla Text', sans-serif;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    font-size: 0.9rem;
-    padding: 8px 15px;
+    font-size: 0.8rem; /* Reduced font size */
+    padding: 6px 12px; /* Reduced padding */
 }
 
 .desktop-nav-content a:hover {
@@ -456,9 +460,9 @@ header {
 }
 
 .desktop-arrow-icon {
-    margin-left: 5px;
+    margin-left: 4px; /* Reduced margin */
     transition: transform 0.3s ease;
-    font-size: 18px;
+    font-size: 16px; /* Reduced size */
 }
 
 .desktop-nav-item.active .desktop-arrow-icon {
@@ -477,47 +481,64 @@ header {
         display: block;
     }
     header {
-        top: 53px;
+        top: 45px; /* Adjusted for reduced height */
     }
     .nav-bar {
-        top: 148px;
+        top: 125px; /* Adjusted position */
     }
     
-    /* Logo on far left */
+    /* Logo on far left - already done with margin-right: auto */
     .logo {
         margin-right: auto;
-        order: -1;
     }
     
-    /* Desktop nav in center */
-    .desktop-nav {
-        order: 0;
-        margin: 0 auto;
-    }
+    /* Desktop nav in center - already done with margin: 0 auto */
     
-    /* Empty space on right to balance */
-    .menu-icon {
-        order: 1;
+    /* Header layout adjustment */
+    header {
+        justify-content: flex-start; /* Aligns items to start */
     }
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 1023px) {
-    .fullscreen-nav-list {
-        gap: 20px;
+/* Tablet screens */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .halfscreen-nav {
+        width: 60%; /* Slightly wider on tablet */
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 767px) {
+    .halfscreen-nav {
+        width: 85%; /* Wider on mobile for better usability */
     }
     
-    .fullscreen-nav-link {
-        font-size: 1.4rem;
+    .halfscreen-nav-link {
+        font-size: 1rem; /* Smaller font on mobile */
     }
     
-    .nav-content-container {
-        margin-top: 60px;
-        gap: 30px;
+    header {
+        padding: 0 15px; /* Less padding on mobile */
     }
     
-    .logo {
-        margin-right: auto;
+    .logo img {
+        height: 75px; /* Smaller logo on mobile */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .halfscreen-nav {
+        width: 100%; /* Full screen on very small devices */
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .announcement-bar {
+        padding: 8px 15px;
     }
 }
 </style>
@@ -589,8 +610,8 @@ header {
     </div>
 </header>
 
-<!-- FULLSCREEN NAVIGATION MENU -->
-<div class="fullscreen-nav" id="fullscreenNav">
+<!-- HALF-SCREEN NAVIGATION MENU -->
+<div class="halfscreen-nav" id="halfscreenNav">
     <div class="close-icon" id="closeNav">
         <span></span>
         <span></span>
@@ -599,27 +620,27 @@ header {
     <div class="nav-content-container">
         <button class="get-quote-btn">Get Quote</button>
         
-        <ul class="fullscreen-nav-list">
-            <li class="fullscreen-nav-item">
-                <a href="#" class="fullscreen-nav-link">HOME</a>
+        <ul class="halfscreen-nav-list">
+            <li class="halfscreen-nav-item">
+                <a href="#" class="halfscreen-nav-link">HOME</a>
             </li>
-            <li class="fullscreen-nav-item">
-                <a href="#" class="fullscreen-nav-link">ABOUT</a>
+            <li class="halfscreen-nav-item">
+                <a href="#" class="halfscreen-nav-link">ABOUT</a>
             </li>
-            <li class="fullscreen-nav-item">
-                <a href="#" class="fullscreen-nav-link">PRODUCT</a>
+            <li class="halfscreen-nav-item">
+                <a href="#" class="halfscreen-nav-link">PRODUCT</a>
             </li>
-            <li class="fullscreen-nav-item">
-                <a href="#" class="fullscreen-nav-link">SERVICES</a>
+            <li class="halfscreen-nav-item">
+                <a href="#" class="halfscreen-nav-link">SERVICES</a>
             </li>
-            <li class="fullscreen-nav-item">
-                <a href="#" class="fullscreen-nav-link">CASE STUDIES</a>
+            <li class="halfscreen-nav-item">
+                <a href="#" class="halfscreen-nav-link">CASE STUDIES</a>
             </li>
-            <li class="fullscreen-nav-item">
-                <a href="#" class="fullscreen-nav-link">NEWS</a>
+            <li class="halfscreen-nav-item">
+                <a href="#" class="halfscreen-nav-link">NEWS</a>
             </li>
-            <li class="fullscreen-nav-item">
-                <a href="#" class="fullscreen-nav-link">CONTACT</a>
+            <li class="halfscreen-nav-item">
+                <a href="#" class="halfscreen-nav-link">CONTACT</a>
             </li>
         </ul>
         
@@ -660,7 +681,7 @@ header {
 const menuIcon = document.getElementById('menuIcon');
 const logo = document.getElementById('logo');
 const navBar = document.getElementById('navBar');
-const fullscreenNav = document.getElementById('fullscreenNav');
+const halfscreenNav = document.getElementById('halfscreenNav');
 const closeNav = document.getElementById('closeNav');
 const homeLink = document.getElementById('homeLink');
 const aboutLink = document.getElementById('aboutLink');
@@ -673,17 +694,17 @@ const contactLink = document.getElementById('contactLink');
 // Desktop navigation elements
 const desktopLinks = document.querySelectorAll('.desktop-nav a');
 
-// Mobile menu toggle - now opens fullscreen navigation
+// Mobile menu toggle - now opens halfscreen navigation
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('active');
-    fullscreenNav.classList.add('active');
+    halfscreenNav.classList.add('active');
     // Hide the old nav bar
     navBar.classList.remove('active');
 });
 
-// Close fullscreen navigation
+// Close halfscreen navigation
 closeNav.addEventListener('click', () => {
-    fullscreenNav.classList.remove('active');
+    halfscreenNav.classList.remove('active');
     menuIcon.classList.remove('active');
 });
 
@@ -707,15 +728,15 @@ mobileLinks.forEach(link => {
         // Close mobile menu when clicking any link
         navBar.classList.remove('active');
         menuIcon.classList.remove('active');
-        fullscreenNav.classList.remove('active');
+        halfscreenNav.classList.remove('active');
     });
 });
 
-// Fullscreen navigation links
-const fullscreenLinks = document.querySelectorAll('.fullscreen-nav-link');
-fullscreenLinks.forEach(link => {
+// Halfscreen navigation links
+const halfscreenLinks = document.querySelectorAll('.halfscreen-nav-link');
+halfscreenLinks.forEach(link => {
     link.addEventListener('click', () => {
-        fullscreenNav.classList.remove('active');
+        halfscreenNav.classList.remove('active');
         menuIcon.classList.remove('active');
     });
 });
@@ -729,11 +750,14 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Close fullscreen nav when clicking outside (on the backdrop)
-fullscreenNav.addEventListener('click', (e) => {
-    if (e.target === fullscreenNav) {
-        fullscreenNav.classList.remove('active');
-        menuIcon.classList.remove('active');
+// Close halfscreen nav when clicking outside (on the backdrop)
+document.addEventListener('click', (e) => {
+    if (halfscreenNav.classList.contains('active')) {
+        // Check if click is outside the halfscreen nav
+        if (!halfscreenNav.contains(e.target) && e.target !== menuIcon) {
+            halfscreenNav.classList.remove('active');
+            menuIcon.classList.remove('active');
+        }
     }
 });
 
@@ -741,8 +765,16 @@ fullscreenNav.addEventListener('click', (e) => {
 const getQuoteBtn = document.querySelector('.get-quote-btn');
 getQuoteBtn.addEventListener('click', () => {
     alert('Get Quote functionality would be implemented here.');
-    fullscreenNav.classList.remove('active');
+    halfscreenNav.classList.remove('active');
     menuIcon.classList.remove('active');
+});
+
+// Close halfscreen nav with escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && halfscreenNav.classList.contains('active')) {
+        halfscreenNav.classList.remove('active');
+        menuIcon.classList.remove('active');
+    }
 });
 </script>
 </body>
