@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no">
 <title>Header Section</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 /* --- GENERAL RESET --- */
 * {
@@ -37,9 +39,8 @@ body {
 
 .announcement-content {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 25px;
 }
 
 .contact-info {
@@ -52,6 +53,7 @@ body {
     align-items: center;
     gap: 8px;
     color: black;
+    text-decoration: none;
 }
 
 .contact-icon-circle {
@@ -67,9 +69,17 @@ body {
     transition: all 0.3s ease;
 }
 
-.contact-item .material-icons {
+.contact-item .material-icons, 
+.contact-item .fas {
     font-size: 16px;
 }
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* Removed social links styling */
 
 /* --- HEADER --- */
 header {
@@ -80,14 +90,13 @@ header {
     height: 95px;
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 1); /* Plain white background */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
     z-index: 1000;
-    transition: all 0.4s ease;
 }
 
 /* --- LOGO --- */
@@ -98,6 +107,124 @@ header {
 .logo img {
     height: 120px;
     width: auto;
+}
+
+/* --- FULLSCREEN NAVIGATION MENU --- */
+.fullscreen-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95); /* White glass morph background */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.fullscreen-nav.active {
+    display: flex;
+}
+
+.close-icon {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-icon span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #333;
+}
+
+.close-icon span:first-child {
+    transform: rotate(45deg);
+}
+
+.close-icon span:last-child {
+    transform: rotate(-45deg);
+}
+
+.nav-content-container {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.get-quote-btn {
+    background: #2c5aa0;
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.get-quote-btn:hover {
+    background: #1e3d6f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 90, 160, 0.2);
+}
+
+.fullscreen-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.fullscreen-nav-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 25px;
+}
+
+.fullscreen-nav-item:last-child {
+    border-bottom: none;
+}
+
+.fullscreen-nav-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 10px 0;
+}
+
+.fullscreen-nav-link:hover {
+    color: #2c5aa0;
+}
+
+.separator-line {
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+}
+
+.empty-space {
+    flex-grow: 1;
+    min-height: 100px;
 }
 
 /* --- NAVIGATION BAR --- */
@@ -134,6 +261,10 @@ header {
     flex-direction: column;
 }
 
+.nav-item.collapsible {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .nav-link {
     display: flex;
     align-items: center;
@@ -155,6 +286,64 @@ header {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+.arrow-icon {
+    margin-left: 10px;
+    margin-right: 45px;
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    color: #333;
+}
+
+.nav-item.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.nav-content {
+    display: none;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    width: 100%;
+}
+
+.nav-content.active {
+    display: block;
+}
+
+.nav-content ul {
+    list-style: none;
+    padding: 10px 0;
+    font-size: 0.7rem;
+    text-align: left;
+}
+
+.nav-content li {
+    padding: 8px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.nav-content li:last-child {
+    border-bottom: none;
+}
+
+.nav-content a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.nav-content a:hover {
+    color: #2c5aa0;
+}
+
 /* --- MENU ICON - MOBILE ONLY --- */
 .menu-icon {
     width: 25px;
@@ -163,11 +352,10 @@ header {
     cursor: pointer;
     transition: transform 0.3s ease;
     display: block;
-    margin-left: 30px; /* added spacing from logo */
 }
 
 .menu-icon span {
-    background: white;
+    background: #000; /* Black color for hamburger menu */
     position: absolute;
     height: 3px;
     width: 100%;
@@ -194,7 +382,7 @@ header {
 }
 
 .desktop-nav a {
-    color: white;
+    color: #333; /* Changed to black for better contrast on white header */
     text-decoration: none;
     font-size: 1.1rem;
     letter-spacing: 1px;
@@ -207,7 +395,6 @@ header {
     text-orientation: mixed;
     display: flex;
     align-items: center;
-    transition: color 0.3s ease;
 }
 
 .desktop-nav a.active::after {
@@ -221,12 +408,117 @@ header {
     border-radius: 2px;
 }
 
+.desktop-nav-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 200px;
+    z-index: 1001;
+    border-top: 3px solid cyan;
+}
+
+.desktop-nav-content.active {
+    display: block;
+}
+
+.desktop-nav-content ul {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.desktop-nav-content li {
+    padding: 8px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.desktop-nav-content li:last-child {
+    border-bottom: none;
+}
+
+.desktop-nav-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+.desktop-nav-content a:hover {
+    color: cyan;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-arrow-icon {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    font-size: 18px;
+}
+
+.desktop-nav-item.active .desktop-arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Show horizontal nav + hide menu icon on larger screens */
 @media (min-width: 1024px) {
-    .menu-icon { display: none; }
-    .desktop-nav { display: flex; }
-    .announcement-bar { display: block; }
-    header { top: 53px; }
-    .nav-bar { top: 148px; }
+    .menu-icon {
+        display: none;
+    }
+    .desktop-nav {
+        display: flex;
+    }
+    .announcement-bar {
+        display: block;
+    }
+    header {
+        top: 53px;
+    }
+    .nav-bar {
+        top: 148px;
+    }
+    
+    /* Logo on far left */
+    .logo {
+        margin-right: auto;
+        order: -1;
+    }
+    
+    /* Desktop nav in center */
+    .desktop-nav {
+        order: 0;
+        margin: 0 auto;
+    }
+    
+    /* Empty space on right to balance */
+    .menu-icon {
+        order: 1;
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 1023px) {
+    .fullscreen-nav-list {
+        gap: 20px;
+    }
+    
+    .fullscreen-nav-link {
+        font-size: 1.4rem;
+    }
+    
+    .nav-content-container {
+        margin-top: 60px;
+        gap: 30px;
+    }
+    
+    .logo {
+        margin-right: auto;
+    }
 }
 </style>
 </head>
@@ -236,40 +528,57 @@ header {
 <div class="announcement-bar">
     <div class="announcement-content">
         <div class="contact-info">
-            <div class="contact-item">
+            <a href="tel:+27762703475" class="contact-item">
                 <div class="contact-icon-circle">
                     <i class="material-icons">call</i>
                 </div>
                 <span>+27 76 270 3475</span>
-            </div>
-            <div class="contact-item">
+            </a>
+            <a href="tel:+27676190270" class="contact-item">
                 <div class="contact-icon-circle">
                     <i class="material-icons">call</i>
                 </div>
                 <span>+27 67 619 0270</span>
-            </div>
-            <div class="contact-item">
+            </a>
+            <a href="mailto:info@ingestionpty.co.za" class="contact-item">
                 <div class="contact-icon-circle">
                     <i class="material-icons">alternate_email</i>
                 </div>
                 <span>info@ingestionpty.co.za</span>
-            </div>
+            </a>
         </div>
+        <!-- Removed social links section -->
     </div>
 </div>
 
-<header id="header">
+<header>
     <div class="logo" id="logo">
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
 
-    <!-- DESKTOP NAV -->
-    <div class="desktop-nav" id="desktopNav">
-        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="about">About Us</a></div>
-        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="values">Values</a></div>
-        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="services">Services</a></div>
-        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="projects">Projects</a></div>
-        <div class="desktop-nav-item"><a class="desktop-nav-link" data-section="contact">Contact</a></div>
+    <!-- DESKTOP NAV - Simplified -->
+    <div class="desktop-nav">
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="home">Home</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="about">About</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="product">Product</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="services">Services</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="case-studies">Case Studies</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="news">News</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a class="nav-link desktop-nav-link" data-section="contact">Contact</a>
+        </div>
     </div>
 
     <!-- MENU ICON - MOBILE ONLY -->
@@ -280,47 +589,110 @@ header {
     </div>
 </header>
 
-<!-- NAVIGATION BAR - MOBILE -->
+<!-- FULLSCREEN NAVIGATION MENU -->
+<div class="fullscreen-nav" id="fullscreenNav">
+    <div class="close-icon" id="closeNav">
+        <span></span>
+        <span></span>
+    </div>
+    
+    <div class="nav-content-container">
+        <button class="get-quote-btn">Get Quote</button>
+        
+        <ul class="fullscreen-nav-list">
+            <li class="fullscreen-nav-item">
+                <a href="#" class="fullscreen-nav-link">HOME</a>
+            </li>
+            <li class="fullscreen-nav-item">
+                <a href="#" class="fullscreen-nav-link">ABOUT</a>
+            </li>
+            <li class="fullscreen-nav-item">
+                <a href="#" class="fullscreen-nav-link">PRODUCT</a>
+            </li>
+            <li class="fullscreen-nav-item">
+                <a href="#" class="fullscreen-nav-link">SERVICES</a>
+            </li>
+            <li class="fullscreen-nav-item">
+                <a href="#" class="fullscreen-nav-link">CASE STUDIES</a>
+            </li>
+            <li class="fullscreen-nav-item">
+                <a href="#" class="fullscreen-nav-link">NEWS</a>
+            </li>
+            <li class="fullscreen-nav-item">
+                <a href="#" class="fullscreen-nav-link">CONTACT</a>
+            </li>
+        </ul>
+        
+        <div class="separator-line"></div>
+        
+        <div class="empty-space"></div>
+    </div>
+</div>
+
+<!-- NAVIGATION BAR - Simplified and White -->
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link">About Us</a></li>
-        <li class="nav-item"><a class="nav-link">Values</a></li>
-        <li class="nav-item"><a class="nav-link">Services</a></li>
-        <li class="nav-item"><a class="nav-link">Projects</a></li>
-        <li class="nav-item"><a class="nav-link">Contact</a></li>
+        <li class="nav-item">
+            <a class="nav-link" id="homeLink">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="aboutLink">ABOUT</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="productLink">PRODUCT</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="servicesLink">SERVICES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="caseStudiesLink">CASE STUDIES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="newsLink">NEWS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contactLink">CONTACT</a>
+        </li>
     </ul>
 </nav>
 
 <script>
 const menuIcon = document.getElementById('menuIcon');
-const header = document.getElementById('header');
+const logo = document.getElementById('logo');
 const navBar = document.getElementById('navBar');
-const desktopLinks = document.querySelectorAll('.desktop-nav-link');
-const mobileLinks = document.querySelectorAll('.nav-link');
+const fullscreenNav = document.getElementById('fullscreenNav');
+const closeNav = document.getElementById('closeNav');
+const homeLink = document.getElementById('homeLink');
+const aboutLink = document.getElementById('aboutLink');
+const productLink = document.getElementById('productLink');
+const servicesLink = document.getElementById('servicesLink');
+const caseStudiesLink = document.getElementById('caseStudiesLink');
+const newsLink = document.getElementById('newsLink');
+const contactLink = document.getElementById('contactLink');
 
-// Toggle mobile menu
+// Desktop navigation elements
+const desktopLinks = document.querySelectorAll('.desktop-nav a');
+
+// Mobile menu toggle - now opens fullscreen navigation
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('active');
-    navBar.classList.toggle('active');
+    fullscreenNav.classList.add('active');
+    // Hide the old nav bar
+    navBar.classList.remove('active');
 });
 
-// Scroll effect for header
-window.addEventListener('scroll', () => {
-    if(window.scrollY > 50){
-        header.style.backgroundColor = '#fff';
-        desktopLinks.forEach(link => link.style.color = '#000');
-    } else {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
-        desktopLinks.forEach(link => link.style.color = '#fff');
-    }
+// Close fullscreen navigation
+closeNav.addEventListener('click', () => {
+    fullscreenNav.classList.remove('active');
+    menuIcon.classList.remove('active');
 });
 
-// Logo scroll to top
-document.getElementById('logo').addEventListener('click', () => {
+// Logo scroll to top functionality
+logo.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Desktop nav active underline
+// Desktop nav underline toggle
 desktopLinks.forEach(link => {
     link.addEventListener('click', () => {
         desktopLinks.forEach(l => l.classList.remove('active'));
@@ -328,20 +700,49 @@ desktopLinks.forEach(link => {
     });
 });
 
-// Mobile link close menu
+// Mobile navigation links - simplified
+const mobileLinks = document.querySelectorAll('.nav-link');
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
+        // Close mobile menu when clicking any link
         navBar.classList.remove('active');
+        menuIcon.classList.remove('active');
+        fullscreenNav.classList.remove('active');
+    });
+});
+
+// Fullscreen navigation links
+const fullscreenLinks = document.querySelectorAll('.fullscreen-nav-link');
+fullscreenLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        fullscreenNav.classList.remove('active');
         menuIcon.classList.remove('active');
     });
 });
 
-// Close nav when clicking outside
-document.addEventListener('click', e => {
-    if(!navBar.contains(e.target) && !menuIcon.contains(e.target)){
+// Close navigation when clicking outside
+document.addEventListener('click', (e) => {
+    // Mobile navigation
+    if (!navBar.contains(e.target) && !menuIcon.contains(e.target)) {
         navBar.classList.remove('active');
         menuIcon.classList.remove('active');
     }
+});
+
+// Close fullscreen nav when clicking outside (on the backdrop)
+fullscreenNav.addEventListener('click', (e) => {
+    if (e.target === fullscreenNav) {
+        fullscreenNav.classList.remove('active');
+        menuIcon.classList.remove('active');
+    }
+});
+
+// Get Quote button functionality
+const getQuoteBtn = document.querySelector('.get-quote-btn');
+getQuoteBtn.addEventListener('click', () => {
+    alert('Get Quote functionality would be implemented here.');
+    fullscreenNav.classList.remove('active');
+    menuIcon.classList.remove('active');
 });
 </script>
 </body>
