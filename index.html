@@ -15,7 +15,7 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    text-transform: uppercase;
+    text-transform: uppercase; /* Kept for nav and button only */
 }
 
 body {
@@ -59,6 +59,7 @@ body {
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 400;
+    text-transform: none; /* Normal text for contact info */
 }
 
 .contact-icon-circle {
@@ -89,7 +90,7 @@ header {
     height: 95px;
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.85); /* Glassmorphic effect */
+    background-color: rgba(255, 255, 255, 0.85);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
@@ -179,25 +180,30 @@ header.scrolled {
     gap: 25px;
 }
 
+/* Updated Get Quote button to match hero button */
 .get-quote-btn {
     background: #2c5aa0;
     color: white;
     border: none;
-    padding: 14px 30px;
-    font-size: 0.9rem;
-    letter-spacing: 0.8px;
+    padding: 18px 45px; /* Same as hero button */
+    font-size: 1.1rem; /* Same as hero button */
+    font-weight: 600; /* Same as hero button */
+    letter-spacing: 1.5px; /* Same as hero button */
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
-    border-radius: 14px;
-    font-weight: 400;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif; /* Same as hero button */
+    text-decoration: none;
+    text-align: center;
+    display: block;
 }
 
 .get-quote-btn:hover {
-    background: #1e3d6f;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(44, 90, 160, 0.2);
+    background: #1a3d75;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .halfscreen-nav-list {
@@ -225,6 +231,7 @@ header.scrolled {
     display: block;
     padding: 8px 0;
     font-weight: 400;
+    text-transform: none; /* Normal text for nav links */
 }
 
 .halfscreen-nav-link:hover {
@@ -288,7 +295,6 @@ header.scrolled {
     padding: 14px 25px;
     color: #333;
     text-decoration: none;
-    text-transform: uppercase;
     font-size: 0.65rem;
     letter-spacing: 0.4px;
     cursor: pointer;
@@ -296,6 +302,7 @@ header.scrolled {
     width: 100%;
     text-align: left;
     font-weight: 400;
+    text-transform: uppercase; /* Kept uppercase for mobile nav */
 }
 
 .nav-link:hover {
@@ -349,11 +356,11 @@ header.scrolled {
     color: #333;
     text-decoration: none;
     display: block;
-    text-transform: uppercase;
     transition: color 0.3s ease;
     text-align: left;
     width: 100%;
     font-weight: 400;
+    text-transform: none; /* Normal text for subnav */
 }
 
 .nav-content a:hover {
@@ -413,6 +420,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     font-weight: 400;
+    text-transform: uppercase; /* Kept uppercase for desktop nav */
 }
 
 .desktop-nav a.active::after {
@@ -461,11 +469,11 @@ header.scrolled {
     color: white;
     text-decoration: none;
     display: block;
-    text-transform: uppercase;
     transition: color 0.3s ease;
     font-size: 0.8rem;
     padding: 6px 12px;
     font-weight: 400;
+    text-transform: none; /* Normal text for desktop subnav */
 }
 
 .desktop-nav-content a:hover {
@@ -573,9 +581,9 @@ header.scrolled {
     align-items: flex-start;
     justify-content: flex-start;
     background: #0f0f0f;
-    margin-top: 95px; /* Adjusted for header height */
+    margin-top: 95px;
     padding-top: 0;
-    top: -20px; /* Moved up slightly to hide edges */
+    top: -20px;
     overflow: hidden;
 }
 
@@ -600,10 +608,22 @@ header.scrolled {
     padding-top: 0;
 }
 
+/* Dark overlay on image */
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
 /* Mobile-specific image styling */
 @media (max-width: 1199px) {
     .hero {
-        height: calc(100vh - 75px); /* Reduced to bring image up */
+        height: calc(100vh - 75px);
     }
     
     .image-container img {
@@ -625,17 +645,17 @@ header.scrolled {
 /* --- BIG TYPOGRAPHY --- */
 .big-typography {
     text-align: left;
-    text-transform: normal !important;
     font-family: 'Raleway', sans-serif !important;
     color: white !important;
     z-index: 2;
     position: relative;
-    margin-top: 15%;
+    margin-top: 20%; /* Moved content down */
     margin-left: 10%;
     width: 80%;
     opacity: 0;
     transform: translateY(50px);
     animation: bounceIn 1.2s ease-out 0.5s forwards;
+    text-transform: none; /* Normal text for hero content */
 }
 
 /* Bounce animation for the big typography */
@@ -660,11 +680,11 @@ header.scrolled {
 /* Move text to left on large screens */
 @media (min-width: 1200px) {
     .big-typography {
-        margin-top: 0;
-        position: absolute;
-        top: 20%;
-        left: 10%;
-        transform: translateY(-50%);
+        margin-top: 25%; /* Moved further down on desktop */
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
         width: 40%;
         animation: bounceInDesktop 1.2s ease-out 0.5s forwards;
     }
@@ -672,18 +692,18 @@ header.scrolled {
     @keyframes bounceInDesktop {
         0% {
             opacity: 0;
-            transform: translateY(-50%) translateX(-50px);
+            transform: translateY(50px);
         }
         60% {
             opacity: 1;
-            transform: translateY(-50%) translateX(20px);
+            transform: translateY(-20px);
         }
         80% {
-            transform: translateY(-50%) translateX(-10px);
+            transform: translateY(10px);
         }
         100% {
             opacity: 1;
-            transform: translateY(-50%) translateX(0);
+            transform: translateY(0);
         }
     }
 }
@@ -692,9 +712,10 @@ header.scrolled {
     font-size: 3.5rem;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     margin-bottom: 30px;
-    letter-spacing: 3px;
-    font-weight: 900; /* Extra bold Raleway */
+    letter-spacing: 2px; /* Reduced for normal text feel */
+    font-weight: 900;
     line-height: 1.1;
+    text-transform: none; /* Normal text for heading */
 }
 
 /* Color styling for specific text */
@@ -709,18 +730,18 @@ header.scrolled {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 40px;
-    text-transform: lowercase;
     max-width: 600px;
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     z-index: 2;
     position: relative;
-    font-weight: 500; /* Montserrat Regular 500 */
+    font-weight: 600; /* Made paragraph bolder (600 instead of 500) */
+    text-transform: none; /* Normal text for paragraph */
 }
 
 /* Blue text within paragraph */
 .hero-paragraph .blue-text {
     color: #2c5aa0;
-    font-weight: 600;
+    font-weight: 700; /* Even bolder for blue text */
 }
 
 /* Mobile adjustments for paragraph */
@@ -751,12 +772,13 @@ header.scrolled {
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-transform: uppercase;
+    text-transform: uppercase; /* Kept uppercase for button */
     font-family: 'Raleway', sans-serif;
     position: relative;
     z-index: 2;
     margin-top: 0;
     margin-bottom: 40px;
+    border-radius: 4px;
 }
 
 .cta-button:hover {
@@ -771,6 +793,11 @@ header.scrolled {
         font-size: 2.5rem;
         margin-bottom: 25px;
     }
+    
+    .big-typography {
+        margin-top: 25%; /* More on mobile */
+    }
+    
     .cta-button {
         padding: 15px 30px;
         font-size: 1rem;
@@ -783,14 +810,17 @@ header.scrolled {
         font-size: 2rem;
         margin-bottom: 20px;
     }
+    
+    .big-typography {
+        margin-top: 30%; /* Even more on very small screens */
+    }
+    
     .cta-button {
         padding: 12px 25px;
         font-size: 0.9rem;
         margin-bottom: 25px;
     }
 }
-
-/* Removed rotating icons section entirely */
 
 /* --- SCROLL DOWN BUTTON --- */
 .scroll-down {
@@ -819,17 +849,6 @@ header.scrolled {
     content: '↓';
     font-size: 1.5rem;
     color: #2c5aa0;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
 }
 </style>
 </head>
@@ -912,25 +931,25 @@ header.scrolled {
         
         <ul class="halfscreen-nav-list">
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">HOME</a>
+                <a href="#" class="halfscreen-nav-link">Home</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">ABOUT</a>
+                <a href="#" class="halfscreen-nav-link">About</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">PRODUCT</a>
+                <a href="#" class="halfscreen-nav-link">Product</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">SERVICES</a>
+                <a href="#" class="halfscreen-nav-link">Services</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">CASE STUDIES</a>
+                <a href="#" class="halfscreen-nav-link">Case Studies</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">NEWS</a>
+                <a href="#" class="halfscreen-nav-link">News</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">CONTACT</a>
+                <a href="#" class="halfscreen-nav-link">Contact</a>
             </li>
         </ul>
         
@@ -944,25 +963,25 @@ header.scrolled {
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
         <li class="nav-item">
-            <a class="nav-link" id="homeLink">HOME</a>
+            <a class="nav-link" id="homeLink">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="aboutLink">ABOUT</a>
+            <a class="nav-link" id="aboutLink">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="productLink">PRODUCT</a>
+            <a class="nav-link" id="productLink">Product</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="servicesLink">SERVICES</a>
+            <a class="nav-link" id="servicesLink">Services</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="caseStudiesLink">CASE STUDIES</a>
+            <a class="nav-link" id="caseStudiesLink">Case Studies</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="newsLink">NEWS</a>
+            <a class="nav-link" id="newsLink">News</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="contactLink">CONTACT</a>
+            <a class="nav-link" id="contactLink">Contact</a>
         </li>
     </ul>
 </nav>
