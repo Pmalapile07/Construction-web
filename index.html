@@ -13,9 +13,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Work Sans', sans-serif; /* Changed to Work Sans */
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
-    text-transform: uppercase;
 }
 
 body {
@@ -23,6 +22,7 @@ body {
     color: #fff;
     overflow-x: hidden;
     font-size: 14px;
+    text-transform: uppercase; /* Moved here from * selector */
 }
 
 /* --- ANNOUNCEMENT BAR --- */
@@ -59,7 +59,7 @@ body {
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 400;
-    text-transform: none;
+    text-transform: none; /* Normal text for contact info */
 }
 
 .contact-icon-circle {
@@ -69,7 +69,7 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #4a8cff; /* Consistent blue color */
+    background: #4a8cff;
     border: 1px solid #4a8cff;
     color: white;
     transition: all 0.3s ease;
@@ -182,7 +182,7 @@ header.scrolled {
 
 /* Updated Get Quote button to match hero button */
 .get-quote-btn {
-    background: #4a8cff; /* Consistent blue color */
+    background: #4a8cff;
     color: white;
     border: none;
     padding: 18px 45px;
@@ -230,12 +230,12 @@ header.scrolled {
     transition: color 0.3s ease;
     display: block;
     padding: 8px 0;
-    font-weight: 200; /* Extra light 200 for nav menu */
+    font-weight: 200;
     text-transform: uppercase; /* Capital letters for nav menu */
 }
 
 .halfscreen-nav-link:hover {
-    color: #4a8cff; /* Consistent blue color */
+    color: #4a8cff;
 }
 
 .separator-line {
@@ -259,7 +259,7 @@ header.scrolled {
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
     background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 4px solid #4a8cff; /* Consistent blue color */
+    border-bottom: 4px solid #4a8cff;
     z-index: 999;
     display: none;
 }
@@ -301,7 +301,7 @@ header.scrolled {
     transition: background-color 0.3s ease;
     width: 100%;
     text-align: left;
-    font-weight: 200; /* Extra light 200 for mobile nav */
+    font-weight: 200;
     text-transform: uppercase; /* Capital letters for mobile nav */
 }
 
@@ -359,12 +359,12 @@ header.scrolled {
     transition: color 0.3s ease;
     text-align: left;
     width: 100%;
-    font-weight: 200; /* Extra light 200 for subnav */
+    font-weight: 200;
     text-transform: none;
 }
 
 .nav-content a:hover {
-    color: #4a8cff; /* Consistent blue color */
+    color: #4a8cff;
 }
 
 /* --- MENU ICON - MOBILE ONLY --- */
@@ -419,7 +419,7 @@ header.scrolled {
     text-orientation: mixed;
     display: flex;
     align-items: center;
-    font-weight: 200; /* Extra light 200 for desktop nav */
+    font-weight: 200;
     text-transform: uppercase; /* Capital letters for desktop nav */
 }
 
@@ -430,7 +430,7 @@ header.scrolled {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background: #4a8cff; /* Consistent blue color */
+    background: #4a8cff;
     border-radius: 2px;
 }
 
@@ -444,7 +444,7 @@ header.scrolled {
     background-color: rgba(0, 0, 0, 0.8);
     min-width: 180px;
     z-index: 1001;
-    border-top: 2px solid #4a8cff; /* Consistent blue color */
+    border-top: 2px solid #4a8cff;
 }
 
 .desktop-nav-content.active {
@@ -472,12 +472,12 @@ header.scrolled {
     transition: color 0.3s ease;
     font-size: 0.8rem;
     padding: 6px 12px;
-    font-weight: 200; /* Extra light 200 for desktop subnav */
+    font-weight: 200;
     text-transform: none;
 }
 
 .desktop-nav-content a:hover {
-    color: #4a8cff; /* Consistent blue color */
+    color: #4a8cff;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -616,7 +616,7 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Increased to 0.7 for darker overlay */
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
 
@@ -712,20 +712,21 @@ header.scrolled {
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     margin-bottom: 30px;
     letter-spacing: 1px;
-    font-weight: 700; /* Bold 700 for heading */
+    font-weight: 700;
     line-height: 1.1;
     text-transform: none; /* All small letters for heading */
-    font-family: 'Work Sans', sans-serif; /* Work Sans for heading */
+    font-family: 'Work Sans', sans-serif;
 }
 
-/* Color styling for specific text - consistent bright blue */
+/* FIXED: Color styling for specific text - consistent bright blue */
 .big-typography h1 .blue-text {
-    color: #4a8cff; /* Consistent bright blue color */
+    color: #4a8cff;
     font-weight: 700;
     text-shadow: none;
     background: none;
     -webkit-background-clip: none;
     -webkit-text-fill-color: #4a8cff;
+    text-transform: none !important; /* ADDED THIS LINE - forces lowercase */
 }
 
 /* New paragraph styling */
@@ -739,14 +740,14 @@ header.scrolled {
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     z-index: 2;
     position: relative;
-    font-weight: 200; /* Light 200 for paragraph */
+    font-weight: 200;
     text-transform: none; /* All small letters for paragraph */
 }
 
 /* Blue text within paragraph - consistent bright blue */
 .hero-paragraph .blue-text {
-    color: #4a8cff; /* Consistent bright blue color */
-    font-weight: 400; /* Slightly bolder for emphasis */
+    color: #4a8cff;
+    font-weight: 400;
     text-shadow: none;
     background: none;
     -webkit-background-clip: none;
@@ -772,7 +773,7 @@ header.scrolled {
 /* Call to Action Button Styles */
 .cta-button {
     display: inline-block;
-    background: #4a8cff; /* Consistent blue color */
+    background: #4a8cff;
     color: white;
     padding: 18px 45px;
     font-size: 1.1rem;
@@ -848,6 +849,7 @@ header.scrolled {
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
     z-index: 2;
+    text-transform: none; /* Added to prevent uppercase arrow */
 }
 
 .scroll-down:hover { 
@@ -858,7 +860,8 @@ header.scrolled {
 .scroll-down::after {
     content: '↓';
     font-size: 1.5rem;
-    color: #4a8cff; /* Consistent blue color */
+    color: #4a8cff;
+    text-transform: none; /* Added to ensure arrow displays correctly */
 }
 </style>
 </head>
