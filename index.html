@@ -415,7 +415,7 @@ header {
 .hero {
     position: relative;
     width: 100%;
-    height: 200vh;
+    height: 150vh; /* REDUCED from 200vh to 150vh */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -441,7 +441,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center bottom;
+    object-position: center 30%; /* Adjusted to show less sky and more subject */
     display: block;
     margin-top: 0;
     padding-top: 0;
@@ -450,13 +450,13 @@ header {
 /* Mobile-specific image styling */
 @media (max-width: 1199px) {
     .hero {
-        height: 140vh; /* Reduced height for mobile */
+        height: 110vh; /* REDUCED from 140vh to 110vh */
     }
     
     .image-container img {
         transform: none !important;
         object-fit: cover;
-        object-position: center 30%; /* Adjusted position for better composition */
+        object-position: center 40%; /* Adjusted position for better composition */
     }
 }
 
@@ -464,7 +464,7 @@ header {
 @media (min-width: 1200px) {
     .image-container img {
         object-fit: cover;
-        object-position: center bottom;
+        object-position: center 30%; /* Adjusted to show less sky */
         transform: scaleX(1.2);
     }
 }
@@ -509,7 +509,7 @@ header {
     .big-typography {
         margin-top: 0;
         position: absolute;
-        top: 45%; /* Changed from 50% to 45% - moved up by 5% */
+        top: 40%; /* Changed from 45% to 40% - moved up further */
         left: 10%;
         transform: translateY(-50%);
         width: 40%;
@@ -538,16 +538,137 @@ header {
 .big-typography h1 {
     font-size: 3.5rem;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Increased margin for button space */
     letter-spacing: 3px;
     font-weight: 900;
     line-height: 1.1;
+}
+
+/* Call to Action Button Styles */
+.cta-button {
+    display: inline-block;
+    background: #2c5aa0;
+    color: white;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: 'Mozilla Text', sans-serif;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background: #1a3d75;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* Mobile text size adjustment */
 @media (max-width: 767px) {
     .big-typography h1 {
         font-size: 2.5rem;
+    }
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Border Top and Features Section */
+.hero-features {
+    position: absolute;
+    bottom: 120px; /* Positioned above scroll down button */
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 0 10%;
+}
+
+.features-border {
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #2c5aa0;
+    border: 2px solid rgba(44, 90, 160, 0.3);
+}
+
+.feature-text {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.feature-text strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #2c5aa0;
+}
+
+/* Mobile adjustments for features */
+@media (max-width: 768px) {
+    .hero-features {
+        bottom: 100px;
+        padding: 0 5%;
+    }
+    
+    .features-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .feature-item {
+        gap: 10px;
+    }
+    
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .feature-text {
+        font-size: 0.8rem;
+    }
+    
+    .feature-text strong {
+        font-size: 1rem;
     }
 }
 
@@ -679,7 +800,7 @@ header {
     background: transparent;
 }
 
-/* Updated Video Preview Section */
+/* Updated Video Preview Section with new image */
 #about-page .tg-video-preview {
     width: 100%;
     height: 400px;
@@ -1517,49 +1638,19 @@ header {
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
 
-    <!-- DESKTOP NAV -->
+    <!-- DESKTOP NAV - Simplified -->
     <div class="desktop-nav">
         <div class="desktop-nav-item">
             <a class="nav-link desktop-nav-link" data-section="home">Home</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="about">
-                About
-                <span class="material-symbols-outlined desktop-arrow-icon">arrow_downward</span>
-            </a>
-            <div class="desktop-nav-content" id="desktopAboutContent">
-                <ul>
-                    <li><a href="#">Our History</a></li>
-                    <li><a href="#">Our Team</a></li>
-                    <li><a href="#">Our Values</a></li>
-                </ul>
-            </div>
+            <a class="nav-link desktop-nav-link" data-section="about">About</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="product">
-                Product
-                <span class="material-symbols-outlined desktop-arrow-icon">arrow_downward</span>
-            </a>
-            <div class="desktop-nav-content" id="desktopProductContent">
-                <ul>
-                    <li><a href="#">Product Line 1</a></li>
-                    <li><a href="#">Product Line 2</a></li>
-                    <li><a href="#">Product Line 3</a></li>
-                </ul>
-            </div>
+            <a class="nav-link desktop-nav-link" data-section="product">Product</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="services">
-                Services
-                <span class="material-symbols-outlined desktop-arrow-icon">arrow_downward</span>
-            </a>
-            <div class="desktop-nav-content" id="desktopServicesContent">
-                <ul>
-                    <li><a href="#">Service 1</a></li>
-                    <li><a href="#">Service 2</a></li>
-                    <li><a href="#">Service 3</a></li>
-                </ul>
-            </div>
+            <a class="nav-link desktop-nav-link" data-section="services">Services</a>
         </div>
         <div class="desktop-nav-item">
             <a class="nav-link desktop-nav-link" data-section="case-studies">Case Studies</a>
@@ -1580,67 +1671,29 @@ header {
     </div>
 </header>
 
-<!-- NAVIGATION BAR -->
+<!-- NAVIGATION BAR - Simplified -->
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
         <li class="nav-item">
-            <a class="nav-link" id="homeLink">
-                HOME
-            </a>
-        </li>
-        <li class="nav-item collapsible">
-            <a class="nav-link" id="aboutLink">
-                ABOUT
-                <span class="material-symbols-outlined arrow-icon">arrow_downward</span>
-            </a>
-            <div class="nav-content" id="aboutContent">
-                <ul>
-                    <li><a href="#">OUR HISTORY</a></li>
-                    <li><a href="#">OUR TEAM</a></li>
-                    <li><a href="#">OUR VALUES</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item collapsible">
-            <a class="nav-link" id="productLink">
-                PRODUCT
-                <span class="material-symbols-outlined arrow-icon">arrow_downward</span>
-            </a>
-            <div class="nav-content" id="productContent">
-                <ul>
-                    <li><a href="#">PRODUCT LINE 1</a></li>
-                    <li><a href="#">PRODUCT LINE 2</a></li>
-                    <li><a href="#">PRODUCT LINE 3</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item collapsible">
-            <a class="nav-link" id="servicesLink">
-                SERVICES
-                <span class="material-symbols-outlined arrow-icon">arrow_downward</span>
-            </a>
-            <div class="nav-content" id="servicesContent">
-                <ul>
-                    <li><a href="#">SERVICE 1</a></li>
-                    <li><a href="#">SERVICE 2</a></li>
-                    <li><a href="#">SERVICE 3</a></li>
-                </ul>
-            </div>
+            <a class="nav-link" id="homeLink">HOME</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="caseStudiesLink">
-                CASE STUDIES
-            </a>
+            <a class="nav-link" id="aboutLink">ABOUT</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="newsLink">
-                NEWS
-            </a>
+            <a class="nav-link" id="productLink">PRODUCT</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="contactLink">
-                CONTACT
-            </a>
+            <a class="nav-link" id="servicesLink">SERVICES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="caseStudiesLink">CASE STUDIES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="newsLink">NEWS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contactLink">CONTACT</a>
         </li>
     </ul>
 </nav>
@@ -1653,6 +1706,41 @@ header {
     
     <div class="big-typography">
         <h1>Building excellence <br> Delivering energy</h1>
+        <a href="#" class="cta-button">Get Code</a>
+    </div>
+    
+    <!-- Features Section with Border Top -->
+    <div class="hero-features">
+        <div class="features-border"></div>
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="material-icons">local_shipping</i>
+                </div>
+                <div class="feature-text">
+                    <strong>24/7 Full Supply</strong>
+                    Round the clock delivery
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="material-icons">verified</i>
+                </div>
+                <div class="feature-text">
+                    <strong>Quality Guaranteed</strong>
+                    Premium standards
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="material-icons">support_agent</i>
+                </div>
+                <div class="feature-text">
+                    <strong>Expert Support</strong>
+                    Professional assistance
+                </div>
+            </div>
+        </div>
     </div>
     
     <div class="scroll-down" id="scrollDownBtn"></div>
@@ -1695,9 +1783,9 @@ header {
             </p>
         </div>
 
-        <!-- VIDEO PREVIEW SECTION -->
+        <!-- VIDEO PREVIEW SECTION with new road image -->
         <div class="tg-video-preview">
-            <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/scott-blake-x-ghf9LjrVg-unsplash.jpg?v=1762584455" alt="Video Preview" class="video-preview-image">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Road infrastructure" class="video-preview-image">
             <div class="play-button-container">
                 <div class="play-button">
                     <div class="play-icon"></div>
@@ -1717,9 +1805,9 @@ header {
             </p>
         </div>
 
-        <!-- CONSTRUCTION IMAGE -->
+        <!-- Additional road image under impact section -->
         <div class="construction-image-section">
-            <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/ej-yao-D46mXLsQRJw-unsplash.jpg?v=1762598630" alt="Construction Site" class="construction-image">
+            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Road infrastructure" class="construction-image">
         </div>
 
         <!-- BLUE SECTION - THE ROOTS -->
@@ -1780,23 +1868,9 @@ const servicesLink = document.getElementById('servicesLink');
 const caseStudiesLink = document.getElementById('caseStudiesLink');
 const newsLink = document.getElementById('newsLink');
 const contactLink = document.getElementById('contactLink');
-const aboutContent = document.getElementById('aboutContent');
-const productContent = document.getElementById('productContent');
-const servicesContent = document.getElementById('servicesContent');
-const aboutItem = aboutLink.parentElement;
-const productItem = productLink.parentElement;
-const servicesItem = servicesLink.parentElement;
 
 // Desktop navigation elements
-const desktopAboutLink = document.querySelector('[data-section="about"]');
-const desktopProductLink = document.querySelector('[data-section="product"]');
-const desktopServicesLink = document.querySelector('[data-section="services"]');
-const desktopAboutContent = document.getElementById('desktopAboutContent');
-const desktopProductContent = document.getElementById('desktopProductContent');
-const desktopServicesContent = document.getElementById('desktopServicesContent');
-const desktopAboutItem = desktopAboutLink.parentElement;
-const desktopProductItem = desktopProductLink.parentElement;
-const desktopServicesItem = desktopServicesLink.parentElement;
+const desktopLinks = document.querySelectorAll('.desktop-nav a');
 
 // Mobile menu toggle
 menuIcon.addEventListener('click', () => {
@@ -1818,97 +1892,21 @@ logo.addEventListener('click', () => {
 });
 
 // Desktop nav underline toggle
-document.querySelectorAll('.desktop-nav a').forEach(link => {
+desktopLinks.forEach(link => {
     link.addEventListener('click', () => {
-        document.querySelectorAll('.desktop-nav a').forEach(l => l.classList.remove('active'));
+        desktopLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
     });
 });
 
-// Mobile navigation functionality
-aboutLink.addEventListener('click', () => {
-    aboutContent.classList.toggle('active');
-    aboutItem.classList.toggle('active');
-    // Close other open content
-    if (productContent.classList.contains('active')) {
-        productContent.classList.remove('active');
-        productItem.classList.remove('active');
-    }
-    if (servicesContent.classList.contains('active')) {
-        servicesContent.classList.remove('active');
-        servicesItem.classList.remove('active');
-    }
-});
-
-productLink.addEventListener('click', () => {
-    productContent.classList.toggle('active');
-    productItem.classList.toggle('active');
-    // Close other open content
-    if (aboutContent.classList.contains('active')) {
-        aboutContent.classList.remove('active');
-        aboutItem.classList.remove('active');
-    }
-    if (servicesContent.classList.contains('active')) {
-        servicesContent.classList.remove('active');
-        servicesItem.classList.remove('active');
-    }
-});
-
-servicesLink.addEventListener('click', () => {
-    servicesContent.classList.toggle('active');
-    servicesItem.classList.toggle('active');
-    // Close other open content
-    if (aboutContent.classList.contains('active')) {
-        aboutContent.classList.remove('active');
-        aboutItem.classList.remove('active');
-    }
-    if (productContent.classList.contains('active')) {
-        productContent.classList.remove('active');
-        productItem.classList.remove('active');
-    }
-});
-
-// Desktop navigation functionality
-desktopAboutLink.addEventListener('click', () => {
-    desktopAboutContent.classList.toggle('active');
-    desktopAboutItem.classList.toggle('active');
-    // Close other open content
-    if (desktopProductContent.classList.contains('active')) {
-        desktopProductContent.classList.remove('active');
-        desktopProductItem.classList.remove('active');
-    }
-    if (desktopServicesContent.classList.contains('active')) {
-        desktopServicesContent.classList.remove('active');
-        desktopServicesItem.classList.remove('active');
-    }
-});
-
-desktopProductLink.addEventListener('click', () => {
-    desktopProductContent.classList.toggle('active');
-    desktopProductItem.classList.toggle('active');
-    // Close other open content
-    if (desktopAboutContent.classList.contains('active')) {
-        desktopAboutContent.classList.remove('active');
-        desktopAboutItem.classList.remove('active');
-    }
-    if (desktopServicesContent.classList.contains('active')) {
-        desktopServicesContent.classList.remove('active');
-        desktopServicesItem.classList.remove('active');
-    }
-});
-
-desktopServicesLink.addEventListener('click', () => {
-    desktopServicesContent.classList.toggle('active');
-    desktopServicesItem.classList.toggle('active');
-    // Close other open content
-    if (desktopAboutContent.classList.contains('active')) {
-        desktopAboutContent.classList.remove('active');
-        desktopAboutItem.classList.remove('active');
-    }
-    if (desktopProductContent.classList.contains('active')) {
-        desktopProductContent.classList.remove('active');
-        desktopProductItem.classList.remove('active');
-    }
+// Mobile navigation links - simplified
+const mobileLinks = document.querySelectorAll('.nav-link');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Close mobile menu when clicking any link
+        navBar.classList.remove('active');
+        menuIcon.classList.remove('active');
+    });
 });
 
 // Close navigation when clicking outside
@@ -1917,22 +1915,6 @@ document.addEventListener('click', (e) => {
     if (!navBar.contains(e.target) && !menuIcon.contains(e.target)) {
         navBar.classList.remove('active');
         menuIcon.classList.remove('active');
-        aboutContent.classList.remove('active');
-        productContent.classList.remove('active');
-        servicesContent.classList.remove('active');
-        aboutItem.classList.remove('active');
-        productItem.classList.remove('active');
-        servicesItem.classList.remove('active');
-    }
-    
-    // Desktop navigation
-    if (!desktopAboutItem.contains(e.target) && !desktopProductItem.contains(e.target) && !desktopServicesItem.contains(e.target)) {
-        desktopAboutContent.classList.remove('active');
-        desktopProductContent.classList.remove('active');
-        desktopServicesContent.classList.remove('active');
-        desktopAboutItem.classList.remove('active');
-        desktopProductItem.classList.remove('active');
-        desktopServicesItem.classList.remove('active');
     }
 });
 
