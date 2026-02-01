@@ -37,8 +37,9 @@ body {
 
 .announcement-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 25px;
 }
 
 .contact-info {
@@ -67,44 +68,6 @@ body {
 }
 
 .contact-item .material-icons {
-    font-size: 16px;
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #2196f3;
-}
-
-.social-icon-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: #2c5aa0;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover .social-icon-circle {
-    background: rgba(33, 150, 243, 0.2);
-    transform: scale(1.1);
-}
-
-.social-links .fa-brands {
     font-size: 16px;
 }
 
@@ -200,6 +163,7 @@ header {
     cursor: pointer;
     transition: transform 0.3s ease;
     display: block;
+    margin-left: 30px; /* added spacing from logo */
 }
 
 .menu-icon span {
@@ -274,36 +238,22 @@ header {
         <div class="contact-info">
             <div class="contact-item">
                 <div class="contact-icon-circle">
-                    <i class="material-icons">phone</i>
+                    <i class="material-icons">call</i>
                 </div>
                 <span>+27 76 270 3475</span>
             </div>
             <div class="contact-item">
                 <div class="contact-icon-circle">
-                    <i class="material-icons">phone_iphone</i>
+                    <i class="material-icons">call</i>
                 </div>
                 <span>+27 67 619 0270</span>
             </div>
             <div class="contact-item">
                 <div class="contact-icon-circle">
-                    <i class="material-icons">email</i>
+                    <i class="material-icons">alternate_email</i>
                 </div>
                 <span>info@ingestionpty.co.za</span>
             </div>
-        </div>
-        <div class="social-links">
-            <a href="#">
-                <div class="social-icon-circle">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </div>
-                <span>Facebook</span>
-            </a>
-            <a href="#">
-                <div class="social-icon-circle">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </div>
-                <span>LinkedIn</span>
-            </a>
         </div>
     </div>
 </div>
