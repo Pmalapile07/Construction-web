@@ -6,14 +6,14 @@
 <title>Ingestion | Home</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* --- GENERAL RESET --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto Flex', sans-serif; /* Changed to Roboto Flex */
+    font-family: 'Google Sans', sans-serif; /* Changed to Google Sans */
     font-weight: 400; /* Regular 400 for all text */
 }
 
@@ -69,9 +69,9 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #4a8cff;
-    border: 1px solid #4a8cff;
-    color: white;
+    background: #fff; /* Changed to white */
+    border: 1px solid #ddd; /* Changed to light gray border */
+    color: #333; /* Dark text for visibility */
     transition: all 0.3s ease;
     flex-shrink: 0;
 }
@@ -88,25 +88,25 @@ header {
     left: 0;
     width: 100%;
     height: 95px;
-    backdrop-filter: blur(15px) saturate(200%);
-    -webkit-backdrop-filter: blur(15px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.65); /* More transparent glass effect */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Enhanced glassmorphic effect on scroll */
+/* Enhanced glassmorphic effect on scroll - more transparent */
 header.scrolled {
-    background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(25px) saturate(200%);
-    -webkit-backdrop-filter: blur(25px) saturate(200%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 /* --- LOGO --- */
@@ -129,15 +129,15 @@ header.scrolled {
     width: 50%;
     height: 100%;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(25px) saturate(200%);
-    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    backdrop-filter: blur(30px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(200%);
     z-index: 2000;
     display: none;
     flex-direction: column;
     padding: 25px;
     overflow-y: auto;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease; /* Faster transition */
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
     border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -182,30 +182,30 @@ header.scrolled {
     gap: 25px;
 }
 
-/* Updated Get Quote button - regular 400, normal text */
+/* Updated Get Quote button - darker blue, capital letters */
 .get-quote-btn {
-    background: #4a8cff;
+    background: #2c5aa0; /* Darker blue */
     color: white;
     border: none;
     padding: 18px 45px;
     font-size: 1.1rem;
     font-weight: 400; /* Regular 400 */
-    letter-spacing: 0.5px;
-    text-transform: none; /* Normal text (not all lowercase) */
+    letter-spacing: 1.5px; /* Increased for uppercase */
+    text-transform: uppercase; /* Capital letters */
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
     border-radius: 4px;
-    font-family: 'Roboto Flex', sans-serif;
+    font-family: 'Google Sans', sans-serif;
     text-decoration: none;
     text-align: center;
     display: block;
 }
 
 .get-quote-btn:hover {
-    background: #3578e5;
+    background: #1a3d75; /* Even darker blue on hover */
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(74, 140, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
 }
 
 .halfscreen-nav-list {
@@ -237,7 +237,7 @@ header.scrolled {
 }
 
 .halfscreen-nav-link:hover {
-    color: #4a8cff;
+    color: #333; /* White only - no blue */
 }
 
 .separator-line {
@@ -261,7 +261,7 @@ header.scrolled {
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
     background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 4px solid #4a8cff;
+    border-bottom: 4px solid #fff; /* Changed to white */
     z-index: 999;
     display: none;
 }
@@ -366,7 +366,7 @@ header.scrolled {
 }
 
 .nav-content a:hover {
-    color: #4a8cff;
+    color: #333; /* White only - no blue */
 }
 
 /* --- MENU ICON - MOBILE ONLY --- */
@@ -375,7 +375,7 @@ header.scrolled {
     height: 15px;
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease; /* Faster transition */
     display: block;
     margin-left: auto;
 }
@@ -386,7 +386,7 @@ header.scrolled {
     height: 2px;
     width: 100%;
     left: 0;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease; /* Faster transition */
 }
 .menu-icon span:nth-child(1) { top: 0; }
 .menu-icon span:nth-child(2) { top: 6px; }
@@ -432,7 +432,7 @@ header.scrolled {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background: #4a8cff;
+    background: #fff; /* Changed to white */
     border-radius: 2px;
 }
 
@@ -446,7 +446,7 @@ header.scrolled {
     background-color: rgba(0, 0, 0, 0.8);
     min-width: 180px;
     z-index: 1001;
-    border-top: 2px solid #4a8cff;
+    border-top: 2px solid #fff; /* Changed to white */
 }
 
 .desktop-nav-content.active {
@@ -479,7 +479,7 @@ header.scrolled {
 }
 
 .desktop-nav-content a:hover {
-    color: #4a8cff;
+    color: #fff; /* White only - no blue */
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -656,7 +656,7 @@ header.scrolled {
     opacity: 0;
     transform: translateY(50px);
     animation: bounceIn 1.2s ease-out 0.5s forwards;
-    text-transform: none;
+    text-transform: uppercase; /* Capital letters for heading */
 }
 
 /* Bounce animation for the big typography */
@@ -714,28 +714,28 @@ header.scrolled {
     font-size: 4.2rem;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     margin-bottom: 30px;
-    letter-spacing: 1px;
+    letter-spacing: 2px; /* Increased for uppercase */
     font-weight: 700; /* Bold 700 for heading */
     line-height: 1.1;
-    text-transform: none;
-    font-family: 'Roboto Flex', sans-serif;
+    text-transform: uppercase; /* Capital letters for heading */
+    font-family: 'Google Sans', sans-serif;
 }
 
-/* Color styling for specific text */
+/* Color styling for specific text - removed blue */
 .big-typography h1 .blue-text {
-    color: #4a8cff;
+    color: white; /* Changed to white */
     font-weight: 700; /* Bold 700 */
-    text-shadow: none;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.8); /* Added shadow for visibility */
     background: none;
     -webkit-background-clip: none;
-    -webkit-text-fill-color: #4a8cff;
-    text-transform: none !important;
+    -webkit-text-fill-color: white;
+    text-transform: uppercase !important;
 }
 
 /* New paragraph styling */
 .hero-paragraph {
     color: white;
-    font-family: 'Roboto Flex', sans-serif; /* Changed to Roboto Flex */
+    font-family: 'Google Sans', sans-serif; /* Changed to Google Sans */
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -744,17 +744,17 @@ header.scrolled {
     z-index: 2;
     position: relative;
     font-weight: 400; /* Regular 400 */
-    text-transform: none; /* Normal text */
+    text-transform: none; /* Normal text for paragraph */
 }
 
-/* Blue text within paragraph */
+/* Blue text within paragraph - changed to white */
 .hero-paragraph .blue-text {
-    color: #4a8cff;
+    color: white; /* Changed to white */
     font-weight: 400; /* Regular 400 */
-    text-shadow: none;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6); /* Added shadow for visibility */
     background: none;
     -webkit-background-clip: none;
-    -webkit-text-fill-color: #4a8cff;
+    -webkit-text-fill-color: white;
     text-transform: none;
 }
 
@@ -773,33 +773,10 @@ header.scrolled {
     }
 }
 
-/* Call to Action Button Styles - regular 400, normal text */
-.cta-button {
-    display: inline-block;
-    background: #4a8cff;
-    color: white;
-    padding: 18px 45px;
-    font-size: 1.1rem;
-    font-weight: 400; /* Regular 400 */
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: none; /* Normal text (not all lowercase) */
-    font-family: 'Roboto Flex', sans-serif;
-    position: relative;
-    z-index: 2;
-    margin-top: 0;
-    margin-bottom: 40px;
-    border-radius: 4px;
-}
-
-.cta-button:hover {
-    background: #3578e5;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(74, 140, 255, 0.3);
-}
+/* Call to Action Button Styles - REMOVED */
+/* .cta-button {
+    display: none;
+} */
 
 /* Mobile text size adjustment */
 @media (max-width: 767px) {
@@ -812,12 +789,6 @@ header.scrolled {
         margin-top: 30%;
         margin-left: 15px;
     }
-    
-    .cta-button {
-        padding: 15px 30px;
-        font-size: 1rem;
-        margin-bottom: 30px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -829,12 +800,6 @@ header.scrolled {
     .big-typography {
         margin-top: 35%;
         margin-left: 15px;
-    }
-    
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 0.9rem;
-        margin-bottom: 25px;
     }
 }
 
@@ -865,7 +830,7 @@ header.scrolled {
 .scroll-down::after {
     content: '↓';
     font-size: 1.5rem;
-    color: #4a8cff;
+    color: #333;
     text-transform: none;
 }
 </style>
@@ -947,7 +912,7 @@ header.scrolled {
     </div>
     
     <div class="nav-content-container">
-        <button class="get-quote-btn">Get Quote</button>
+        <button class="get-quote-btn">GET QUOTE</button>
         
         <ul class="halfscreen-nav-list">
             <li class="halfscreen-nav-item">
@@ -1013,12 +978,12 @@ header.scrolled {
     </div>
     
     <div class="big-typography">
-        <h1>Building excellence <br><span class="blue-text">Fueling futures</span></h1>
+        <h1>BUILDING EXCELLENCE <br><span class="blue-text">FUELING FUTURES</span></h1>
         <!-- New paragraph between heading and button -->
         <div class="hero-paragraph">
             From bulk fuel to complex constructions, we bring <span class="blue-text">10+ years of experience</span> to every project. Your trusted partner for innovation, reliability, and results.
         </div>
-        <a href="#" class="cta-button">Get Quote</a>
+        <!-- CTA Button removed -->
     </div>
     
     <div class="scroll-down" id="scrollDownBtn"></div>
@@ -1043,7 +1008,7 @@ const mainHeader = document.getElementById('mainHeader');
 // Desktop navigation elements
 const desktopLinks = document.querySelectorAll('.desktop-nav-link');
 
-// Mobile menu toggle
+// Mobile menu toggle - faster animation
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('active');
     halfscreenNav.classList.add('active');
