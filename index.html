@@ -22,7 +22,7 @@ body {
     color: #fff;
     overflow-x: hidden;
     font-size: 14px;
-    text-transform: uppercase; /* Moved here from * selector */
+    text-transform: uppercase;
 }
 
 /* --- ANNOUNCEMENT BAR --- */
@@ -59,7 +59,7 @@ body {
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 400;
-    text-transform: none; /* Normal text for contact info */
+    text-transform: none;
 }
 
 .contact-icon-circle {
@@ -88,24 +88,25 @@ header {
     left: 0;
     width: 100%;
     height: 95px;
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.75); /* More glassmorphic */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     z-index: 1000;
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Glassmorphic effect on scroll */
+/* Enhanced glassmorphic effect on scroll */
 header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px) saturate(200%);
-    -webkit-backdrop-filter: blur(20px) saturate(200%);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* --- LOGO --- */
@@ -127,9 +128,9 @@ header.scrolled {
     right: 0;
     width: 50%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
     z-index: 2000;
     display: none;
     flex-direction: column;
@@ -138,6 +139,7 @@ header.scrolled {
     transform: translateX(100%);
     transition: transform 0.3s ease;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .halfscreen-nav.active {
@@ -180,16 +182,16 @@ header.scrolled {
     gap: 25px;
 }
 
-/* Updated Get Quote button to match hero button */
+/* Updated Get Quote button - light text, no bold, no caps */
 .get-quote-btn {
     background: #4a8cff;
     color: white;
     border: none;
     padding: 18px 45px;
     font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    font-weight: 400; /* No bold - light weight */
+    letter-spacing: 0.5px; /* Reduced for lowercase */
+    text-transform: none; /* No capital letters */
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
@@ -231,7 +233,7 @@ header.scrolled {
     display: block;
     padding: 8px 0;
     font-weight: 200;
-    text-transform: uppercase; /* Capital letters for nav menu */
+    text-transform: uppercase;
 }
 
 .halfscreen-nav-link:hover {
@@ -302,7 +304,7 @@ header.scrolled {
     width: 100%;
     text-align: left;
     font-weight: 200;
-    text-transform: uppercase; /* Capital letters for mobile nav */
+    text-transform: uppercase;
 }
 
 .nav-link:hover {
@@ -420,7 +422,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     font-weight: 200;
-    text-transform: uppercase; /* Capital letters for desktop nav */
+    text-transform: uppercase;
 }
 
 .desktop-nav a.active::after {
@@ -608,7 +610,7 @@ header.scrolled {
     padding-top: 0;
 }
 
-/* Dark overlay on image - increased darkness */
+/* Dark overlay on image */
 .image-container::after {
     content: '';
     position: absolute;
@@ -648,13 +650,13 @@ header.scrolled {
     color: white !important;
     z-index: 2;
     position: relative;
-    margin-top: 30%;
-    margin-left: 10%;
+    margin-top: 25%; /* Moved up on desktop */
+    margin-left: 20px; /* Align with logo padding */
     width: 80%;
     opacity: 0;
     transform: translateY(50px);
     animation: bounceIn 1.2s ease-out 0.5s forwards;
-    text-transform: none; /* All small letters for hero content */
+    text-transform: none;
 }
 
 /* Bounce animation for the big typography */
@@ -676,15 +678,16 @@ header.scrolled {
     }
 }
 
-/* Move text to left on large screens */
+/* Move text to left on large screens - content moved up and aligned with logo */
 @media (min-width: 1200px) {
     .big-typography {
-        margin-top: 30%;
+        margin-top: 20%; /* Moved further up on desktop */
+        margin-left: 20px; /* Aligned with logo padding (20px from header padding) */
         position: relative;
         top: auto;
         left: auto;
         transform: none;
-        width: 40%;
+        width: 45%;
         animation: bounceInDesktop 1.2s ease-out 0.5s forwards;
     }
     
@@ -714,11 +717,11 @@ header.scrolled {
     letter-spacing: 1px;
     font-weight: 700;
     line-height: 1.1;
-    text-transform: none; /* All small letters for heading */
+    text-transform: none;
     font-family: 'Work Sans', sans-serif;
 }
 
-/* FIXED: Color styling for specific text - consistent bright blue */
+/* Color styling for specific text */
 .big-typography h1 .blue-text {
     color: #4a8cff;
     font-weight: 700;
@@ -726,7 +729,7 @@ header.scrolled {
     background: none;
     -webkit-background-clip: none;
     -webkit-text-fill-color: #4a8cff;
-    text-transform: none !important; /* ADDED THIS LINE - forces lowercase */
+    text-transform: none !important;
 }
 
 /* New paragraph styling */
@@ -741,10 +744,10 @@ header.scrolled {
     z-index: 2;
     position: relative;
     font-weight: 200;
-    text-transform: none; /* All small letters for paragraph */
+    text-transform: none;
 }
 
-/* Blue text within paragraph - consistent bright blue */
+/* Blue text within paragraph */
 .hero-paragraph .blue-text {
     color: #4a8cff;
     font-weight: 400;
@@ -770,20 +773,20 @@ header.scrolled {
     }
 }
 
-/* Call to Action Button Styles */
+/* Call to Action Button Styles - light text, no bold, no caps */
 .cta-button {
     display: inline-block;
     background: #4a8cff;
     color: white;
     padding: 18px 45px;
     font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
+    font-weight: 400; /* No bold - light weight */
+    letter-spacing: 0.5px; /* Reduced for lowercase */
     text-decoration: none;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-transform: uppercase; /* Capital letters for button */
+    text-transform: none; /* No capital letters */
     font-family: 'Work Sans', sans-serif;
     position: relative;
     z-index: 2;
@@ -806,7 +809,8 @@ header.scrolled {
     }
     
     .big-typography {
-        margin-top: 35%;
+        margin-top: 30%; /* Adjusted for mobile */
+        margin-left: 15px; /* Align with mobile logo padding */
     }
     
     .cta-button {
@@ -823,7 +827,8 @@ header.scrolled {
     }
     
     .big-typography {
-        margin-top: 40%;
+        margin-top: 35%; /* Adjusted for mobile */
+        margin-left: 15px; /* Align with mobile logo padding */
     }
     
     .cta-button {
@@ -849,7 +854,7 @@ header.scrolled {
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
     z-index: 2;
-    text-transform: none; /* Added to prevent uppercase arrow */
+    text-transform: none;
 }
 
 .scroll-down:hover { 
@@ -861,7 +866,7 @@ header.scrolled {
     content: '↓';
     font-size: 1.5rem;
     color: #4a8cff;
-    text-transform: none; /* Added to ensure arrow displays correctly */
+    text-transform: none;
 }
 </style>
 </head>
@@ -940,7 +945,7 @@ header.scrolled {
     </div>
     
     <div class="nav-content-container">
-        <button class="get-quote-btn">GET QUOTE</button>
+        <button class="get-quote-btn">get quote</button>
         
         <ul class="halfscreen-nav-list">
             <li class="halfscreen-nav-item">
@@ -1006,12 +1011,12 @@ header.scrolled {
     </div>
     
     <div class="big-typography">
-        <h1>Building Excellence <br><span class="blue-text">Fueling Futures</span></h1>
+        <h1>Building excellence <br><span class="blue-text">fueling futures</span></h1>
         <!-- New paragraph between heading and button -->
         <div class="hero-paragraph">
             From bulk fuel to complex constructions, we bring <span class="blue-text">10+ years of experience</span> to every project. Your trusted partner for innovation, reliability, and results.
         </div>
-        <a href="#" class="cta-button">GET QUOTE</a>
+        <a href="#" class="cta-button">get quote</a>
     </div>
     
     <div class="scroll-down" id="scrollDownBtn"></div>
