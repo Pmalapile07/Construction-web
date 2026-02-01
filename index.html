@@ -150,7 +150,7 @@ header {
     position: relative;
 }
 .logo img {
-    height: 100px;
+    height: 120px; /* INCREASED from 100px to 120px */
     width: auto;
     /* Shadow removed as requested */
 }
@@ -161,9 +161,9 @@ header {
     top: 95px; /* Changed from 148px to 95px - adjusted for header only (no announcement bar) */
     left: 0;
     width: 100%;
-    backdrop-filter: blur(15px) saturate(200%); /* Increased blur and saturation for more "frozen" effect */
+    backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+    background-color: rgba(255, 255, 255, 0.9); /* CHANGED to white/light background */
     border-bottom: 5px solid #2c5aa0;
     z-index: 999;
     display: none;
@@ -177,28 +177,28 @@ header {
     list-style: none;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start; /* CHANGED from flex-end to flex-start */
     flex-direction: column;
 }
 
 .nav-item {
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start; /* CHANGED from flex-end to flex-start */
     align-items: center;
     flex-direction: column;
 }
 
 .nav-item.collapsible {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* CHANGED to darker border for contrast */
 }
 
 .nav-link {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start; /* CHANGED from flex-end to flex-start */
     padding: 16px 30px;
-    color: white;
+    color: #333; /* CHANGED from white to dark text */
     text-decoration: none;
     font-family: 'Mozilla Text', sans-serif;
     text-transform: uppercase;
@@ -207,11 +207,11 @@ header {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
-    text-align: right;
+    text-align: left; /* CHANGED from right to left */
 }
 
 .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.05); /* CHANGED to dark hover on light background */
 }
 
 .arrow-icon {
@@ -219,6 +219,7 @@ header {
     margin-right: 45px;
     transition: transform 0.3s ease;
     font-size: 18px;
+    color: #333; /* CHANGED from white to dark */
 }
 
 .nav-item.active .arrow-icon {
@@ -227,10 +228,10 @@ header {
 
 .nav-content {
     display: none;
-    backdrop-filter: blur(15px) saturate(200%); /* Increased blur for consistency */
+    backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
-    background-color: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.95); /* CHANGED to white background */
+    border-top: 1px solid rgba(0, 0, 0, 0.2); /* CHANGED to darker border */
     z-index: 1001;
     width: 100%;
 }
@@ -243,13 +244,13 @@ header {
     list-style: none;
     padding: 10px 0;
     font-size: 0.7rem;
-    text-align: right;
+    text-align: left; /* CHANGED from right to left */
 }
 
 .nav-content li {
     padding: 8px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: right;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* CHANGED to darker border */
+    text-align: left; /* CHANGED from right to left */
 }
 
 .nav-content li:last-child {
@@ -257,18 +258,18 @@ header {
 }
 
 .nav-content a {
-    color: white;
+    color: #333; /* CHANGED from white to dark */
     text-decoration: none;
     display: block;
     font-family: 'Mozilla Text', sans-serif;
     text-transform: uppercase;
     transition: color 0.3s ease;
-    text-align: right;
+    text-align: left; /* CHANGED from right to left */
     width: 100%;
 }
 
 .nav-content a:hover {
-    color: cyan;
+    color: #2c5aa0; /* CHANGED from cyan to brand blue */
 }
 
 /* --- MENU ICON - MOBILE ONLY --- */
@@ -340,9 +341,9 @@ header {
     position: absolute;
     top: 100%;
     left: 0;
-    backdrop-filter: blur(15px) saturate(200%); /* Increased blur for consistency */
+    backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
-    background-color: rgba(0, 0, 0, 0.8); /* Darker background for better contrast */
+    background-color: rgba(0, 0, 0, 0.8);
     min-width: 200px;
     z-index: 1001;
     border-top: 3px solid cyan;
@@ -415,7 +416,7 @@ header {
 .hero {
     position: relative;
     width: 100%;
-    height: 150vh; /* REDUCED from 200vh to 150vh */
+    height: 100vh; /* REDUCED from 150vh to 100vh */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -441,7 +442,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%; /* Adjusted to show less sky and more subject */
+    object-position: center 40%; /* Adjusted to show less sky and more subject */
     display: block;
     margin-top: 0;
     padding-top: 0;
@@ -450,13 +451,13 @@ header {
 /* Mobile-specific image styling */
 @media (max-width: 1199px) {
     .hero {
-        height: 110vh; /* REDUCED from 140vh to 110vh */
+        height: 80vh; /* REDUCED from 110vh to 80vh */
     }
     
     .image-container img {
         transform: none !important;
         object-fit: cover;
-        object-position: center 40%; /* Adjusted position for better composition */
+        object-position: center 50%; /* Adjusted position for better composition */
     }
 }
 
@@ -464,7 +465,7 @@ header {
 @media (min-width: 1200px) {
     .image-container img {
         object-fit: cover;
-        object-position: center 30%; /* Adjusted to show less sky */
+        object-position: center 40%; /* Adjusted to show less sky */
         transform: scaleX(1.2);
     }
 }
@@ -509,7 +510,7 @@ header {
     .big-typography {
         margin-top: 0;
         position: absolute;
-        top: 40%; /* Changed from 45% to 40% - moved up further */
+        top: 35%; /* Changed from 40% to 35% - adjusted for reduced height */
         left: 10%;
         transform: translateY(-50%);
         width: 40%;
@@ -538,7 +539,7 @@ header {
 .big-typography h1 {
     font-size: 3.5rem;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
-    margin-bottom: 20px; /* Increased margin for button space */
+    margin-bottom: 30px; /* Increased margin for button space */
     letter-spacing: 3px;
     font-weight: 900;
     line-height: 1.1;
@@ -549,8 +550,8 @@ header {
     display: inline-block;
     background: #2c5aa0;
     color: white;
-    padding: 15px 35px;
-    font-size: 1rem;
+    padding: 18px 45px;
+    font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-decoration: none;
@@ -574,6 +575,18 @@ header {
 @media (max-width: 767px) {
     .big-typography h1 {
         font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .big-typography h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
     .cta-button {
         padding: 12px 25px;
@@ -584,7 +597,7 @@ header {
 /* Border Top and Features Section */
 .hero-features {
     position: absolute;
-    bottom: 120px; /* Positioned above scroll down button */
+    bottom: 100px; /* Positioned above scroll down button */
     left: 0;
     width: 100%;
     z-index: 2;
@@ -592,9 +605,26 @@ header {
 }
 
 .features-border {
-    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
     padding-top: 30px;
     margin-bottom: 30px;
+    position: relative;
+}
+
+.features-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.7) 20%, 
+        rgba(255, 255, 255, 0.9) 50%, 
+        rgba(255, 255, 255, 0.7) 80%, 
+        transparent 100%);
+    filter: blur(1px);
 }
 
 .features-container {
@@ -612,18 +642,19 @@ header {
 }
 
 .feature-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    width: 60px; /* Slightly larger */
+    height: 60px; /* Slightly larger */
+    background: rgba(255, 255, 255, 0.15); /* Lighter glass effect */
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 28px; /* Slightly larger */
     color: #2c5aa0;
-    border: 2px solid rgba(44, 90, 160, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3); /* White border for glass effect */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .feature-text {
@@ -637,34 +668,35 @@ header {
     display: block;
     font-size: 1.1rem;
     margin-bottom: 5px;
-    color: #2c5aa0;
+    color: white; /* Changed to white for better visibility */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 /* Mobile adjustments for features */
 @media (max-width: 768px) {
     .hero-features {
-        bottom: 100px;
+        bottom: 80px; /* Adjusted for reduced height */
         padding: 0 5%;
     }
     
     .features-container {
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 25px;
     }
     
     .feature-item {
-        gap: 10px;
+        gap: 12px;
     }
     
     .feature-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
     
     .feature-text {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     
     .feature-text strong {
@@ -672,10 +704,34 @@ header {
     }
 }
 
+@media (max-width: 480px) {
+    .hero-features {
+        bottom: 70px;
+    }
+    
+    .features-container {
+        gap: 20px;
+    }
+    
+    .feature-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+    
+    .feature-text {
+        font-size: 0.8rem;
+    }
+    
+    .feature-text strong {
+        font-size: 0.95rem;
+    }
+}
+
 /* --- SCROLL DOWN BUTTON --- */
 .scroll-down {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px; /* Moved up for reduced height */
     left: 50%;
     transform: translateX(-50%);
     width: 50px;
@@ -800,7 +856,7 @@ header {
     background: transparent;
 }
 
-/* Updated Video Preview Section with new image */
+/* Updated Video Preview Section with construction road image */
 #about-page .tg-video-preview {
     width: 100%;
     height: 400px;
@@ -1671,7 +1727,7 @@ header {
     </div>
 </header>
 
-<!-- NAVIGATION BAR - Simplified -->
+<!-- NAVIGATION BAR - Simplified and White -->
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
         <li class="nav-item">
@@ -1706,7 +1762,7 @@ header {
     
     <div class="big-typography">
         <h1>Building excellence <br> Delivering energy</h1>
-        <a href="#" class="cta-button">Get Code</a>
+        <a href="#" class="cta-button">Get Quote</a>
     </div>
     
     <!-- Features Section with Border Top -->
@@ -1783,9 +1839,9 @@ header {
             </p>
         </div>
 
-        <!-- VIDEO PREVIEW SECTION with new road image -->
+        <!-- VIDEO PREVIEW SECTION with construction road image -->
         <div class="tg-video-preview">
-            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Road infrastructure" class="video-preview-image">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Construction workers building road" class="video-preview-image">
             <div class="play-button-container">
                 <div class="play-button">
                     <div class="play-icon"></div>
@@ -1805,9 +1861,9 @@ header {
             </p>
         </div>
 
-        <!-- Additional road image under impact section -->
+        <!-- Additional construction road image under impact section -->
         <div class="construction-image-section">
-            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Road infrastructure" class="construction-image">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Road construction with workers" class="construction-image">
         </div>
 
         <!-- BLUE SECTION - THE ROOTS -->
