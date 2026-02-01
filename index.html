@@ -6,14 +6,14 @@
 <title>Ingestion | Home</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;800;900&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
 <style>
 /* --- GENERAL RESET --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Work Sans', sans-serif; /* Changed to Work Sans */
     font-weight: 400;
     text-transform: uppercase;
 }
@@ -69,8 +69,8 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #2c5aa0;
-    border: 1px solid #2c5aa0;
+    background: #4a8cff; /* Consistent blue color */
+    border: 1px solid #4a8cff;
     color: white;
     transition: all 0.3s ease;
     flex-shrink: 0;
@@ -182,7 +182,7 @@ header.scrolled {
 
 /* Updated Get Quote button to match hero button */
 .get-quote-btn {
-    background: #2c5aa0;
+    background: #4a8cff; /* Consistent blue color */
     color: white;
     border: none;
     padding: 18px 45px;
@@ -194,16 +194,16 @@ header.scrolled {
     transition: all 0.3s ease;
     width: 100%;
     border-radius: 4px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     text-decoration: none;
     text-align: center;
     display: block;
 }
 
 .get-quote-btn:hover {
-    background: #1a3d75;
+    background: #3578e5;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(74, 140, 255, 0.3);
 }
 
 .halfscreen-nav-list {
@@ -230,12 +230,12 @@ header.scrolled {
     transition: color 0.3s ease;
     display: block;
     padding: 8px 0;
-    font-weight: 400;
-    text-transform: none;
+    font-weight: 200; /* Extra light 200 for nav menu */
+    text-transform: uppercase; /* Capital letters for nav menu */
 }
 
 .halfscreen-nav-link:hover {
-    color: #2c5aa0;
+    color: #4a8cff; /* Consistent blue color */
 }
 
 .separator-line {
@@ -259,7 +259,7 @@ header.scrolled {
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
     background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 4px solid #2c5aa0;
+    border-bottom: 4px solid #4a8cff; /* Consistent blue color */
     z-index: 999;
     display: none;
 }
@@ -301,8 +301,8 @@ header.scrolled {
     transition: background-color 0.3s ease;
     width: 100%;
     text-align: left;
-    font-weight: 400;
-    text-transform: uppercase;
+    font-weight: 200; /* Extra light 200 for mobile nav */
+    text-transform: uppercase; /* Capital letters for mobile nav */
 }
 
 .nav-link:hover {
@@ -359,12 +359,12 @@ header.scrolled {
     transition: color 0.3s ease;
     text-align: left;
     width: 100%;
-    font-weight: 400;
+    font-weight: 200; /* Extra light 200 for subnav */
     text-transform: none;
 }
 
 .nav-content a:hover {
-    color: #2c5aa0;
+    color: #4a8cff; /* Consistent blue color */
 }
 
 /* --- MENU ICON - MOBILE ONLY --- */
@@ -419,8 +419,8 @@ header.scrolled {
     text-orientation: mixed;
     display: flex;
     align-items: center;
-    font-weight: 400;
-    text-transform: uppercase;
+    font-weight: 200; /* Extra light 200 for desktop nav */
+    text-transform: uppercase; /* Capital letters for desktop nav */
 }
 
 .desktop-nav a.active::after {
@@ -430,7 +430,7 @@ header.scrolled {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background: #2196f3;
+    background: #4a8cff; /* Consistent blue color */
     border-radius: 2px;
 }
 
@@ -444,7 +444,7 @@ header.scrolled {
     background-color: rgba(0, 0, 0, 0.8);
     min-width: 180px;
     z-index: 1001;
-    border-top: 2px solid cyan;
+    border-top: 2px solid #4a8cff; /* Consistent blue color */
 }
 
 .desktop-nav-content.active {
@@ -472,12 +472,12 @@ header.scrolled {
     transition: color 0.3s ease;
     font-size: 0.8rem;
     padding: 6px 12px;
-    font-weight: 400;
+    font-weight: 200; /* Extra light 200 for desktop subnav */
     text-transform: none;
 }
 
 .desktop-nav-content a:hover {
-    color: cyan;
+    color: #4a8cff; /* Consistent blue color */
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -608,7 +608,7 @@ header.scrolled {
     padding-top: 0;
 }
 
-/* Dark overlay on image */
+/* Dark overlay on image - increased darkness */
 .image-container::after {
     content: '';
     position: absolute;
@@ -616,7 +616,7 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7); /* Increased to 0.7 for darker overlay */
     z-index: 1;
 }
 
@@ -645,17 +645,16 @@ header.scrolled {
 /* --- BIG TYPOGRAPHY --- */
 .big-typography {
     text-align: left;
-    font-family: 'Raleway', sans-serif !important;
     color: white !important;
     z-index: 2;
     position: relative;
-    margin-top: 30%; /* Moved content further down */
+    margin-top: 30%;
     margin-left: 10%;
     width: 80%;
     opacity: 0;
     transform: translateY(50px);
     animation: bounceIn 1.2s ease-out 0.5s forwards;
-    text-transform: none;
+    text-transform: none; /* All small letters for hero content */
 }
 
 /* Bounce animation for the big typography */
@@ -680,7 +679,7 @@ header.scrolled {
 /* Move text to left on large screens */
 @media (min-width: 1200px) {
     .big-typography {
-        margin-top: 30%; /* Moved further down on desktop */
+        margin-top: 30%;
         position: relative;
         top: auto;
         left: auto;
@@ -709,21 +708,22 @@ header.scrolled {
 }
 
 .big-typography h1 {
-    font-size: 4.2rem; /* Increased from 3.5rem */
+    font-size: 4.2rem;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     margin-bottom: 30px;
-    letter-spacing: 1px; /* Normal letter spacing */
-    font-weight: 900;
+    letter-spacing: 1px;
+    font-weight: 700; /* Bold 700 for heading */
     line-height: 1.1;
-    text-transform: none;
+    text-transform: none; /* All small letters for heading */
+    font-family: 'Work Sans', sans-serif; /* Work Sans for heading */
 }
 
-/* Color styling for specific text - brighter blue, no gradient */
+/* Color styling for specific text - consistent bright blue */
 .big-typography h1 .blue-text {
-    color: #4a8cff; /* Brighter blue color */
-    font-weight: 900;
+    color: #4a8cff; /* Consistent bright blue color */
+    font-weight: 700;
     text-shadow: none;
-    background: none; /* Remove any gradient */
+    background: none;
     -webkit-background-clip: none;
     -webkit-text-fill-color: #4a8cff;
 }
@@ -739,19 +739,19 @@ header.scrolled {
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     z-index: 2;
     position: relative;
-    font-weight: 600;
-    text-transform: none;
+    font-weight: 200; /* Light 200 for paragraph */
+    text-transform: none; /* All small letters for paragraph */
 }
 
-/* Blue text within paragraph - brighter blue, no gradient */
+/* Blue text within paragraph - consistent bright blue */
 .hero-paragraph .blue-text {
-    color: #4a8cff; /* Brighter blue color */
-    font-weight: 700;
+    color: #4a8cff; /* Consistent bright blue color */
+    font-weight: 400; /* Slightly bolder for emphasis */
     text-shadow: none;
-    background: none; /* Remove any gradient */
+    background: none;
     -webkit-background-clip: none;
     -webkit-text-fill-color: #4a8cff;
-    text-transform: none; /* Normal text transform */
+    text-transform: none;
 }
 
 /* Mobile adjustments for paragraph */
@@ -772,7 +772,7 @@ header.scrolled {
 /* Call to Action Button Styles */
 .cta-button {
     display: inline-block;
-    background: #2c5aa0;
+    background: #4a8cff; /* Consistent blue color */
     color: white;
     padding: 18px 45px;
     font-size: 1.1rem;
@@ -782,8 +782,8 @@ header.scrolled {
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase; /* Capital letters for button */
+    font-family: 'Work Sans', sans-serif;
     position: relative;
     z-index: 2;
     margin-top: 0;
@@ -792,20 +792,20 @@ header.scrolled {
 }
 
 .cta-button:hover {
-    background: #1a3d75;
+    background: #3578e5;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 15px rgba(74, 140, 255, 0.3);
 }
 
 /* Mobile text size adjustment */
 @media (max-width: 767px) {
     .big-typography h1 {
-        font-size: 3.2rem; /* Increased mobile size */
+        font-size: 3.2rem;
         margin-bottom: 25px;
     }
     
     .big-typography {
-        margin-top: 35%; /* More on mobile */
+        margin-top: 35%;
     }
     
     .cta-button {
@@ -817,12 +817,12 @@ header.scrolled {
 
 @media (max-width: 480px) {
     .big-typography h1 {
-        font-size: 2.5rem; /* Increased mobile size */
+        font-size: 2.5rem;
         margin-bottom: 20px;
     }
     
     .big-typography {
-        margin-top: 40%; /* Even more on very small screens */
+        margin-top: 40%;
     }
     
     .cta-button {
@@ -858,7 +858,7 @@ header.scrolled {
 .scroll-down::after {
     content: '↓';
     font-size: 1.5rem;
-    color: #2c5aa0;
+    color: #4a8cff; /* Consistent blue color */
 }
 </style>
 </head>
@@ -899,25 +899,25 @@ header.scrolled {
     <!-- DESKTOP NAV -->
     <div class="desktop-nav">
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="home">Home</a>
+            <a class="nav-link desktop-nav-link" data-section="home">HOME</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="about">About</a>
+            <a class="nav-link desktop-nav-link" data-section="about">ABOUT</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="product">Product</a>
+            <a class="nav-link desktop-nav-link" data-section="product">PRODUCT</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="services">Services</a>
+            <a class="nav-link desktop-nav-link" data-section="services">SERVICES</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="case-studies">Case Studies</a>
+            <a class="nav-link desktop-nav-link" data-section="case-studies">CASE STUDIES</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="news">News</a>
+            <a class="nav-link desktop-nav-link" data-section="news">NEWS</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="contact">Contact</a>
+            <a class="nav-link desktop-nav-link" data-section="contact">CONTACT</a>
         </div>
     </div>
 
@@ -937,29 +937,29 @@ header.scrolled {
     </div>
     
     <div class="nav-content-container">
-        <button class="get-quote-btn">Get Quote</button>
+        <button class="get-quote-btn">GET QUOTE</button>
         
         <ul class="halfscreen-nav-list">
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">Home</a>
+                <a href="#" class="halfscreen-nav-link">HOME</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">About</a>
+                <a href="#" class="halfscreen-nav-link">ABOUT</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">Product</a>
+                <a href="#" class="halfscreen-nav-link">PRODUCT</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">Services</a>
+                <a href="#" class="halfscreen-nav-link">SERVICES</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">Case Studies</a>
+                <a href="#" class="halfscreen-nav-link">CASE STUDIES</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">News</a>
+                <a href="#" class="halfscreen-nav-link">NEWS</a>
             </li>
             <li class="halfscreen-nav-item">
-                <a href="#" class="halfscreen-nav-link">Contact</a>
+                <a href="#" class="halfscreen-nav-link">CONTACT</a>
             </li>
         </ul>
         
@@ -1003,12 +1003,12 @@ header.scrolled {
     </div>
     
     <div class="big-typography">
-        <h1>Building excellence <br><span class="blue-text">Fueling futures</span></h1>
+        <h1>Building excellence <br><span class="blue-text">fueling futures</span></h1>
         <!-- New paragraph between heading and button -->
         <div class="hero-paragraph">
             From bulk fuel to complex constructions, we bring <span class="blue-text">10+ years of experience</span> to every project. Your trusted partner for innovation, reliability, and results.
         </div>
-        <a href="#" class="cta-button">Get Quote</a>
+        <a href="#" class="cta-button">GET QUOTE</a>
     </div>
     
     <div class="scroll-down" id="scrollDownBtn"></div>
