@@ -6,7 +6,7 @@
 <title>Ingestion | Home</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;800;900&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* --- GENERAL RESET --- */
 * {
@@ -89,13 +89,22 @@ header {
     height: 95px;
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.85); /* Glassmorphic effect */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Glassmorphic effect on scroll */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* --- LOGO --- */
@@ -566,7 +575,7 @@ header {
     background: #0f0f0f;
     margin-top: 95px; /* Adjusted for header height */
     padding-top: 0;
-    top: 0;
+    top: -20px; /* Moved up slightly to hide edges */
     overflow: hidden;
 }
 
@@ -594,7 +603,7 @@ header {
 /* Mobile-specific image styling */
 @media (max-width: 1199px) {
     .hero {
-        height: calc(100vh - 95px); /* Adjust for header height */
+        height: calc(100vh - 75px); /* Reduced to bring image up */
     }
     
     .image-container img {
@@ -617,7 +626,7 @@ header {
 .big-typography {
     text-align: left;
     text-transform: normal !important;
-    font-family: 'Archivo Black', sans-serif !important;
+    font-family: 'Raleway', sans-serif !important;
     color: white !important;
     z-index: 2;
     position: relative;
@@ -684,14 +693,19 @@ header {
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     margin-bottom: 30px;
     letter-spacing: 3px;
-    font-weight: 900;
+    font-weight: 900; /* Extra bold Raleway */
     line-height: 1.1;
+}
+
+/* Color styling for specific text */
+.big-typography h1 .blue-text {
+    color: #2c5aa0;
 }
 
 /* New paragraph styling */
 .hero-paragraph {
     color: white;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -700,6 +714,13 @@ header {
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     z-index: 2;
     position: relative;
+    font-weight: 500; /* Montserrat Regular 500 */
+}
+
+/* Blue text within paragraph */
+.hero-paragraph .blue-text {
+    color: #2c5aa0;
+    font-weight: 600;
 }
 
 /* Mobile adjustments for paragraph */
@@ -769,122 +790,7 @@ header {
     }
 }
 
-/* Rotating Icon Section at Bottom */
-.rotating-icons {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1200px;
-    z-index: 2;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.icon-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.rotating-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    color: #2c5aa0;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-    transition: all 0.5s ease;
-    opacity: 0;
-    transform: scale(0.8);
-}
-
-.rotating-icon.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.icon-text {
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-align: center;
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 0.5s ease;
-    opacity: 0;
-}
-
-.icon-text.active {
-    opacity: 1;
-}
-
-.icon-text strong {
-    display: block;
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Mobile adjustments for rotating icons */
-@media (max-width: 768px) {
-    .rotating-icons {
-        bottom: 80px;
-        padding: 0 15px;
-    }
-    
-    .rotating-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 32px;
-    }
-    
-    .icon-text {
-        font-size: 1rem;
-        min-height: 50px;
-    }
-    
-    .icon-text strong {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .rotating-icons {
-        bottom: 70px;
-    }
-    
-    .rotating-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 28px;
-    }
-    
-    .icon-text {
-        font-size: 0.9rem;
-        min-height: 45px;
-    }
-    
-    .icon-text strong {
-        font-size: 1rem;
-    }
-}
+/* Removed rotating icons section entirely */
 
 /* --- SCROLL DOWN BUTTON --- */
 .scroll-down {
@@ -956,7 +862,7 @@ header {
 </div>
 
 <!-- HEADER -->
-<header>
+<header id="mainHeader">
     <div class="logo" id="logo">
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
@@ -1068,25 +974,12 @@ header {
     </div>
     
     <div class="big-typography">
-        <h1>Building excellence <br> Delivering energy</h1>
+        <h1>Building excellence <br><span class="blue-text">Fueling futures</span></h1>
         <!-- New paragraph between heading and button -->
         <div class="hero-paragraph">
-            From bulk fuel to complex constructions, we bring 10+ years of excellence to every project. Your trusted partner for innovation, reliability, and results.
+            From bulk fuel to complex constructions, we bring <span class="blue-text">10+ years of experience</span> to every project. Your trusted partner for innovation, reliability, and results.
         </div>
         <a href="#" class="cta-button">Get Quote</a>
-    </div>
-    
-    <!-- Rotating Icon Section at Bottom -->
-    <div class="rotating-icons">
-        <div class="icon-container">
-            <div class="rotating-icon active" id="rotatingIcon">
-                <i class="material-icons">local_shipping</i>
-            </div>
-        </div>
-        <div class="icon-text active" id="iconText">
-            <strong>24/7 Full Supply</strong>
-            Round the clock delivery
-        </div>
     </div>
     
     <div class="scroll-down" id="scrollDownBtn"></div>
@@ -1106,6 +999,7 @@ const servicesLink = document.getElementById('servicesLink');
 const caseStudiesLink = document.getElementById('caseStudiesLink');
 const newsLink = document.getElementById('newsLink');
 const contactLink = document.getElementById('contactLink');
+const mainHeader = document.getElementById('mainHeader');
 
 // Desktop navigation elements
 const desktopLinks = document.querySelectorAll('.desktop-nav a');
@@ -1189,6 +1083,15 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Header scroll effect - glassmorphic on scroll
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        mainHeader.classList.add('scrolled');
+    } else {
+        mainHeader.classList.remove('scrolled');
+    }
+});
+
 // --- HERO SECTION FUNCTIONALITY ---
 // Scroll down button
 const scrollDownBtn = document.getElementById('scrollDownBtn');
@@ -1201,65 +1104,6 @@ scrollDownBtn.addEventListener('click', () => {
         // If no about section, scroll down by viewport height
         window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
     }
-});
-
-// Rotating Icon Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const rotatingIcon = document.getElementById('rotatingIcon');
-    const iconText = document.getElementById('iconText');
-    
-    // Define the icons and their text
-    const icons = [
-        {
-            icon: 'local_shipping',
-            title: '24/7 Full Supply',
-            subtitle: 'Round the clock delivery'
-        },
-        {
-            icon: 'verified',
-            title: 'Quality Guaranteed',
-            subtitle: 'Premium standards'
-        },
-        {
-            icon: 'support_agent',
-            title: 'Expert Support',
-            subtitle: 'Professional assistance'
-        }
-    ];
-    
-    let currentIndex = 0;
-    
-    function rotateIcon() {
-        // Fade out current icon and text
-        rotatingIcon.classList.remove('active');
-        iconText.classList.remove('active');
-        
-        setTimeout(() => {
-            // Update to next icon
-            currentIndex = (currentIndex + 1) % icons.length;
-            const nextIcon = icons[currentIndex];
-            
-            // Update icon
-            rotatingIcon.innerHTML = `<i class="material-icons">${nextIcon.icon}</i>`;
-            
-            // Update text
-            iconText.innerHTML = `<strong>${nextIcon.title}</strong>${nextIcon.subtitle}`;
-            
-            // Fade in new icon and text
-            setTimeout(() => {
-                rotatingIcon.classList.add('active');
-                iconText.classList.add('active');
-            }, 100);
-        }, 500);
-    }
-    
-    // Start rotating every 5 seconds (5000ms)
-    setInterval(rotateIcon, 5000);
-    
-    // Initialize with first icon
-    const firstIcon = icons[0];
-    rotatingIcon.innerHTML = `<i class="material-icons">${firstIcon.icon}</i>`;
-    iconText.innerHTML = `<strong>${firstIcon.title}</strong>${firstIcon.subtitle}`;
 });
 </script>
 </body>
