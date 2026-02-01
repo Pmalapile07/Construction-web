@@ -13,8 +13,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Google Sans', sans-serif; /* Changed to Google Sans */
-    font-weight: 400; /* Regular 400 for all text */
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 400;
 }
 
 body {
@@ -22,7 +22,6 @@ body {
     color: #fff;
     overflow-x: hidden;
     font-size: 14px;
-    text-transform: uppercase;
 }
 
 /* --- ANNOUNCEMENT BAR --- */
@@ -58,7 +57,7 @@ body {
     color: black;
     text-decoration: none;
     font-size: 0.8rem;
-    font-weight: 400; /* Regular 400 */
+    font-weight: 400;
     text-transform: none;
 }
 
@@ -69,9 +68,9 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #fff; /* Changed to white */
-    border: 1px solid #ddd; /* Changed to light gray border */
-    color: #333; /* Dark text for visibility */
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #333;
     transition: all 0.3s ease;
     flex-shrink: 0;
 }
@@ -81,32 +80,26 @@ body {
     font-size: 14px;
 }
 
-/* --- HEADER --- */
+/* --- HEADER - NO BACKGROUND, JUST LOGO AND MENU --- */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 95px;
-    backdrop-filter: blur(20px) saturate(200%);
-    -webkit-backdrop-filter: blur(20px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.65); /* More transparent glass effect */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    background: transparent; /* No background */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Enhanced glassmorphic effect on scroll - more transparent */
+/* Remove all glassmorphic effects */
 header.scrolled {
-    background-color: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(30px) saturate(200%);
-    -webkit-backdrop-filter: blur(30px) saturate(200%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    background: transparent; /* Keep transparent on scroll */
+    box-shadow: none; /* No shadow */
 }
 
 /* --- LOGO --- */
@@ -137,7 +130,7 @@ header.scrolled {
     padding: 25px;
     overflow-y: auto;
     transform: translateX(100%);
-    transition: transform 0.2s ease; /* Faster transition */
+    transition: transform 0.2s ease;
     box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
     border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -184,14 +177,14 @@ header.scrolled {
 
 /* Updated Get Quote button - darker blue, capital letters */
 .get-quote-btn {
-    background: #2c5aa0; /* Darker blue */
+    background: #2c5aa0;
     color: white;
     border: none;
     padding: 18px 45px;
     font-size: 1.1rem;
-    font-weight: 400; /* Regular 400 */
-    letter-spacing: 1.5px; /* Increased for uppercase */
-    text-transform: uppercase; /* Capital letters */
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
@@ -203,7 +196,7 @@ header.scrolled {
 }
 
 .get-quote-btn:hover {
-    background: #1a3d75; /* Even darker blue on hover */
+    background: #1a3d75;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
 }
@@ -232,12 +225,12 @@ header.scrolled {
     transition: color 0.3s ease;
     display: block;
     padding: 8px 0;
-    font-weight: 400; /* Regular 400 */
-    text-transform: uppercase; /* Uppercase for nav menu */
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .halfscreen-nav-link:hover {
-    color: #333; /* White only - no blue */
+    color: #333;
 }
 
 .separator-line {
@@ -261,7 +254,7 @@ header.scrolled {
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
     background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 4px solid #fff; /* Changed to white */
+    border-bottom: 4px solid #fff;
     z-index: 999;
     display: none;
 }
@@ -303,8 +296,8 @@ header.scrolled {
     transition: background-color 0.3s ease;
     width: 100%;
     text-align: left;
-    font-weight: 400; /* Regular 400 */
-    text-transform: uppercase; /* Uppercase for mobile nav */
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .nav-link:hover {
@@ -361,39 +354,39 @@ header.scrolled {
     transition: color 0.3s ease;
     text-align: left;
     width: 100%;
-    font-weight: 400; /* Regular 400 */
+    font-weight: 400;
     text-transform: none;
 }
 
 .nav-content a:hover {
-    color: #333; /* White only - no blue */
+    color: #333;
 }
 
-/* --- MENU ICON - MOBILE ONLY --- */
+/* --- MENU ICON - MOBILE ONLY - WHITE, LARGER, NO BACKGROUND --- */
 .menu-icon {
-    width: 22px;
-    height: 15px;
+    width: 30px; /* Increased size */
+    height: 22px; /* Increased size */
     position: relative;
     cursor: pointer;
-    transition: transform 0.2s ease; /* Faster transition */
+    transition: transform 0.2s ease;
     display: block;
     margin-left: auto;
 }
 
 .menu-icon span {
-    background: #000;
+    background: #fff; /* White color */
     position: absolute;
-    height: 2px;
+    height: 3px; /* Thicker lines */
     width: 100%;
     left: 0;
-    transition: all 0.2s ease; /* Faster transition */
+    transition: all 0.2s ease;
 }
 .menu-icon span:nth-child(1) { top: 0; }
-.menu-icon span:nth-child(2) { top: 6px; }
-.menu-icon span:nth-child(3) { top: 12px; }
-.menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 6px; }
+.menu-icon span:nth-child(2) { top: 9px; } /* Adjusted for larger size */
+.menu-icon span:nth-child(3) { top: 18px; } /* Adjusted for larger size */
+.menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 9px; }
 .menu-icon.active span:nth-child(2) { opacity: 0; }
-.menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 6px; }
+.menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
 
 /* --- DESKTOP NAV --- */
 .desktop-nav {
@@ -421,8 +414,8 @@ header.scrolled {
     text-orientation: mixed;
     display: flex;
     align-items: center;
-    font-weight: 400; /* Regular 400 */
-    text-transform: uppercase; /* Uppercase for desktop nav */
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .desktop-nav a.active::after {
@@ -432,7 +425,7 @@ header.scrolled {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background: #fff; /* Changed to white */
+    background: #fff;
     border-radius: 2px;
 }
 
@@ -446,7 +439,7 @@ header.scrolled {
     background-color: rgba(0, 0, 0, 0.8);
     min-width: 180px;
     z-index: 1001;
-    border-top: 2px solid #fff; /* Changed to white */
+    border-top: 2px solid #fff;
 }
 
 .desktop-nav-content.active {
@@ -474,12 +467,12 @@ header.scrolled {
     transition: color 0.3s ease;
     font-size: 0.8rem;
     padding: 6px 12px;
-    font-weight: 400; /* Regular 400 */
+    font-weight: 400;
     text-transform: none;
 }
 
 .desktop-nav-content a:hover {
-    color: #fff; /* White only - no blue */
+    color: #fff;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -552,6 +545,21 @@ header.scrolled {
     .logo img {
         height: 100px;
     }
+    
+    /* Adjust hamburger menu size for mobile */
+    .menu-icon {
+        width: 28px;
+        height: 20px;
+    }
+    
+    .menu-icon span {
+        height: 2.5px;
+    }
+    
+    .menu-icon span:nth-child(2) { top: 8px; }
+    .menu-icon span:nth-child(3) { top: 16px; }
+    .menu-icon.active span:nth-child(1) { top: 8px; }
+    .menu-icon.active span:nth-child(3) { top: 8px; }
 }
 
 /* Very small screens */
@@ -650,13 +658,13 @@ header.scrolled {
     color: white !important;
     z-index: 2;
     position: relative;
-    margin-top: 25%;
+    margin-top: 35%; /* Moved content down */
     margin-left: 20px;
     width: 80%;
     opacity: 0;
     transform: translateY(50px);
     animation: bounceIn 1.2s ease-out 0.5s forwards;
-    text-transform: uppercase; /* Capital letters for heading */
+    text-transform: none; /* Normal text for heading */
 }
 
 /* Bounce animation for the big typography */
@@ -681,7 +689,7 @@ header.scrolled {
 /* Move text to left on large screens */
 @media (min-width: 1200px) {
     .big-typography {
-        margin-top: 20%;
+        margin-top: 30%; /* Moved down on desktop */
         margin-left: 20px;
         position: relative;
         top: auto;
@@ -714,28 +722,28 @@ header.scrolled {
     font-size: 4.2rem;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     margin-bottom: 30px;
-    letter-spacing: 2px; /* Increased for uppercase */
-    font-weight: 700; /* Bold 700 for heading */
+    letter-spacing: 1px; /* Normal letter spacing */
+    font-weight: 700;
     line-height: 1.1;
-    text-transform: uppercase; /* Capital letters for heading */
+    text-transform: none; /* Normal text (first letters capital) */
     font-family: 'Google Sans', sans-serif;
 }
 
-/* Color styling for specific text - removed blue */
+/* Color styling for specific text */
 .big-typography h1 .blue-text {
-    color: white; /* Changed to white */
-    font-weight: 700; /* Bold 700 */
-    text-shadow: 2px 2px 12px rgba(0,0,0,0.8); /* Added shadow for visibility */
+    color: white;
+    font-weight: 700;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     background: none;
     -webkit-background-clip: none;
     -webkit-text-fill-color: white;
-    text-transform: uppercase !important;
+    text-transform: none !important;
 }
 
 /* New paragraph styling */
 .hero-paragraph {
     color: white;
-    font-family: 'Google Sans', sans-serif; /* Changed to Google Sans */
+    font-family: 'Google Sans', sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -743,15 +751,15 @@ header.scrolled {
     text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     z-index: 2;
     position: relative;
-    font-weight: 400; /* Regular 400 */
+    font-weight: 400;
     text-transform: none; /* Normal text for paragraph */
 }
 
-/* Blue text within paragraph - changed to white */
+/* Text within paragraph */
 .hero-paragraph .blue-text {
-    color: white; /* Changed to white */
-    font-weight: 400; /* Regular 400 */
-    text-shadow: 1px 1px 8px rgba(0,0,0,0.6); /* Added shadow for visibility */
+    color: white;
+    font-weight: 400;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     background: none;
     -webkit-background-clip: none;
     -webkit-text-fill-color: white;
@@ -773,10 +781,35 @@ header.scrolled {
     }
 }
 
-/* Call to Action Button Styles - REMOVED */
-/* .cta-button {
-    display: none;
-} */
+/* New CTA Button - White background, dark blue text, "Get quote" format */
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #2c5aa0; /* Dark blue text */
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: none; /* Normal text - "Get quote" */
+    font-family: 'Google Sans', sans-serif;
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    border: 2px solid white;
+}
+
+.cta-button:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    color: #1a3d75; /* Darker blue on hover */
+}
 
 /* Mobile text size adjustment */
 @media (max-width: 767px) {
@@ -786,8 +819,14 @@ header.scrolled {
     }
     
     .big-typography {
-        margin-top: 30%;
+        margin-top: 40%; /* More on mobile */
         margin-left: 15px;
+    }
+    
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+        margin-bottom: 30px;
     }
 }
 
@@ -798,41 +837,18 @@ header.scrolled {
     }
     
     .big-typography {
-        margin-top: 35%;
+        margin-top: 45%; /* Even more on mobile */
         margin-left: 15px;
+    }
+    
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
     }
 }
 
-/* --- SCROLL DOWN BUTTON --- */
-.scroll-down {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    background: white;
-    border: 2px solid #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
-    z-index: 2;
-    text-transform: none;
-}
-
-.scroll-down:hover { 
-    background: rgba(255,255,255,0.4); 
-    transform: translateX(-50%) translateY(3px); 
-}
-
-.scroll-down::after {
-    content: '↓';
-    font-size: 1.5rem;
-    color: #333;
-    text-transform: none;
-}
+/* Scroll down button removed */
 </style>
 </head>
 <body>
@@ -863,13 +879,13 @@ header.scrolled {
     </div>
 </div>
 
-<!-- HEADER -->
+<!-- HEADER - NO BACKGROUND -->
 <header id="mainHeader">
     <div class="logo" id="logo">
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
 
-    <!-- DESKTOP NAV - MATCHING MOBILE STYLE -->
+    <!-- DESKTOP NAV -->
     <nav class="desktop-nav">
         <ul class="desktop-nav-list" style="display: flex; gap: 4px; list-style: none; padding: 0; margin: 0;">
             <li class="desktop-nav-item">
@@ -896,7 +912,7 @@ header.scrolled {
         </ul>
     </nav>
 
-    <!-- MENU ICON - MOBILE ONLY -->
+    <!-- MENU ICON - WHITE, LARGER, NO BACKGROUND -->
     <div class="menu-icon" id="menuIcon">
         <span></span>
         <span></span>
@@ -978,15 +994,16 @@ header.scrolled {
     </div>
     
     <div class="big-typography">
-        <h1>BUILDING EXCELLENCE <br><span class="blue-text">FUELING FUTURES</span></h1>
-        <!-- New paragraph between heading and button -->
+        <h1>Building Excellence <br><span class="blue-text">Fueling Futures</span></h1>
+        <!-- Updated paragraph -->
         <div class="hero-paragraph">
-            From bulk fuel to <br>complex constructions, we bring <span class="blue-text">10+ years of experience</span> to every project. Your trusted partner for innovation, reliability, and results.
+            10+ years of experience delivering reliable, innovative solutions—from bulk fuel to complex construction.
         </div>
-        <!-- CTA Button removed -->
+        <!-- New CTA Button with "Get quote" format -->
+        <a href="#" class="cta-button">Get quote</a>
     </div>
     
-    <div class="scroll-down" id="scrollDownBtn"></div>
+    <!-- Scroll down button removed -->
 </section>
 
 <script>
@@ -1087,7 +1104,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Header scroll effect - glassmorphic on scroll
+// Header scroll effect - keeps transparent
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         mainHeader.classList.add('scrolled');
@@ -1096,19 +1113,14 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// --- HERO SECTION FUNCTIONALITY ---
-// Scroll down button
-const scrollDownBtn = document.getElementById('scrollDownBtn');
-scrollDownBtn.addEventListener('click', () => {
-    // Scroll to the next section
-    const nextSection = document.querySelector('#about-page, .about-section, section:nth-of-type(3)');
-    if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        // If no about section, scroll down by viewport height
-        window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
-    }
-});
+// Hero CTA button functionality
+const ctaButton = document.querySelector('.cta-button');
+if (ctaButton) {
+    ctaButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Get Quote functionality would be implemented here.');
+    });
+}
 </script>
 </body>
 </html>
