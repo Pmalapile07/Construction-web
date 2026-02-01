@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no">
-<title>Header Section</title>
+<title>Ingestion | Home</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet">
 <style>
 /* --- GENERAL RESET --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif; /* Changed to Raleway */
-    font-weight: 400; /* Regular 400 weight */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
@@ -58,7 +58,7 @@ body {
     color: black;
     text-decoration: none;
     font-size: 0.8rem;
-    font-weight: 400; /* Raleway Regular */
+    font-weight: 400;
 }
 
 .contact-icon-circle {
@@ -86,7 +86,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 95px; /* Increased from 80px to accommodate larger logo */
+    height: 95px;
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
     background-color: rgba(255, 255, 255, 1);
@@ -105,7 +105,7 @@ header {
     margin-right: auto;
 }
 .logo img {
-    height: 120px; /* Increased from 90px to 120px */
+    height: 120px;
     width: auto;
     max-height: 100%;
 }
@@ -182,7 +182,7 @@ header {
     transition: all 0.3s ease;
     width: 100%;
     border-radius: 4px;
-    font-weight: 400; /* Raleway Regular */
+    font-weight: 400;
 }
 
 .get-quote-btn:hover {
@@ -215,7 +215,7 @@ header {
     transition: color 0.3s ease;
     display: block;
     padding: 8px 0;
-    font-weight: 400; /* Raleway Regular */
+    font-weight: 400;
 }
 
 .halfscreen-nav-link:hover {
@@ -237,7 +237,7 @@ header {
 /* --- NAVIGATION BAR --- */
 .nav-bar {
     position: fixed;
-    top: 95px; /* Adjusted to match increased header height */
+    top: 95px;
     left: 0;
     width: 100%;
     backdrop-filter: blur(15px) saturate(200%);
@@ -286,7 +286,7 @@ header {
     transition: background-color 0.3s ease;
     width: 100%;
     text-align: left;
-    font-weight: 400; /* Raleway Regular */
+    font-weight: 400;
 }
 
 .nav-link:hover {
@@ -344,7 +344,7 @@ header {
     transition: color 0.3s ease;
     text-align: left;
     width: 100%;
-    font-weight: 400; /* Raleway Regular */
+    font-weight: 400;
 }
 
 .nav-content a:hover {
@@ -403,7 +403,7 @@ header {
     text-orientation: mixed;
     display: flex;
     align-items: center;
-    font-weight: 400; /* Raleway Regular */
+    font-weight: 400;
 }
 
 .desktop-nav a.active::after {
@@ -456,7 +456,7 @@ header {
     transition: color 0.3s ease;
     font-size: 0.8rem;
     padding: 6px 12px;
-    font-weight: 400; /* Raleway Regular */
+    font-weight: 400;
 }
 
 .desktop-nav-content a:hover {
@@ -489,7 +489,7 @@ header {
         top: 45px;
     }
     .nav-bar {
-        top: 140px; /* Adjusted for larger header */
+        top: 140px;
     }
     
     /* Logo on far left */
@@ -527,11 +527,11 @@ header {
     
     header {
         padding: 0 15px;
-        height: 90px; /* Slightly reduced for mobile */
+        height: 90px;
     }
     
     .logo img {
-        height: 100px; /* Slightly smaller on mobile but still larger than before */
+        height: 100px;
     }
 }
 
@@ -551,8 +551,379 @@ header {
     }
     
     .logo img {
-        height: 90px; /* Adjusted for very small screens */
+        height: 90px;
     }
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: #0f0f0f;
+    margin-top: 95px; /* Adjusted for header height */
+    padding-top: 0;
+    top: 0;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0f0f;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Mobile-specific image styling */
+@media (max-width: 1199px) {
+    .hero {
+        height: calc(100vh - 95px); /* Adjust for header height */
+    }
+    
+    .image-container img {
+        transform: none !important;
+        object-fit: cover;
+        object-position: center 50%;
+    }
+}
+
+/* Stretch horizontally on big screens only */
+@media (min-width: 1200px) {
+    .image-container img {
+        object-fit: cover;
+        object-position: center 40%;
+        transform: scaleX(1.2);
+    }
+}
+
+/* --- BIG TYPOGRAPHY --- */
+.big-typography {
+    text-align: left;
+    text-transform: normal !important;
+    font-family: 'Archivo Black', sans-serif !important;
+    color: white !important;
+    z-index: 2;
+    position: relative;
+    margin-top: 15%;
+    margin-left: 10%;
+    width: 80%;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: bounceIn 1.2s ease-out 0.5s forwards;
+}
+
+/* Bounce animation for the big typography */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Move text to left on large screens */
+@media (min-width: 1200px) {
+    .big-typography {
+        margin-top: 0;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        transform: translateY(-50%);
+        width: 40%;
+        animation: bounceInDesktop 1.2s ease-out 0.5s forwards;
+    }
+    
+    @keyframes bounceInDesktop {
+        0% {
+            opacity: 0;
+            transform: translateY(-50%) translateX(-50px);
+        }
+        60% {
+            opacity: 1;
+            transform: translateY(-50%) translateX(20px);
+        }
+        80% {
+            transform: translateY(-50%) translateX(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+    }
+}
+
+.big-typography h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+/* New paragraph styling */
+.hero-paragraph {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-transform: none;
+    max-width: 600px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+    z-index: 2;
+    position: relative;
+}
+
+/* Mobile adjustments for paragraph */
+@media (max-width: 767px) {
+    .hero-paragraph {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-paragraph {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+}
+
+/* Call to Action Button Styles */
+.cta-button {
+    display: inline-block;
+    background: #2c5aa0;
+    color: white;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.cta-button:hover {
+    background: #1a3d75;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Mobile text size adjustment */
+@media (max-width: 767px) {
+    .big-typography h1 {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .big-typography h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+}
+
+/* Rotating Icon Section at Bottom */
+.rotating-icons {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    z-index: 2;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rotating-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: #2c5aa0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.rotating-icon.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.icon-text {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.icon-text.active {
+    opacity: 1;
+}
+
+.icon-text strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Mobile adjustments for rotating icons */
+@media (max-width: 768px) {
+    .rotating-icons {
+        bottom: 80px;
+        padding: 0 15px;
+    }
+    
+    .rotating-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+    
+    .icon-text {
+        font-size: 1rem;
+        min-height: 50px;
+    }
+    
+    .icon-text strong {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rotating-icons {
+        bottom: 70px;
+    }
+    
+    .rotating-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+    
+    .icon-text {
+        font-size: 0.9rem;
+        min-height: 45px;
+    }
+    
+    .icon-text strong {
+        font-size: 1rem;
+    }
+}
+
+/* --- SCROLL DOWN BUTTON --- */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 2;
+}
+
+.scroll-down:hover { 
+    background: rgba(255,255,255,0.4); 
+    transform: translateX(-50%) translateY(3px); 
+}
+
+.scroll-down::after {
+    content: '↓';
+    font-size: 1.5rem;
+    color: #2c5aa0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
 </style>
 </head>
@@ -584,12 +955,13 @@ header {
     </div>
 </div>
 
+<!-- HEADER -->
 <header>
     <div class="logo" id="logo">
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
 
-    <!-- DESKTOP NAV - Simplified -->
+    <!-- DESKTOP NAV -->
     <div class="desktop-nav">
         <div class="desktop-nav-item">
             <a class="nav-link desktop-nav-link" data-section="home">Home</a>
@@ -662,7 +1034,7 @@ header {
     </div>
 </div>
 
-<!-- NAVIGATION BAR - Simplified and White -->
+<!-- NAVIGATION BAR -->
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
         <li class="nav-item">
@@ -689,7 +1061,39 @@ header {
     </ul>
 </nav>
 
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="image-container">
+        <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/IMG_3016.jpg?v=1762625673" alt="Background Image">
+    </div>
+    
+    <div class="big-typography">
+        <h1>Building excellence <br> Delivering energy</h1>
+        <!-- New paragraph between heading and button -->
+        <div class="hero-paragraph">
+            From bulk fuel to complex constructions, we bring 10+ years of excellence to every project. Your trusted partner for innovation, reliability, and results.
+        </div>
+        <a href="#" class="cta-button">Get Quote</a>
+    </div>
+    
+    <!-- Rotating Icon Section at Bottom -->
+    <div class="rotating-icons">
+        <div class="icon-container">
+            <div class="rotating-icon active" id="rotatingIcon">
+                <i class="material-icons">local_shipping</i>
+            </div>
+        </div>
+        <div class="icon-text active" id="iconText">
+            <strong>24/7 Full Supply</strong>
+            Round the clock delivery
+        </div>
+    </div>
+    
+    <div class="scroll-down" id="scrollDownBtn"></div>
+</section>
+
 <script>
+// --- HEADER FUNCTIONALITY ---
 const menuIcon = document.getElementById('menuIcon');
 const logo = document.getElementById('logo');
 const navBar = document.getElementById('navBar');
@@ -769,7 +1173,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Get Quote button functionality
+// Get Quote button functionality (from halfscreen nav)
 const getQuoteBtn = document.querySelector('.get-quote-btn');
 getQuoteBtn.addEventListener('click', () => {
     alert('Get Quote functionality would be implemented here.');
@@ -783,6 +1187,79 @@ document.addEventListener('keydown', (e) => {
         halfscreenNav.classList.remove('active');
         menuIcon.classList.remove('active');
     }
+});
+
+// --- HERO SECTION FUNCTIONALITY ---
+// Scroll down button
+const scrollDownBtn = document.getElementById('scrollDownBtn');
+scrollDownBtn.addEventListener('click', () => {
+    // Scroll to the next section
+    const nextSection = document.querySelector('#about-page, .about-section, section:nth-of-type(3)');
+    if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        // If no about section, scroll down by viewport height
+        window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    }
+});
+
+// Rotating Icon Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const rotatingIcon = document.getElementById('rotatingIcon');
+    const iconText = document.getElementById('iconText');
+    
+    // Define the icons and their text
+    const icons = [
+        {
+            icon: 'local_shipping',
+            title: '24/7 Full Supply',
+            subtitle: 'Round the clock delivery'
+        },
+        {
+            icon: 'verified',
+            title: 'Quality Guaranteed',
+            subtitle: 'Premium standards'
+        },
+        {
+            icon: 'support_agent',
+            title: 'Expert Support',
+            subtitle: 'Professional assistance'
+        }
+    ];
+    
+    let currentIndex = 0;
+    
+    function rotateIcon() {
+        // Fade out current icon and text
+        rotatingIcon.classList.remove('active');
+        iconText.classList.remove('active');
+        
+        setTimeout(() => {
+            // Update to next icon
+            currentIndex = (currentIndex + 1) % icons.length;
+            const nextIcon = icons[currentIndex];
+            
+            // Update icon
+            rotatingIcon.innerHTML = `<i class="material-icons">${nextIcon.icon}</i>`;
+            
+            // Update text
+            iconText.innerHTML = `<strong>${nextIcon.title}</strong>${nextIcon.subtitle}`;
+            
+            // Fade in new icon and text
+            setTimeout(() => {
+                rotatingIcon.classList.add('active');
+                iconText.classList.add('active');
+            }, 100);
+        }, 500);
+    }
+    
+    // Start rotating every 5 seconds (5000ms)
+    setInterval(rotateIcon, 5000);
+    
+    // Initialize with first icon
+    const firstIcon = icons[0];
+    rotatingIcon.innerHTML = `<i class="material-icons">${firstIcon.icon}</i>`;
+    iconText.innerHTML = `<strong>${firstIcon.title}</strong>${firstIcon.subtitle}`;
 });
 </script>
 </body>
