@@ -38,6 +38,14 @@ body {
     overflow-x: hidden;
 }
 
+/* --- CONTAINER CLASS FOR CONSISTENT ALIGNMENT --- */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 /* --- ANNOUNCEMENT BAR --- */
 .announcement-bar {
     display: none;
@@ -46,7 +54,7 @@ body {
     left: 0;
     width: 100%;
     background: white;
-    padding: 13px 40px;
+    padding: 13px 0;
     font-size: 0.9rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     color: black;
@@ -57,6 +65,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .contact-info {
@@ -68,7 +80,8 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #2c5aa0; /* Changed to light blue */
+    color: #2c5aa0; /* Exact logo blue */
+    font-weight: 500;
 }
 
 .contact-icon-circle {
@@ -80,7 +93,7 @@ body {
     border-radius: 50%;
     background: #2c5aa0;
     border: 1px solid #2c5aa0;
-   color: white;
+    color: white;
     transition: all 0.3s ease;
 }
 
@@ -94,7 +107,7 @@ body {
 }
 
 .social-links a {
-    color: #2c5aa0; /* Changed to light blue */
+    color: #2c5aa0; /* Exact logo blue */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -103,7 +116,7 @@ body {
 }
 
 .social-links a:hover {
-    color: #2196f3;
+    color: #1a3d75;
 }
 
 .social-icon-circle {
@@ -139,10 +152,9 @@ header {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
     z-index: 1000;
     transition: all 0.3s ease;
+    padding: 0;
 }
 
 /* Header white background when past footer */
@@ -151,6 +163,17 @@ header.white-bg {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header container for consistent alignment */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 /* --- LOGO - ABSOLUTE FAR LEFT --- */
@@ -348,12 +371,13 @@ header.white-bg .desktop-nav a {
     color: #333; /* Changed to grey */
 }
 
+/* Fixed active underline alignment */
 .desktop-nav a.active::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 15px; /* Match padding */
     bottom: 0;
-    width: 100%;
+    width: calc(100% - 30px); /* Subtract padding on both sides */
     height: 4px;
     background: #2196f3;
     border-radius: 2px;
@@ -453,7 +477,7 @@ header.white-bg .desktop-nav a {
     }
     
     /* Ensure logo aligns with hero content */
-    header {
+    .header-container {
         padding: 0 20px;
     }
 }
@@ -464,13 +488,26 @@ header.white-bg .desktop-nav a {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     background: #0f0f0f;
     margin-top: 0;
     padding-top: 95px;
     top: 0;
     overflow: hidden;
+}
+
+/* Hero container for consistent alignment */
+.hero-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .image-container {
@@ -524,12 +561,11 @@ header.white-bg .desktop-nav a {
     color: white !important;
     z-index: 2;
     position: relative;
-    margin-top: 30%;
-    margin-left: 10%;
     width: 80%;
     opacity: 0;
     transform: translateY(50px);
     animation: bounceIn 1.2s ease-out 0.5s forwards;
+    margin-top: 60px; /* Proper vertical spacing */
 }
 
 /* Bounce animation for the big typography */
@@ -551,14 +587,10 @@ header.white-bg .desktop-nav a {
     }
 }
 
-/* Move text to left on large screens - MOVED DOWN */
+/* Move text to left on large screens - Proper vertical alignment */
 @media (min-width: 1200px) {
     .big-typography {
-        margin-top: 0;
-        position: absolute;
-        top: 50%; /* Changed from 35% to 50% to move down */
-        left: 10%;
-        transform: translateY(-50%);
+        margin-top: 80px; /* Proper vertical spacing on desktop */
         width: 40%;
         animation: bounceInDesktop 1.2s ease-out 0.5s forwards;
     }
@@ -566,18 +598,18 @@ header.white-bg .desktop-nav a {
     @keyframes bounceInDesktop {
         0% {
             opacity: 0;
-            transform: translateY(-50%) translateX(-50px);
+            transform: translateY(50px);
         }
         60% {
             opacity: 1;
-            transform: translateY(-50%) translateX(20px);
+            transform: translateY(-20px);
         }
         80% {
-            transform: translateY(-50%) translateX(-10px);
+            transform: translateY(10px);
         }
         100% {
             opacity: 1;
-            transform: translateY(-50%) translateX(0);
+            transform: translateY(0);
         }
     }
 }
@@ -677,11 +709,11 @@ header.white-bg .desktop-nav a {
     display: none;
 }
 
-/* --- SCROLL DOWN BUTTON FIX: Fixed position with rotation --- */
+/* --- SCROLL DOWN BUTTON FIX: Aligned with hamburger menu --- */
 .scroll-down {
     position: fixed;
     bottom: 50px;
-    right: 5%;
+    right: calc(5% + 40px); /* Aligned with hamburger menu grid line */
     width: 50px;
     height: 50px;
     background: white;
@@ -887,10 +919,12 @@ header.white-bg .desktop-nav a {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Footer container for consistent alignment with other sections */
 .footer-container {
-    width: 80%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 50px;
@@ -928,6 +962,13 @@ header.white-bg .desktop-nav a {
     text-transform: none;
 }
 
+/* Footer button shake animation */
+@keyframes subtleShake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-1px); }
+    20%, 40%, 60%, 80% { transform: translateX(1px); }
+}
+
 .supplier-button {
     display: inline-block;
     background: #2c5aa0;
@@ -950,6 +991,7 @@ header.white-bg .desktop-nav a {
     background-color: rgba(44, 90, 160, 1);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    animation: subtleShake 0.5s ease-in-out;
 }
 
 .footer-services h3,
@@ -1088,7 +1130,6 @@ header.white-bg .desktop-nav a {
 
 @media (max-width: 1024px) {
     .footer-container {
-        width: 90%;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
@@ -1104,9 +1145,9 @@ header.white-bg .desktop-nav a {
     }
     
     .footer-container {
-        width: 90%;
         grid-template-columns: 1fr;
         gap: 40px;
+        padding: 0 20px;
     }
     
     .footer-logo-section {
@@ -1125,8 +1166,8 @@ header.white-bg .desktop-nav a {
     }
     
     .footer-container {
-        width: 90%;
         gap: 30px;
+        padding: 0 20px;
     }
     
     .footer-logo img {
@@ -1159,10 +1200,11 @@ header.white-bg .desktop-nav a {
 /* Content container */
 #about-page .tg-content {
     width: 100%;
-    padding: 30px 1%;
+    padding: 30px 40px;
     margin: auto;
     position: relative;
     z-index: 2;
+    max-width: 1400px;
 }
 
 #about-page h1, #about-page h2, #about-page h3, #about-page .tg-subtitle {
@@ -1687,8 +1729,8 @@ header.white-bg .desktop-nav a {
         flex-direction: column; 
         align-items: flex-start;
         width: 100%;
-        max-width: 100%;
-        padding: 30px 1%;
+        max-width: 1400px;
+        padding: 30px 40px;
     }
 
     /* Desktop image container - Frame passes under image but shows around edges */
@@ -1743,16 +1785,16 @@ header.white-bg .desktop-nav a {
         font-size: 18px;
         line-height: 1.8;
         max-width: 100%;
-        padding: 0 8%;
+        padding: 0;
     }
 
     #about-page .tg-subtitle,
     #about-page .tg-title {
-        padding: 0 8%;
+        padding: 0;
     }
 
     #about-page .tg-impact {
-        padding: 0 8%;
+        padding: 0;
     }
 
     #about-page .tg-title {
@@ -1860,14 +1902,14 @@ header.white-bg .desktop-nav a {
     }
     #about-page .tg-description, #about-page .tg-impact-text { font-size: 12px; }
     #about-page .tg-description {
-        padding: 0 5%;
+        padding: 0;
     }
     #about-page .tg-subtitle,
     #about-page .tg-title {
-        padding: 0 5%;
+        padding: 0;
     }
     #about-page .tg-impact {
-        padding: 0 5%;
+        padding: 0;
     }
     #about-page .tg-video-preview { 
         height: 260px; 
@@ -2055,37 +2097,39 @@ header.white-bg .desktop-nav a {
 </div>
 
 <header>
-    <div class="logo" id="logo">
-        <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
-    </div>
+    <div class="header-container">
+        <div class="logo" id="logo">
+            <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
+        </div>
 
-    <!-- DESKTOP NAV -->
-    <div class="desktop-nav">
-        <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="home">Home</a>
+        <!-- DESKTOP NAV -->
+        <div class="desktop-nav">
+            <div class="desktop-nav-item">
+                <a class="nav-link desktop-nav-link" data-section="home">Home</a>
+            </div>
+            <div class="desktop-nav-item">
+                <a class="nav-link desktop-nav-link" data-section="about">About Us</a>
+            </div>
+            <div class="desktop-nav-item">
+                <a class="nav-link desktop-nav-link" data-section="values">Values</a>
+            </div>
+            <div class="desktop-nav-item">
+                <a class="nav-link desktop-nav-link" data-section="services">Services</a>
+            </div>
+            <div class="desktop-nav-item">
+                <a class="nav-link desktop-nav-link" data-section="projects">Projects</a>
+            </div>
+            <div class="desktop-nav-item">
+                <a class="nav-link desktop-nav-link" data-section="contact">Contact Us</a>
+            </div>
         </div>
-        <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="about">About Us</a>
-        </div>
-        <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="values">Values</a>
-        </div>
-        <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="services">Services</a>
-        </div>
-        <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="projects">Projects</a>
-        </div>
-        <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="contact">Contact Us</a>
-        </div>
-    </div>
 
-    <!-- MENU ICON - ABSOLUTE FAR RIGHT -->
-    <div class="menu-icon" id="menuIcon">
-        <span></span>
-        <span></span>
-        <span></span>
+        <!-- MENU ICON - ABSOLUTE FAR RIGHT -->
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 </header>
 
@@ -2119,12 +2163,14 @@ header.white-bg .desktop-nav a {
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/IMG_3016.jpg?v=1762625673" alt="Background Image">
     </div>
     
-    <div class="big-typography">
-        <h1>Building excellence <br> Delivering energy</h1>
-        <div class="hero-paragraph">
-            From bulk fuel to complex constructions, we bring 10+ years of excellence to every project. Your trusted partner for innovation, reliability, and results.
+    <div class="hero-container">
+        <div class="big-typography">
+            <h1>Building excellence <br> Delivering energy</h1>
+            <div class="hero-paragraph">
+                From bulk fuel to complex constructions, we bring 10+ years of excellence to every project. Your trusted partner for innovation, reliability, and results.
+            </div>
+            <a href="#" class="cta-button">Get Quote</a>
         </div>
-        <a href="#" class="cta-button">Get Quote</a>
     </div>
     
     <!-- Scroll down button with rotation functionality -->
