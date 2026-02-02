@@ -126,7 +126,7 @@ body {
     font-size: 16px;
 }
 
-/* --- HEADER --- */
+/* --- HEADER FIX: Logo on far left, menu on far right --- */
 header {
     position: fixed;
     top: 0; /* Changed from 53px to 0 - header now starts at very top */
@@ -139,23 +139,50 @@ header {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Fixed: Proper spacing between logo and menu */
     padding: 0 40px;
     z-index: 1000;
 }
 
-/* --- LOGO - ON FAR FAR LEFT --- */
+/* --- LOGO - ABSOLUTE FAR LEFT --- */
 .logo {
     cursor: pointer;
     position: relative;
-    margin-left: 0; /* Changed from 10% to 0 - FAR FAR LEFT */
-    margin-right: auto;
+    margin-left: 0; /* Ensure it's on the far left */
+    margin-right: auto; /* Push everything else to the right */
 }
 .logo img {
     height: 120px; /* INCREASED from 100px to 120px */
     width: auto;
     /* Shadow removed as requested */
 }
+
+/* --- MENU ICON - ABSOLUTE FAR RIGHT --- */
+.menu-icon {
+    width: 25px;
+    height: 17px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+    margin-left: auto; /* Push to far right */
+    order: 2; /* Ensure it's after logo */
+}
+
+.menu-icon span {
+    background: white;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 8px; }
+.menu-icon span:nth-child(3) { top: 16px; }
+.menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.menu-icon.active span:nth-child(2) { opacity: 0; }
+.menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
 
 /* --- NAVIGATION BAR --- */
 .nav-bar {
@@ -273,31 +300,6 @@ header {
 .nav-content a:hover {
     color: #2c5aa0; /* CHANGED from cyan to brand blue */
 }
-
-/* --- MENU ICON - MOBILE ONLY --- */
-.menu-icon {
-    width: 25px;
-    height: 17px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    display: block;
-}
-
-.menu-icon span {
-    background: white;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    left: 0;
-    transition: all 0.3s ease;
-}
-.menu-icon span:nth-child(1) { top: 0; }
-.menu-icon span:nth-child(2) { top: 8px; }
-.menu-icon span:nth-child(3) { top: 16px; }
-.menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 8px; }
-.menu-icon.active span:nth-child(2) { opacity: 0; }
-.menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
 
 /* --- DESKTOP NAV --- */
 .desktop-nav {
@@ -577,7 +579,7 @@ header {
     }
 }
 
-/* Call to Action Button Styles */
+/* Call to Action Button Styles - Used as reference for consistency */
 .cta-button {
     display: inline-block;
     background: #2c5aa0;
@@ -634,11 +636,11 @@ header {
     display: none; /* Removed icons as requested */
 }
 
-/* --- SCROLL DOWN BUTTON - MOVED TO FAR RIGHT --- */
+/* --- SCROLL DOWN BUTTON FIX: Fixed position --- */
 .scroll-down {
-    position: absolute;
-    bottom: 30px;
-    right: 5%; /* Changed from center to right side */
+    position: fixed; /* Changed from absolute to fixed */
+    bottom: 50px; /* Moved slightly lower */
+    right: 5%;
     width: 50px;
     height: 50px;
     background: white;
@@ -648,8 +650,8 @@ header {
     justify-content: center;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
-    z-index: 2;
-    transform: none; /* Remove center transform */
+    z-index: 1002; /* Higher than other elements */
+    transform: none;
 }
 
 .scroll-down:hover { 
@@ -674,7 +676,7 @@ header {
     z-index: 1;
 }
 
-/* --- READY TO WORK SECTION - UPDATED --- */
+/* --- READY TO WORK SECTION FIX: Consistent width --- */
 .ready-to-work-section {
     width: 100%;
     background: #0f0f0f;
@@ -684,8 +686,8 @@ header {
 }
 
 .ready-to-work-container {
-    width: 80%; /* Same width as other sections */
-    max-width: 1200px;
+    width: 80%; /* Fixed: Same width as other sections */
+    max-width: 1200px; /* Fixed: Same max-width as other sections */
     margin: 0 auto;
     backdrop-filter: blur(20px) saturate(200%);
     -webkit-backdrop-filter: blur(20px) saturate(200%);
@@ -769,6 +771,7 @@ header {
     letter-spacing: 0.5px;
 }
 
+/* BUTTON FIX: Use existing cta-button class for consistency */
 .get-code-button-container {
     text-align: center;
     margin-top: 40px;
@@ -776,60 +779,27 @@ header {
 
 .get-code-button {
     display: inline-block;
-    background: linear-gradient(135deg, #2c5aa0, #3a6bc8);
-    color: white;
-    padding: 22px 55px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    font-family: 'Mozilla Text', sans-serif;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 
-        0 10px 30px rgba(44, 90, 160, 0.3),
-        0 4px 15px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.get-code-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.2), 
-        transparent);
-    transition: 0.6s;
+    background: #2c5aa0; /* Same as cta-button */
+    color: white; /* Same as cta-button */
+    padding: 18px 45px; /* Same as cta-button */
+    font-size: 1.1rem; /* Same as cta-button */
+    font-weight: 600; /* Same as cta-button */
+    letter-spacing: 1.5px; /* Same as cta-button */
+    text-transform: uppercase; /* Same as cta-button */
+    border: none; /* Same as cta-button */
+    cursor: pointer; /* Same as cta-button */
+    transition: all 0.3s ease; /* Same as cta-button */
+    font-family: 'Mozilla Text', sans-serif; /* Same as cta-button */
+    text-decoration: none; /* Same as cta-button */
+    position: relative; /* Same as cta-button */
+    z-index: 2; /* Same as cta-button */
+    border-radius: 0; /* Ensured: No border radius to match other buttons */
 }
 
 .get-code-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 15px 40px rgba(44, 90, 160, 0.4),
-        0 6px 20px rgba(0, 0, 0, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    background: linear-gradient(135deg, #3a6bc8, #2c5aa0);
-}
-
-.get-code-button:hover::before {
-    left: 100%;
-}
-
-.get-code-button:active {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 8px 25px rgba(44, 90, 160, 0.3),
-        0 4px 15px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background: #1a3d75; /* Same as cta-button */
+    transform: translateY(-3px); /* Same as cta-button */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Same as cta-button */
 }
 
 @media (max-width: 768px) {
@@ -838,7 +808,7 @@ header {
     }
     
     .ready-to-work-container {
-        width: 90%;
+        width: 90%; /* Responsive width adjustment */
         padding: 60px 30px;
     }
     
@@ -852,14 +822,14 @@ header {
     }
     
     .get-code-button {
-        padding: 20px 45px;
-        font-size: 1.2rem;
+        padding: 15px 30px; /* Same as cta-button mobile */
+        font-size: 1rem; /* Same as cta-button mobile */
     }
 }
 
 @media (max-width: 480px) {
     .ready-to-work-container {
-        width: 95%;
+        width: 95%; /* Responsive width adjustment */
         padding: 50px 25px;
     }
     
@@ -873,8 +843,8 @@ header {
     }
     
     .get-code-button {
-        padding: 18px 40px;
-        font-size: 1.1rem;
+        padding: 12px 25px; /* Same as cta-button mobile small */
+        font-size: 0.9rem; /* Same as cta-button mobile small */
     }
 }
 
@@ -890,7 +860,7 @@ header {
 
 .footer-container {
     width: 80%; /* Same width as other sections */
-    max-width: 1200px;
+    max-width: 1200px; /* Same max-width as other sections */
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1043,6 +1013,7 @@ header {
     font-size: 18px;
 }
 
+/* PHONE NUMBER COLOR FIX: Ensure white color for phone numbers */
 .contact-text-footer h4 {
     font-family: 'Mozilla Text', sans-serif;
     font-size: 0.9rem;
@@ -1055,9 +1026,19 @@ header {
 .contact-text-footer p {
     font-family: 'Mozilla Text', sans-serif;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7); /* Phone numbers in white with transparency */
+    color: white; /* FIXED: Changed from rgba to solid white */
     line-height: 1.5;
     text-transform: none;
+}
+
+/* Phone number link specific fix */
+.contact-text-footer p a,
+.contact-text-footer p a:link,
+.contact-text-footer p a:visited,
+.contact-text-footer p a:hover,
+.contact-text-footer p a:active {
+    color: white !important; /* Force white color */
+    text-decoration: none;
 }
 
 .footer-bottom {
@@ -2071,7 +2052,7 @@ header {
         </div>
     </div>
 
-    <!-- MENU ICON - MOBILE ONLY -->
+    <!-- MENU ICON - ABSOLUTE FAR RIGHT -->
     <div class="menu-icon" id="menuIcon">
         <span></span>
         <span></span>
@@ -2118,7 +2099,7 @@ header {
         <a href="#" class="cta-button">Get Quote</a>
     </div>
     
-    <!-- Scroll down button moved to far right -->
+    <!-- Scroll down button - Now fixed position -->
     <div class="scroll-down" id="scrollDownBtn"></div>
 </section>
 
@@ -2233,7 +2214,7 @@ header {
     </div>
 </div>
 
-<!-- READY TO WORK SECTION - UPDATED -->
+<!-- READY TO WORK SECTION - FIXED WIDTH AND BUTTON -->
 <section class="ready-to-work-section">
     <div class="ready-to-work-container">
         <h2 class="ready-to-work-title">READY TO WORK WITH US?</h2>
