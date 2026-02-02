@@ -148,7 +148,7 @@ header {
 .logo {
     cursor: pointer;
     position: relative;
-    margin-left: 10%; /* Added to align with hero content */
+    margin-left: 10%; /* Aligns with hero content */
 }
 .logo img {
     height: 120px; /* INCREASED from 100px to 120px */
@@ -632,16 +632,14 @@ header {
     display: none; /* Removed icons as requested */
 }
 
-/* --- SCROLL DOWN BUTTON --- */
+/* --- SCROLL DOWN BUTTON - MOVED TO FAR RIGHT --- */
 .scroll-down {
     position: absolute;
     bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 5%; /* Changed from center to right side */
     width: 50px;
     height: 50px;
     background: white;
-    
     border: 2px solid #fff;
     display: flex;
     align-items: center;
@@ -649,11 +647,12 @@ header {
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
     z-index: 2;
+    transform: none; /* Remove center transform */
 }
 
 .scroll-down:hover { 
     background: rgba(255,255,255,0.4); 
-    transform: translateX(-50%) translateY(3px); 
+    transform: translateY(3px); 
 }
 
 .scroll-down::after {
@@ -671,6 +670,410 @@ header {
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
     z-index: 1;
+}
+
+/* --- WORK WITH US FORM SECTION --- */
+.work-with-us-section {
+    width: 100%;
+    background: #0f0f0f;
+    padding: 80px 10%;
+    position: relative;
+    z-index: 2;
+}
+
+.work-with-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.work-with-us-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.work-with-us-subtitle {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: none;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.work-with-us-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.work-with-us-form label {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.work-with-us-form input,
+.work-with-us-form textarea,
+.work-with-us-form select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 15px 20px;
+    color: white;
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.work-with-us-form input:focus,
+.work-with-us-form textarea:focus,
+.work-with-us-form select:focus {
+    outline: none;
+    border-color: #2c5aa0;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.work-with-us-form input::placeholder,
+.work-with-us-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.work-with-us-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    background: #2c5aa0;
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Mozilla Text', sans-serif;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background: #1a3d75;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .work-with-us-section {
+        padding: 60px 5%;
+    }
+    
+    .work-with-us-container {
+        padding: 40px 30px;
+    }
+    
+    .work-with-us-title {
+        font-size: 2.2rem;
+    }
+    
+    .work-with-us-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    
+    .work-with-us-form {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .work-with-us-container {
+        padding: 30px 20px;
+    }
+    
+    .work-with-us-title {
+        font-size: 1.8rem;
+    }
+    
+    .work-with-us-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* --- FOOTER --- */
+.footer {
+    width: 100%;
+    background: #0f0f0f;
+    padding: 80px 10% 40px;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-logo-section {
+    grid-column: 1 / 3;
+}
+
+.footer-logo {
+    margin-bottom: 25px;
+}
+
+.footer-logo img {
+    height: 80px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.footer-company-info h3 {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-company-info p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+.supplier-button {
+    display: inline-block;
+    background: #2c5aa0;
+    color: white;
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(44, 90, 160, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.supplier-button:hover {
+    background-color: rgba(44, 90, 160, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-services h3,
+.footer-links h3,
+.footer-contact h3 {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-services h3::after,
+.footer-links h3::after,
+.footer-contact h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #2c5aa0;
+}
+
+.footer-services ul,
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-services li,
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-services a,
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-services a:hover,
+.footer-links a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-services a::before,
+.footer-links a::before {
+    content: '▸';
+    margin-right: 10px;
+    color: #2c5aa0;
+    font-size: 0.8rem;
+}
+
+.footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon-footer {
+    width: 40px;
+    height: 40px;
+    background: rgba(44, 90, 160, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon-footer i {
+    color: #2c5aa0;
+    font-size: 18px;
+}
+
+.contact-text-footer h4 {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-text-footer p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    text-transform: none;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .footer-logo-section {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 5% 30px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-logo-section {
+        grid-column: 1;
+    }
+    
+    .footer-bottom {
+        margin-top: 40px;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 50px 5% 25px;
+    }
+    
+    .footer-container {
+        gap: 30px;
+    }
+    
+    .footer-logo img {
+        height: 60px;
+    }
 }
 
 /* --- ABOUT PAGE STYLES --- */
@@ -1667,8 +2070,7 @@ header {
         <a href="#" class="cta-button">Get Quote</a>
     </div>
     
-    <!-- Removed Rotating Icons Section -->
-    
+    <!-- Scroll down button moved to far right -->
     <div class="scroll-down" id="scrollDownBtn"></div>
 </section>
 
@@ -1783,6 +2185,155 @@ header {
     </div>
 </div>
 
+<!-- WORK WITH US FORM SECTION -->
+<section class="work-with-us-section">
+    <div class="work-with-us-container">
+        <h2 class="work-with-us-title">WORK WITH US</h2>
+        <p class="work-with-us-subtitle">
+            Ready to bring your project to life? Partner with Ingestion Ennovation for innovative solutions, 
+            reliable service, and exceptional results. Share your details below and let's build something great together.
+        </p>
+        
+        <form class="work-with-us-form" id="workWithUsForm">
+            <div class="form-group">
+                <label for="name">FULL NAME</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">EMAIL ADDRESS</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">PHONE NUMBER</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="company">COMPANY NAME</label>
+                <input type="text" id="company" name="company" placeholder="Enter your company name">
+            </div>
+            
+            <div class="form-group">
+                <label for="service">SERVICE INTERESTED IN</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="bulk-fuel">Bulk Fuel Supply</option>
+                    <option value="green-energy">Green Energy Services</option>
+                    <option value="construction">Construction & Consultation</option>
+                    <option value="compliance">Compliance Services</option>
+                    <option value="office-supplies">Office Supplies & Consumables</option>
+                    <option value="training">Staff Impact Training</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="budget">PROJECT BUDGET</label>
+                <select id="budget" name="budget">
+                    <option value="">Select budget range</option>
+                    <option value="under-50k">Under R50,000</option>
+                    <option value="50k-100k">R50,000 - R100,000</option>
+                    <option value="100k-500k">R100,000 - R500,000</option>
+                    <option value="500k-1m">R500,000 - R1,000,000</option>
+                    <option value="over-1m">Over R1,000,000</option>
+                </select>
+            </div>
+            
+            <div class="form-group full-width">
+                <label for="message">PROJECT DETAILS</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project, timeline, and specific requirements..." required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button">SUBMIT INQUIRY</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo and Company Info -->
+        <div class="footer-logo-section">
+            <div class="footer-logo">
+                <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Ingestion Logo">
+            </div>
+            <div class="footer-company-info">
+                <h3>INGESTION ENNOVATION</h3>
+                <p>Driving innovation in construction and energy solutions. We deliver excellence through sustainable practices and cutting-edge technology.</p>
+                <a href="#" class="supplier-button">SUPPLIER: MAAA0017105</a>
+            </div>
+        </div>
+        
+        <!-- Our Services -->
+        <div class="footer-services">
+            <h3>OUR SERVICES</h3>
+            <ul>
+                <li><a href="#">Bulk Fuel Supply</a></li>
+                <li><a href="#">Green Energy Services</a></li>
+                <li><a href="#">Construction & Consultation</a></li>
+                <li><a href="#">Compliance Services</a></li>
+                <li><a href="#">Office Supplies & Consumables</a></li>
+                <li><a href="#">Staff Impact Training</a></li>
+            </ul>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h3>QUICK LINKS</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Values</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Our Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Contact Us -->
+        <div class="footer-contact">
+            <h3>CONTACT US</h3>
+            <div class="footer-contact-info">
+                <div class="contact-item-footer">
+                    <div class="contact-icon-footer">
+                        <i class="material-icons">location_on</i>
+                    </div>
+                    <div class="contact-text-footer">
+                        <h4>ADDRESS</h4>
+                        <p>296 Andries Street, 515 Constantia Building, Pretoria, 0002</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item-footer">
+                    <div class="contact-icon-footer">
+                        <i class="material-icons">phone</i>
+                    </div>
+                    <div class="contact-text-footer">
+                        <h4>PHONE</h4>
+                        <p>+27 76 270 3475<br>+27 67 619 0270</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item-footer">
+                    <div class="contact-icon-footer">
+                        <i class="material-icons">email</i>
+                    </div>
+                    <div class="contact-text-footer">
+                        <h4>EMAIL</h4>
+                        <p>ingestion.pty@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 INGESTION ENNOVATION. ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+</footer>
+
 <script>
 const menuIcon = document.getElementById('menuIcon');
 const logo = document.getElementById('logo');
@@ -1890,7 +2441,59 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Removed Rotating Icon Functionality as requested
+// Work With Us Form Submission
+const workWithUsForm = document.getElementById('workWithUsForm');
+if (workWithUsForm) {
+    workWithUsForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+        
+        // Here you would typically send the data to your backend
+        // For now, we'll just show an alert and reset the form
+        alert('Thank you for your inquiry! We will contact you shortly.');
+        console.log('Form data:', formObject); // You can see the data in console
+        
+        // Reset form
+        this.reset();
+        
+        // Backend Integration Note:
+        // To connect this form to a backend, you would need to:
+        // 1. Set up a server (Node.js, PHP, Python, etc.)
+        // 2. Create an API endpoint to receive form data
+        // 3. Update the form action attribute to point to your endpoint
+        // 4. Add form validation and email sending functionality
+        // 5. Implement CSRF protection if needed
+        // 
+        // Example backend endpoint structure:
+        // POST /api/contact/submit
+        // Headers: Content-Type: application/json
+        // Body: { name, email, phone, company, service, budget, message }
+        //
+        // You can use the formObject above as your request body
+    });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 </script>
 </body>
 </html>
