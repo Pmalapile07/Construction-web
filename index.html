@@ -68,7 +68,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: black;
+    color: #2c5aa0; /* Changed to light blue */
 }
 
 .contact-icon-circle {
@@ -94,7 +94,7 @@ body {
 }
 
 .social-links a {
-    color: white;
+    color: #2c5aa0; /* Changed to light blue */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -142,6 +142,15 @@ header {
     justify-content: space-between;
     padding: 0 40px;
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Header white background when past footer */
+header.white-bg {
+    background-color: white;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* --- LOGO - ABSOLUTE FAR LEFT --- */
@@ -182,6 +191,11 @@ header {
 .menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 8px; }
 .menu-icon.active span:nth-child(2) { opacity: 0; }
 .menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+
+/* Menu icon grey when header is white */
+header.white-bg .menu-icon span {
+    background: #333; /* Changed to grey */
+}
 
 /* --- NAVIGATION BAR --- */
 .nav-bar {
@@ -329,6 +343,11 @@ header {
     align-items: center;
 }
 
+/* Desktop nav color change when header is white */
+header.white-bg .desktop-nav a {
+    color: #333; /* Changed to grey */
+}
+
 .desktop-nav a.active::after {
     content: '';
     position: absolute;
@@ -413,6 +432,29 @@ header {
     }
     .nav-bar {
         top: 148px;
+    }
+    
+    /* Hide Facebook and LinkedIn on desktop */
+    .social-links {
+        display: none;
+    }
+}
+
+/* Mobile logo alignment */
+@media (max-width: 1023px) {
+    .logo {
+        margin-left: 0;
+        padding-left: 0;
+        transform: translateX(-15px); /* Move logo further left */
+    }
+    
+    .logo img {
+        height: 100px;
+    }
+    
+    /* Ensure logo aligns with hero content */
+    header {
+        padding: 0 20px;
     }
 }
 
@@ -509,12 +551,12 @@ header {
     }
 }
 
-/* Move text to left on large screens */
+/* Move text to left on large screens - MOVED DOWN */
 @media (min-width: 1200px) {
     .big-typography {
         margin-top: 0;
         position: absolute;
-        top: 35%;
+        top: 50%; /* Changed from 35% to 50% to move down */
         left: 10%;
         transform: translateY(-50%);
         width: 40%;
@@ -699,6 +741,14 @@ header {
     border-radius: 0 !important; /* NO border radius */
 }
 
+/* Increased height on mobile */
+@media (max-width: 768px) {
+    .ready-to-work-section {
+        height: 350px; /* Increased height */
+        padding: 70px 20px; /* Increased padding */
+    }
+}
+
 .ready-to-work-container {
     width: 100%;
     max-width: 100%; /* Full width on desktop */
@@ -763,7 +813,7 @@ header {
 @media (max-width: 768px) {
     .ready-to-work-section {
         padding: 40px 20px;
-        height: 250px;
+        height: 350px; /* Increased height */
     }
     
     .ready-to-work-title {
@@ -785,8 +835,8 @@ header {
 
 @media (max-width: 480px) {
     .ready-to-work-section {
-        padding: 30px 20px;
-        height: 200px;
+        padding: 40px 20px;
+        height: 350px; /* Increased height */
     }
     
     .ready-to-work-title {
@@ -1972,19 +2022,19 @@ header {
                 <div class="contact-icon-circle">
                     <i class="material-icons">phone</i>
                 </div>
-                <span style="color: black;">+27 76 270 3475</span>
+                <span>+27 76 270 3475</span>
             </div>
             <div class="contact-item">
                 <div class="contact-icon-circle">
                     <i class="material-icons">phone_iphone</i>
                 </div>
-                <span style="color: black;">+27 67 619 0270</span>
+                <span>+27 67 619 0270</span>
             </div>
             <div class="contact-item">
                 <div class="contact-icon-circle">
                     <i class="material-icons">email</i>
                 </div>
-                <span style="color: black;">info@ingestionpty.co.za</span>
+                <span>info@ingestionpty.co.za</span>
             </div>
         </div>
         <div class="social-links">
@@ -2064,7 +2114,7 @@ header {
 </nav>
 
 <!-- HERO SECTION -->
-<section class="hero">
+<section class="hero" id="home">
     <div class="image-container">
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/IMG_3016.jpg?v=1762625673" alt="Background Image">
     </div>
@@ -2104,7 +2154,7 @@ header {
         </div>
 
         <!-- TEXT CONTENT with enhanced whiter fog -->
-        <div class="text-content">
+        <div class="text-content" id="about">
             <div class="tg-subtitle">ABOUT US</div>
             <h1 class="tg-title">DRIVEN BY INNOVATION</h1>
             <p class="tg-description">
@@ -2129,7 +2179,7 @@ header {
         </div>
 
         <!-- UPDATED IMPACT SECTION -->
-        <div class="tg-impact">
+        <div class="tg-impact" id="values">
             <h3 class="tg-impact-title">OUR IMPACT</h3>
             <p class="tg-impact-text">
                 At Ingestion Ennovation, our impact extends beyond construction and fuel supply - we empower communities, 
@@ -2152,13 +2202,13 @@ header {
         </div>
 
         <!-- IMAGE BACKGROUND SECTION - COMMITTED TO EXCELLENCE -->
-        <div class="image-bg-section">
+        <div class="image-bg-section" id="services">
             <div class="image-bg-title">COMMITTED TO EXCELLENCE</div>
             <a href="/excellence" class="image-bg-button">Discover More</a>
         </div>
 
         <!-- NEW COMPANY PROFILE SECTION -->
-        <div class="company-profile-section">
+        <div class="company-profile-section" id="projects">
             <div class="company-profile-title">COMPANY PROFILE</div>
             <a href="YOUR_PDF_LINK_HERE" download="Company-Profile.pdf" class="company-profile-button">
                 <span>Download PDF</span>
@@ -2193,7 +2243,7 @@ header {
 </div>
 
 <!-- READY TO WORK SECTION - MATCHES "WHO WE ARE" AESTHETIC -->
-<section class="ready-to-work-section">
+<section class="ready-to-work-section" id="contact">
     <div class="ready-to-work-container">
         <h2 class="ready-to-work-title">READY TO WORK WITH US?</h2>
         <p class="ready-to-work-subtitle">
@@ -2300,6 +2350,7 @@ const valuesLink = document.getElementById('valuesLink');
 const servicesLink = document.getElementById('servicesLink');
 const projectsLink = document.getElementById('projectsLink');
 const contactLink = document.getElementById('contactLink');
+const header = document.querySelector('header');
 
 // Desktop navigation elements
 const desktopLinks = document.querySelectorAll('.desktop-nav a');
@@ -2334,11 +2385,34 @@ function updateScrollButton() {
     }
 }
 
+// Check if header should be white (past the ready-to-work section)
+function updateHeaderBackground() {
+    const readyToWorkSection = document.getElementById('contact');
+    const footer = document.querySelector('.footer');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Get the position of the ready-to-work section
+    const readyToWorkTop = readyToWorkSection.offsetTop;
+    const readyToWorkHeight = readyToWorkSection.offsetHeight;
+    const readyToWorkBottom = readyToWorkTop + readyToWorkHeight;
+    
+    // If we've scrolled past the ready-to-work section, make header white
+    if (scrollTop > readyToWorkBottom) {
+        header.classList.add('white-bg');
+    } else {
+        header.classList.remove('white-bg');
+    }
+}
+
 // Initial check
 updateScrollButton();
+updateHeaderBackground();
 
 // Listen for scroll events
-window.addEventListener('scroll', updateScrollButton);
+window.addEventListener('scroll', () => {
+    updateScrollButton();
+    updateHeaderBackground();
+});
 
 // Scroll functionality
 scrollDownBtn.addEventListener('click', () => {
@@ -2347,7 +2421,7 @@ scrollDownBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
         // Scroll to the about page section
-        const aboutPage = document.getElementById('about-page');
+        const aboutPage = document.getElementById('about');
         aboutPage.scrollIntoView({ behavior: 'smooth' });
     }
 });
@@ -2355,7 +2429,83 @@ scrollDownBtn.addEventListener('click', () => {
 // Logo scroll to top functionality
 logo.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    header.classList.remove('white-bg');
 });
+
+// Navigation scroll functionality
+function setupNavigation() {
+    // Mobile navigation
+    const mobileNavLinks = {
+        homeLink: 'home',
+        aboutLink: 'about',
+        valuesLink: 'values',
+        servicesLink: 'services',
+        projectsLink: 'projects',
+        contactLink: 'contact'
+    };
+    
+    // Add click events to mobile nav links
+    Object.keys(mobileNavLinks).forEach(linkId => {
+        const link = document.getElementById(linkId);
+        if (link) {
+            link.addEventListener('click', () => {
+                const targetId = mobileNavLinks[linkId];
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    // Close mobile menu
+                    navBar.classList.remove('active');
+                    menuIcon.classList.remove('active');
+                }
+            });
+        }
+    });
+    
+    // Desktop navigation
+    desktopLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const section = link.getAttribute('data-section');
+            const targetElement = document.getElementById(section);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update active state
+                desktopLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // Update active state on scroll
+    window.addEventListener('scroll', () => {
+        const sections = ['home', 'about', 'values', 'services', 'projects', 'contact'];
+        const scrollPosition = window.scrollY + 100;
+        
+        let currentSection = 'home';
+        
+        for (const section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+                const offsetTop = element.offsetTop;
+                const offsetBottom = offsetTop + element.offsetHeight;
+                
+                if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+                    currentSection = section;
+                    break;
+                }
+            }
+        }
+        
+        // Update active link
+        desktopLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === currentSection) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
 
 // Desktop nav underline toggle
 desktopLinks.forEach(link => {
@@ -2429,22 +2579,9 @@ document.addEventListener('DOMContentLoaded', function() {
             modalVideo.currentTime = 0;
         }
     });
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
+    
+    // Setup navigation
+    setupNavigation();
 });
 </script>
 </body>
