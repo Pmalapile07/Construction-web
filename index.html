@@ -792,11 +792,11 @@ header.white-bg .desktop-nav a {
     background: transparent;
     border: 2px solid white;
     color: white;
-    padding: 18px 45px;
-    font-size: 1.1rem;
+    padding: 10px 25px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'archivo', sans-serif;
@@ -828,8 +828,8 @@ header.white-bg .desktop-nav a {
     }
     
     .get-code-button {
-        padding: 15px 30px;
-        font-size: 1rem;
+        padding: 10px 25px;
+        font-size: 14px;
     }
 }
 
@@ -850,8 +850,8 @@ header.white-bg .desktop-nav a {
     }
     
     .get-code-button {
-        padding: 12px 25px;
-        font-size: 0.9rem;
+        padding: 8px 20px;
+        font-size: 12px;
     }
 }
 
@@ -872,8 +872,8 @@ header.white-bg .desktop-nav a {
     }
     
     .get-code-button {
-        padding: 18px 45px;
-        font-size: 1.1rem;
+        padding: 12px 30px;
+        font-size: 16px;
     }
 }
 
@@ -1221,6 +1221,16 @@ header.white-bg .desktop-nav a {
     background: transparent;
 }
 
+/* Updated typography for ABOUT section to match hero */
+#about-page .tg-description {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    text-transform: none;
+    max-width: 100%;
+}
+
 /* Updated Video Preview Section with construction road image */
 #about-page .tg-video-preview {
     width: 100%;
@@ -1322,63 +1332,15 @@ header.white-bg .desktop-nav a {
     font-family: Arial, sans-serif;
 }
 
-/* UPDATED VALUES SECTION */
-#about-page .tg-values {
-    border-left: 6px solid #2c5aa0;
-    padding-left: 25px;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 3;
-    margin-top: -50px; /* Added to make it slightly higher */
-}
-
-#about-page .tg-values-title { 
-    font-size: 22px; 
-    margin-bottom: 10px; 
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#about-page .tg-values-text { 
-    font-size: 12px; 
-    line-height: 1.6;
-    color: #444;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-    background: transparent;
-}
-
-/* Updated typography to match hero paragraph */
-#about-page .tg-values-text,
-#about-page .tg-impact-text {
-    font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #444;
-    text-transform: none;
-    max-width: 100%;
-}
-
-/* UPDATED IMPACT SECTION */
 #about-page .tg-impact {
     border-left: 6px solid #2c5aa0;
     padding-left: 25px;
     margin-bottom: 40px;
     position: relative;
     z-index: 3;
-    margin-top: 40px; /* Added spacing */
 }
 
-#about-page .tg-impact-title { 
-    font-size: 22px; 
-    margin-bottom: 10px; 
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
+#about-page .tg-impact-title { font-size: 22px; margin-bottom: 10px; }
 #about-page .tg-impact-text { 
     font-size: 12px; 
     line-height: 1.6;
@@ -1389,8 +1351,8 @@ header.white-bg .desktop-nav a {
     background: transparent;
 }
 
-/* Updated typography for ABOUT section */
-#about-page .tg-description {
+/* Updated typography for impact text to match hero */
+#about-page .tg-impact-text {
     font-family: 'Mozilla Text', sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -1707,45 +1669,6 @@ header.white-bg .desktop-nav a {
     color: #2c5aa0;
 }
 
-/* New Projects Section */
-#about-page .projects-section {
-    width: 100%;
-    height: 300px;
-    background-color: #2c5aa0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-#about-page .projects-title {
-    font-size: 36px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    font-family: 'archivo', sans-serif;
-}
-
-#about-page .projects-subtitle {
-    font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    margin-bottom: 25px;
-    text-transform: none;
-    line-height: 1.6;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 300;
-}
-
 /* MOBILE IMAGE WITH FRAME - Frame passes under image but shows around edges */
 #about-page .mobile-image-container {
     width: 100%;
@@ -1848,7 +1771,6 @@ header.white-bg .desktop-nav a {
         padding: 0 8%;
     }
 
-    #about-page .tg-values,
     #about-page .tg-impact {
         padding: 0 8%;
     }
@@ -1864,7 +1786,6 @@ header.white-bg .desktop-nav a {
         margin-top: -150px;
     }
     
-    #about-page .tg-values,
     #about-page .tg-impact { 
         width: 100%;
         margin-bottom: 60px;
@@ -1879,8 +1800,7 @@ header.white-bg .desktop-nav a {
     #about-page .image-bg-section,
     #about-page .company-profile-section,
     #about-page .who-we-are-section,
-    #about-page .what-we-do-section,
-    #about-page .projects-section {
+    #about-page .what-we-do-section {
         height: 350px;
         padding: 80px 20px;
     }
@@ -1889,8 +1809,7 @@ header.white-bg .desktop-nav a {
     #about-page .image-bg-title,
     #about-page .company-profile-title,
     #about-page .who-we-are-title,
-    #about-page .what-we-do-title,
-    #about-page .projects-title {
+    #about-page .what-we-do-title {
         font-size: 42px;
     }
 
@@ -1910,16 +1829,10 @@ header.white-bg .desktop-nav a {
         right: 25px;
     }
     
-    /* Desktop font size for values and impact text */
-    #about-page .tg-values-text,
-    #about-page .tg-impact-text,
-    #about-page .tg-description {
+    /* Desktop font size for impact text */
+    #about-page .tg-impact-text {
         font-size: 18px;
         line-height: 1.8;
-    }
-    
-    #about-page .projects-subtitle {
-        font-size: 1.3rem;
     }
 }
 
@@ -1965,11 +1878,7 @@ header.white-bg .desktop-nav a {
     #about-page .tg-subtitle {
         font-size: 16px;
     }
-    #about-page .tg-description, 
-    #about-page .tg-values-text, 
-    #about-page .tg-impact-text { 
-        font-size: 12px; 
-    }
+    #about-page .tg-description, #about-page .tg-impact-text { font-size: 12px; }
     #about-page .tg-description {
         padding: 0 5%;
     }
@@ -1977,7 +1886,6 @@ header.white-bg .desktop-nav a {
     #about-page .tg-title {
         padding: 0 5%;
     }
-    #about-page .tg-values,
     #about-page .tg-impact {
         padding: 0 5%;
     }
@@ -2001,8 +1909,7 @@ header.white-bg .desktop-nav a {
     #about-page .image-bg-title,
     #about-page .company-profile-title,
     #about-page .who-we-are-title,
-    #about-page .what-we-do-title,
-    #about-page .projects-title {
+    #about-page .what-we-do-title {
         font-size: 24px;
         letter-spacing: 1px;
         margin-bottom: 20px;
@@ -2016,13 +1923,11 @@ header.white-bg .desktop-nav a {
     #about-page .image-bg-section,
     #about-page .company-profile-section,
     #about-page .who-we-are-section,
-    #about-page .what-we-do-section,
-    #about-page .projects-section {
+    #about-page .what-we-do-section {
         height: 250px;
         padding: 40px 20px;
     }
 
-    #about-page .tg-values,
     #about-page .tg-impact {
         margin-bottom: 30px;
     }
@@ -2053,10 +1958,6 @@ header.white-bg .desktop-nav a {
         width: 20px;
         height: 20px;
         margin: 0;
-    }
-    
-    #about-page .projects-subtitle {
-        font-size: 1rem;
     }
 }
 
@@ -2093,8 +1994,7 @@ header.white-bg .desktop-nav a {
     #about-page .image-bg-title,
     #about-page .company-profile-title,
     #about-page .who-we-are-title,
-    #about-page .what-we-do-title,
-    #about-page .projects-title {
+    #about-page .what-we-do-title {
         font-size: 20px;
         letter-spacing: 0.5px;
     }
@@ -2107,13 +2007,11 @@ header.white-bg .desktop-nav a {
     #about-page .image-bg-section,
     #about-page .company-profile-section,
     #about-page .who-we-are-section,
-    #about-page .what-we-do-section,
-    #about-page .projects-section {
+    #about-page .what-we-do-section {
         height: 200px;
         padding: 30px 20px;
     }
 
-    #about-page .tg-values,
     #about-page .tg-impact {
         margin-bottom: 25px;
     }
@@ -2129,78 +2027,9 @@ header.white-bg .desktop-nav a {
         width: 45px;
         height: 45px;
     }
-    
-    #about-page .projects-subtitle {
-        font-size: 0.9rem;
-    }
 }
 
 #about-page .fog-overlay { display: none; }
-
-/* Services button animation */
-#about-page .image-bg-section {
-    position: relative;
-    overflow: hidden;
-}
-
-#about-page .image-bg-button {
-    position: relative;
-    overflow: hidden;
-}
-
-#about-page .image-bg-button::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 0;
-    border-radius: 100%;
-    transform: scale(1, 1) translate(-50%);
-    transform-origin: 50% 50%;
-}
-
-@keyframes ripple {
-    0% {
-        transform: scale(0, 0);
-        opacity: 0.5;
-    }
-    20% {
-        transform: scale(25, 25);
-        opacity: 0.3;
-    }
-    100% {
-        opacity: 0;
-        transform: scale(40, 40);
-    }
-}
-
-#about-page .image-bg-button:focus:not(:active)::after {
-    animation: ripple 1s ease-out;
-}
-
-/* Pulse animation for services button */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-#about-page .image-bg-button {
-    animation: pulse 2s infinite;
-}
-
-#about-page .image-bg-button:hover {
-    animation: none;
-}
 </style>
 </head>
 <body>
@@ -2315,7 +2144,7 @@ header.white-bg .desktop-nav a {
         <div class="hero-paragraph">
             From bulk fuel to complex constructions, we bring 10+ years of excellence to every project. Your trusted partner for innovation, reliability, and results.
         </div>
-        <a href="/contact" class="cta-button">Get Quote</a>
+        <a href="#" class="cta-button">Get Quote</a>
     </div>
     
     <!-- Scroll down button with rotation functionality -->
@@ -2369,15 +2198,15 @@ header.white-bg .desktop-nav a {
             </div>
         </div>
 
-        <!-- UPDATED VALUES SECTION -->
-        <div class="tg-values" id="values">
-            <h3 class="tg-values-title">OUR VALUES</h3>
-            <p class="tg-values-text">
-                At Ingestion Ennovation, our core values define who we are and guide everything we do. Integrity, 
-                excellence, and innovation form the foundation of our work. We believe in building trust through 
-                transparent communication, delivering quality that exceeds expectations, and pioneering solutions 
-                that drive sustainable growth. Our commitment to safety, community empowerment, and responsible 
-                development ensures that every project leaves a positive, lasting impact.
+        <!-- UPDATED IMPACT SECTION -->
+        <div class="tg-impact" id="values">
+            <h3 class="tg-impact-title">OUR IMPACT</h3>
+            <p class="tg-impact-text">
+                At Ingestion Ennovation, our impact extends beyond construction and fuel supply - we empower communities, 
+                create jobs, and drive sustainable growth through innovation and responsible development. Guided by integrity 
+                and excellence, we build infrastructure that connects people and deliver energy solutions that power businesses. 
+                Through strategic partnerships and modern technologies, we continue to shape a future where progress fuels 
+                opportunity and every project leaves a lasting, positive mark on society.
             </p>
         </div>
 
@@ -2392,19 +2221,16 @@ header.white-bg .desktop-nav a {
             <a href="/our-story" class="blue-section-button">Learn More</a>
         </div>
 
-        <!-- IMAGE BACKGROUND SECTION - OUR SERVICES -->
+        <!-- IMAGE BACKGROUND SECTION - COMMITTED TO EXCELLENCE -->
         <div class="image-bg-section" id="services">
-            <div class="image-bg-title">OUR SERVICES</div>
-            <button class="image-bg-button" id="servicesToggle">
-                <i class="material-icons" style="font-size: 20px; margin-right: 8px;">expand_more</i>
-                View Services
-            </button>
+            <div class="image-bg-title">COMMITTED TO EXCELLENCE</div>
+            <a href="/excellence" class="image-bg-button">Discover More</a>
         </div>
 
         <!-- NEW COMPANY PROFILE SECTION -->
         <div class="company-profile-section" id="projects">
             <div class="company-profile-title">COMPANY PROFILE</div>
-            <a href="#" class="company-profile-button" onclick="event.preventDefault(); alert('Company profile will be available soon.');">
+            <a href="YOUR_PDF_LINK_HERE" download="Company-Profile.pdf" class="company-profile-button">
                 <span>Download PDF</span>
                 <div class="download-icon"></div>
             </a>
@@ -2420,12 +2246,6 @@ header.white-bg .desktop-nav a {
         <div class="what-we-do-section">
             <div class="what-we-do-title">WHAT WE DO</div>
             <a href="/services" class="what-we-do-button">Discover More</a>
-        </div>
-        
-        <!-- NEW PROJECTS SECTION -->
-        <div class="projects-section">
-            <div class="projects-title">COMMITTED TO EXCELLENCE</div>
-            <div class="projects-subtitle">What We Have Worked On - Delivering quality projects with precision and expertise</div>
         </div>
 
     </section>
@@ -2476,12 +2296,12 @@ header.white-bg .desktop-nav a {
         <div class="footer-services">
             <h3>OUR SERVICES</h3>
             <ul>
-                <li><a href="/services#fuel">Bulk Fuel Supply</a></li>
-                <li><a href="/services#energy">Green Energy Services</a></li>
-                <li><a href="/services#construction">Construction & Consultation</a></li>
-                <li><a href="/services#compliance">Compliance Services</a></li>
-                <li><a href="/services#supplies">Office Supplies & Consumables</a></li>
-                <li><a href="/services#training">Staff Impact Training</a></li>
+                <li><a href="#">Bulk Fuel Supply</a></li>
+                <li><a href="#">Green Energy Services</a></li>
+                <li><a href="#">Construction & Consultation</a></li>
+                <li><a href="#">Compliance Services</a></li>
+                <li><a href="#">Office Supplies & Consumables</a></li>
+                <li><a href="#">Staff Impact Training</a></li>
             </ul>
         </div>
         
@@ -2489,11 +2309,11 @@ header.white-bg .desktop-nav a {
         <div class="footer-links">
             <h3>QUICK LINKS</h3>
             <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#values">Our Values</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Our Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Values</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Our Projects</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
         
@@ -2561,7 +2381,7 @@ menuIcon.addEventListener('click', () => {
     navBar.classList.toggle('active');
 });
 
-// Scroll down button with rotation functionality
+// Scroll down button with rotation functionality - FIXED TO SCROLL ALL THE WAY DOWN
 const scrollDownBtn = document.getElementById('scrollDownBtn');
 let isScrolledToBottom = false;
 
@@ -2614,7 +2434,7 @@ window.addEventListener('scroll', () => {
     updateHeaderBackground();
 });
 
-// Scroll functionality - UPDATED TO SCROLL ALL THE WAY DOWN
+// Scroll functionality - FIXED: Scrolls all the way down to bottom of page
 scrollDownBtn.addEventListener('click', () => {
     if (isScrolledToBottom) {
         // Scroll to top
@@ -2634,16 +2454,16 @@ logo.addEventListener('click', () => {
     header.classList.remove('white-bg');
 });
 
-// Navigation scroll functionality with offset
+// Navigation scroll functionality
 function setupNavigation() {
-    // Mobile navigation with offset
+    // Mobile navigation
     const mobileNavLinks = {
-        homeLink: {id: 'home', offset: 0},
-        aboutLink: {id: 'about', offset: -50}, // Slightly up
-        valuesLink: {id: 'values', offset: -50}, // Slightly up
-        servicesLink: {id: 'services', offset: 0},
-        projectsLink: {id: 'projects', offset: 0},
-        contactLink: {id: 'contact', offset: 0}
+        homeLink: 'home',
+        aboutLink: 'about',
+        valuesLink: 'values',
+        servicesLink: 'services',
+        projectsLink: 'projects',
+        contactLink: 'contact'
     };
     
     // Add click events to mobile nav links
@@ -2651,14 +2471,10 @@ function setupNavigation() {
         const link = document.getElementById(linkId);
         if (link) {
             link.addEventListener('click', () => {
-                const target = mobileNavLinks[linkId];
-                const targetElement = document.getElementById(target.id);
+                const targetId = mobileNavLinks[linkId];
+                const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    const targetPosition = targetElement.offsetTop + target.offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
                     // Close mobile menu
                     navBar.classList.remove('active');
                     menuIcon.classList.remove('active');
@@ -2667,23 +2483,14 @@ function setupNavigation() {
         }
     });
     
-    // Desktop navigation with offset
+    // Desktop navigation
     desktopLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const section = link.getAttribute('data-section');
             const targetElement = document.getElementById(section);
             if (targetElement) {
-                let offset = 0;
-                if (section === 'about' || section === 'values') {
-                    offset = -50; // Slightly up for About Us and Values
-                }
-                
-                const targetPosition = targetElement.offsetTop + offset;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
                 
                 // Update active state
                 desktopLinks.forEach(l => l.classList.remove('active'));
@@ -2694,26 +2501,19 @@ function setupNavigation() {
     
     // Update active state on scroll
     window.addEventListener('scroll', () => {
-        const sections = [
-            {id: 'home', offset: 0},
-            {id: 'about', offset: 0},
-            {id: 'values', offset: 0},
-            {id: 'services', offset: 0},
-            {id: 'projects', offset: 0},
-            {id: 'contact', offset: 0}
-        ];
+        const sections = ['home', 'about', 'values', 'services', 'projects', 'contact'];
         const scrollPosition = window.scrollY + 100;
         
         let currentSection = 'home';
         
         for (const section of sections) {
-            const element = document.getElementById(section.id);
+            const element = document.getElementById(section);
             if (element) {
                 const offsetTop = element.offsetTop;
                 const offsetBottom = offsetTop + element.offsetHeight;
                 
                 if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-                    currentSection = section.id;
+                    currentSection = section;
                     break;
                 }
             }
@@ -2804,15 +2604,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Setup navigation
     setupNavigation();
-    
-    // Services toggle button functionality
-    const servicesToggle = document.getElementById('servicesToggle');
-    if (servicesToggle) {
-        servicesToggle.addEventListener('click', function() {
-            alert('Services details will be available in the collapsible section. This feature will be implemented next.');
-            // Add collapsible functionality here when ready
-        });
-    }
 });
 </script>
 </body>
