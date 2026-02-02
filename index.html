@@ -148,6 +148,7 @@ header {
 .logo {
     cursor: pointer;
     position: relative;
+    margin-left: 10%; /* Added to align with hero content */
 }
 .logo img {
     height: 120px; /* INCREASED from 100px to 120px */
@@ -478,7 +479,7 @@ header {
     color: white !important;
     z-index: 2;
     position: relative;
-    margin-top: 15%; /* CHANGED from 30% to 15% - moved heading up */
+    margin-top: 30%; /* CHANGED from 15% to 30% - moved content down */
     margin-left: 10%;
     width: 80%;
     opacity: 0;
@@ -510,7 +511,7 @@ header {
     .big-typography {
         margin-top: 0;
         position: absolute;
-        top: 20%; /* CHANGED from 35% to 20% - moved heading up */
+        top: 35%; /* CHANGED from 20% to 35% - moved content down */
         left: 10%;
         transform: translateY(-50%);
         width: 40%;
@@ -626,121 +627,9 @@ header {
     }
 }
 
-/* Rotating Icon Section at Bottom */
+/* Removed Rotating Icon Section */
 .rotating-icons {
-    position: absolute;
-    bottom: 100px; /* Position above scroll button */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1200px;
-    z-index: 2;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.icon-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.rotating-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    color: #2c5aa0;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
-    transition: all 0.5s ease;
-    opacity: 0;
-    transform: scale(0.8);
-}
-
-.rotating-icon.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.icon-text {
-    color: white;
-    font-family: 'Mozilla Text', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-align: center;
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: all 0.5s ease;
-    opacity: 0;
-}
-
-.icon-text.active {
-    opacity: 1;
-}
-
-.icon-text strong {
-    display: block;
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Mobile adjustments for rotating icons */
-@media (max-width: 768px) {
-    .rotating-icons {
-        bottom: 80px;
-        padding: 0 15px;
-    }
-    
-    .rotating-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 32px;
-    }
-    
-    .icon-text {
-        font-size: 1rem;
-        min-height: 50px;
-    }
-    
-    .icon-text strong {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .rotating-icons {
-        bottom: 70px;
-    }
-    
-    .rotating-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 28px;
-    }
-    
-    .icon-text {
-        font-size: 0.9rem;
-        min-height: 45px;
-    }
-    
-    .icon-text strong {
-        font-size: 1rem;
-    }
+    display: none; /* Removed icons as requested */
 }
 
 /* --- SCROLL DOWN BUTTON --- */
@@ -1709,28 +1598,25 @@ header {
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
 
-    <!-- DESKTOP NAV - Simplified -->
+    <!-- DESKTOP NAV - Updated with new hierarchy -->
     <div class="desktop-nav">
         <div class="desktop-nav-item">
             <a class="nav-link desktop-nav-link" data-section="home">Home</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="about">About</a>
+            <a class="nav-link desktop-nav-link" data-section="about">About Us</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="product">Product</a>
+            <a class="nav-link desktop-nav-link" data-section="values">Values</a>
         </div>
         <div class="desktop-nav-item">
             <a class="nav-link desktop-nav-link" data-section="services">Services</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="case-studies">Case Studies</a>
+            <a class="nav-link desktop-nav-link" data-section="projects">Projects</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="news">News</a>
-        </div>
-        <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="contact">Contact</a>
+            <a class="nav-link desktop-nav-link" data-section="contact">Contact Us</a>
         </div>
     </div>
 
@@ -1742,29 +1628,26 @@ header {
     </div>
 </header>
 
-<!-- NAVIGATION BAR - Simplified and White -->
+<!-- NAVIGATION BAR - Updated with new hierarchy -->
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
         <li class="nav-item">
             <a class="nav-link" id="homeLink">HOME</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="aboutLink">ABOUT</a>
+            <a class="nav-link" id="aboutLink">ABOUT US</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="productLink">PRODUCT</a>
+            <a class="nav-link" id="valuesLink">VALUES</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="servicesLink">SERVICES</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="caseStudiesLink">CASE STUDIES</a>
+            <a class="nav-link" id="projectsLink">PROJECTS</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="newsLink">NEWS</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="contactLink">CONTACT</a>
+            <a class="nav-link" id="contactLink">CONTACT US</a>
         </li>
     </ul>
 </nav>
@@ -1784,18 +1667,7 @@ header {
         <a href="#" class="cta-button">Get Quote</a>
     </div>
     
-    <!-- Rotating Icon Section at Bottom -->
-    <div class="rotating-icons">
-        <div class="icon-container">
-            <div class="rotating-icon active" id="rotatingIcon">
-                <i class="material-icons">local_shipping</i>
-            </div>
-        </div>
-        <div class="icon-text active" id="iconText">
-            <strong>24/7 Full Supply</strong>
-            Round the clock delivery
-        </div>
-    </div>
+    <!-- Removed Rotating Icons Section -->
     
     <div class="scroll-down" id="scrollDownBtn"></div>
 </section>
@@ -1917,10 +1789,9 @@ const logo = document.getElementById('logo');
 const navBar = document.getElementById('navBar');
 const homeLink = document.getElementById('homeLink');
 const aboutLink = document.getElementById('aboutLink');
-const productLink = document.getElementById('productLink');
+const valuesLink = document.getElementById('valuesLink');
 const servicesLink = document.getElementById('servicesLink');
-const caseStudiesLink = document.getElementById('caseStudiesLink');
-const newsLink = document.getElementById('newsLink');
+const projectsLink = document.getElementById('projectsLink');
 const contactLink = document.getElementById('contactLink');
 
 // Desktop navigation elements
@@ -2019,64 +1890,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Rotating Icon Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const rotatingIcon = document.getElementById('rotatingIcon');
-    const iconText = document.getElementById('iconText');
-    
-    // Define the icons and their text
-    const icons = [
-        {
-            icon: 'local_shipping',
-            title: '24/7 Full Supply',
-            subtitle: 'Round the clock delivery'
-        },
-        {
-            icon: 'verified',
-            title: 'Quality Guaranteed',
-            subtitle: 'Premium standards'
-        },
-        {
-            icon: 'support_agent',
-            title: 'Expert Support',
-            subtitle: 'Professional assistance'
-        }
-    ];
-    
-    let currentIndex = 0;
-    
-    function rotateIcon() {
-        // Fade out current icon and text
-        rotatingIcon.classList.remove('active');
-        iconText.classList.remove('active');
-        
-        setTimeout(() => {
-            // Update to next icon
-            currentIndex = (currentIndex + 1) % icons.length;
-            const nextIcon = icons[currentIndex];
-            
-            // Update icon
-            rotatingIcon.innerHTML = `<i class="material-icons">${nextIcon.icon}</i>`;
-            
-            // Update text
-            iconText.innerHTML = `<strong>${nextIcon.title}</strong>${nextIcon.subtitle}`;
-            
-            // Fade in new icon and text
-            setTimeout(() => {
-                rotatingIcon.classList.add('active');
-                iconText.classList.add('active');
-            }, 100);
-        }, 500);
-    }
-    
-    // Start rotating every 5 seconds (5000ms)
-    setInterval(rotateIcon, 5000);
-    
-    // Initialize with first icon
-    const firstIcon = icons[0];
-    rotatingIcon.innerHTML = `<i class="material-icons">${firstIcon.icon}</i>`;
-    iconText.innerHTML = `<strong>${firstIcon.title}</strong>${firstIcon.subtitle}`;
-});
+// Removed Rotating Icon Functionality as requested
 </script>
 </body>
 </html>
