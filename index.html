@@ -144,11 +144,12 @@ header {
     z-index: 1000;
 }
 
-/* --- LOGO --- */
+/* --- LOGO - ON FAR FAR LEFT --- */
 .logo {
     cursor: pointer;
     position: relative;
-    margin-left: 10%; /* Aligns with hero content */
+    margin-left: 0; /* Changed from 10% to 0 - FAR FAR LEFT */
+    margin-right: auto;
 }
 .logo img {
     height: 120px; /* INCREASED from 100px to 120px */
@@ -304,6 +305,7 @@ header {
     gap: 5px;
     align-items: center;
     position: relative;
+    margin-left: 0;
 }
 
 .desktop-nav-item {
@@ -672,165 +674,207 @@ header {
     z-index: 1;
 }
 
-/* --- WORK WITH US FORM SECTION --- */
-.work-with-us-section {
+/* --- READY TO WORK SECTION - UPDATED --- */
+.ready-to-work-section {
     width: 100%;
     background: #0f0f0f;
-    padding: 80px 10%;
+    padding: 80px 0; /* Same padding as other sections */
     position: relative;
     z-index: 2;
 }
 
-.work-with-us-container {
+.ready-to-work-container {
+    width: 80%; /* Same width as other sections */
     max-width: 1200px;
     margin: 0 auto;
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 60px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.08) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 80px 60px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-.work-with-us-title {
+.ready-to-work-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+}
+
+.ready-to-work-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        rgba(44, 90, 160, 0.1) 0%,
+        transparent 70%
+    );
+    z-index: -1;
+}
+
+.ready-to-work-title {
     font-family: 'Archivo Black', sans-serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: white;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
-.work-with-us-subtitle {
+.ready-to-work-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #2c5aa0, #4a7bc8, #2c5aa0);
+    border-radius: 2px;
+}
+
+.ready-to-work-subtitle {
     font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.85);
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     text-transform: none;
-    line-height: 1.6;
+    line-height: 1.7;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
-.work-with-us-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
+.get-code-button-container {
+    text-align: center;
+    margin-top: 40px;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group.full-width {
-    grid-column: 1 / -1;
-}
-
-.work-with-us-form label {
-    font-family: 'Mozilla Text', sans-serif;
-    font-size: 0.9rem;
+.get-code-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #2c5aa0, #3a6bc8);
     color: white;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.work-with-us-form input,
-.work-with-us-form textarea,
-.work-with-us-form select {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 8px;
-    padding: 15px 20px;
-    color: white;
-    font-family: 'Mozilla Text', sans-serif;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.work-with-us-form input:focus,
-.work-with-us-form textarea:focus,
-.work-with-us-form select:focus {
-    outline: none;
-    border-color: #2c5aa0;
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.work-with-us-form input::placeholder,
-.work-with-us-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.work-with-us-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-.submit-button {
-    background: #2c5aa0;
-    color: white;
-    border: none;
-    padding: 18px 45px;
-    font-size: 1.1rem;
+    padding: 22px 55px;
+    font-size: 1.3rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    border-radius: 8px;
+    border: none;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     font-family: 'Mozilla Text', sans-serif;
-    margin-top: 20px;
-    width: 100%;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 30px rgba(44, 90, 160, 0.3),
+        0 4px 15px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.submit-button:hover {
-    background: #1a3d75;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+.get-code-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: 0.6s;
+}
+
+.get-code-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 40px rgba(44, 90, 160, 0.4),
+        0 6px 20px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #3a6bc8, #2c5aa0);
+}
+
+.get-code-button:hover::before {
+    left: 100%;
+}
+
+.get-code-button:active {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(44, 90, 160, 0.3),
+        0 4px 15px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
-    .work-with-us-section {
-        padding: 60px 5%;
+    .ready-to-work-section {
+        padding: 60px 0;
     }
     
-    .work-with-us-container {
-        padding: 40px 30px;
+    .ready-to-work-container {
+        width: 90%;
+        padding: 60px 30px;
     }
     
-    .work-with-us-title {
-        font-size: 2.2rem;
+    .ready-to-work-title {
+        font-size: 2.5rem;
     }
     
-    .work-with-us-subtitle {
-        font-size: 1rem;
-        margin-bottom: 40px;
+    .ready-to-work-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 50px;
     }
     
-    .work-with-us-form {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .get-code-button {
+        padding: 20px 45px;
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .work-with-us-container {
-        padding: 30px 20px;
+    .ready-to-work-container {
+        width: 95%;
+        padding: 50px 25px;
     }
     
-    .work-with-us-title {
-        font-size: 1.8rem;
+    .ready-to-work-title {
+        font-size: 2rem;
     }
     
-    .work-with-us-subtitle {
-        font-size: 0.9rem;
+    .ready-to-work-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    
+    .get-code-button {
+        padding: 18px 40px;
+        font-size: 1.1rem;
     }
 }
 
@@ -838,13 +882,14 @@ header {
 .footer {
     width: 100%;
     background: #0f0f0f;
-    padding: 80px 10% 40px;
+    padding: 80px 0 40px; /* Same top padding as other sections */
     position: relative;
     z-index: 2;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-container {
+    width: 80%; /* Same width as other sections */
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -861,7 +906,7 @@ header {
 }
 
 .footer-logo img {
-    height: 80px;
+    height: 100px; /* INCREASED from 80px to 100px */
     width: auto;
     filter: brightness(0) invert(1);
 }
@@ -1001,7 +1046,7 @@ header {
 .contact-text-footer h4 {
     font-family: 'Mozilla Text', sans-serif;
     font-size: 0.9rem;
-    color: white;
+    color: white; /* CHANGED to white */
     margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1010,7 +1055,7 @@ header {
 .contact-text-footer p {
     font-family: 'Mozilla Text', sans-serif;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); /* Phone numbers in white with transparency */
     line-height: 1.5;
     text-transform: none;
 }
@@ -1033,6 +1078,7 @@ header {
 
 @media (max-width: 1024px) {
     .footer-container {
+        width: 90%;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
@@ -1044,10 +1090,11 @@ header {
 
 @media (max-width: 768px) {
     .footer {
-        padding: 60px 5% 30px;
+        padding: 60px 0 30px;
     }
     
     .footer-container {
+        width: 90%;
         grid-template-columns: 1fr;
         gap: 40px;
     }
@@ -1064,15 +1111,16 @@ header {
 
 @media (max-width: 480px) {
     .footer {
-        padding: 50px 5% 25px;
+        padding: 50px 0 25px;
     }
     
     .footer-container {
+        width: 90%;
         gap: 30px;
     }
     
     .footer-logo img {
-        height: 60px;
+        height: 80px;
     }
 }
 
@@ -1964,19 +2012,19 @@ header {
                 <div class="contact-icon-circle">
                     <i class="material-icons">phone</i>
                 </div>
-                <span>+27 76 270 3475</span>
+                <span style="color: black;">+27 76 270 3475</span> <!-- Changed to black for announcement bar -->
             </div>
             <div class="contact-item">
                 <div class="contact-icon-circle">
                     <i class="material-icons">phone_iphone</i>
                 </div>
-                <span>+27 67 619 0270</span>
+                <span style="color: black;">+27 67 619 0270</span> <!-- Changed to black for announcement bar -->
             </div>
             <div class="contact-item">
                 <div class="contact-icon-circle">
                     <i class="material-icons">email</i>
                 </div>
-                <span>info@ingestionpty.co.za</span>
+                <span style="color: black;">info@ingestionpty.co.za</span> <!-- New email added -->
             </div>
         </div>
         <div class="social-links">
@@ -2185,69 +2233,18 @@ header {
     </div>
 </div>
 
-<!-- WORK WITH US FORM SECTION -->
-<section class="work-with-us-section">
-    <div class="work-with-us-container">
-        <h2 class="work-with-us-title">WORK WITH US</h2>
-        <p class="work-with-us-subtitle">
-            Ready to bring your project to life? Partner with Ingestion Ennovation for innovative solutions, 
-            reliable service, and exceptional results. Share your details below and let's build something great together.
+<!-- READY TO WORK SECTION - UPDATED -->
+<section class="ready-to-work-section">
+    <div class="ready-to-work-container">
+        <h2 class="ready-to-work-title">READY TO WORK WITH US?</h2>
+        <p class="ready-to-work-subtitle">
+            Let's build something extraordinary together. Share your project details and get a customized quote 
+            from our expert team. We're here to bring your vision to life with innovative solutions and unparalleled expertise.
         </p>
         
-        <form class="work-with-us-form" id="workWithUsForm">
-            <div class="form-group">
-                <label for="name">FULL NAME</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">EMAIL ADDRESS</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">PHONE NUMBER</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="company">COMPANY NAME</label>
-                <input type="text" id="company" name="company" placeholder="Enter your company name">
-            </div>
-            
-            <div class="form-group">
-                <label for="service">SERVICE INTERESTED IN</label>
-                <select id="service" name="service" required>
-                    <option value="">Select a service</option>
-                    <option value="bulk-fuel">Bulk Fuel Supply</option>
-                    <option value="green-energy">Green Energy Services</option>
-                    <option value="construction">Construction & Consultation</option>
-                    <option value="compliance">Compliance Services</option>
-                    <option value="office-supplies">Office Supplies & Consumables</option>
-                    <option value="training">Staff Impact Training</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="budget">PROJECT BUDGET</label>
-                <select id="budget" name="budget">
-                    <option value="">Select budget range</option>
-                    <option value="under-50k">Under R50,000</option>
-                    <option value="50k-100k">R50,000 - R100,000</option>
-                    <option value="100k-500k">R100,000 - R500,000</option>
-                    <option value="500k-1m">R500,000 - R1,000,000</option>
-                    <option value="over-1m">Over R1,000,000</option>
-                </select>
-            </div>
-            
-            <div class="form-group full-width">
-                <label for="message">PROJECT DETAILS</label>
-                <textarea id="message" name="message" placeholder="Tell us about your project, timeline, and specific requirements..." required></textarea>
-            </div>
-            
-            <button type="submit" class="submit-button">SUBMIT INQUIRY</button>
-        </form>
+        <div class="get-code-button-container">
+            <a href="/contact-form" class="get-code-button">GET QUOTE</a>
+        </div>
     </div>
 </section>
 
@@ -2321,7 +2318,7 @@ header {
                     </div>
                     <div class="contact-text-footer">
                         <h4>EMAIL</h4>
-                        <p>ingestion.pty@gmail.com</p>
+                        <p>ingestion.pty@gmail.com<br>info@ingestionpty.co.za</p>
                     </div>
                 </div>
             </div>
@@ -2440,44 +2437,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-// Work With Us Form Submission
-const workWithUsForm = document.getElementById('workWithUsForm');
-if (workWithUsForm) {
-    workWithUsForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Here you would typically send the data to your backend
-        // For now, we'll just show an alert and reset the form
-        alert('Thank you for your inquiry! We will contact you shortly.');
-        console.log('Form data:', formObject); // You can see the data in console
-        
-        // Reset form
-        this.reset();
-        
-        // Backend Integration Note:
-        // To connect this form to a backend, you would need to:
-        // 1. Set up a server (Node.js, PHP, Python, etc.)
-        // 2. Create an API endpoint to receive form data
-        // 3. Update the form action attribute to point to your endpoint
-        // 4. Add form validation and email sending functionality
-        // 5. Implement CSRF protection if needed
-        // 
-        // Example backend endpoint structure:
-        // POST /api/contact/submit
-        // Headers: Content-Type: application/json
-        // Body: { name, email, phone, company, service, budget, message }
-        //
-        // You can use the formObject above as your request body
-    });
-}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
