@@ -827,9 +827,19 @@ header.white-bg .desktop-nav a {
         margin-bottom: 30px;
     }
     
+    /* UPDATED: Make mobile button match other buttons */
     .get-code-button {
-        padding: 20px 45px;
-        font-size: 14px;
+        padding: 10px 25px; /* Match other button padding */
+        font-size: 14px; /* Match other button font size */
+        border: 2px solid white; /* Ensure border matches */
+        background: transparent; /* Match other button background */
+        margin-top: 0;
+        width: auto; /* Allow natural width */
+    }
+    
+    .get-code-button:hover {
+        background: white; /* Match hover state */
+        color: #2c5aa0; /* Match hover state */
     }
 }
 
@@ -849,9 +859,17 @@ header.white-bg .desktop-nav a {
         margin-bottom: 25px;
     }
     
+    /* UPDATED: Make mobile button match other buttons */
     .get-code-button {
-        padding: 8px 20px;
-        font-size: 12px;
+        padding: 10px 25px; /* Match other button padding */
+        font-size: 14px; /* Match other button font size */
+        border: 2px solid white; /* Ensure border matches */
+        background: transparent; /* Match other button background */
+    }
+    
+    .get-code-button:hover {
+        background: white; /* Match hover state */
+        color: #2c5aa0; /* Match hover state */
     }
 }
 
@@ -904,19 +922,20 @@ header.white-bg .desktop-nav a {
     margin-bottom: 25px;
 }
 
+/* UPDATED: Footer logo same size as header logo */
 .footer-logo img {
-    height: 100px;
+    height: 120px; /* Changed from 100px to match header logo */
     width: auto;
     filter: brightness(0) invert(1);
 }
 
 .footer-company-info h3 {
     font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.7rem; /* UPDATED: Match navigation menu size */
     color: white;
     margin-bottom: 15px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px; /* UPDATED: Match navigation spacing */
 }
 
 .footer-company-info p {
@@ -928,6 +947,7 @@ header.white-bg .desktop-nav a {
     text-transform: none;
 }
 
+/* UPDATED: Remove border radius on supplier button */
 .supplier-button {
     display: inline-block;
     background: #2c5aa0;
@@ -937,7 +957,7 @@ header.white-bg .desktop-nav a {
     font-weight: 600;
     letter-spacing: 1px;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 0; /* Changed from 8px to 0 */
     transition: all 0.3s ease;
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
@@ -955,12 +975,12 @@ header.white-bg .desktop-nav a {
 .footer-services h3,
 .footer-links h3,
 .footer-contact h3 {
-    font-family: 'archivo', sans-serif;
-    font-size: 1.1rem;
+    font-family: 'Mozilla Text', sans-serif; /* UPDATED: Changed font */
+    font-size: 0.7rem; /* UPDATED: Match navigation menu size */
     color: white;
     margin-bottom: 25px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px; /* UPDATED: Match navigation spacing */
     position: relative;
     padding-bottom: 10px;
 }
@@ -992,9 +1012,9 @@ header.white-bg .desktop-nav a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-family: 'Mozilla Text', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.7rem; /* UPDATED: Match navigation menu size */
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; /* UPDATED: Match navigation spacing */
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -1045,11 +1065,11 @@ header.white-bg .desktop-nav a {
 /* PHONE NUMBER COLOR FIX */
 .contact-text-footer h4 {
     font-family: 'Mozilla Text', sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.7rem; /* UPDATED: Match navigation menu size */
     color: white;
     margin-bottom: 5px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px; /* UPDATED: Match navigation spacing */
 }
 
 .contact-text-footer p {
@@ -1080,10 +1100,10 @@ header.white-bg .desktop-nav a {
 
 .footer-bottom p {
     font-family: 'Mozilla Text', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.7rem; /* UPDATED: Match navigation menu size */
     color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px; /* UPDATED: Match navigation spacing */
 }
 
 @media (max-width: 1024px) {
@@ -1130,7 +1150,7 @@ header.white-bg .desktop-nav a {
     }
     
     .footer-logo img {
-        height: 80px;
+        height: 120px; /* Keep same size even on mobile */
     }
 }
 
