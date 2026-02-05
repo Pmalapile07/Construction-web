@@ -724,8 +724,8 @@ header.white-bg .desktop-nav a {
     z-index: 1;
 }
 
-/* --- READY TO WORK SECTION FIX: Match "Who We Are" aesthetic --- */
-.ready-to-work-section {
+/* --- HAVE A PROJECT IN MIND SECTION FIX: Match "Who We Are" aesthetic --- */
+.have-project-section {
     width: 100%;
     background: #2c5aa0; /* Same blue as "Who We Are" section */
     padding: 60px 20px; /* Same padding as "Who We Are" section */
@@ -743,13 +743,13 @@ header.white-bg .desktop-nav a {
 
 /* Increased height on mobile */
 @media (max-width: 768px) {
-    .ready-to-work-section {
+    .have-project-section {
         height: 350px; /* Increased height */
         padding: 70px 20px; /* Increased padding */
     }
 }
 
-.ready-to-work-container {
+.have-project-container {
     width: 100%;
     max-width: 100%; /* Full width on desktop */
     margin: 0 auto;
@@ -758,7 +758,7 @@ header.white-bg .desktop-nav a {
     z-index: 2;
 }
 
-.ready-to-work-title {
+.have-project-title {
     font-size: 36px;
     color: white;
     text-transform: uppercase;
@@ -766,9 +766,11 @@ header.white-bg .desktop-nav a {
     letter-spacing: 2px;
     margin-bottom: 25px;
     font-family: 'archivo', sans-serif;
+    text-align: center;
+    width: 100%;
 }
 
-.ready-to-work-subtitle {
+.have-project-subtitle {
     font-family: 'Mozilla Text', sans-serif;
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.9);
@@ -782,12 +784,12 @@ header.white-bg .desktop-nav a {
     font-weight: 300;
 }
 
-.get-code-button-container {
+.get-in-touch-button-container {
     text-align: center;
     margin-top: 0;
 }
 
-.get-code-button {
+.get-in-touch-button {
     display: inline-block;
     background: transparent;
     border: 2px solid white;
@@ -805,30 +807,31 @@ header.white-bg .desktop-nav a {
     border-radius: 0; /* NO border radius */
 }
 
-.get-code-button:hover {
+.get-in-touch-button:hover {
     background: white;
     color: #2c5aa0;
 }
 
 @media (max-width: 768px) {
-    .ready-to-work-section {
+    .have-project-section {
         padding: 40px 20px;
         height: 350px; /* Increased height */
     }
     
-    .ready-to-work-title {
+    .have-project-title {
         font-size: 24px;
         letter-spacing: 1px;
         margin-bottom: 20px;
     }
     
-    .ready-to-work-subtitle {
+    .have-project-subtitle {
         font-size: 1rem;
         margin-bottom: 30px;
+        text-align: center;
     }
     
     /* UPDATED: Make mobile button match other buttons */
-    .get-code-button {
+    .get-in-touch-button {
         padding: 10px 25px; /* Match other button padding */
         font-size: 14px; /* Match other button font size */
         border: 2px solid white; /* Ensure border matches */
@@ -837,37 +840,38 @@ header.white-bg .desktop-nav a {
         width: auto; /* Allow natural width */
     }
     
-    .get-code-button:hover {
+    .get-in-touch-button:hover {
         background: white; /* Match hover state */
         color: #2c5aa0; /* Match hover state */
     }
 }
 
 @media (max-width: 480px) {
-    .ready-to-work-section {
+    .have-project-section {
         padding: 40px 20px;
         height: 350px; /* Increased height */
     }
     
-    .ready-to-work-title {
+    .have-project-title {
         font-size: 20px;
         letter-spacing: 0.5px;
     }
     
-    .ready-to-work-subtitle {
+    .have-project-subtitle {
         font-size: 0.9rem;
         margin-bottom: 25px;
+        text-align: center;
     }
     
     /* UPDATED: Make mobile button match other buttons */
-    .get-code-button {
+    .get-in-touch-button {
         padding: 10px 25px; /* Match other button padding */
         font-size: 14px; /* Match other button font size */
         border: 2px solid white; /* Ensure border matches */
         background: transparent; /* Match other button background */
     }
     
-    .get-code-button:hover {
+    .get-in-touch-button:hover {
         background: white; /* Match hover state */
         color: #2c5aa0; /* Match hover state */
     }
@@ -875,27 +879,27 @@ header.white-bg .desktop-nav a {
 
 /* Desktop adjustments for full width */
 @media (min-width: 769px) {
-    .ready-to-work-section {
+    .have-project-section {
         height: 350px;
         padding: 80px 20px;
     }
     
-    .ready-to-work-title {
+    .have-project-title {
         font-size: 42px;
     }
     
-    .ready-to-work-subtitle {
+    .have-project-subtitle {
         font-size: 1.3rem;
         margin-bottom: 50px;
     }
     
-    .get-code-button {
+    .get-in-touch-button {
         padding: 20px 45px;
         font-size: 16px;
     }
 }
 
-/* --- FOOTER --- */
+/* --- FOOTER - FULL WIDTH ON DESKTOP --- */
 .footer {
     width: 100%;
     background: #0f0f0f;
@@ -905,13 +909,15 @@ header.white-bg .desktop-nav a {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* UPDATED: Full width container starting from logo alignment */
 .footer-container {
-    width: 80%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 50px;
+    padding: 0 40px; /* Match header padding */
 }
 
 .footer-logo-section {
@@ -922,9 +928,9 @@ header.white-bg .desktop-nav a {
     margin-bottom: 25px;
 }
 
-/* UPDATED: Footer logo same size as header logo */
+/* UPDATED: Reduced footer logo size */
 .footer-logo img {
-    height: 120px; /* Changed from 100px to match header logo */
+    height: 90px; /* Reduced from 120px */
     width: auto;
     filter: brightness(0) invert(1);
 }
@@ -1111,6 +1117,7 @@ header.white-bg .desktop-nav a {
         width: 90%;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
+        padding: 0 20px;
     }
     
     .footer-logo-section {
@@ -1127,6 +1134,7 @@ header.white-bg .desktop-nav a {
         width: 90%;
         grid-template-columns: 1fr;
         gap: 40px;
+        padding: 0 20px;
     }
     
     .footer-logo-section {
@@ -1147,10 +1155,11 @@ header.white-bg .desktop-nav a {
     .footer-container {
         width: 90%;
         gap: 30px;
+        padding: 0 15px;
     }
     
     .footer-logo img {
-        height: 120px; /* Keep same size even on mobile */
+        height: 90px; /* Keep reduced size even on mobile */
     }
 }
 
@@ -1396,8 +1405,8 @@ header.white-bg .desktop-nav a {
     display: block;
 }
 
-/* Blue Section Styles - Reduced equal height and no margin */
-#about-page .blue-section {
+/* OUR VALUES SECTION - UPDATED from "The Roots" */
+#about-page .values-section {
     width: 100%;
     background-color: #2c5aa0;
     padding: 60px 20px;
@@ -1410,9 +1419,10 @@ header.white-bg .desktop-nav a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-#about-page .blue-section-title {
+#about-page .values-title {
     font-size: 36px;
     color: white;
     text-transform: uppercase;
@@ -1420,9 +1430,56 @@ header.white-bg .desktop-nav a {
     letter-spacing: 2px;
     margin-bottom: 25px;
     font-family: 'archivo', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
 }
 
-#about-page .blue-section-button {
+#about-page .values-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2c5aa0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    opacity: 0;
+}
+
+#about-page .values-section:hover .values-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#about-page .values-content h3 {
+    font-size: 28px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-family: 'archivo', sans-serif;
+}
+
+#about-page .values-content p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.6;
+    text-transform: none;
+}
+
+#about-page .values-button {
     background: transparent;
     border: 2px solid white;
     color: white;
@@ -1436,15 +1493,18 @@ header.white-bg .desktop-nav a {
     font-family: 'archivo', sans-serif;
     text-decoration: none;
     display: inline-block;
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
 }
 
-#about-page .blue-section-button:hover {
+#about-page .values-button:hover {
     background: white;
     color: #2c5aa0;
 }
 
-/* Image Background Section - Updated button styles */
-#about-page .image-bg-section {
+/* DRIVEN BY INNOVATION SECTION - UPDATED from "Committed to Excellence" */
+#about-page .innovation-section {
     width: 100%;
     height: 300px;
     background-image: url('https://cdn.shopify.com/s/files/1/0778/5578/5184/files/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg?v=1762598629');
@@ -1458,7 +1518,7 @@ header.white-bg .desktop-nav a {
     margin: 0;
 }
 
-#about-page .image-bg-section::before {
+#about-page .innovation-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1469,41 +1529,17 @@ header.white-bg .desktop-nav a {
     z-index: 1;
 }
 
-#about-page .image-bg-title {
+#about-page .innovation-title {
     font-size: 36px;
     color: white;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;
-    margin-bottom: 25px;
     font-family: 'archivo', sans-serif;
     position: relative;
     z-index: 2;
     text-align: center;
-}
-
-/* Updated image background button with white background and blue text */
-#about-page .image-bg-button {
-    background: white;
-    border: 2px solid white;
-    color: #2c5aa0;
-    padding: 10px 25px;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'archivo', sans-serif;
-    position: relative;
-    z-index: 2;
-    text-decoration: none;
-    display: inline-block;
-}
-
-#about-page .image-bg-button:hover {
-    background: transparent;
-    color: white;
+    /* Button removed as requested */
 }
 
 /* New Company Profile Section with subtle radial gradient background using #2c5aa0 */
@@ -1580,7 +1616,7 @@ header.white-bg .desktop-nav a {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c5aa0'%3E%3Cpath d='M12 16l4-5h-3V4h-2v7H8l4 5zm-8 2h16v2H4v-2z'/%3E%3C/svg%3E");
 }
 
-/* New Who We Are Section */
+/* WHO WE ARE SECTION with animation */
 #about-page .who-we-are-section {
     width: 100%;
     background-color: #2c5aa0;
@@ -1594,6 +1630,7 @@ header.white-bg .desktop-nav a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 #about-page .who-we-are-title {
@@ -1604,6 +1641,53 @@ header.white-bg .desktop-nav a {
     letter-spacing: 2px;
     margin-bottom: 25px;
     font-family: 'archivo', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 3;
+}
+
+#about-page .who-we-are-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2c5aa0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    opacity: 0;
+}
+
+#about-page .who-we-are-section:hover .who-we-are-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#about-page .who-we-are-content h3 {
+    font-size: 28px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-family: 'archivo', sans-serif;
+}
+
+#about-page .who-we-are-content p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.6;
+    text-transform: none;
 }
 
 #about-page .who-we-are-button {
@@ -1620,6 +1704,9 @@ header.white-bg .desktop-nav a {
     font-family: 'archivo', sans-serif;
     text-decoration: none;
     display: inline-block;
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
 }
 
 #about-page .who-we-are-button:hover {
@@ -1627,7 +1714,7 @@ header.white-bg .desktop-nav a {
     color: #2c5aa0;
 }
 
-/* New What We Do Section */
+/* WHAT WE DO SECTION with animation */
 #about-page .what-we-do-section {
     width: 100%;
     height: 300px;
@@ -1640,6 +1727,7 @@ header.white-bg .desktop-nav a {
     justify-content: center;
     position: relative;
     margin: 0;
+    overflow: hidden;
 }
 
 #about-page .what-we-do-section::before {
@@ -1662,8 +1750,52 @@ header.white-bg .desktop-nav a {
     margin-bottom: 25px;
     font-family: 'archivo', sans-serif;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     text-align: center;
+    cursor: pointer;
+}
+
+#about-page .what-we-do-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    opacity: 0;
+}
+
+#about-page .what-we-do-section:hover .what-we-do-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#about-page .what-we-do-content h3 {
+    font-size: 28px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-family: 'archivo', sans-serif;
+}
+
+#about-page .what-we-do-content p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.6;
+    text-transform: none;
 }
 
 #about-page .what-we-do-button {
@@ -1679,9 +1811,10 @@ header.white-bg .desktop-nav a {
     transition: all 0.3s ease;
     font-family: 'archivo', sans-serif;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     text-decoration: none;
     display: inline-block;
+    margin-top: 20px;
 }
 
 #about-page .what-we-do-button:hover {
@@ -1816,8 +1949,8 @@ header.white-bg .desktop-nav a {
         height: 350px;
     }
 
-    #about-page .blue-section,
-    #about-page .image-bg-section,
+    #about-page .values-section,
+    #about-page .innovation-section,
     #about-page .company-profile-section,
     #about-page .who-we-are-section,
     #about-page .what-we-do-section {
@@ -1825,20 +1958,31 @@ header.white-bg .desktop-nav a {
         padding: 80px 20px;
     }
 
-    #about-page .blue-section-title,
-    #about-page .image-bg-title,
+    #about-page .values-title,
+    #about-page .innovation-title,
     #about-page .company-profile-title,
     #about-page .who-we-are-title,
     #about-page .what-we-do-title {
         font-size: 42px;
     }
 
-    #about-page .blue-section-button,
-    #about-page .image-bg-button,
+    #about-page .values-button,
     #about-page .who-we-are-button,
     #about-page .what-we-do-button {
         padding: 12px 30px;
         font-size: 16px;
+    }
+    
+    #about-page .values-content h3,
+    #about-page .who-we-are-content h3,
+    #about-page .what-we-do-content h3 {
+        font-size: 32px;
+    }
+    
+    #about-page .values-content p,
+    #about-page .who-we-are-content p,
+    #about-page .what-we-do-content p {
+        font-size: 1.2rem;
     }
     
     /* Keep company profile button smaller on desktop */
@@ -1925,8 +2069,8 @@ header.white-bg .desktop-nav a {
     #about-page .modal-content { width: 95%; }
 
     /* Mobile adjustments for new sections */
-    #about-page .blue-section-title,
-    #about-page .image-bg-title,
+    #about-page .values-title,
+    #about-page .innovation-title,
     #about-page .company-profile-title,
     #about-page .who-we-are-title,
     #about-page .what-we-do-title {
@@ -1939,8 +2083,8 @@ header.white-bg .desktop-nav a {
         height: 250px;
     }
 
-    #about-page .blue-section,
-    #about-page .image-bg-section,
+    #about-page .values-section,
+    #about-page .innovation-section,
     #about-page .company-profile-section,
     #about-page .who-we-are-section,
     #about-page .what-we-do-section {
@@ -1979,6 +2123,26 @@ header.white-bg .desktop-nav a {
         height: 20px;
         margin: 0;
     }
+    
+    /* Mobile adjustments for animated content */
+    #about-page .values-content,
+    #about-page .who-we-are-content,
+    #about-page .what-we-do-content {
+        padding: 30px 15px;
+    }
+    
+    #about-page .values-content h3,
+    #about-page .who-we-are-content h3,
+    #about-page .what-we-do-content h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    #about-page .values-content p,
+    #about-page .who-we-are-content p,
+    #about-page .what-we-do-content p {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2010,8 +2174,8 @@ header.white-bg .desktop-nav a {
         margin-top: -80px;
     }
 
-    #about-page .blue-section-title,
-    #about-page .image-bg-title,
+    #about-page .values-title,
+    #about-page .innovation-title,
     #about-page .company-profile-title,
     #about-page .who-we-are-title,
     #about-page .what-we-do-title {
@@ -2023,8 +2187,8 @@ header.white-bg .desktop-nav a {
         height: 200px;
     }
 
-    #about-page .blue-section,
-    #about-page .image-bg-section,
+    #about-page .values-section,
+    #about-page .innovation-section,
     #about-page .company-profile-section,
     #about-page .who-we-are-section,
     #about-page .what-we-do-section {
@@ -2235,16 +2399,20 @@ header.white-bg .desktop-nav a {
             <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Road construction with workers" class="construction-image">
         </div>
 
-        <!-- BLUE SECTION - THE ROOTS -->
-        <div class="blue-section">
-            <div class="blue-section-title">THE ROOTS</div>
-            <a href="/our-story" class="blue-section-button">Learn More</a>
+        <!-- OUR VALUES SECTION - UPDATED from "The Roots" -->
+        <div class="values-section">
+            <div class="values-title">OUR VALUES</div>
+            <a href="#" class="values-button">Learn More</a>
+            <div class="values-content">
+                <h3>Our Core Principles</h3>
+                <p>Integrity, excellence, innovation, and sustainability form the foundation of everything we do. We believe in transparent communication, ethical practices, and building lasting relationships based on trust and mutual respect.</p>
+            </div>
         </div>
 
-        <!-- IMAGE BACKGROUND SECTION - COMMITTED TO EXCELLENCE -->
-        <div class="image-bg-section" id="services">
-            <div class="image-bg-title">COMMITTED TO EXCELLENCE</div>
-            <a href="/excellence" class="image-bg-button">Discover More</a>
+        <!-- DRIVEN BY INNOVATION SECTION - UPDATED from "Committed to Excellence" -->
+        <div class="innovation-section" id="services">
+            <div class="innovation-title">DRIVEN BY INNOVATION</div>
+            <!-- Button removed as requested -->
         </div>
 
         <!-- NEW COMPANY PROFILE SECTION -->
@@ -2256,16 +2424,24 @@ header.white-bg .desktop-nav a {
             </a>
         </div>
 
-        <!-- NEW WHO WE ARE SECTION -->
+        <!-- WHO WE ARE SECTION with animation -->
         <div class="who-we-are-section">
             <div class="who-we-are-title">WHO WE ARE</div>
-            <a href="/about" class="who-we-are-button">Learn More</a>
+            <a href="#" class="who-we-are-button">Learn More</a>
+            <div class="who-we-are-content">
+                <h3>Our Team & Vision</h3>
+                <p>A dedicated team of professionals with 10+ years of experience in construction and energy solutions. We combine technical expertise with creative problem-solving to deliver exceptional results for every client.</p>
+            </div>
         </div>
 
-        <!-- NEW WHAT WE DO SECTION -->
+        <!-- WHAT WE DO SECTION with animation -->
         <div class="what-we-do-section">
             <div class="what-we-do-title">WHAT WE DO</div>
-            <a href="/services" class="what-we-do-button">Discover More</a>
+            <a href="#" class="what-we-do-button">Discover More</a>
+            <div class="what-we-do-content">
+                <h3>Our Services</h3>
+                <p>Comprehensive construction services, bulk fuel supply, green energy solutions, compliance services, and innovative consulting. We provide end-to-end solutions tailored to your specific needs.</p>
+            </div>
         </div>
 
     </section>
@@ -2282,17 +2458,17 @@ header.white-bg .desktop-nav a {
     </div>
 </div>
 
-<!-- READY TO WORK SECTION - MATCHES "WHO WE ARE" AESTHETIC -->
-<section class="ready-to-work-section" id="contact">
-    <div class="ready-to-work-container">
-        <h2 class="ready-to-work-title">READY TO WORK WITH US?</h2>
-        <p class="ready-to-work-subtitle">
+<!-- HAVE A PROJECT IN MIND SECTION - UPDATED from "Ready to Work" -->
+<section class="have-project-section" id="contact">
+    <div class="have-project-container">
+        <h2 class="have-project-title">HAVE A PROJECT IN MIND?</h2>
+        <p class="have-project-subtitle">
             Let's build something extraordinary together. Share your project details and get a customized quote 
             from our expert team. We're here to bring your vision to life with innovative solutions and unparalleled expertise.
         </p>
         
-        <div class="get-code-button-container">
-            <a href="/contact-form" class="get-code-button">GET QUOTE</a>
+        <div class="get-in-touch-button-container">
+            <a href="/contact-form" class="get-in-touch-button">GET IN TOUCH</a>
         </div>
     </div>
 </section>
@@ -2425,19 +2601,19 @@ function updateScrollButton() {
     }
 }
 
-// Check if header should be white (past the ready-to-work section)
+// Check if header should be white (past the have-project section)
 function updateHeaderBackground() {
-    const readyToWorkSection = document.getElementById('contact');
+    const haveProjectSection = document.getElementById('contact');
     const footer = document.querySelector('.footer');
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    // Get the position of the ready-to-work section
-    const readyToWorkTop = readyToWorkSection.offsetTop;
-    const readyToWorkHeight = readyToWorkSection.offsetHeight;
-    const readyToWorkBottom = readyToWorkTop + readyToWorkHeight;
+    // Get the position of the have-project section
+    const haveProjectTop = haveProjectSection.offsetTop;
+    const haveProjectHeight = haveProjectSection.offsetHeight;
+    const haveProjectBottom = haveProjectTop + haveProjectHeight;
     
-    // If we've scrolled past the ready-to-work section, make header white
-    if (scrollTop > readyToWorkBottom) {
+    // If we've scrolled past the have-project section, make header white
+    if (scrollTop > haveProjectBottom) {
         header.classList.add('white-bg');
     } else {
         header.classList.remove('white-bg');
@@ -2613,14 +2789,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-            videoModal.classList.remove('active');
-            modalVideo.pause();
-            modalVideo.currentTime = 0;
-        }
-    });
     
     // Setup navigation
     setupNavigation();
