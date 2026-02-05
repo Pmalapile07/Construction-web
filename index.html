@@ -1003,6 +1003,7 @@ header.white-bg .desktop-nav a {
     background: #2c5aa0;
 }
 
+/* Footer collapsible sections */
 .footer-services ul,
 .footer-links ul {
     list-style: none;
@@ -1011,6 +1012,7 @@ header.white-bg .desktop-nav a {
 .footer-services li,
 .footer-links li {
     margin-bottom: 12px;
+    position: relative;
 }
 
 .footer-services a,
@@ -1024,12 +1026,14 @@ header.white-bg .desktop-nav a {
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    padding-right: 20px;
+    position: relative;
 }
 
 .footer-services a:hover,
 .footer-links a:hover {
     color: white;
-    transform: translateX(5px);
 }
 
 .footer-services a::before,
@@ -1038,6 +1042,32 @@ header.white-bg .desktop-nav a {
     margin-right: 10px;
     color: #2c5aa0;
     font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-services li.active a::before,
+.footer-links li.active a::before {
+    transform: rotate(90deg);
+}
+
+/* Collapsible content */
+.footer-service-desc,
+.footer-link-desc {
+    display: none;
+    padding: 10px 0 10px 20px;
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    text-transform: none;
+    border-left: 2px solid #2c5aa0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.footer-services li.active .footer-service-desc,
+.footer-links li.active .footer-link-desc {
+    display: block;
 }
 
 .footer-contact-info {
@@ -1438,7 +1468,7 @@ header.white-bg .desktop-nav a {
 
 #about-page .values-content {
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1448,15 +1478,17 @@ header.white-bg .desktop-nav a {
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
-    transform: translateY(-100%);
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 2;
     opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    transform: translateY(20px);
 }
 
 #about-page .values-section:hover .values-content {
-    transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 #about-page .values-content h3 {
@@ -1649,7 +1681,7 @@ header.white-bg .desktop-nav a {
 
 #about-page .who-we-are-content {
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1659,15 +1691,17 @@ header.white-bg .desktop-nav a {
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
-    transform: translateY(-100%);
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 2;
     opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    transform: translateY(20px);
 }
 
 #about-page .who-we-are-section:hover .who-we-are-content {
-    transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 #about-page .who-we-are-content h3 {
@@ -1757,7 +1791,7 @@ header.white-bg .desktop-nav a {
 
 #about-page .what-we-do-content {
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1767,15 +1801,17 @@ header.white-bg .desktop-nav a {
     align-items: center;
     justify-content: center;
     padding: 40px 20px;
-    transform: translateY(-100%);
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 2;
     opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 2;
+    transform: translateY(20px);
 }
 
 #about-page .what-we-do-section:hover .what-we-do-content {
-    transform: translateY(0);
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 #about-page .what-we-do-content h3 {
@@ -2263,7 +2299,7 @@ header.white-bg .desktop-nav a {
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
 
-    <!-- DESKTOP NAV -->
+    <!-- DESKTOP NAV - REMOVED "Our Projects" -->
     <div class="desktop-nav">
         <div class="desktop-nav-item">
             <a class="nav-link desktop-nav-link" data-section="home">Home</a>
@@ -2278,9 +2314,6 @@ header.white-bg .desktop-nav a {
             <a class="nav-link desktop-nav-link" data-section="services">Services</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="projects">Projects</a>
-        </div>
-        <div class="desktop-nav-item">
             <a class="nav-link desktop-nav-link" data-section="contact">Contact Us</a>
         </div>
     </div>
@@ -2293,7 +2326,7 @@ header.white-bg .desktop-nav a {
     </div>
 </header>
 
-<!-- NAVIGATION BAR -->
+<!-- NAVIGATION BAR - REMOVED "Our Projects" -->
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
         <li class="nav-item">
@@ -2307,9 +2340,6 @@ header.white-bg .desktop-nav a {
         </li>
         <li class="nav-item">
             <a class="nav-link" id="servicesLink">SERVICES</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="projectsLink">PROJECTS</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="contactLink">CONTACT US</a>
@@ -2328,7 +2358,7 @@ header.white-bg .desktop-nav a {
         <div class="hero-paragraph">
             From bulk fuel to complex constructions, we bring 10+ years of excellence to every project. Your trusted partner for innovation, reliability, and results.
         </div>
-        <a href="#" class="cta-button">Get Quote</a>
+        <a href="mailto:info@ingestionennovation.co.za?subject=Quote Request&body=Hello Ingestion Ennovation, I would like to request a quote for:" class="cta-button">Get Quote</a>
     </div>
     
     <!-- Scroll down button with rotation functionality -->
@@ -2416,7 +2446,7 @@ header.white-bg .desktop-nav a {
         </div>
 
         <!-- NEW COMPANY PROFILE SECTION -->
-        <div class="company-profile-section" id="projects">
+        <div class="company-profile-section">
             <div class="company-profile-title">COMPANY PROFILE</div>
             <a href="YOUR_PDF_LINK_HERE" download="Company-Profile.pdf" class="company-profile-button">
                 <span>Download PDF</span>
@@ -2468,7 +2498,7 @@ header.white-bg .desktop-nav a {
         </p>
         
         <div class="get-in-touch-button-container">
-            <a href="/contact-form" class="get-in-touch-button">GET IN TOUCH</a>
+            <a href="mailto:info@ingestionennovation.co.za?subject=Project Inquiry&body=Hello Ingestion Ennovation, I have a project in mind:" class="get-in-touch-button">GET IN TOUCH</a>
         </div>
     </div>
 </section>
@@ -2488,28 +2518,57 @@ header.white-bg .desktop-nav a {
             </div>
         </div>
         
-        <!-- Our Services -->
+        <!-- Our Services - COLLAPSIBLE -->
         <div class="footer-services">
             <h3>OUR SERVICES</h3>
             <ul>
-                <li><a href="#">Bulk Fuel Supply</a></li>
-                <li><a href="#">Green Energy Services</a></li>
-                <li><a href="#">Construction & Consultation</a></li>
-                <li><a href="#">Compliance Services</a></li>
-                <li><a href="#">Office Supplies & Consumables</a></li>
-                <li><a href="#">Staff Impact Training</a></li>
+                <li>
+                    <a class="service-toggle">Bulk Fuel Supply</a>
+                    <div class="footer-service-desc">Reliable bulk fuel delivery for construction sites, industrial facilities, and commercial operations.</div>
+                </li>
+                <li>
+                    <a class="service-toggle">Green Energy Services</a>
+                    <div class="footer-service-desc">Sustainable energy solutions including solar installations and energy efficiency consulting.</div>
+                </li>
+                <li>
+                    <a class="service-toggle">Construction & Consultation</a>
+                    <div class="footer-service-desc">Full-service construction management and expert consulting for project planning and execution.</div>
+                </li>
+                <li>
+                    <a class="service-toggle">Compliance Services</a>
+                    <div class="footer-service-desc">Regulatory compliance assessments and certification for construction and energy projects.</div>
+                </li>
+                <li>
+                    <a class="service-toggle">Office Supplies & Consumables</a>
+                    <div class="footer-service-desc">Comprehensive supply of office materials and construction consumables.</div>
+                </li>
+                <li>
+                    <a class="service-toggle">Staff Impact Training</a>
+                    <div class="footer-service-desc">Specialized training programs for workforce development and safety compliance.</div>
+                </li>
             </ul>
         </div>
         
-        <!-- Quick Links -->
+        <!-- Quick Links - COLLAPSIBLE -->
         <div class="footer-links">
             <h3>QUICK LINKS</h3>
             <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Values</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Our Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li>
+                    <a class="link-toggle">About Us</a>
+                    <div class="footer-link-desc">Learn about our mission, vision, and team of experts driving innovation in construction and energy.</div>
+                </li>
+                <li>
+                    <a class="link-toggle">Our Values</a>
+                    <div class="footer-link-desc">Discover the core principles that guide our work: integrity, excellence, and sustainability.</div>
+                </li>
+                <li>
+                    <a class="link-toggle">Services</a>
+                    <div class="footer-link-desc">Explore our comprehensive range of construction and energy solutions tailored to your needs.</div>
+                </li>
+                <li>
+                    <a class="link-toggle">Contact</a>
+                    <div class="footer-link-desc">Get in touch with our team for inquiries, quotes, or project consultations.</div>
+                </li>
             </ul>
         </div>
         
@@ -2543,7 +2602,7 @@ header.white-bg .desktop-nav a {
                     </div>
                     <div class="contact-text-footer">
                         <h4>EMAIL</h4>
-                        <p>ingestion.pty@gmail.com<br>info@ingestionpty.co.za</p>
+                        <p>ingestion.pty@gmail.com<br>info@ingestionennovation.co.za</p>
                     </div>
                 </div>
             </div>
@@ -2564,7 +2623,6 @@ const homeLink = document.getElementById('homeLink');
 const aboutLink = document.getElementById('aboutLink');
 const valuesLink = document.getElementById('valuesLink');
 const servicesLink = document.getElementById('servicesLink');
-const projectsLink = document.getElementById('projectsLink');
 const contactLink = document.getElementById('contactLink');
 const header = document.querySelector('header');
 
@@ -2658,7 +2716,6 @@ function setupNavigation() {
         aboutLink: 'about',
         valuesLink: 'values',
         servicesLink: 'services',
-        projectsLink: 'projects',
         contactLink: 'contact'
     };
     
@@ -2697,7 +2754,7 @@ function setupNavigation() {
     
     // Update active state on scroll
     window.addEventListener('scroll', () => {
-        const sections = ['home', 'about', 'values', 'services', 'projects', 'contact'];
+        const sections = ['home', 'about', 'values', 'services', 'contact'];
         const scrollPosition = window.scrollY + 100;
         
         let currentSection = 'home';
@@ -2789,6 +2846,55 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Footer collapsible functionality
+    const serviceToggles = document.querySelectorAll('.service-toggle');
+    const linkToggles = document.querySelectorAll('.link-toggle');
+    
+    serviceToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentLi = this.closest('li');
+            const isActive = parentLi.classList.contains('active');
+            
+            // Close all other service items
+            document.querySelectorAll('.footer-services li').forEach(li => {
+                li.classList.remove('active');
+            });
+            
+            // Toggle current item if it wasn't already active
+            if (!isActive) {
+                parentLi.classList.add('active');
+            }
+        });
+    });
+    
+    linkToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentLi = this.closest('li');
+            const isActive = parentLi.classList.contains('active');
+            
+            // Close all other link items
+            document.querySelectorAll('.footer-links li').forEach(li => {
+                li.classList.remove('active');
+            });
+            
+            // Toggle current item if it wasn't already active
+            if (!isActive) {
+                parentLi.classList.add('active');
+            }
+        });
+    });
+    
+    // Close collapsible items when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.footer-services') && !e.target.closest('.footer-links')) {
+            document.querySelectorAll('.footer-services li, .footer-links li').forEach(li => {
+                li.classList.remove('active');
+            });
+        }
+    });
     
     // Setup navigation
     setupNavigation();
