@@ -2127,16 +2127,16 @@ header.white-bg .desktop-nav a {
             <a href="#home" class="nav-link desktop-nav-link" data-section="home">Home</a>
         </div>
         <div class="desktop-nav-item">
-            <a href="/about" class="nav-link desktop-nav-link" data-section="about">About Us</a>
+            <a href="who-we-are.html" class="nav-link desktop-nav-link">About Us</a>
         </div>
         <div class="desktop-nav-item">
-            <a href="/values" class="nav-link desktop-nav-link" data-section="values">Values</a>
+            <a href="our-values.html" class="nav-link desktop-nav-link">Values</a>
         </div>
         <div class="desktop-nav-item">
-            <a href="/services" class="nav-link desktop-nav-link" data-section="services">Services</a>
+            <a href="what-we-do.html" class="nav-link desktop-nav-link">Services</a>
         </div>
         <div class="desktop-nav-item">
-            <a href="/contact" class="nav-link desktop-nav-link" data-section="contact">Contact Us</a>
+            <a href="contact-us.html" class="nav-link desktop-nav-link">Contact Us</a>
         </div>
     </div>
 
@@ -2155,16 +2155,16 @@ header.white-bg .desktop-nav a {
             <a href="#home" class="nav-link" id="homeLink">HOME</a>
         </li>
         <li class="nav-item">
-            <a href="/about" class="nav-link" id="aboutLink">ABOUT US</a>
+            <a href="who-we-are.html" class="nav-link" id="aboutLink">ABOUT US</a>
         </li>
         <li class="nav-item">
-            <a href="/values" class="nav-link" id="valuesLink">VALUES</a>
+            <a href="our-values.html" class="nav-link" id="valuesLink">VALUES</a>
         </li>
         <li class="nav-item">
-            <a href="/services" class="nav-link" id="servicesLink">SERVICES</a>
+            <a href="what-we-do.html" class="nav-link" id="servicesLink">SERVICES</a>
         </li>
         <li class="nav-item">
-            <a href="/contact" class="nav-link" id="contactLink">CONTACT US</a>
+            <a href="contact-us.html" class="nav-link" id="contactLink">CONTACT US</a>
         </li>
     </ul>
 </nav>
@@ -2275,7 +2275,7 @@ header.white-bg .desktop-nav a {
         <!-- WHO WE ARE SECTION - NORMAL BUTTON -->
         <div class="who-we-are-section">
             <div class="who-we-are-title">WHO WE ARE</div>
-    <a href="who-we-are.html" class="who-we-are-button">Learn More</a>
+            <a href="who-we-are.html" class="who-we-are-button">Learn More</a>
         </div>
 
         <!-- WHAT WE DO SECTION - NORMAL BUTTON -->
@@ -2364,19 +2364,19 @@ header.white-bg .desktop-nav a {
             <h3>QUICK LINKS</h3>
             <ul>
                 <li>
-                    <a href="/about" class="link-toggle">About Us</a>
+                    <a href="who-we-are.html" class="link-toggle">About Us</a>
                     <div class="footer-link-desc">Learn about our mission, vision, and team of experts driving innovation in construction and energy. Discover our 10+ years of industry experience and commitment to sustainable development.</div>
                 </li>
                 <li>
-                    <a href="/values" class="link-toggle">Our Values</a>
+                    <a href="our-values.html" class="link-toggle">Our Values</a>
                     <div class="footer-link-desc">Discover the core principles that guide our work: integrity, excellence, innovation, and sustainability. Learn how our values shape every project we undertake.</div>
                 </li>
                 <li>
-                    <a href="/services" class="link-toggle">Services</a>
+                    <a href="what-we-do.html" class="link-toggle">Services</a>
                     <div class="footer-link-desc">Explore our comprehensive range of construction and energy solutions tailored to your needs. From bulk fuel to green energy, we provide end-to-end services.</div>
                 </li>
                 <li>
-                    <a href="/contact" class="link-toggle">Contact</a>
+                    <a href="contact-us.html" class="link-toggle">Contact</a>
                     <div class="footer-link-desc">Get in touch with our team for inquiries, quotes, or project consultations. We're ready to discuss your next construction or energy project.</div>
                 </li>
             </ul>
@@ -2429,11 +2429,6 @@ header.white-bg .desktop-nav a {
 const menuIcon = document.getElementById('menuIcon');
 const logo = document.getElementById('logo');
 const navBar = document.getElementById('navBar');
-const homeLink = document.getElementById('homeLink');
-const aboutLink = document.getElementById('aboutLink');
-const valuesLink = document.getElementById('valuesLink');
-const servicesLink = document.getElementById('servicesLink');
-const contactLink = document.getElementById('contactLink');
 const header = document.querySelector('header');
 
 // Desktop navigation elements
@@ -2518,119 +2513,6 @@ logo.addEventListener('click', () => {
     header.classList.remove('white-bg');
 });
 
-// Navigation scroll functionality
-function setupNavigation() {
-    // Mobile navigation
-    const mobileNavLinks = {
-        homeLink: 'home',
-        aboutLink: '/about',
-        valuesLink: '/values',
-        servicesLink: '/services',
-        contactLink: '/contact'
-    };
-    
-    // Add click events to mobile nav links
-    Object.keys(mobileNavLinks).forEach(linkId => {
-        const link = document.getElementById(linkId);
-        if (link) {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetUrl = mobileNavLinks[linkId];
-                if (targetUrl.startsWith('/')) {
-                    // For page links, navigate to the page
-                    window.location.href = targetUrl;
-                } else {
-                    // For anchor links, scroll to section
-                    const targetElement = document.getElementById(targetUrl);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-                // Close mobile menu
-                navBar.classList.remove('active');
-                menuIcon.classList.remove('active');
-            });
-        }
-    });
-    
-    // Desktop navigation
-    desktopLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                const section = href.substring(1);
-                const targetElement = document.getElementById(section);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                    
-                    // Update active state
-                    desktopLinks.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-                }
-            }
-            // If href starts with '/', it will navigate normally
-        });
-    });
-    
-    // Update active state on scroll for anchor links
-    window.addEventListener('scroll', () => {
-        const sections = ['home', 'about', 'values', 'services', 'contact'];
-        const scrollPosition = window.scrollY + 100;
-        
-        let currentSection = 'home';
-        
-        for (const section of sections) {
-            const element = document.getElementById(section);
-            if (element) {
-                const offsetTop = element.offsetTop;
-                const offsetBottom = offsetTop + element.offsetHeight;
-                
-                if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-                    currentSection = section;
-                    break;
-                }
-            }
-        }
-        
-        // Update active link for anchor links
-        desktopLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                link.classList.remove('active');
-                if (href === `#${currentSection}`) {
-                    link.classList.add('active');
-                }
-            }
-        });
-    });
-}
-
-// Mobile navigation links - simplified
-const mobileLinks = document.querySelectorAll('.nav-link');
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        // Close mobile menu when clicking any link
-        navBar.classList.remove('active');
-        menuIcon.classList.remove('active');
-    });
-});
-
-// Close navigation when clicking outside
-document.addEventListener('click', (e) => {
-    // Mobile navigation
-    if (!navBar.contains(e.target) && !menuIcon.contains(e.target)) {
-        navBar.classList.remove('active');
-        menuIcon.classList.remove('active');
-    }
-});
-
-// Force image load
-window.addEventListener('load', function() {
-    const img = document.querySelector('.image-container img');
-    if (img.complete) img.style.opacity = '1';
-});
-
 // About page video modal functionality
 document.addEventListener('DOMContentLoaded', function() {
     const playButton = document.querySelector('#about-page .play-button');
@@ -2688,7 +2570,7 @@ document.addEventListener('DOMContentLoaded', function() {
     linkToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href && href.startsWith('/')) {
+            if (href && href.endsWith('.html')) {
                 // Let the link navigate normally
                 return;
             }
@@ -2718,8 +2600,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Setup navigation
-    setupNavigation();
+    // Update navigation for new links
+    const mobileNavLinks = document.querySelectorAll('.nav-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Close mobile menu when clicking any link
+            navBar.classList.remove('active');
+            menuIcon.classList.remove('active');
+        });
+    });
+    
+    // Close navigation when clicking outside
+    document.addEventListener('click', (e) => {
+        // Mobile navigation
+        if (!navBar.contains(e.target) && !menuIcon.contains(e.target)) {
+            navBar.classList.remove('active');
+            menuIcon.classList.remove('active');
+        }
+    });
+});
+
+// Force image load
+window.addEventListener('load', function() {
+    const img = document.querySelector('.image-container img');
+    if (img.complete) img.style.opacity = '1';
 });
 </script>
 </body>
