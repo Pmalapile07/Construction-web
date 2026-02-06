@@ -529,13 +529,12 @@ header.white-bg .desktop-nav a {
 }
 
 .values-hero-content h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
     margin-bottom: 30px;
     letter-spacing: 3px;
     font-weight: 900;
     line-height: 1.1;
-    font-family: 'Mozilla Text';
 }
 
 .values-hero-content p {
@@ -619,11 +618,11 @@ header.white-bg .desktop-nav a {
     z-index: 1;
 }
 
-/* --- VALUES CONTENT SECTION --- */
+/* --- MINIMALISTIC VALUES CONTENT SECTION --- */
 .values-content-section {
     width: 100%;
     background: #f8f9fa;
-    padding: 100px 20px;
+    padding: 60px 0;
     position: relative;
     z-index: 2;
 }
@@ -632,260 +631,295 @@ header.white-bg .desktop-nav a {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .values-intro {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .values-intro h2 {
-    font-family: 'archivo', sans-serif;
-    font-size: 3rem;
+    font-family: 'Mozilla Text', sans-serif; /* Same as paragraph font */
+    font-size: 2rem; /* Reduced from 3rem */
     color: #2c5aa0;
     text-transform: uppercase;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .values-intro p {
     font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #333;
-    line-height: 1.8;
+    line-height: 1.7;
     max-width: 800px;
     margin: 0 auto;
     text-transform: none;
 }
 
-/* Values Grid - Updated for full width */
-.values-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column for full width */
-    gap: 40px;
-    margin-bottom: 80px;
-}
-
-/* Full width value cards */
-.value-card-full-width {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns: image and content */
-    min-height: 300px;
-}
-
-.value-card-full-width:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.value-image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.value-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.value-card-full-width:hover .value-image img {
-    transform: scale(1.05);
-}
-
-.value-content {
-    padding: 40px;
+/* Minimalistic Values List - Full Width Sections */
+.values-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 0;
+    margin-bottom: 60px;
 }
 
-.value-content h3 {
-    font-family: 'archivo', sans-serif;
-    font-size: 1.8rem;
-    color: #2c5aa0;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+/* Alternate between blue and white backgrounds */
+.value-item-blue {
+    width: 100%;
+    background: #2c5aa0;
+    padding: 50px 0;
 }
 
-/* Make value paragraphs match other paragraph fonts */
-.value-content p {
-    font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.7;
-    text-transform: none; /* Remove uppercase */
-    margin-bottom: 0;
+.value-item-white {
+    width: 100%;
+    background: white;
+    padding: 50px 0;
 }
 
-.value-icon {
+.value-item-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.value-icon-minimal {
+    flex-shrink: 0;
     width: 60px;
     height: 60px;
-    background: #2c5aa0;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
-.value-icon i {
+/* White icon for blue background, blue icon for white background */
+.value-item-blue .value-icon-minimal i {
     color: white;
-    font-size: 24px;
+    font-size: 32px;
 }
 
-/* Responsive for full width cards */
-@media (max-width: 768px) {
-    .value-card-full-width {
-        grid-template-columns: 1fr;
-        min-height: auto;
-    }
-    
-    .value-image {
-        height: 250px;
-    }
-    
-    .value-content {
-        padding: 30px;
-    }
+.value-item-white .value-icon-minimal i {
+    color: #2c5aa0;
+    font-size: 32px;
 }
 
-/* Commitment Section */
-.commitment-section {
-    background: #2c5aa0;
-    padding: 80px 20px;
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 80px;
+.value-text {
+    flex: 1;
 }
 
-.commitment-section h2 {
-    font-family: 'archivo', sans-serif;
-    font-size: 2.5rem;
+.value-item-blue .value-text h3 {
+    font-family: 'Mozilla Text', sans-serif; /* Same as paragraph font */
+    font-size: 1.3rem; /* Reduced from 1.8rem */
     color: white;
     text-transform: uppercase;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
-
-.commitment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.commitment-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-}
-
-.commitment-item h4 {
-    font-family: 'archivo', sans-serif;
-    font-size: 1.3rem;
-    color: white;
     margin-bottom: 15px;
-    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
-.commitment-item p {
+.value-item-white .value-text h3 {
+    font-family: 'Mozilla Text', sans-serif; /* Same as paragraph font */
+    font-size: 1.3rem; /* Reduced from 1.8rem */
+    color: #2c5aa0;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.value-text p {
     font-family: 'Mozilla Text', sans-serif;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.7;
     text-transform: none;
 }
 
-/* CTA Section */
-.cta-section {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #2c5aa0 0%, #1a3d75 100%);
-    border-radius: 10px;
+.value-item-blue .value-text p {
+    color: rgba(255, 255, 255, 0.95);
 }
 
-.cta-section h2 {
-    font-family: 'archivo', sans-serif;
-    font-size: 2.5rem;
+.value-item-white .value-text p {
+    color: #555;
+}
+
+/* Responsive for value items */
+@media (max-width: 768px) {
+    .value-item-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .value-icon-minimal {
+        margin: 0 auto;
+    }
+    
+    .value-item-blue,
+    .value-item-white {
+        padding: 40px 0;
+    }
+    
+    .values-intro h2 {
+        font-size: 1.8rem;
+    }
+    
+    .value-item-blue .value-text h3,
+    .value-item-white .value-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .value-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Minimalistic Commitment Section */
+.commitment-section-minimal {
+    width: 100%;
+    background: #2c5aa0;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.commitment-section-minimal h2 {
+    font-family: 'Mozilla Text', sans-serif; /* Same as paragraph font */
+    font-size: 2rem; /* Reduced from 2.5rem */
     color: white;
     text-transform: uppercase;
     margin-bottom: 30px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
-.cta-section p {
+.commitment-section-minimal > p {
     font-family: 'Mozilla Text', sans-serif;
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 40px;
-    max-width: 700px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
+    text-transform: none;
+    font-weight: normal;
+}
+
+.commitment-grid-minimal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.commitment-item-minimal {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    text-align: left;
+}
+
+.commitment-item-minimal h4 {
+    font-family: 'Mozilla Text', sans-serif; /* Same as paragraph font */
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.commitment-item-minimal p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
     text-transform: none;
 }
 
-.cta-button {
+/* Minimalistic CTA Section */
+.cta-section-minimal {
+    width: 100%;
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(135deg, #2c5aa0 0%, #1a3d75 100%);
+}
+
+.cta-section-minimal h2 {
+    font-family: 'Mozilla Text', sans-serif; /* Same as paragraph font */
+    font-size: 2rem; /* Reduced from 2.5rem */
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.cta-section-minimal p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    text-transform: none;
+}
+
+.cta-button-minimal {
     display: inline-block;
     background: white;
     color: #2c5aa0;
-    padding: 20px 45px;
-    font-size: 1.1rem;
+    padding: 15px 35px;
+    font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-decoration: none;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-family: 'Mozilla Text', sans-serif;
-    border-radius: 5px;
 }
 
-.cta-button:hover {
+.cta-button-minimal:hover {
     background: #f0f0f0;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
     .values-content-section {
-        padding: 60px 20px;
+        padding: 40px 0;
     }
     
-    .values-intro h2 {
-        font-size: 2.2rem;
+    .values-intro {
+        margin-bottom: 40px;
     }
     
-    .values-intro p {
+    .commitment-section-minimal h2,
+    .cta-section-minimal h2 {
+        font-size: 1.8rem;
+    }
+    
+    .commitment-section-minimal > p,
+    .cta-section-minimal p {
         font-size: 1.1rem;
     }
     
-    .values-grid {
+    .commitment-grid-minimal {
         grid-template-columns: 1fr;
-        gap: 30px;
     }
     
-    .commitment-section h2 {
-        font-size: 2rem;
-    }
-    
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-    
-    .cta-section p {
-        font-size: 1.1rem;
+    .cta-button-minimal {
+        padding: 12px 30px;
+        font-size: 0.9rem;
     }
 }
 
@@ -1250,7 +1284,7 @@ header.white-bg .desktop-nav a {
     <div class="scroll-down" id="scrollDownBtn"></div>
 </section>
 
-<!-- VALUES CONTENT SECTION -->
+<!-- MINIMALISTIC VALUES CONTENT SECTION -->
 <section class="values-content-section">
     <div class="values-container">
         <div class="values-intro">
@@ -1258,120 +1292,114 @@ header.white-bg .desktop-nav a {
             <p>At Ingestion Ennovation, our values are more than just words - they're the foundation of our company culture and the guiding principles that drive our decisions, actions, and relationships with clients, partners, and communities.</p>
         </div>
 
-        <div class="values-grid">
-            <!-- Integrity Card -->
-            <div class="value-card-full-width">
-                <div class="value-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Handshake representing integrity">
-                </div>
-                <div class="value-content">
-                    <div class="value-icon">
+        <div class="values-list">
+            <!-- Integrity -->
+            <div class="value-item-blue">
+                <div class="value-item-content">
+                    <div class="value-icon-minimal">
                         <i class="material-icons">handshake</i>
                     </div>
-                    <h3>INTEGRITY</h3>
-                    <p>We conduct business with honesty, transparency, and ethical practices. Our word is our bond, and we build trust through consistent, reliable actions. Every project is approached with full disclosure and fair dealing.</p>
+                    <div class="value-text">
+                        <h3>INTEGRITY</h3>
+                        <p>We conduct business with honesty, transparency, and ethical practices. Our word is our bond, and we build trust through consistent, reliable actions. Every project is approached with full disclosure and fair dealing.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Excellence Card -->
-            <div class="value-card-full-width">
-                <div class="value-image">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Precision construction work">
-                </div>
-                <div class="value-content">
-                    <div class="value-icon">
+            <!-- Excellence -->
+            <div class="value-item-white">
+                <div class="value-item-content">
+                    <div class="value-icon-minimal">
                         <i class="material-icons">star</i>
                     </div>
-                    <h3>EXCELLENCE</h3>
-                    <p>We strive for the highest quality in everything we do. From project planning to execution, we maintain rigorous standards and attention to detail. Our commitment to excellence ensures exceptional results for every client.</p>
+                    <div class="value-text">
+                        <h3>EXCELLENCE</h3>
+                        <p>We strive for the highest quality in everything we do. From project planning to execution, we maintain rigorous standards and attention to detail. Our commitment to excellence ensures exceptional results for every client.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Innovation Card -->
-            <div class="value-card-full-width">
-                <div class="value-image">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Innovative construction technology">
-                </div>
-                <div class="value-content">
-                    <div class="value-icon">
+            <!-- Innovation -->
+            <div class="value-item-blue">
+                <div class="value-item-content">
+                    <div class="value-icon-minimal">
                         <i class="material-icons">lightbulb</i>
                     </div>
-                    <h3>INNOVATION</h3>
-                    <p>We embrace new technologies, methods, and ideas to solve complex challenges. Our innovative approach allows us to deliver cutting-edge solutions that maximize efficiency, sustainability, and value for our clients.</p>
+                    <div class="value-text">
+                        <h3>INNOVATION</h3>
+                        <p>We embrace new technologies, methods, and ideas to solve complex challenges. Our innovative approach allows us to deliver cutting-edge solutions that maximize efficiency, sustainability, and value for our clients.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Sustainability Card -->
-            <div class="value-card-full-width">
-                <div class="value-image">
-                    <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Sustainable construction practices">
-                </div>
-                <div class="value-content">
-                    <div class="value-icon">
+            <!-- Sustainability -->
+            <div class="value-item-white">
+                <div class="value-item-content">
+                    <div class="value-icon-minimal">
                         <i class="material-icons">eco</i>
                     </div>
-                    <h3>SUSTAINABILITY</h3>
-                    <p>We prioritize environmental responsibility and sustainable practices in all our operations. From material selection to construction methods, we minimize environmental impact while maximizing long-term value.</p>
+                    <div class="value-text">
+                        <h3>SUSTAINABILITY</h3>
+                        <p>We prioritize environmental responsibility and sustainable practices in all our operations. From material selection to construction methods, we minimize environmental impact while maximizing long-term value.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Safety Card -->
-            <div class="value-card-full-width">
-                <div class="value-image">
-                    <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Construction safety equipment">
-                </div>
-                <div class="value-content">
-                    <div class="value-icon">
+            <!-- Safety -->
+            <div class="value-item-blue">
+                <div class="value-item-content">
+                    <div class="value-icon-minimal">
                         <i class="material-icons">security</i>
                     </div>
-                    <h3>SAFETY FIRST</h3>
-                    <p>The well-being of our team, clients, and communities is our top priority. We maintain the highest safety standards through rigorous training, proper equipment, and continuous safety monitoring on all sites.</p>
+                    <div class="value-text">
+                        <h3>SAFETY FIRST</h3>
+                        <p>The well-being of our team, clients, and communities is our top priority. We maintain the highest safety standards through rigorous training, proper equipment, and continuous safety monitoring on all sites.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Collaboration Card -->
-            <div class="value-card-full-width">
-                <div class="value-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team collaboration on site">
-                </div>
-                <div class="value-content">
-                    <div class="value-icon">
+            <!-- Collaboration -->
+            <div class="value-item-white">
+                <div class="value-item-content">
+                    <div class="value-icon-minimal">
                         <i class="material-icons">group</i>
                     </div>
-                    <h3>COLLABORATION</h3>
-                    <p>We believe in the power of teamwork and partnership. By working closely with clients, stakeholders, and communities, we create solutions that benefit everyone involved and build lasting relationships.</p>
+                    <div class="value-text">
+                        <h3>COLLABORATION</h3>
+                        <p>We believe in the power of teamwork and partnership. By working closely with clients, stakeholders, and communities, we create solutions that benefit everyone involved and build lasting relationships.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="commitment-section">
+        <div class="commitment-section-minimal">
             <h2>OUR COMMITMENT</h2>
-            <p style="color: white; font-size: 1.2rem; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; text-transform: none; font-family: 'Mozilla Text', sans-serif; font-weight: normal;">These values aren't just ideals - they're actionable commitments that shape our daily operations and long-term strategy.</p>
+            <p>These values aren't just ideals - they're actionable commitments that shape our daily operations and long-term strategy.</p>
             
-            <div class="commitment-grid">
-                <div class="commitment-item">
+            <div class="commitment-grid-minimal">
+                <div class="commitment-item-minimal">
                     <h4>CLIENT-CENTRIC APPROACH</h4>
                     <p>We listen to your needs and tailor solutions that exceed expectations while maintaining transparent communication throughout the project lifecycle.</p>
                 </div>
-                <div class="commitment-item">
+                <div class="commitment-item-minimal">
                     <h4>CONTINUOUS IMPROVEMENT</h4>
                     <p>We invest in training, technology, and process optimization to consistently enhance our capabilities and service delivery.</p>
                 </div>
-                <div class="commitment-item">
+                <div class="commitment-item-minimal">
                     <h4>COMMUNITY IMPACT</h4>
                     <p>We contribute positively to the communities where we work through job creation, skills development, and sustainable practices.</p>
                 </div>
-                <div class="commitment-item">
+                <div class="commitment-item-minimal">
                     <h4>ETHICAL PRACTICES</h4>
                     <p>We adhere to the highest ethical standards in all business dealings, ensuring fairness, honesty, and accountability.</p>
                 </div>
             </div>
         </div>
 
-        <div class="cta-section">
+        <div class="cta-section-minimal">
             <h2>BUILD WITH VALUES</h2>
             <p>Partner with a company that stands by its principles. Experience the Ingestion Ennovation difference - where values drive excellence and integrity builds trust.</p>
-            <a href="mailto:info@ingestionennovation.co.za?subject=Values Partnership Inquiry" class="cta-button">START PROJECT</a>
+            <a href="mailto:info@ingestionennovation.co.za?subject=Values Partnership Inquiry" class="cta-button-minimal">START PROJECT</a>
         </div>
     </div>
 </section>
