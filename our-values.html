@@ -657,30 +657,34 @@ header.white-bg .desktop-nav a {
     text-transform: none;
 }
 
-/* Values Grid */
+/* Values Grid - Updated for full width */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Single column for full width */
     gap: 40px;
     margin-bottom: 80px;
 }
 
-.value-card {
+/* Full width value cards */
+.value-card-full-width {
     background: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: image and content */
+    min-height: 300px;
 }
 
-.value-card:hover {
+.value-card-full-width:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .value-image {
     width: 100%;
-    height: 200px;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -691,29 +695,34 @@ header.white-bg .desktop-nav a {
     transition: transform 0.5s ease;
 }
 
-.value-card:hover .value-image img {
+.value-card-full-width:hover .value-image img {
     transform: scale(1.05);
 }
 
 .value-content {
-    padding: 30px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .value-content h3 {
     font-family: 'archivo', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #2c5aa0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+/* Make value paragraphs match other paragraph fonts */
 .value-content p {
     font-family: 'Mozilla Text', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
-    line-height: 1.6;
-    text-transform: none;
+    line-height: 1.7;
+    text-transform: none; /* Remove uppercase */
+    margin-bottom: 0;
 }
 
 .value-icon {
@@ -730,6 +739,22 @@ header.white-bg .desktop-nav a {
 .value-icon i {
     color: white;
     font-size: 24px;
+}
+
+/* Responsive for full width cards */
+@media (max-width: 768px) {
+    .value-card-full-width {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .value-image {
+        height: 250px;
+    }
+    
+    .value-content {
+        padding: 30px;
+    }
 }
 
 /* Commitment Section */
@@ -888,6 +913,7 @@ header.white-bg .desktop-nav a {
 
 .footer-logo {
     margin-bottom: 25px;
+    cursor: pointer;
 }
 
 .footer-logo img {
@@ -1162,7 +1188,7 @@ header.white-bg .desktop-nav a {
 </div>
 
 <header>
-    <div class="logo" id="logo">
+    <div class="logo" id="logo" onclick="window.location.href='index.html'">
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
 
@@ -1233,7 +1259,7 @@ header.white-bg .desktop-nav a {
 
         <div class="values-grid">
             <!-- Integrity Card -->
-            <div class="value-card">
+            <div class="value-card-full-width">
                 <div class="value-image">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Handshake representing integrity">
                 </div>
@@ -1247,7 +1273,7 @@ header.white-bg .desktop-nav a {
             </div>
 
             <!-- Excellence Card -->
-            <div class="value-card">
+            <div class="value-card-full-width">
                 <div class="value-image">
                     <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Precision construction work">
                 </div>
@@ -1261,7 +1287,7 @@ header.white-bg .desktop-nav a {
             </div>
 
             <!-- Innovation Card -->
-            <div class="value-card">
+            <div class="value-card-full-width">
                 <div class="value-image">
                     <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Innovative construction technology">
                 </div>
@@ -1275,7 +1301,7 @@ header.white-bg .desktop-nav a {
             </div>
 
             <!-- Sustainability Card -->
-            <div class="value-card">
+            <div class="value-card-full-width">
                 <div class="value-image">
                     <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Sustainable construction practices">
                 </div>
@@ -1289,7 +1315,7 @@ header.white-bg .desktop-nav a {
             </div>
 
             <!-- Safety Card -->
-            <div class="value-card">
+            <div class="value-card-full-width">
                 <div class="value-image">
                     <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Construction safety equipment">
                 </div>
@@ -1303,7 +1329,7 @@ header.white-bg .desktop-nav a {
             </div>
 
             <!-- Collaboration Card -->
-            <div class="value-card">
+            <div class="value-card-full-width">
                 <div class="value-image">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team collaboration on site">
                 </div>
@@ -1319,7 +1345,7 @@ header.white-bg .desktop-nav a {
 
         <div class="commitment-section">
             <h2>OUR COMMITMENT</h2>
-            <p style="color: white; font-size: 1.2rem; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">These values aren't just ideals - they're actionable commitments that shape our daily operations and long-term strategy.</p>
+            <p style="color: white; font-size: 1.2rem; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; text-transform: none; font-family: 'Mozilla Text', sans-serif; font-weight: normal;">These values aren't just ideals - they're actionable commitments that shape our daily operations and long-term strategy.</p>
             
             <div class="commitment-grid">
                 <div class="commitment-item">
@@ -1344,7 +1370,7 @@ header.white-bg .desktop-nav a {
         <div class="cta-section">
             <h2>BUILD WITH VALUES</h2>
             <p>Partner with a company that stands by its principles. Experience the Ingestion Ennovation difference - where values drive excellence and integrity builds trust.</p>
-            <a href="mailto:info@ingestionennovation.co.za?subject=Values Partnership Inquiry" class="cta-button">START A VALUES-DRIVEN PROJECT</a>
+            <a href="mailto:info@ingestionennovation.co.za?subject=Values Partnership Inquiry" class="cta-button">START PROJECT</a>
         </div>
     </div>
 </section>
@@ -1354,7 +1380,7 @@ header.white-bg .desktop-nav a {
     <div class="footer-container">
         <!-- Logo and Company Info -->
         <div class="footer-logo-section">
-            <div class="footer-logo">
+            <div class="footer-logo" onclick="window.location.href='index.html'">
                 <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Ingestion Logo">
             </div>
             <div class="footer-company-info">
@@ -1506,10 +1532,10 @@ scrollDownBtn.addEventListener('click', () => {
     }
 });
 
-// Logo scroll to top functionality
-logo.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    header.classList.remove('white-bg');
+// Logo click to index.html
+logo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'index.html';
 });
 
 // Mobile navigation links
