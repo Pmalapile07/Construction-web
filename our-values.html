@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no">
+<title>Our Values - Ingestion Ennovation</title>
+
+<!-- Preload the image to prevent loading delay -->
+<link rel="preload" href="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/IMG_2570.jpg?v=1760818938" as="image">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=BBH+Sans+Bogle&family=Bebas+Neue&family=Mozilla+Text:wght@200..700&family=Staatliches&display=swap" rel="stylesheet">
+<!-- Material Icons -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward" />
+<!-- Google Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Font Awesome for LinkedIn and Facebook icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Additional Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+/* --- GENERAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+}
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- ANNOUNCEMENT BAR --- */
+.announcement-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 13px 40px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: black;
+    z-index: 1001;
+}
+
+.announcement-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2c5aa0;
+}
+
+.contact-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2c5aa0;
+    border: 1px solid #2c5aa0;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.contact-item .material-icons {
+    font-size: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #2c5aa0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2196f3;
+}
+
+.social-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2c5aa0;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover .social-icon-circle {
+    background: rgba(33, 150, 243, 0.2);
+    transform: scale(1.1);
+}
+
+.social-links .fa-brands {
+    font-size: 16px;
+}
+
+/* --- HEADER FIX: Logo on far left, menu on far right --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95px;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Header white background when past footer */
+header.white-bg {
+    background-color: white;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- LOGO - ABSOLUTE FAR LEFT --- */
+.logo {
+    cursor: pointer;
+    position: relative;
+    margin-left: 0;
+    padding-left: 0;
+}
+.logo img {
+    height: 120px;
+    width: auto;
+}
+
+/* --- MENU ICON - ABSOLUTE FAR RIGHT --- */
+.menu-icon {
+    width: 25px;
+    height: 17px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.menu-icon span {
+    background: white;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    transition: all 0.3s ease;
+}
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 8px; }
+.menu-icon span:nth-child(3) { top: 16px; }
+.menu-icon.active span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.menu-icon.active span:nth-child(2) { opacity: 0; }
+.menu-icon.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+
+/* Menu icon grey when header is white */
+header.white-bg .menu-icon span {
+    background: #333;
+}
+
+/* --- NAVIGATION BAR --- */
+.nav-bar {
+    position: fixed;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 5px solid #2c5aa0;
+    z-index: 999;
+    display: none;
+}
+
+.nav-bar.active {
+    display: block;
+}
+
+.nav-list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-item.collapsible {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px 30px;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.arrow-icon {
+    margin-left: 10px;
+    margin-right: 45px;
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    color: #333;
+}
+
+.nav-item.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.nav-content {
+    display: none;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    width: 100%;
+}
+
+.nav-content.active {
+    display: block;
+}
+
+.nav-content ul {
+    list-style: none;
+    padding: 10px 0;
+    font-size: 0.7rem;
+    text-align: left;
+}
+
+.nav-content li {
+    padding: 8px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.nav-content li:last-child {
+    border-bottom: none;
+}
+
+.nav-content a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.nav-content a:hover {
+    color: #2c5aa0;
+}
+
+/* --- DESKTOP NAV --- */
+.desktop-nav {
+    display: none;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+    margin-left: 0;
+}
+
+.desktop-nav-item {
+    position: relative;
+}
+
+.desktop-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Mozilla Text', sans-serif;
+    white-space: nowrap;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+}
+
+/* Desktop nav color change when header is white */
+header.white-bg .desktop-nav a {
+    color: #333;
+}
+
+.desktop-nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: #2196f3;
+    border-radius: 2px;
+}
+
+.desktop-nav-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 200px;
+    z-index: 1001;
+    border-top: 3px solid cyan;
+}
+
+.desktop-nav-content.active {
+    display: block;
+}
+
+.desktop-nav-content ul {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.desktop-nav-content li {
+    padding: 8px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.desktop-nav-content li:last-child {
+    border-bottom: none;
+}
+
+.desktop-nav-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-family: 'Mozilla Text', sans-serif;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+.desktop-nav-content a:hover {
+    color: cyan;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-arrow-icon {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    font-size: 18px;
+}
+
+.desktop-nav-item.active .desktop-arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* Show horizontal nav + hide menu icon on larger screens */
+@media (min-width: 1024px) {
+    .menu-icon {
+        display: none;
+    }
+    .desktop-nav {
+        display: flex;
+    }
+    .announcement-bar {
+        display: block;
+    }
+    header {
+        top: 53px;
+    }
+    .nav-bar {
+        top: 148px;
+    }
+    
+    /* Hide Facebook and LinkedIn on desktop */
+    .social-links {
+        display: none;
+    }
+}
+
+/* Mobile logo alignment */
+@media (max-width: 1023px) {
+    .logo {
+        margin-left: 0;
+        padding-left: 0;
+        transform: translateX(-15px);
+    }
+    
+    .logo img {
+        height: 100px;
+    }
+    
+    /* Ensure logo aligns with hero content */
+    header {
+        padding: 0 20px;
+    }
+}
+
+/* --- HERO SECTION FOR VALUES PAGE --- */
+.values-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f0f0f;
+    margin-top: 0;
+    padding-top: 95px;
+    top: 0;
+    overflow: hidden;
+}
+
+.values-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0f0f;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.values-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    margin-top: 0;
+    padding-top: 0;
+    filter: brightness(0.7);
+}
+
+.values-hero-content {
+    text-align: center;
+    text-transform: normal !important;
+    font-family: 'Archivo Black', sans-serif !important;
+    color: white !important;
+    z-index: 2;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: bounceIn 1.2s ease-out 0.5s forwards;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* Bounce animation for the hero content */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.values-hero-content h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.values-hero-content p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    text-transform: none;
+    line-height: 1.6;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 767px) {
+    .values-hero-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .values-hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .values-hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .values-hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+}
+
+/* --- SCROLL DOWN BUTTON --- */
+.scroll-down {
+    position: fixed;
+    bottom: 50px;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1002;
+    transform: none;
+}
+
+.scroll-down.scrolled-to-bottom::after {
+    content: '↑';
+    font-size: 1.5rem;
+    color: #2c5aa0;
+}
+
+.scroll-down:not(.scrolled-to-bottom)::after {
+    content: '↓';
+    font-size: 1.5rem;
+    color: #2c5aa0;
+    transition: all 0.3s ease;
+}
+
+.scroll-down:hover { 
+    background: rgba(255,255,255,0.4); 
+    transform: translateY(3px); 
+}
+
+.values-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* --- VALUES CONTENT SECTION --- */
+.values-content-section {
+    width: 100%;
+    background: #f8f9fa;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.values-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.values-intro {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.values-intro h2 {
+    font-family: 'archivo', sans-serif;
+    font-size: 3rem;
+    color: #2c5aa0;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.values-intro p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-transform: none;
+}
+
+/* Values Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.value-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.value-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.value-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.value-card:hover .value-image img {
+    transform: scale(1.05);
+}
+
+.value-content {
+    padding: 30px;
+}
+
+.value-content h3 {
+    font-family: 'archivo', sans-serif;
+    font-size: 1.5rem;
+    color: #2c5aa0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.value-content p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    text-transform: none;
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    background: #2c5aa0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.value-icon i {
+    color: white;
+    font-size: 24px;
+}
+
+/* Commitment Section */
+.commitment-section {
+    background: #2c5aa0;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 80px;
+}
+
+.commitment-section h2 {
+    font-family: 'archivo', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.commitment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.commitment-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.commitment-item h4 {
+    font-family: 'archivo', sans-serif;
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.commitment-item p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    text-transform: none;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #2c5aa0 0%, #1a3d75 100%);
+    border-radius: 10px;
+}
+
+.cta-section h2 {
+    font-family: 'archivo', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.cta-section p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    text-transform: none;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #2c5aa0;
+    padding: 20px 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: 'Mozilla Text', sans-serif;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .values-content-section {
+        padding: 60px 20px;
+    }
+    
+    .values-intro h2 {
+        font-size: 2.2rem;
+    }
+    
+    .values-intro p {
+        font-size: 1.1rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .commitment-section h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-section p {
+        font-size: 1.1rem;
+    }
+}
+
+/* --- FOOTER --- */
+.footer {
+    width: 100%;
+    background: #0f0f0f;
+    padding: 80px 0 40px;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-logo-section {
+    grid-column: 1 / 3;
+}
+
+.footer-logo {
+    margin-bottom: 25px;
+}
+
+.footer-logo img {
+    height: 90px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.footer-company-info h3 {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.7rem;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-company-info p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-transform: none;
+}
+
+.supplier-button {
+    display: inline-block;
+    background: #2c5aa0;
+    color: white;
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    background-color: rgba(44, 90, 160, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.supplier-button:hover {
+    background-color: rgba(44, 90, 160, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-services h3,
+.footer-links h3,
+.footer-contact h3 {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.7rem;
+    color: white;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-services h3::after,
+.footer-links h3::after,
+.footer-contact h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #2c5aa0;
+}
+
+.footer-services ul,
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-services li,
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-services a,
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-services a:hover,
+.footer-links a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-services a::before,
+.footer-links a::before {
+    content: '▸';
+    margin-right: 10px;
+    color: #2c5aa0;
+    font-size: 0.8rem;
+}
+
+.footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon-footer {
+    width: 40px;
+    height: 40px;
+    background: rgba(44, 90, 160, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon-footer i {
+    color: #2c5aa0;
+    font-size: 18px;
+}
+
+.contact-text-footer h4 {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.7rem;
+    color: white;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-text-footer p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    line-height: 1.5;
+    text-transform: none;
+}
+
+.contact-text-footer p a,
+.contact-text-footer p a:link,
+.contact-text-footer p a:visited,
+.contact-text-footer p a:hover,
+.contact-text-footer p a:active {
+    color: white !important;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-family: 'Mozilla Text', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 1024px) {
+    .footer-container {
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .footer-logo-section {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 0 30px;
+    }
+    
+    .footer-container {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-logo-section {
+        grid-column: 1;
+    }
+    
+    .footer-bottom {
+        margin-top: 40px;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 50px 0 25px;
+    }
+    
+    .footer-container {
+        width: 90%;
+        gap: 30px;
+    }
+    
+    .footer-logo img {
+        height: 80px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announcement-bar">
+    <div class="announcement-content">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">phone</i>
+                </div>
+                <span>+27 76 270 3475</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">phone_iphone</i>
+                </div>
+                <span>+27 67 619 0270</span>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon-circle">
+                    <i class="material-icons">email</i>
+                </div>
+                <span>info@ingestionennovation.co.za</span>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#">
+                <div class="social-icon-circle">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <span>Facebook</span>
+            </a>
+            <a href="#">
+                <div class="social-icon-circle">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="logo" id="logo">
+        <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <div class="desktop-nav">
+        <div class="desktop-nav-item">
+            <a href="index.html" class="nav-link desktop-nav-link">Home</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a href="our-values.html" class="nav-link desktop-nav-link active">Values</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a href="#services" class="nav-link desktop-nav-link">Services</a>
+        </div>
+        <div class="desktop-nav-item">
+            <a href="#contact" class="nav-link desktop-nav-link">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- MENU ICON - ABSOLUTE FAR RIGHT -->
+    <div class="menu-icon" id="menuIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<!-- NAVIGATION BAR -->
+<nav class="nav-bar" id="navBar">
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a href="index.html" class="nav-link" id="homeLink">HOME</a>
+        </li>
+        <li class="nav-item">
+            <a href="our-values.html" class="nav-link" id="valuesLink">VALUES</a>
+        </li>
+        <li class="nav-item">
+            <a href="#services" class="nav-link" id="servicesLink">SERVICES</a>
+        </li>
+        <li class="nav-item">
+            <a href="#contact" class="nav-link" id="contactLink">CONTACT US</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- HERO SECTION FOR VALUES PAGE -->
+<section class="values-hero">
+    <div class="values-hero-image">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Construction team working together">
+    </div>
+    
+    <div class="values-hero-content">
+        <h1>OUR CORE VALUES</h1>
+        <p>Building with integrity, innovating with purpose, and delivering excellence in every project. Our values define who we are and guide everything we do at Ingestion Ennovation.</p>
+    </div>
+    
+    <!-- Scroll down button -->
+    <div class="scroll-down" id="scrollDownBtn"></div>
+</section>
+
+<!-- VALUES CONTENT SECTION -->
+<section class="values-content-section">
+    <div class="values-container">
+        <div class="values-intro">
+            <h2>WHAT WE STAND FOR</h2>
+            <p>At Ingestion Ennovation, our values are more than just words - they're the foundation of our company culture and the guiding principles that drive our decisions, actions, and relationships with clients, partners, and communities.</p>
+        </div>
+
+        <div class="values-grid">
+            <!-- Integrity Card -->
+            <div class="value-card">
+                <div class="value-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Handshake representing integrity">
+                </div>
+                <div class="value-content">
+                    <div class="value-icon">
+                        <i class="material-icons">handshake</i>
+                    </div>
+                    <h3>INTEGRITY</h3>
+                    <p>We conduct business with honesty, transparency, and ethical practices. Our word is our bond, and we build trust through consistent, reliable actions. Every project is approached with full disclosure and fair dealing.</p>
+                </div>
+            </div>
+
+            <!-- Excellence Card -->
+            <div class="value-card">
+                <div class="value-image">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Precision construction work">
+                </div>
+                <div class="value-content">
+                    <div class="value-icon">
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h3>EXCELLENCE</h3>
+                    <p>We strive for the highest quality in everything we do. From project planning to execution, we maintain rigorous standards and attention to detail. Our commitment to excellence ensures exceptional results for every client.</p>
+                </div>
+            </div>
+
+            <!-- Innovation Card -->
+            <div class="value-card">
+                <div class="value-image">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Innovative construction technology">
+                </div>
+                <div class="value-content">
+                    <div class="value-icon">
+                        <i class="material-icons">lightbulb</i>
+                    </div>
+                    <h3>INNOVATION</h3>
+                    <p>We embrace new technologies, methods, and ideas to solve complex challenges. Our innovative approach allows us to deliver cutting-edge solutions that maximize efficiency, sustainability, and value for our clients.</p>
+                </div>
+            </div>
+
+            <!-- Sustainability Card -->
+            <div class="value-card">
+                <div class="value-image">
+                    <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80" alt="Sustainable construction practices">
+                </div>
+                <div class="value-content">
+                    <div class="value-icon">
+                        <i class="material-icons">eco</i>
+                    </div>
+                    <h3>SUSTAINABILITY</h3>
+                    <p>We prioritize environmental responsibility and sustainable practices in all our operations. From material selection to construction methods, we minimize environmental impact while maximizing long-term value.</p>
+                </div>
+            </div>
+
+            <!-- Safety Card -->
+            <div class="value-card">
+                <div class="value-image">
+                    <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Construction safety equipment">
+                </div>
+                <div class="value-content">
+                    <div class="value-icon">
+                        <i class="material-icons">security</i>
+                    </div>
+                    <h3>SAFETY FIRST</h3>
+                    <p>The well-being of our team, clients, and communities is our top priority. We maintain the highest safety standards through rigorous training, proper equipment, and continuous safety monitoring on all sites.</p>
+                </div>
+            </div>
+
+            <!-- Collaboration Card -->
+            <div class="value-card">
+                <div class="value-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Team collaboration on site">
+                </div>
+                <div class="value-content">
+                    <div class="value-icon">
+                        <i class="material-icons">group</i>
+                    </div>
+                    <h3>COLLABORATION</h3>
+                    <p>We believe in the power of teamwork and partnership. By working closely with clients, stakeholders, and communities, we create solutions that benefit everyone involved and build lasting relationships.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="commitment-section">
+            <h2>OUR COMMITMENT</h2>
+            <p style="color: white; font-size: 1.2rem; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">These values aren't just ideals - they're actionable commitments that shape our daily operations and long-term strategy.</p>
+            
+            <div class="commitment-grid">
+                <div class="commitment-item">
+                    <h4>CLIENT-CENTRIC APPROACH</h4>
+                    <p>We listen to your needs and tailor solutions that exceed expectations while maintaining transparent communication throughout the project lifecycle.</p>
+                </div>
+                <div class="commitment-item">
+                    <h4>CONTINUOUS IMPROVEMENT</h4>
+                    <p>We invest in training, technology, and process optimization to consistently enhance our capabilities and service delivery.</p>
+                </div>
+                <div class="commitment-item">
+                    <h4>COMMUNITY IMPACT</h4>
+                    <p>We contribute positively to the communities where we work through job creation, skills development, and sustainable practices.</p>
+                </div>
+                <div class="commitment-item">
+                    <h4>ETHICAL PRACTICES</h4>
+                    <p>We adhere to the highest ethical standards in all business dealings, ensuring fairness, honesty, and accountability.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>BUILD WITH VALUES</h2>
+            <p>Partner with a company that stands by its principles. Experience the Ingestion Ennovation difference - where values drive excellence and integrity builds trust.</p>
+            <a href="mailto:info@ingestionennovation.co.za?subject=Values Partnership Inquiry" class="cta-button">START A VALUES-DRIVEN PROJECT</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo and Company Info -->
+        <div class="footer-logo-section">
+            <div class="footer-logo">
+                <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Ingestion Logo">
+            </div>
+            <div class="footer-company-info">
+                <h3>INGESTION ENNOVATION</h3>
+                <p>Driving innovation in construction and energy solutions. We deliver excellence through sustainable practices and cutting-edge technology.</p>
+                <a href="#" class="supplier-button">SUPPLIER: MAAA0017105</a>
+            </div>
+        </div>
+        
+        <!-- Our Services -->
+        <div class="footer-services">
+            <h3>OUR SERVICES</h3>
+            <ul>
+                <li><a href="#">Bulk Fuel Supply</a></li>
+                <li><a href="#">Green Energy Services</a></li>
+                <li><a href="#">Construction & Consultation</a></li>
+                <li><a href="#">Compliance Services</a></li>
+                <li><a href="#">Office Supplies & Consumables</a></li>
+                <li><a href="#">Staff Impact Training</a></li>
+            </ul>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h3>QUICK LINKS</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our-values.html">Our Values</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Contact Us -->
+        <div class="footer-contact">
+            <h3>CONTACT US</h3>
+            <div class="footer-contact-info">
+                <div class="contact-item-footer">
+                    <div class="contact-icon-footer">
+                        <i class="material-icons">location_on</i>
+                    </div>
+                    <div class="contact-text-footer">
+                        <h4>ADDRESS</h4>
+                        <p>296 Andries Street, 515 Constantia Building, Pretoria, 0002</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item-footer">
+                    <div class="contact-icon-footer">
+                        <i class="material-icons">phone</i>
+                    </div>
+                    <div class="contact-text-footer">
+                        <h4>PHONE</h4>
+                        <p>+27 76 270 3475<br>+27 67 619 0270</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item-footer">
+                    <div class="contact-icon-footer">
+                        <i class="material-icons">email</i>
+                    </div>
+                    <div class="contact-text-footer">
+                        <h4>EMAIL</h4>
+                        <p>ingestion.pty@gmail.com<br>info@ingestionennovation.co.za</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 INGESTION ENNOVATION. ALL RIGHTS RESERVED.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+const menuIcon = document.getElementById('menuIcon');
+const logo = document.getElementById('logo');
+const navBar = document.getElementById('navBar');
+const scrollDownBtn = document.getElementById('scrollDownBtn');
+const header = document.querySelector('header');
+
+// Mobile menu toggle
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('active');
+    navBar.classList.toggle('active');
+});
+
+// Scroll down button functionality
+let isScrolledToBottom = false;
+
+function updateScrollButton() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    
+    if (scrollHeight - scrollTop - clientHeight < 100) {
+        if (!isScrolledToBottom) {
+            scrollDownBtn.classList.add('scrolled-to-bottom');
+            isScrolledToBottom = true;
+        }
+    } else {
+        if (isScrolledToBottom) {
+            scrollDownBtn.classList.remove('scrolled-to-bottom');
+            isScrolledToBottom = false;
+        }
+    }
+}
+
+function updateHeaderBackground() {
+    const valuesContentSection = document.querySelector('.values-content-section');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (valuesContentSection) {
+        const sectionTop = valuesContentSection.offsetTop;
+        const sectionHeight = valuesContentSection.offsetHeight;
+        const sectionBottom = sectionTop + sectionHeight;
+        
+        if (scrollTop > sectionBottom) {
+            header.classList.add('white-bg');
+        } else {
+            header.classList.remove('white-bg');
+        }
+    }
+}
+
+// Initial check
+updateScrollButton();
+updateHeaderBackground();
+
+// Listen for scroll events
+window.addEventListener('scroll', () => {
+    updateScrollButton();
+    updateHeaderBackground();
+});
+
+// Scroll functionality
+scrollDownBtn.addEventListener('click', () => {
+    if (isScrolledToBottom) {
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        // Scroll to values content section
+        const valuesContentSection = document.querySelector('.values-content-section');
+        if (valuesContentSection) {
+            valuesContentSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});
+
+// Logo scroll to top functionality
+logo.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    header.classList.remove('white-bg');
+});
+
+// Mobile navigation links
+const mobileLinks = document.querySelectorAll('.nav-link');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navBar.classList.remove('active');
+        menuIcon.classList.remove('active');
+    });
+});
+
+// Close navigation when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navBar.contains(e.target) && !menuIcon.contains(e.target)) {
+        navBar.classList.remove('active');
+        menuIcon.classList.remove('active');
+    }
+});
+
+// Force image load
+window.addEventListener('load', function() {
+    const img = document.querySelector('.values-hero-image img');
+    if (img.complete) img.style.opacity = '1';
+});
+</script>
+</body>
+</html>
