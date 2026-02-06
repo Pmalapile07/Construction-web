@@ -789,22 +789,25 @@ header.white-bg .desktop-nav a {
     margin-top: 0;
 }
 
+/* UPDATED: Increased height for Get in Touch button */
 .get-in-touch-button {
     display: inline-block;
     background: transparent;
     border: 2px solid white;
     color: white;
-    padding: 20px 45px;
-    font-size: 14px;
+    padding: 25px 50px; /* Increased padding for taller button */
+    font-size: 16px; /* Slightly larger font */
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px; /* Increased letter spacing */
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'archivo', sans-serif;
     text-decoration: none;
     display: inline-block;
     border-radius: 0; /* NO border radius */
+    height: 60px; /* Set fixed height */
+    line-height: 10px; /* Center text vertically */
 }
 
 .get-in-touch-button:hover {
@@ -830,14 +833,16 @@ header.white-bg .desktop-nav a {
         text-align: center;
     }
     
-    /* UPDATED: Make mobile button match other buttons */
+    /* UPDATED: Make mobile button match other buttons but taller */
     .get-in-touch-button {
-        padding: 10px 25px; /* Match other button padding */
+        padding: 15px 30px; /* Increased padding */
         font-size: 14px; /* Match other button font size */
         border: 2px solid white; /* Ensure border matches */
         background: transparent; /* Match other button background */
         margin-top: 0;
         width: auto; /* Allow natural width */
+        height: 50px; /* Taller on mobile too */
+        line-height: 20px; /* Center text vertically */
     }
     
     .get-in-touch-button:hover {
@@ -863,12 +868,14 @@ header.white-bg .desktop-nav a {
         text-align: center;
     }
     
-    /* UPDATED: Make mobile button match other buttons */
+    /* UPDATED: Make mobile button match other buttons but taller */
     .get-in-touch-button {
-        padding: 10px 25px; /* Match other button padding */
+        padding: 15px 25px; /* Increased padding */
         font-size: 14px; /* Match other button font size */
         border: 2px solid white; /* Ensure border matches */
         background: transparent; /* Match other button background */
+        height: 50px;
+        line-height: 20px;
     }
     
     .get-in-touch-button:hover {
@@ -894,8 +901,10 @@ header.white-bg .desktop-nav a {
     }
     
     .get-in-touch-button {
-        padding: 20px 45px;
-        font-size: 16px;
+        padding: 25px 50px; /* Increased padding */
+        font-size: 16px; /* Slightly larger font */
+        height: 60px;
+        line-height: 10px;
     }
 }
 
@@ -1435,7 +1444,7 @@ header.white-bg .desktop-nav a {
     display: block;
 }
 
-/* OUR VALUES SECTION - UPDATED from "The Roots" */
+/* OUR VALUES SECTION - NORMAL BUTTON (no animation) */
 #about-page .values-section {
     width: 100%;
     background-color: #2c5aa0;
@@ -1449,7 +1458,6 @@ header.white-bg .desktop-nav a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 #about-page .values-title {
@@ -1460,55 +1468,6 @@ header.white-bg .desktop-nav a {
     letter-spacing: 2px;
     margin-bottom: 25px;
     font-family: 'archivo', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 3;
-}
-
-#about-page .values-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #2c5aa0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 2;
-    transform: translateY(20px);
-}
-
-#about-page .values-section:hover .values-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-#about-page .values-content h3 {
-    font-size: 28px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
-    font-family: 'archivo', sans-serif;
-}
-
-#about-page .values-content p {
-    font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    max-width: 800px;
-    line-height: 1.6;
-    text-transform: none;
 }
 
 #about-page .values-button {
@@ -1525,9 +1484,6 @@ header.white-bg .desktop-nav a {
     font-family: 'archivo', sans-serif;
     text-decoration: none;
     display: inline-block;
-    position: relative;
-    z-index: 3;
-    margin-top: 20px;
 }
 
 #about-page .values-button:hover {
@@ -1535,7 +1491,7 @@ header.white-bg .desktop-nav a {
     color: #2c5aa0;
 }
 
-/* DRIVEN BY INNOVATION SECTION - UPDATED from "Committed to Excellence" */
+/* DRIVEN BY INNOVATION SECTION */
 #about-page .innovation-section {
     width: 100%;
     height: 300px;
@@ -1571,7 +1527,6 @@ header.white-bg .desktop-nav a {
     position: relative;
     z-index: 2;
     text-align: center;
-    /* Button removed as requested */
 }
 
 /* New Company Profile Section with subtle radial gradient background using #2c5aa0 */
@@ -1648,7 +1603,7 @@ header.white-bg .desktop-nav a {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c5aa0'%3E%3Cpath d='M12 16l4-5h-3V4h-2v7H8l4 5zm-8 2h16v2H4v-2z'/%3E%3C/svg%3E");
 }
 
-/* WHO WE ARE SECTION with animation */
+/* WHO WE ARE SECTION - NORMAL BUTTON (no animation) */
 #about-page .who-we-are-section {
     width: 100%;
     background-color: #2c5aa0;
@@ -1662,7 +1617,6 @@ header.white-bg .desktop-nav a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 #about-page .who-we-are-title {
@@ -1673,55 +1627,6 @@ header.white-bg .desktop-nav a {
     letter-spacing: 2px;
     margin-bottom: 25px;
     font-family: 'archivo', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 3;
-}
-
-#about-page .who-we-are-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #2c5aa0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 2;
-    transform: translateY(20px);
-}
-
-#about-page .who-we-are-section:hover .who-we-are-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-#about-page .who-we-are-content h3 {
-    font-size: 28px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
-    font-family: 'archivo', sans-serif;
-}
-
-#about-page .who-we-are-content p {
-    font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    max-width: 800px;
-    line-height: 1.6;
-    text-transform: none;
 }
 
 #about-page .who-we-are-button {
@@ -1738,9 +1643,6 @@ header.white-bg .desktop-nav a {
     font-family: 'archivo', sans-serif;
     text-decoration: none;
     display: inline-block;
-    position: relative;
-    z-index: 3;
-    margin-top: 20px;
 }
 
 #about-page .who-we-are-button:hover {
@@ -1748,7 +1650,7 @@ header.white-bg .desktop-nav a {
     color: #2c5aa0;
 }
 
-/* WHAT WE DO SECTION with animation */
+/* WHAT WE DO SECTION - NORMAL BUTTON (no animation) */
 #about-page .what-we-do-section {
     width: 100%;
     height: 300px;
@@ -1761,7 +1663,6 @@ header.white-bg .desktop-nav a {
     justify-content: center;
     position: relative;
     margin: 0;
-    overflow: hidden;
 }
 
 #about-page .what-we-do-section::before {
@@ -1784,54 +1685,8 @@ header.white-bg .desktop-nav a {
     margin-bottom: 25px;
     font-family: 'archivo', sans-serif;
     position: relative;
-    z-index: 3;
-    text-align: center;
-    cursor: pointer;
-}
-
-#about-page .what-we-do-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 2;
-    transform: translateY(20px);
-}
-
-#about-page .what-we-do-section:hover .what-we-do-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-#about-page .what-we-do-content h3 {
-    font-size: 28px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
-    font-family: 'archivo', sans-serif;
-}
-
-#about-page .what-we-do-content p {
-    font-family: 'Mozilla Text', sans-serif;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
     text-align: center;
-    max-width: 800px;
-    line-height: 1.6;
-    text-transform: none;
 }
 
 #about-page .what-we-do-button {
@@ -1847,10 +1702,9 @@ header.white-bg .desktop-nav a {
     transition: all 0.3s ease;
     font-family: 'archivo', sans-serif;
     position: relative;
-    z-index: 3;
+    z-index: 2;
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
 }
 
 #about-page .what-we-do-button:hover {
@@ -2009,18 +1863,6 @@ header.white-bg .desktop-nav a {
         font-size: 16px;
     }
     
-    #about-page .values-content h3,
-    #about-page .who-we-are-content h3,
-    #about-page .what-we-do-content h3 {
-        font-size: 32px;
-    }
-    
-    #about-page .values-content p,
-    #about-page .who-we-are-content p,
-    #about-page .what-we-do-content p {
-        font-size: 1.2rem;
-    }
-    
     /* Keep company profile button smaller on desktop */
     #about-page .company-profile-button {
         padding: 8px 16px;
@@ -2159,26 +2001,6 @@ header.white-bg .desktop-nav a {
         height: 20px;
         margin: 0;
     }
-    
-    /* Mobile adjustments for animated content */
-    #about-page .values-content,
-    #about-page .who-we-are-content,
-    #about-page .what-we-do-content {
-        padding: 30px 15px;
-    }
-    
-    #about-page .values-content h3,
-    #about-page .who-we-are-content h3,
-    #about-page .what-we-do-content h3 {
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-    
-    #about-page .values-content p,
-    #about-page .who-we-are-content p,
-    #about-page .what-we-do-content p {
-        font-size: 0.9rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -2274,7 +2096,7 @@ header.white-bg .desktop-nav a {
                 <div class="contact-icon-circle">
                     <i class="material-icons">email</i>
                 </div>
-                <span>info@ingestionpty.co.za</span>
+                <span>info@ingestionennovation.co.za</span>
             </div>
         </div>
         <div class="social-links">
@@ -2299,22 +2121,22 @@ header.white-bg .desktop-nav a {
         <img src="https://cdn.shopify.com/s/files/1/0778/5578/5184/files/e37c82dc-7fdc-481e-80cb-2e513f6b54bd.png?v=1760815251" alt="Logo">
     </div>
 
-    <!-- DESKTOP NAV - REMOVED "Our Projects" -->
+    <!-- DESKTOP NAV - WITH LINKS TO PAGES -->
     <div class="desktop-nav">
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="home">Home</a>
+            <a href="#home" class="nav-link desktop-nav-link" data-section="home">Home</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="about">About Us</a>
+            <a href="/about" class="nav-link desktop-nav-link" data-section="about">About Us</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="values">Values</a>
+            <a href="/values" class="nav-link desktop-nav-link" data-section="values">Values</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="services">Services</a>
+            <a href="/services" class="nav-link desktop-nav-link" data-section="services">Services</a>
         </div>
         <div class="desktop-nav-item">
-            <a class="nav-link desktop-nav-link" data-section="contact">Contact Us</a>
+            <a href="/contact" class="nav-link desktop-nav-link" data-section="contact">Contact Us</a>
         </div>
     </div>
 
@@ -2326,23 +2148,23 @@ header.white-bg .desktop-nav a {
     </div>
 </header>
 
-<!-- NAVIGATION BAR - REMOVED "Our Projects" -->
+<!-- NAVIGATION BAR - WITH LINKS TO PAGES -->
 <nav class="nav-bar" id="navBar">
     <ul class="nav-list">
         <li class="nav-item">
-            <a class="nav-link" id="homeLink">HOME</a>
+            <a href="#home" class="nav-link" id="homeLink">HOME</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="aboutLink">ABOUT US</a>
+            <a href="/about" class="nav-link" id="aboutLink">ABOUT US</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="valuesLink">VALUES</a>
+            <a href="/values" class="nav-link" id="valuesLink">VALUES</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="servicesLink">SERVICES</a>
+            <a href="/services" class="nav-link" id="servicesLink">SERVICES</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="contactLink">CONTACT US</a>
+            <a href="/contact" class="nav-link" id="contactLink">CONTACT US</a>
         </li>
     </ul>
 </nav>
@@ -2429,17 +2251,13 @@ header.white-bg .desktop-nav a {
             <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Road construction with workers" class="construction-image">
         </div>
 
-        <!-- OUR VALUES SECTION - UPDATED from "The Roots" -->
+        <!-- OUR VALUES SECTION - NORMAL BUTTON -->
         <div class="values-section">
             <div class="values-title">OUR VALUES</div>
-            <a href="#" class="values-button">Learn More</a>
-            <div class="values-content">
-                <h3>Our Core Principles</h3>
-                <p>Integrity, excellence, innovation, and sustainability form the foundation of everything we do. We believe in transparent communication, ethical practices, and building lasting relationships based on trust and mutual respect.</p>
-            </div>
+            <a href="/values" class="values-button">Learn More</a>
         </div>
 
-        <!-- DRIVEN BY INNOVATION SECTION - UPDATED from "Committed to Excellence" -->
+        <!-- DRIVEN BY INNOVATION SECTION -->
         <div class="innovation-section" id="services">
             <div class="innovation-title">DRIVEN BY INNOVATION</div>
             <!-- Button removed as requested -->
@@ -2454,24 +2272,16 @@ header.white-bg .desktop-nav a {
             </a>
         </div>
 
-        <!-- WHO WE ARE SECTION with animation -->
+        <!-- WHO WE ARE SECTION - NORMAL BUTTON -->
         <div class="who-we-are-section">
             <div class="who-we-are-title">WHO WE ARE</div>
-            <a href="#" class="who-we-are-button">Learn More</a>
-            <div class="who-we-are-content">
-                <h3>Our Team & Vision</h3>
-                <p>A dedicated team of professionals with 10+ years of experience in construction and energy solutions. We combine technical expertise with creative problem-solving to deliver exceptional results for every client.</p>
-            </div>
+            <a href="/about" class="who-we-are-button">Learn More</a>
         </div>
 
-        <!-- WHAT WE DO SECTION with animation -->
+        <!-- WHAT WE DO SECTION - NORMAL BUTTON -->
         <div class="what-we-do-section">
             <div class="what-we-do-title">WHAT WE DO</div>
-            <a href="#" class="what-we-do-button">Discover More</a>
-            <div class="what-we-do-content">
-                <h3>Our Services</h3>
-                <p>Comprehensive construction services, bulk fuel supply, green energy solutions, compliance services, and innovative consulting. We provide end-to-end solutions tailored to your specific needs.</p>
-            </div>
+            <a href="/services" class="what-we-do-button">Discover More</a>
         </div>
 
     </section>
@@ -2518,56 +2328,56 @@ header.white-bg .desktop-nav a {
             </div>
         </div>
         
-        <!-- Our Services - COLLAPSIBLE -->
+        <!-- Our Services - COLLAPSIBLE WITH MORE INFORMATION -->
         <div class="footer-services">
             <h3>OUR SERVICES</h3>
             <ul>
                 <li>
                     <a class="service-toggle">Bulk Fuel Supply</a>
-                    <div class="footer-service-desc">Reliable bulk fuel delivery for construction sites, industrial facilities, and commercial operations.</div>
+                    <div class="footer-service-desc">We provide reliable bulk fuel delivery for construction sites, industrial facilities, and commercial operations. Our fleet ensures timely delivery of diesel, petrol, and specialized fuels with strict quality control and competitive pricing. We handle all logistics from storage to on-site delivery.</div>
                 </li>
                 <li>
                     <a class="service-toggle">Green Energy Services</a>
-                    <div class="footer-service-desc">Sustainable energy solutions including solar installations and energy efficiency consulting.</div>
+                    <div class="footer-service-desc">Comprehensive sustainable energy solutions including solar panel installations, energy efficiency consulting, and renewable energy system design. We help businesses reduce carbon footprint and energy costs through innovative green technologies and government compliance assistance.</div>
                 </li>
                 <li>
                     <a class="service-toggle">Construction & Consultation</a>
-                    <div class="footer-service-desc">Full-service construction management and expert consulting for project planning and execution.</div>
+                    <div class="footer-service-desc">Full-service construction management from project planning to completion. Our expert consultants provide feasibility studies, architectural design coordination, contractor management, and quality assurance. We specialize in commercial, industrial, and infrastructure projects.</div>
                 </li>
                 <li>
                     <a class="service-toggle">Compliance Services</a>
-                    <div class="footer-service-desc">Regulatory compliance assessments and certification for construction and energy projects.</div>
+                    <div class="footer-service-desc">Complete regulatory compliance assessments and certification for construction and energy projects. We ensure adherence to local regulations, environmental standards, safety protocols, and industry certifications. Our team handles documentation, inspections, and audit preparation.</div>
                 </li>
                 <li>
                     <a class="service-toggle">Office Supplies & Consumables</a>
-                    <div class="footer-service-desc">Comprehensive supply of office materials and construction consumables.</div>
+                    <div class="footer-service-desc">Comprehensive supply chain management for office materials and construction consumables. We source and deliver everything from stationery and cleaning supplies to safety equipment and construction materials with bulk pricing and scheduled deliveries.</div>
                 </li>
                 <li>
                     <a class="service-toggle">Staff Impact Training</a>
-                    <div class="footer-service-desc">Specialized training programs for workforce development and safety compliance.</div>
+                    <div class="footer-service-desc">Specialized training programs for workforce development, safety compliance, and technical skills enhancement. Our certified trainers provide on-site and virtual training in construction safety, equipment operation, environmental awareness, and industry best practices.</div>
                 </li>
             </ul>
         </div>
         
-        <!-- Quick Links - COLLAPSIBLE -->
+        <!-- Quick Links - COLLAPSIBLE WITH LINKS TO PAGES -->
         <div class="footer-links">
             <h3>QUICK LINKS</h3>
             <ul>
                 <li>
-                    <a class="link-toggle">About Us</a>
-                    <div class="footer-link-desc">Learn about our mission, vision, and team of experts driving innovation in construction and energy.</div>
+                    <a href="/about" class="link-toggle">About Us</a>
+                    <div class="footer-link-desc">Learn about our mission, vision, and team of experts driving innovation in construction and energy. Discover our 10+ years of industry experience and commitment to sustainable development.</div>
                 </li>
                 <li>
-                    <a class="link-toggle">Our Values</a>
-                    <div class="footer-link-desc">Discover the core principles that guide our work: integrity, excellence, and sustainability.</div>
+                    <a href="/values" class="link-toggle">Our Values</a>
+                    <div class="footer-link-desc">Discover the core principles that guide our work: integrity, excellence, innovation, and sustainability. Learn how our values shape every project we undertake.</div>
                 </li>
                 <li>
-                    <a class="link-toggle">Services</a>
-                    <div class="footer-link-desc">Explore our comprehensive range of construction and energy solutions tailored to your needs.</div>
+                    <a href="/services" class="link-toggle">Services</a>
+                    <div class="footer-link-desc">Explore our comprehensive range of construction and energy solutions tailored to your needs. From bulk fuel to green energy, we provide end-to-end services.</div>
                 </li>
                 <li>
-                    <a class="link-toggle">Contact</a>
-                    <div class="footer-link-desc">Get in touch with our team for inquiries, quotes, or project consultations.</div>
+                    <a href="/contact" class="link-toggle">Contact</a>
+                    <div class="footer-link-desc">Get in touch with our team for inquiries, quotes, or project consultations. We're ready to discuss your next construction or energy project.</div>
                 </li>
             </ul>
         </div>
@@ -2713,25 +2523,32 @@ function setupNavigation() {
     // Mobile navigation
     const mobileNavLinks = {
         homeLink: 'home',
-        aboutLink: 'about',
-        valuesLink: 'values',
-        servicesLink: 'services',
-        contactLink: 'contact'
+        aboutLink: '/about',
+        valuesLink: '/values',
+        servicesLink: '/services',
+        contactLink: '/contact'
     };
     
     // Add click events to mobile nav links
     Object.keys(mobileNavLinks).forEach(linkId => {
         const link = document.getElementById(linkId);
         if (link) {
-            link.addEventListener('click', () => {
-                const targetId = mobileNavLinks[linkId];
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                    // Close mobile menu
-                    navBar.classList.remove('active');
-                    menuIcon.classList.remove('active');
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetUrl = mobileNavLinks[linkId];
+                if (targetUrl.startsWith('/')) {
+                    // For page links, navigate to the page
+                    window.location.href = targetUrl;
+                } else {
+                    // For anchor links, scroll to section
+                    const targetElement = document.getElementById(targetUrl);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
+                // Close mobile menu
+                navBar.classList.remove('active');
+                menuIcon.classList.remove('active');
             });
         }
     });
@@ -2739,20 +2556,24 @@ function setupNavigation() {
     // Desktop navigation
     desktopLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const section = link.getAttribute('data-section');
-            const targetElement = document.getElementById(section);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                
-                // Update active state
-                desktopLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const section = href.substring(1);
+                const targetElement = document.getElementById(section);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Update active state
+                    desktopLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                }
             }
+            // If href starts with '/', it will navigate normally
         });
     });
     
-    // Update active state on scroll
+    // Update active state on scroll for anchor links
     window.addEventListener('scroll', () => {
         const sections = ['home', 'about', 'values', 'services', 'contact'];
         const scrollPosition = window.scrollY + 100;
@@ -2772,23 +2593,18 @@ function setupNavigation() {
             }
         }
         
-        // Update active link
+        // Update active link for anchor links
         desktopLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('data-section') === currentSection) {
-                link.classList.add('active');
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                link.classList.remove('active');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
             }
         });
     });
 }
-
-// Desktop nav underline toggle
-desktopLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        desktopLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-    });
-});
 
 // Mobile navigation links - simplified
 const mobileLinks = document.querySelectorAll('.nav-link');
@@ -2871,6 +2687,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     linkToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('/')) {
+                // Let the link navigate normally
+                return;
+            }
+            
             e.preventDefault();
             const parentLi = this.closest('li');
             const isActive = parentLi.classList.contains('active');
