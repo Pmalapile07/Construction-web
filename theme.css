@@ -360,7 +360,14 @@ header.white-bg .menu-icon span {
 }
 
 .footer { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-.footer-logo img { height: 110px; width: auto; border-radius: 0; filter: none; }
+.footer-logo img {
+    height: 110px;
+    width: auto;
+    filter: none;
+    padding: 12px 18px;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.92);
+}
 
 .scroll-down { border-radius: 50%; }
 
