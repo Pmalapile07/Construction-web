@@ -23,8 +23,8 @@
     --glow: 0 6px 18px rgba(20, 41, 74, 0.18);
     --glow-soft: 0 8px 24px rgba(20, 41, 74, 0.1);
     --glow-text: 0 2px 14px rgba(0, 0, 0, 0.35);
-    --overlay: linear-gradient(170deg, rgba(20, 41, 74, 0.15) 0%, rgba(20, 41, 74, 0.45) 60%, rgba(20, 41, 74, 0.7) 100%);
-    --panel: linear-gradient(155deg, #14294a 0%, #14294a 66%, #3b78a8 66%, #3b78a8 71%, #1b3a63 71%, #1b3a63 100%);
+    --overlay: linear-gradient(180deg, rgba(10, 20, 38, 0.35) 0%, rgba(10, 20, 38, 0.15) 40%, rgba(10, 20, 38, 0.8) 100%);
+    --panel: linear-gradient(145deg, #1b3a63 0%, #14294a 60%, #10223e 100%);
 }
 
 /* --- GENERAL RESET --- */
@@ -32,7 +32,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
 }
 
@@ -245,7 +245,7 @@ header.white-bg .menu-icon span {
     padding: 16px 30px;
     color: var(--text);
     text-decoration: none;
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     font-size: 0.7rem;
     letter-spacing: 0.5px;
@@ -306,7 +306,7 @@ header.white-bg .menu-icon span {
     color: var(--text);
     text-decoration: none;
     display: block;
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     transition: color 0.3s ease;
     text-align: left;
@@ -338,7 +338,7 @@ header.white-bg .menu-icon span {
     position: relative;
     padding: 10px 15px;
     cursor: pointer;
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     white-space: nowrap;
     writing-mode: horizontal-tb;
     text-orientation: mixed;
@@ -405,7 +405,7 @@ header.white-bg .desktop-nav a:hover {
     color: white;
     text-decoration: none;
     display: block;
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     transition: color 0.3s ease;
     font-size: 0.9rem;
@@ -490,7 +490,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .section-header h2 {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2rem;
     color: var(--brand-deep);
     text-transform: uppercase;
@@ -500,7 +500,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .section-header p {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     color: var(--text);
     line-height: 1.7;
@@ -525,7 +525,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .cta-section-minimal h2 {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 2rem;
     color: white;
     text-transform: uppercase;
@@ -535,7 +535,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .cta-section-minimal p {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: 30px;
@@ -561,7 +561,7 @@ header.white-bg .desktop-nav a:hover {
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .cta-button-minimal:hover {
@@ -610,7 +610,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .footer-company-info h3 {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     color: white;
     margin-bottom: 15px;
@@ -619,7 +619,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .footer-company-info p {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
@@ -654,7 +654,7 @@ header.white-bg .desktop-nav a:hover {
 .footer-services h3,
 .footer-links h3,
 .footer-contact h3 {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     color: white;
     margin-bottom: 25px;
@@ -691,7 +691,7 @@ header.white-bg .desktop-nav a:hover {
 .footer-links a {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -726,7 +726,7 @@ header.white-bg .desktop-nav a:hover {
 .footer-link-desc {
     display: none;
     padding: 10px 0 10px 20px;
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.65rem;
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.5;
@@ -770,7 +770,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .contact-text-footer h4 {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     color: white;
     margin-bottom: 5px;
@@ -779,7 +779,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .contact-text-footer p {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     color: white;
     line-height: 1.5;
@@ -804,7 +804,7 @@ header.white-bg .desktop-nav a:hover {
 }
 
 .footer-bottom p {
-    font-family: 'Mozilla Text', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
@@ -869,24 +869,4 @@ header.white-bg .desktop-nav a:hover {
     height: 3px;
     margin: 14px auto 0;
     background: var(--gold);
-}
-
-.hero::after, .about-hero::after, .services-hero::after,
-.values-hero::after, .contact-hero::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 26%;
-    background: linear-gradient(to top right, var(--brand-deep) 0%, var(--brand-deep) 47%, var(--brand-bright) 47%, var(--brand-bright) 50%, transparent 50%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.hero::before, .about-hero::before, .services-hero::before,
-.values-hero::before, .contact-hero::before {
-    background:
-        linear-gradient(to bottom left, var(--brand-deep) 0%, var(--brand-deep) 9%, var(--brand-bright) 9%, var(--brand-bright) 12%, transparent 12%),
-        var(--overlay) !important;
 }

@@ -1,0 +1,323 @@
+/* ==========================================================================
+   INGESTION ENNOVATION — THEME OVERRIDES
+   Loaded after each page's own <style> block so these rules win.
+   Minimal + bold: Inter, floating pill header, rounded surfaces.
+   ========================================================================== */
+
+:root {
+    --radius-sm: 12px;
+    --radius: 18px;
+    --radius-lg: 28px;
+    --pill: 999px;
+}
+
+body, button, input, select, textarea {
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4,
+.section-header h2, .have-project-title, .values-title, .who-we-are-title,
+.what-we-do-title, .innovation-title, .company-profile-title {
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* --- FLOATING PILL HEADER --- */
+header,
+header.white-bg {
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 1180px;
+    height: 68px;
+    padding: 0 10px 0 22px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-radius: var(--pill);
+    background-color: rgba(16, 32, 58, 0.55);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+header.white-bg {
+    background-color: rgba(20, 41, 74, 0.94);
+}
+
+.menu-icon {
+    display: block !important;
+    justify-self: start;
+    width: 24px;
+    height: 16px;
+}
+
+.menu-icon span,
+header.white-bg .menu-icon span {
+    background: #fff;
+    height: 2px;
+    border-radius: 2px;
+}
+
+.menu-icon span:nth-child(2) { top: 7px; }
+.menu-icon span:nth-child(3) { top: 14px; }
+.menu-icon.active span:nth-child(1) { top: 7px; }
+.menu-icon.active span:nth-child(3) { top: 7px; }
+
+.logo,
+.logo:visited {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transform: none !important;
+}
+
+.logo img {
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+}
+
+.logo-text {
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    line-height: 1.25;
+}
+
+.header-quote {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 26px;
+    border-radius: var(--pill);
+    background: var(--cream);
+    color: var(--brand-deep);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.header-quote:hover {
+    background: #fff;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    header, header.white-bg { height: 60px; padding: 0 6px 0 18px; top: 12px; width: calc(100% - 24px); }
+    .logo-text { display: none; }
+    .logo img { height: 40px; width: 40px; }
+    .header-quote { height: 44px; padding: 0 18px; font-size: 0.78rem; }
+}
+
+@media (min-width: 1024px) {
+    header, header.white-bg { top: 69px; }
+}
+
+/* --- MENU DROPDOWN (opens from the pill) --- */
+.nav-bar {
+    top: 94px;
+    left: 16px;
+    width: min(320px, calc(100% - 32px));
+    padding: 8px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background-color: rgba(251, 248, 243, 0.98);
+    box-shadow: 0 20px 50px rgba(10, 20, 38, 0.25);
+}
+
+@media (min-width: 1024px) {
+    .nav-bar { top: 147px; left: max(16px, calc(50% - 590px)); }
+}
+
+@media (max-width: 600px) {
+    .nav-bar { top: 82px; left: 12px; width: calc(100% - 24px); }
+}
+
+.nav-bar .nav-link {
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--text);
+}
+
+.nav-bar .nav-link:hover { background: rgba(20, 41, 74, 0.06); }
+.nav-bar .nav-link.current { background: var(--brand-deep); color: var(--cream); }
+
+/* --- HOME HERO --- */
+.hero {
+    height: 100vh !important;
+    min-height: 620px;
+    padding-top: 0;
+}
+
+.image-container img {
+    transform: none !important;
+    object-position: center 35% !important;
+}
+
+.big-typography {
+    position: absolute !important;
+    top: auto !important;
+    left: 0 !important;
+    bottom: 0;
+    width: 100% !important;
+    max-width: 1180px;
+    margin: 0 !important;
+    padding: 0 40px 72px;
+    right: 0;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: none !important;
+    animation: heroFade 0.9s ease-out 0.2s both !important;
+}
+
+@keyframes heroFade {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 8px 16px;
+    border-radius: var(--pill);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+}
+
+.big-typography h1 {
+    font-size: clamp(2.6rem, 7vw, 6.2rem) !important;
+    font-weight: 900 !important;
+    line-height: 0.98;
+    letter-spacing: -0.04em !important;
+    text-transform: none;
+    color: #fff;
+    text-shadow: none;
+    margin-bottom: 36px !important;
+}
+
+.hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.hero-paragraph {
+    max-width: 440px;
+    margin: 0 !important;
+    font-size: 1.05rem !important;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: none;
+}
+
+.hero-link {
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 4px;
+}
+
+@media (max-width: 767px) {
+    .big-typography { padding: 0 20px 48px; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 18px; }
+}
+
+/* --- INNER PAGE HEROES --- */
+.about-hero-content h1, .services-hero-content h1,
+.values-hero-content h1, .contact-hero-content h1 {
+    font-weight: 900 !important;
+    letter-spacing: -0.03em !important;
+    text-shadow: none;
+}
+
+/* --- ROUNDED SURFACES --- */
+.service-card, .process-step, .industry-item, .benefit-item, .leader-card,
+.approach-item, .mission-item, .vision-item, .faq-item, .response-item,
+.contact-info-section, .commitment-item-minimal {
+    border-radius: var(--radius);
+}
+
+.contact-form-section, .map-container, .map-placeholder, .emergency-section,
+.service-detail-section-blue, .service-detail-section-white,
+.about-section-blue, .about-section-white,
+.value-item-blue, .value-item-white,
+.commitment-section-minimal {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.service-icon, .approach-icon, .contact-detail-icon {
+    border-radius: var(--radius-sm);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    border-radius: var(--radius-sm);
+}
+
+/* Full-width bands become inset rounded cards */
+.have-project-section,
+.cta-section-minimal,
+#about-page .values-section,
+#about-page .innovation-section,
+#about-page .company-profile-section,
+#about-page .who-we-are-section,
+#about-page .what-we-do-section {
+    width: calc(100% - 24px) !important;
+    margin: 12px !important;
+    align-self: stretch;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden;
+}
+
+#about-page .tg-video-preview,
+#about-page .construction-image {
+    border-radius: var(--radius-lg) !important;
+}
+
+#about-page .construction-image-section { padding: 0 12px; }
+#about-page .tg-video-preview { margin-top: 0 !important; }
+#about-page .text-content { margin-bottom: 0 !important; padding-bottom: 40px !important; background: transparent !important; }
+
+/* Buttons become pills */
+.cta-button-minimal, .submit-button, .get-in-touch-button, .supplier-button,
+#about-page .values-button, #about-page .who-we-are-button,
+#about-page .what-we-do-button, #about-page .company-profile-button {
+    border-radius: var(--pill) !important;
+}
+
+.get-in-touch-button { height: auto !important; line-height: 1 !important; padding: 20px 40px !important; }
+.cta-button-minimal { border-bottom: none !important; }
+
+.footer { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+.footer-logo img { border-radius: 50%; height: 72px; }
+
+.scroll-down { border-radius: 50%; }
+
+/* Long email addresses must wrap on phones */
+.contact-layout > *, .contact-detail-text { min-width: 0; }
+.contact-detail-text p, .emergency-item p { overflow-wrap: anywhere; }

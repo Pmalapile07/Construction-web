@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
             menuIcon.classList.toggle('active');
             navBar.classList.toggle('active');
         });
+        menuIcon.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                menuIcon.click();
+            }
+        });
     }
 
     /* --- Scroll down button + header background switch --- */
