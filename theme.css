@@ -326,3 +326,6 @@ header.white-bg .menu-icon span {
     height: clamp(260px, 38vw, 540px) !important;
     object-position: center 45%;
 }
+
+/* Keep the station below the "What We Do" heading */
+#about-page .what-we-do-section { background-position: center 30%; }
