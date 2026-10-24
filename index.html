@@ -593,15 +593,13 @@
 </div>
 
 <header>
-    <div class="menu-icon" id="menuIcon" aria-label="Open menu" role="button" tabindex="0">
-        <span></span><span></span><span></span>
-    </div>
-
     <a href="index.html" class="logo" id="logo" aria-label="Ingestion Ennovation home">
         <img src="logo.png" alt="Ingestion Ennovation logo">
     </a>
 
-    <a href="mailto:info@ingestionennovation.co.za?subject=Quote Request&body=Hello Ingestion Ennovation, I would like to request a quote for:" class="header-quote">Get Quote</a>
+    <div class="menu-icon" id="menuIcon" aria-label="Open menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+    </div>
 </header>
 
 <nav class="nav-bar" id="navBar">
@@ -621,12 +619,15 @@
     </div>
 
     <div class="big-typography">
-        <h1>Energy that keeps<br>business moving.</h1>
+        <h1>Energy that keeps<br>business <span class="hero-moving">moving.</span></h1>
         <div class="hero-bottom">
             <p class="hero-paragraph">
                 From bulk fuel to nationwide freight, we bring 10+ years of excellence to every delivery.
             </p>
-            <a href="what-we-do.html" class="hero-link">Explore services</a>
+            <div class="hero-actions">
+                <a href="mailto:info@ingestionennovation.co.za?subject=Quote Request&body=Hello Ingestion Ennovation, I would like to request a quote for:" class="hero-btn hero-btn-primary">Get Quote</a>
+                <a href="what-we-do.html" class="hero-btn hero-btn-ghost">Explore services</a>
+            </div>
         </div>
     </div>
 
