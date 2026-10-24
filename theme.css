@@ -155,9 +155,20 @@ header.white-bg .menu-icon span {
     padding-top: 0;
 }
 
+/* Tanker photo: keep the truck above the headline */
 .image-container img {
     transform: none !important;
-    object-position: center 35% !important;
+    object-position: center 85% !important;
+}
+
+@media (max-aspect-ratio: 4/5) {
+    .image-container img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 130% !important;
+        object-position: 48% bottom !important;
+    }
 }
 
 .big-typography {
