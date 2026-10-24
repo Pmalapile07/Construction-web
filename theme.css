@@ -77,17 +77,10 @@ header.white-bg .menu-icon span {
 }
 
 .logo img {
-    height: 46px;
-    width: 46px;
-    border-radius: 50%;
-}
-
-.logo-text {
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    line-height: 1.25;
+    height: 64px;
+    width: auto;
+    border-radius: 0;
+    filter: none;
 }
 
 .header-quote {
@@ -113,8 +106,7 @@ header.white-bg .menu-icon span {
 
 @media (max-width: 600px) {
     header, header.white-bg { height: 60px; padding: 0 6px 0 18px; top: 12px; width: calc(100% - 24px); }
-    .logo-text { display: none; }
-    .logo img { height: 40px; width: 40px; }
+    .logo img { height: 56px; }
     .header-quote { height: 44px; padding: 0 18px; font-size: 0.78rem; }
 }
 
@@ -314,7 +306,7 @@ header.white-bg .menu-icon span {
 .cta-button-minimal { border-bottom: none !important; }
 
 .footer { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-.footer-logo img { border-radius: 50%; height: 72px; }
+.footer-logo img { height: 110px; width: auto; border-radius: 0; filter: none; }
 
 .scroll-down { border-radius: 50%; }
 
