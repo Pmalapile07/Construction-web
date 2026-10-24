@@ -57,7 +57,7 @@ header.white-bg {
 }
 
 .logo img {
-    height: 56px;
+    height: 48px; /* same as the menu button */
     width: auto;
     border-radius: 0;
     filter: none;
