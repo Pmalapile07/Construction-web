@@ -89,7 +89,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.contact-item .material-icons {
+.contact-item .ph-bold {
     font-size: 16px;
 }
 
@@ -127,7 +127,7 @@ body {
     transform: scale(1.1);
 }
 
-.social-links .fa-brands {
+.social-links .ph-bold {
     font-size: 16px;
 }
 
@@ -465,17 +465,14 @@ header.white-bg .desktop-nav a:hover {
     transform: none;
 }
 
-.scroll-down.scrolled-to-bottom::after {
-    content: '↑';
-    font-size: 1.5rem;
+.scroll-down i {
+    font-size: 1.4rem;
     color: var(--cream);
+    transition: transform 0.3s ease;
 }
 
-.scroll-down:not(.scrolled-to-bottom)::after {
-    content: '↓';
-    font-size: 1.5rem;
-    color: var(--cream);
-    transition: all 0.3s ease;
+.scroll-down.scrolled-to-bottom i {
+    transform: rotate(180deg);
 }
 
 .scroll-down:hover {
@@ -709,10 +706,12 @@ header.white-bg .desktop-nav a:hover {
 
 .footer-services a::before,
 .footer-links a::before {
-    content: '▸';
+    content: '';
+    flex-shrink: 0;
+    width: 10px;
+    height: 2px;
     margin-right: 10px;
-    color: var(--gold);
-    font-size: 0.8rem;
+    background: var(--gold);
     transition: transform 0.3s ease;
 }
 

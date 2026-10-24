@@ -329,3 +329,132 @@ header.white-bg .menu-icon span {
 
 /* Keep the station below the "What We Do" heading */
 #about-page .what-we-do-section { background-position: center 30%; }
+
+/* ==========================================================================
+   TYPE SCALE — one set of sizes for every page
+   display (home hero) > h1 (page heroes) > h2 (sections) > h3 (cards)
+   > h4 (small cards) > lead > body > label
+   ========================================================================== */
+:root {
+    --fs-h1: clamp(2.5rem, 6vw, 4.5rem);
+    --fs-h2: clamp(1.75rem, 3.2vw, 2.5rem);
+    --fs-h3: 1.25rem;
+    --fs-h4: 1.0625rem;
+    --fs-lead: 1.125rem;
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+    --fs-label: 0.75rem;
+}
+
+/* Only headings, labels and buttons are uppercase */
+* { text-transform: none; }
+
+/* h1 — page heroes */
+.about-hero-content h1, .services-hero-content h1,
+.values-hero-content h1, .contact-hero-content h1 {
+    font-size: var(--fs-h1) !important;
+    font-weight: 900 !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.035em !important;
+    text-transform: uppercase !important;
+    margin-bottom: 24px !important;
+}
+
+/* h2 — section titles */
+.section-header h2, .values-intro h2, .have-project-title,
+.cta-section-minimal h2, .commitment-section-minimal h2,
+.emergency-section h3, .quick-response h3,
+.service-detail-section-blue h3, .service-detail-section-white h3,
+#about-page .tg-title, #about-page .tg-impact-title,
+#about-page .values-title, #about-page .innovation-title,
+#about-page .company-profile-title, #about-page .who-we-are-title,
+#about-page .what-we-do-title {
+    font-size: var(--fs-h2) !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: uppercase !important;
+}
+
+/* h3 — card titles */
+.service-card h3, .mission-item h3, .vision-item h3,
+.contact-info-section h3, .contact-form-section h3,
+.value-item-blue .value-text h3, .value-item-white .value-text h3,
+.about-section-blue h3, .about-section-white h3, .map-placeholder h4 {
+    font-size: var(--fs-h3) !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+    text-transform: uppercase !important;
+}
+
+/* h4 — small card titles */
+.process-step h4, .benefit-item h4, .faq-item h4, .leader-card h4,
+.approach-text h4, .response-item h4, .industry-item h4,
+.commitment-item-minimal h4, .business-hours h4 {
+    font-size: var(--fs-h4) !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0 !important;
+    text-transform: uppercase !important;
+}
+
+/* Labels / eyebrows */
+#about-page .tg-subtitle, .contact-detail-text h4, .form-group label,
+.emergency-item h4, .contact-text-footer h4, .footer-company-info h3,
+.footer-services h3, .footer-links h3, .footer-contact h3 {
+    font-size: var(--fs-label) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+}
+
+/* Body copy */
+body p, body li {
+    font-size: var(--fs-body) !important;
+    font-weight: 400 !important;
+    line-height: 1.7 !important;
+    letter-spacing: 0 !important;
+    font-style: normal !important;
+}
+
+/* Lead paragraphs (intros under titles) */
+.about-hero-content p, .services-hero-content p, .values-hero-content p,
+.contact-hero-content p, .hero-paragraph, .section-header p, .values-intro p,
+.cta-section-minimal p, .have-project-subtitle, .commitment-section-minimal > p,
+.emergency-section > p, .quick-response > p,
+#about-page .tg-description, #about-page .tg-impact-text {
+    font-size: var(--fs-lead) !important;
+    line-height: 1.65 !important;
+}
+
+/* Small text */
+.footer p, .footer li, .contact-item span, .hours-list li,
+.service-features li, .footer-bottom p {
+    font-size: var(--fs-small) !important;
+}
+.footer-bottom p { letter-spacing: 0.04em !important; }
+.emergency-item p { font-size: var(--fs-h4) !important; font-weight: 700 !important; }
+
+/* Buttons and links styled as buttons */
+.header-quote, .hero-link, .cta-button-minimal, .submit-button,
+.get-in-touch-button, .supplier-button, #about-page .values-button,
+#about-page .who-we-are-button, #about-page .what-we-do-button,
+#about-page .company-profile-button, .nav-bar .nav-link {
+    font-size: var(--fs-small) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+}
+
+/* Footer links */
+.footer-services a, .footer-links a {
+    font-size: var(--fs-small) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+}
+
+@media (max-width: 768px) {
+    :root { --fs-lead: 1.0625rem; }
+}

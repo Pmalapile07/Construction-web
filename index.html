@@ -22,12 +22,8 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=BBH+Sans+Bogle&family=Bebas+Neue&family=Mozilla+Text:wght@200..700&family=Staatliches&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_downward" />
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="vendor/phosphor/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <!-- Shared styles -->
 <link rel="stylesheet" href="styles.css">
@@ -439,14 +435,6 @@
     bottom: 20px; right: 20px; border-radius: 4px; text-decoration: none;
 }
 #about-page .company-profile-button:hover { background: transparent; color: var(--brand-bright); }
-#about-page .download-icon {
-    width: 16px; height: 16px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 16l4-5h-3V4h-2v7H8l4 5zm-8 2h16v2H4v-2z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: center; background-size: contain;
-}
-#about-page .company-profile-button:hover .download-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2358b0ee'%3E%3Cpath d='M12 16l4-5h-3V4h-2v7H8l4 5zm-8 2h16v2H4v-2z'/%3E%3C/svg%3E");
-}
 
 #about-page .who-we-are-section {
     width: 100%; background: var(--panel); padding: 60px 20px; text-align: center; margin: 0;
@@ -552,7 +540,6 @@
         display: flex; align-items: center; justify-content: center; border-radius: 4px;
     }
     #about-page .company-profile-button span { display: none; }
-    #about-page .download-icon { width: 20px; height: 20px; margin: 0; }
 }
 
 @media (max-width: 480px) {
@@ -586,21 +573,21 @@
     <div class="announcement-content">
         <div class="contact-info">
             <div class="contact-item">
-                <div class="contact-icon-circle"><i class="material-icons">phone</i></div>
+                <div class="contact-icon-circle"><i class="ph-bold ph-phone"></i></div>
                 <span>+27 76 270 3475</span>
             </div>
             <div class="contact-item">
-                <div class="contact-icon-circle"><i class="material-icons">phone_iphone</i></div>
+                <div class="contact-icon-circle"><i class="ph-bold ph-device-mobile"></i></div>
                 <span>+27 67 619 0270</span>
             </div>
             <div class="contact-item">
-                <div class="contact-icon-circle"><i class="material-icons">email</i></div>
+                <div class="contact-icon-circle"><i class="ph-bold ph-envelope-simple"></i></div>
                 <span>info@ingestionennovation.co.za</span>
             </div>
         </div>
         <div class="social-links">
-            <a href="#"><div class="social-icon-circle"><i class="fa-brands fa-facebook-f"></i></div><span>Facebook</span></a>
-            <a href="#"><div class="social-icon-circle"><i class="fa-brands fa-linkedin-in"></i></div><span>LinkedIn</span></a>
+            <a href="#"><div class="social-icon-circle"><i class="ph-bold ph-facebook-logo"></i></div><span>Facebook</span></a>
+            <a href="#"><div class="social-icon-circle"><i class="ph-bold ph-linkedin-logo"></i></div><span>LinkedIn</span></a>
         </div>
     </div>
 </div>
@@ -643,7 +630,7 @@
         </div>
     </div>
 
-    <div class="scroll-down" id="scrollDownBtn"></div>
+    <div class="scroll-down" id="scrollDownBtn"><i class="ph-bold ph-arrow-down"></i></div>
 </section>
 
 <!-- ABOUT PAGE SECTION -->
@@ -697,7 +684,7 @@
             <div class="company-profile-title">COMPANY PROFILE</div>
             <a href="YOUR_PDF_LINK_HERE" download="Company-Profile.pdf" class="company-profile-button">
                 <span>Download PDF</span>
-                <div class="download-icon"></div>
+                <i class="ph-bold ph-download-simple"></i>
             </a>
         </div>
 
@@ -807,15 +794,15 @@
             <h3>CONTACT US</h3>
             <div class="footer-contact-info">
                 <div class="contact-item-footer">
-                    <div class="contact-icon-footer"><i class="material-icons">location_on</i></div>
+                    <div class="contact-icon-footer"><i class="ph-bold ph-map-pin"></i></div>
                     <div class="contact-text-footer"><h4>ADDRESS</h4><p>296 Andries Street, 515 Constantia Building, Pretoria, 0002</p></div>
                 </div>
                 <div class="contact-item-footer">
-                    <div class="contact-icon-footer"><i class="material-icons">phone</i></div>
+                    <div class="contact-icon-footer"><i class="ph-bold ph-phone"></i></div>
                     <div class="contact-text-footer"><h4>PHONE</h4><p>+27 76 270 3475<br>+27 67 619 0270</p></div>
                 </div>
                 <div class="contact-item-footer">
-                    <div class="contact-icon-footer"><i class="material-icons">email</i></div>
+                    <div class="contact-icon-footer"><i class="ph-bold ph-envelope-simple"></i></div>
                     <div class="contact-text-footer"><h4>EMAIL</h4><p>ingestion.pty@gmail.com<br>info@ingestionennovation.co.za</p></div>
                 </div>
             </div>
