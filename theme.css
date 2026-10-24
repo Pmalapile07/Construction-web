@@ -274,7 +274,6 @@ header.white-bg .menu-icon span {
 
 /* Full-width bands become inset rounded cards */
 .have-project-section,
-.cta-section-minimal,
 #about-page .values-section,
 #about-page .innovation-section,
 #about-page .company-profile-section,
@@ -306,6 +305,14 @@ header.white-bg .menu-icon span {
 .get-in-touch-button { height: auto !important; line-height: 1 !important; padding: 20px 40px !important; }
 .cta-button-minimal { border-bottom: none !important; }
 
+/* CTA box sits inside the page container: span its full width like the card grids above */
+.cta-section-minimal {
+    width: 100%;
+    margin: 60px 0 0;
+    padding: 60px 30px;
+    border-radius: var(--radius-lg);
+}
+
 .footer { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
 .footer-logo img { height: 110px; width: auto; border-radius: 0; filter: none; }
 
@@ -314,3 +321,8 @@ header.white-bg .menu-icon span {
 /* Long email addresses must wrap on phones */
 .contact-layout > *, .contact-detail-text { min-width: 0; }
 .contact-detail-text p, .emergency-item p { overflow-wrap: anywhere; }
+
+#about-page .construction-image {
+    height: clamp(260px, 38vw, 540px) !important;
+    object-position: center 45%;
+}
