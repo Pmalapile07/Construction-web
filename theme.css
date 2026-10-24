@@ -150,7 +150,7 @@ header.white-bg .menu-icon span {
 
 /* --- HOME HERO --- */
 .hero {
-    height: 100vh !important;
+    height: 90vh !important;
     min-height: 620px;
     padding-top: 0;
 }
@@ -166,7 +166,7 @@ header.white-bg .menu-icon span {
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 130% !important;
+        height: 144% !important;
         object-position: 48% bottom !important;
     }
 }
