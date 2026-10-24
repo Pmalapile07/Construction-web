@@ -57,7 +57,7 @@ header.white-bg {
 }
 
 .logo img {
-    height: 48px; /* same as the menu button */
+    height: 46px;
     width: auto;
     border-radius: 0;
     filter: none;
@@ -95,7 +95,7 @@ header.white-bg .menu-icon span {
 
 @media (max-width: 600px) {
     header, header.white-bg { height: 60px; padding: 0 6px 0 12px; top: 12px; width: calc(100% - 24px); }
-    .logo img { height: 48px; }
+    .logo img { height: 46px; }
 }
 
 @media (min-width: 1024px) {
