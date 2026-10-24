@@ -4,25 +4,27 @@
             our-values.html, contact-us.html
    ========================================================================== */
 
-/* --- THEME TOKENS (matched to the logo: midnight navy, glowing blue, cream) --- */
+/* --- THEME TOKENS (matched to the company profile: warm cream, navy, steel blue, gold) --- */
 :root {
-    --bg: #04080f;
-    --bg-alt: #071223;
-    --surface: #0b1b31;
-    --surface-2: #0f2440;
-    --brand: #1f6fb2;
-    --brand-bright: #58b0ee;
-    --brand-deep: #0d3a6b;
-    --cream: #efe3cc;
-    --cream-bright: #faf3e4;
-    --text: #e9eff7;
-    --text-muted: #a3b6cc;
-    --line: rgba(88, 176, 238, 0.18);
-    --glow: 0 0 24px rgba(88, 176, 238, 0.45), 0 0 60px rgba(31, 111, 178, 0.25);
-    --glow-soft: 0 0 30px rgba(31, 111, 178, 0.25);
-    --glow-text: 0 0 18px rgba(88, 176, 238, 0.55), 0 0 42px rgba(31, 111, 178, 0.4);
-    --overlay: radial-gradient(ellipse at 50% 45%, rgba(31, 111, 178, 0.25) 0%, rgba(4, 8, 15, 0.55) 45%, rgba(4, 8, 15, 0.85) 100%);
-    --panel: radial-gradient(ellipse at 50% 0%, rgba(88, 176, 238, 0.35) 0%, rgba(31, 111, 178, 0) 60%), linear-gradient(160deg, #134f8c 0%, #0b2f57 55%, #061a33 100%);
+    --bg: #f7f3ec;
+    --bg-alt: #f3efe8;
+    --surface: #ffffff;
+    --surface-2: #fbf8f3;
+    --brand: #2a6496;
+    --brand-bright: #3b78a8;
+    --brand-deep: #14294a;
+    --navy-2: #1b3a63;
+    --gold: #c8a165;
+    --cream: #f3ebdc;
+    --cream-bright: #fbf6ec;
+    --text: #14294a;
+    --text-muted: #4a5a70;
+    --line: rgba(20, 41, 74, 0.12);
+    --glow: 0 6px 18px rgba(20, 41, 74, 0.18);
+    --glow-soft: 0 8px 24px rgba(20, 41, 74, 0.1);
+    --glow-text: 0 2px 14px rgba(0, 0, 0, 0.35);
+    --overlay: linear-gradient(170deg, rgba(20, 41, 74, 0.15) 0%, rgba(20, 41, 74, 0.45) 60%, rgba(20, 41, 74, 0.7) 100%);
+    --panel: linear-gradient(155deg, #14294a 0%, #14294a 66%, #3b78a8 66%, #3b78a8 71%, #1b3a63 71%, #1b3a63 100%);
 }
 
 /* --- GENERAL RESET --- */
@@ -138,7 +140,7 @@ header {
     height: 95px;
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    background-color: rgba(4, 8, 15, 0.35);
+    background-color: rgba(20, 41, 74, 0.25);
     border-bottom: 1px solid var(--line);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     display: flex;
@@ -150,10 +152,11 @@ header {
 }
 
 header.white-bg {
-    background-color: rgba(4, 8, 15, 0.92);
+    background-color: rgba(247, 243, 236, 0.97);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    box-shadow: 0 4px 30px rgba(31, 111, 178, 0.25);
+    box-shadow: 0 4px 20px rgba(20, 41, 74, 0.12);
+    border-bottom: 3px solid var(--brand-deep);
 }
 
 .logo {
@@ -165,7 +168,6 @@ header.white-bg {
 .logo img {
     height: 120px;
     width: auto;
-    filter: drop-shadow(0 0 14px rgba(88, 176, 238, 0.45));
 }
 
 .menu-icon {
@@ -196,7 +198,6 @@ header.white-bg {
 
 header.white-bg .menu-icon span {
     background: var(--text);
-    box-shadow: 0 0 8px rgba(88, 176, 238, 0.6);
 }
 
 /* --- MOBILE NAVIGATION BAR --- */
@@ -207,7 +208,7 @@ header.white-bg .menu-icon span {
     width: 100%;
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
-    background-color: rgba(7, 20, 38, 0.85);
+    background-color: rgba(247, 243, 236, 0.98);
     border-bottom: 5px solid var(--brand);
     z-index: 999;
     display: none;
@@ -234,7 +235,7 @@ header.white-bg .menu-icon span {
 }
 
 .nav-item.collapsible {
-    border-bottom: 1px solid rgba(88, 176, 238, 0.15);
+    border-bottom: 1px solid rgba(59, 120, 168, 0.15);
 }
 
 .nav-link {
@@ -274,8 +275,8 @@ header.white-bg .menu-icon span {
     display: none;
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
-    background-color: rgba(7, 20, 38, 0.85);
-    border-top: 1px solid rgba(88, 176, 238, 0.15);
+    background-color: rgba(247, 243, 236, 0.98);
+    border-top: 1px solid rgba(59, 120, 168, 0.15);
     z-index: 1001;
     width: 100%;
 }
@@ -293,7 +294,7 @@ header.white-bg .menu-icon span {
 
 .nav-content li {
     padding: 8px 20px;
-    border-bottom: 1px solid rgba(88, 176, 238, 0.15);
+    border-bottom: 1px solid rgba(59, 120, 168, 0.15);
     text-align: left;
 }
 
@@ -350,8 +351,11 @@ header.white-bg .desktop-nav a {
 }
 
 .desktop-nav a:hover {
+    color: var(--cream);
+}
+
+header.white-bg .desktop-nav a:hover {
     color: var(--brand-bright);
-    text-shadow: var(--glow-text);
 }
 
 .desktop-nav a.active::after {
@@ -361,9 +365,8 @@ header.white-bg .desktop-nav a {
     bottom: 0;
     width: 100%;
     height: 3px;
-    background: var(--brand-bright);
+    background: var(--gold);
     border-radius: 2px;
-    box-shadow: var(--glow);
 }
 
 .desktop-nav-content {
@@ -373,7 +376,7 @@ header.white-bg .desktop-nav a {
     left: 0;
     backdrop-filter: blur(15px) saturate(200%);
     -webkit-backdrop-filter: blur(15px) saturate(200%);
-    background-color: rgba(4, 8, 15, 0.92);
+    background-color: rgba(20, 41, 74, 0.97);
     box-shadow: var(--glow-soft);
     min-width: 200px;
     z-index: 1001;
@@ -410,7 +413,7 @@ header.white-bg .desktop-nav a {
 }
 
 .desktop-nav-content a:hover {
-    color: var(--brand-bright);
+    color: var(--gold);
     background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -450,8 +453,8 @@ header.white-bg .desktop-nav a {
     right: 5%;
     width: 50px;
     height: 50px;
-    background: var(--cream);
-    border: 2px solid var(--cream);
+    background: var(--brand-deep);
+    border: 2px solid var(--brand-deep);
     box-shadow: var(--glow);
     display: flex;
     align-items: center;
@@ -465,18 +468,18 @@ header.white-bg .desktop-nav a {
 .scroll-down.scrolled-to-bottom::after {
     content: '↑';
     font-size: 1.5rem;
-    color: var(--brand);
+    color: var(--cream);
 }
 
 .scroll-down:not(.scrolled-to-bottom)::after {
     content: '↓';
     font-size: 1.5rem;
-    color: var(--brand);
+    color: var(--cream);
     transition: all 0.3s ease;
 }
 
 .scroll-down:hover {
-    background: var(--cream-bright);
+    background: var(--brand);
     transform: translateY(3px);
 }
 
@@ -489,8 +492,7 @@ header.white-bg .desktop-nav a {
 .section-header h2 {
     font-family: 'Mozilla Text', sans-serif;
     font-size: 2rem;
-    color: var(--brand-bright);
-    text-shadow: var(--glow-text);
+    color: var(--brand-deep);
     text-transform: uppercase;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -547,6 +549,7 @@ header.white-bg .desktop-nav a {
 .cta-button-minimal {
     display: inline-block;
     background: var(--cream);
+    border-bottom: 3px solid var(--gold) !important;
     color: var(--brand-deep);
     box-shadow: var(--glow);
     padding: 15px 35px;
@@ -575,7 +578,7 @@ header.white-bg .desktop-nav a {
 /* --- FOOTER --- */
 .footer {
     width: 100%;
-    background: radial-gradient(ellipse at 50% 0%, rgba(31, 111, 178, 0.18) 0%, rgba(4, 8, 15, 0) 60%), var(--bg);
+    background: var(--brand-deep);
     padding: 80px 0 40px;
     position: relative;
     z-index: 2;
@@ -603,7 +606,7 @@ header.white-bg .desktop-nav a {
 .footer-logo img {
     height: 90px;
     width: auto;
-    filter: drop-shadow(0 0 18px rgba(88, 176, 238, 0.45));
+    filter: none;
 }
 
 .footer-company-info h3 {
@@ -637,13 +640,13 @@ header.white-bg .desktop-nav a {
     transition: all 0.3s ease;
     backdrop-filter: blur(10px) saturate(180%);
     -webkit-backdrop-filter: blur(10px) saturate(180%);
-    background-color: rgba(31, 111, 178, 0.8);
+    background-color: rgba(42, 100, 150, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(88, 176, 238, 0.15);
+    box-shadow: 0 4px 15px rgba(59, 120, 168, 0.15);
 }
 
 .supplier-button:hover {
-    background-color: rgba(31, 111, 178, 1);
+    background-color: rgba(59, 120, 168, 1);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
@@ -670,8 +673,7 @@ header.white-bg .desktop-nav a {
     left: 0;
     width: 50px;
     height: 2px;
-    background: var(--brand-bright);
-    box-shadow: var(--glow);
+    background: var(--gold);
 }
 
 .footer-services ul,
@@ -709,7 +711,7 @@ header.white-bg .desktop-nav a {
 .footer-links a::before {
     content: '▸';
     margin-right: 10px;
-    color: var(--brand-bright);
+    color: var(--gold);
     font-size: 0.8rem;
     transition: transform 0.3s ease;
 }
@@ -729,7 +731,7 @@ header.white-bg .desktop-nav a {
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.5;
     text-transform: none;
-    border-left: 2px solid var(--brand);
+    border-left: 2px solid var(--gold);
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -754,7 +756,7 @@ header.white-bg .desktop-nav a {
 .contact-icon-footer {
     width: 40px;
     height: 40px;
-    background: rgba(31, 111, 178, 0.2);
+    background: rgba(243, 235, 220, 0.12);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -763,7 +765,7 @@ header.white-bg .desktop-nav a {
 }
 
 .contact-icon-footer i {
-    color: var(--brand-bright);
+    color: var(--gold);
     font-size: 18px;
 }
 
@@ -850,11 +852,41 @@ header.white-bg .desktop-nav a {
 .service-card:hover, .process-step:hover, .industry-item:hover, .benefit-item:hover,
 .leader-card:hover, .approach-item:hover, .mission-item:hover, .faq-item:hover,
 .response-item:hover, .commitment-item-minimal:hover {
-    border-color: rgba(88, 176, 238, 0.5);
+    border-color: rgba(59, 120, 168, 0.5);
     box-shadow: var(--glow-soft), 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .service-icon, .process-icon, .benefit-icon, .leader-icon, .approach-icon,
 .contact-detail-icon, .response-icon, .step-number {
     box-shadow: var(--glow);
+}
+
+/* --- THEME: PROFILE-STYLE DIAGONALS --- */
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 14px auto 0;
+    background: var(--gold);
+}
+
+.hero::after, .about-hero::after, .services-hero::after,
+.values-hero::after, .contact-hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 26%;
+    background: linear-gradient(to top right, var(--brand-deep) 0%, var(--brand-deep) 47%, var(--brand-bright) 47%, var(--brand-bright) 50%, transparent 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero::before, .about-hero::before, .services-hero::before,
+.values-hero::before, .contact-hero::before {
+    background:
+        linear-gradient(to bottom left, var(--brand-deep) 0%, var(--brand-deep) 9%, var(--brand-bright) 9%, var(--brand-bright) 12%, transparent 12%),
+        var(--overlay) !important;
 }
