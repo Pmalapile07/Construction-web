@@ -5,6 +5,7 @@
    ========================================================================== */
 
 :root {
+    --logo-h: 36px; /* header and footer logo share one size */
     --radius-sm: 12px;
     --radius: 18px;
     --radius-lg: 28px;
@@ -57,7 +58,7 @@ header.white-bg {
 }
 
 .logo img {
-    height: 44.5px;
+    height: var(--logo-h) !important;
     width: auto;
     border-radius: 0;
     filter: none;
@@ -95,7 +96,7 @@ header.white-bg .menu-icon span {
 
 @media (max-width: 600px) {
     header, header.white-bg { height: 60px; padding: 0 6px 0 12px; top: 12px; width: calc(100% - 24px); }
-    .logo img { height: 44.5px; }
+    .logo img { height: var(--logo-h) !important; }
 }
 
 @media (min-width: 1024px) {
@@ -361,7 +362,7 @@ header.white-bg .menu-icon span {
 
 .footer { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
 .footer-logo img {
-    height: 110px;
+    height: var(--logo-h) !important;
     width: auto;
     /* soft light halo so the dark wordmark reads on navy, no panel */
     filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.18));
