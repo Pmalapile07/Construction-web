@@ -40,7 +40,7 @@ header.white-bg {
     backdrop-filter: blur(18px) saturate(180%);
     -webkit-backdrop-filter: blur(18px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0 12px 40px rgba(10, 20, 38, 0.18);
+    box-shadow: 0 12px 40px rgba(8, 45, 74, 0.18);
 }
 
 header.white-bg {
@@ -112,8 +112,8 @@ header.white-bg .menu-icon span {
     border-radius: var(--radius);
     border: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    background-color: rgba(251, 248, 243, 0.98);
-    box-shadow: 0 20px 50px rgba(10, 20, 38, 0.25);
+    background-color: rgba(251, 248, 244, 0.98);
+    box-shadow: 0 20px 50px rgba(8, 45, 74, 0.25);
 }
 
 @media (min-width: 1024px) {
@@ -133,7 +133,7 @@ header.white-bg .menu-icon span {
     color: var(--text);
 }
 
-.nav-bar .nav-link:hover { background: rgba(20, 41, 74, 0.06); }
+.nav-bar .nav-link:hover { background: rgba(8, 45, 74, 0.06); }
 .nav-bar .nav-link.current { background: var(--brand-deep); color: var(--cream); }
 
 /* --- HOME HERO --- */
@@ -508,4 +508,242 @@ body p, body li {
 
 @media (max-width: 768px) {
     :root { --fs-lead: 1.0625rem; }
+}
+
+/* ==========================================================================
+   BRAND LAYER — client palette + light construction / bulk-fuel structure
+   ========================================================================== */
+
+/* --- Primary button is brass --- */
+.hero-btn-primary,
+.cta-button-minimal,
+.submit-button {
+    background: var(--brass) !important;
+    border-color: var(--brass) !important;
+    color: var(--navy) !important;
+}
+
+.hero-btn-primary:hover,
+.cta-button-minimal:hover,
+.submit-button:hover {
+    background: #C29E66 !important;
+    border-color: #C29E66 !important;
+}
+
+/* Small labels in earth brown */
+#about-page .tg-subtitle,
+.contact-detail-text h4 {
+    color: var(--brown) !important;
+}
+
+/* --- Home: key facts strip under the hero --- */
+.facts-strip {
+    position: relative;
+    z-index: 2;
+    background: var(--navy);
+    color: var(--cream);
+}
+
+.facts-strip::after {
+    content: '';
+    display: block;
+    height: 8px;
+    background: var(--hazard);
+}
+
+.facts-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.fact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 18px;
+    border-left: 3px solid var(--brass);
+}
+
+.fact-value {
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #fff;
+}
+
+.fact-label {
+    font-size: var(--fs-label);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone);
+}
+
+@media (max-width: 767px) {
+    .facts-inner { grid-template-columns: 1fr 1fr; padding: 28px 20px; gap: 22px 16px; }
+}
+
+/* --- Home: about as two columns, then a bento grid of tiles --- */
+#about-page .tg-content {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 72px 16px 16px !important;
+}
+
+#about-page .tg-content > * {
+    width: auto !important;
+    margin: 0 !important;
+}
+
+#about-page .text-content,
+#about-page .tg-impact {
+    padding: 0 24px 40px !important;
+    border-left: none !important;
+    border-top: 3px solid var(--brass);
+    padding-top: 28px !important;
+}
+
+#about-page .tg-subtitle, #about-page .tg-title,
+#about-page .tg-description, #about-page .tg-impact-title,
+#about-page .tg-impact-text {
+    padding: 0 !important;
+}
+
+#about-page .tg-title,
+#about-page .tg-impact-title {
+    margin-bottom: 16px !important;
+}
+
+#about-page .construction-image-section { grid-column: 1 / -1; padding: 0 !important; }
+#about-page .company-profile-section { grid-column: 1 / -1; }
+
+@media (max-width: 768px) {
+    #about-page .tg-content { grid-template-columns: 1fr; padding-top: 48px !important; }
+    #about-page .text-content, #about-page .tg-impact { padding: 24px 8px 24px !important; }
+}
+
+/* --- Brand diagonal (from the logo sheet) on navy panels --- */
+.have-project-section,
+.cta-section-minimal,
+#about-page .values-section,
+#about-page .who-we-are-section,
+.emergency-section,
+.commitment-section-minimal,
+.contact-form-section,
+.service-detail-section-blue,
+.about-section-blue,
+.vision-item,
+.value-item-blue,
+.map-placeholder {
+    background:
+        linear-gradient(155deg, transparent 0 76%, var(--petrol) 76% 84%, var(--brass) 84% 88%, transparent 88%),
+        var(--panel) !important;
+}
+
+/* --- Inner page heroes: title bottom-left like the home page --- */
+.about-hero, .services-hero, .values-hero, .contact-hero {
+    align-items: flex-end !important;
+    justify-content: center !important;
+    height: 80vh !important;
+    min-height: 560px;
+}
+
+.about-hero-content, .services-hero-content,
+.values-hero-content, .contact-hero-content {
+    width: 100%;
+    max-width: 1180px !important;
+    padding: 0 40px 72px !important;
+    text-align: left !important;
+}
+
+.about-hero-content::before, .services-hero-content::before,
+.values-hero-content::before, .contact-hero-content::before {
+    content: 'Ingestion Ennovation';
+    display: inline-block;
+    margin-bottom: 18px;
+    padding-left: 14px;
+    border-left: 3px solid var(--brass);
+    font-family: 'Inter', sans-serif;
+    font-size: var(--fs-label);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--stone);
+}
+
+.about-hero-content p, .services-hero-content p,
+.values-hero-content p, .contact-hero-content p {
+    max-width: 620px;
+    margin-bottom: 0 !important;
+    text-shadow: none !important;
+}
+
+@media (max-width: 767px) {
+    .about-hero-content, .services-hero-content,
+    .values-hero-content, .contact-hero-content { padding: 0 20px 48px !important; }
+}
+
+/* --- Section headers left-aligned with a brass rule --- */
+.section-header {
+    text-align: left !important;
+    max-width: 760px;
+}
+
+.section-header p { margin: 0 !important; }
+.section-header h2::after { margin: 14px 0 0 !important; background: var(--brass) !important; }
+
+/* --- Cards: brass top edge, left-aligned service cards --- */
+.service-card, .benefit-item, .leader-card, .response-item,
+.faq-item, .industry-item, .process-step {
+    border-top: 3px solid var(--brass) !important;
+}
+
+.service-card {
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+/* --- Footer: hazard stripe on top --- */
+.footer {
+    border-top: none !important;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--hazard);
+}
+
+/* Station sits below the heading in the narrower tile */
+#about-page .what-we-do-section {
+    background-size: 165% auto !important;
+    background-position: center 0% !important;
+}
+
+/* Company profile tile in warm stone */
+#about-page .company-profile-section {
+    background: var(--stone) !important;
+}
+
+#about-page .company-profile-button {
+    background: var(--navy) !important;
+    border-color: var(--navy) !important;
+}
+
+.service-detail-section-blue h3,
+.service-detail-section-white h3 {
+    text-align: left !important;
 }
