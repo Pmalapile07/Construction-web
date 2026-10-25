@@ -57,7 +57,7 @@ header.white-bg {
 }
 
 .logo img {
-    height: 46px;
+    height: 44.5px;
     width: auto;
     border-radius: 0;
     filter: none;
@@ -95,7 +95,7 @@ header.white-bg .menu-icon span {
 
 @media (max-width: 600px) {
     header, header.white-bg { height: 60px; padding: 0 6px 0 12px; top: 12px; width: calc(100% - 24px); }
-    .logo img { height: 46px; }
+    .logo img { height: 44.5px; }
 }
 
 @media (min-width: 1024px) {
@@ -363,10 +363,8 @@ header.white-bg .menu-icon span {
 .footer-logo img {
     height: 110px;
     width: auto;
-    filter: none;
-    padding: 12px 18px;
-    border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.92);
+    /* soft light halo so the dark wordmark reads on navy, no panel */
+    filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.18));
 }
 
 .scroll-down { border-radius: 50%; }
