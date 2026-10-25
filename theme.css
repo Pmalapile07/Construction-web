@@ -143,10 +143,10 @@ header.white-bg .menu-icon span {
     padding-top: 0;
 }
 
-/* Tanker photo: keep the truck above the headline */
+/* Sunset tanker photo: show the tank, sun and storage tanks */
 .image-container img {
     transform: none !important;
-    object-position: center 85% !important;
+    object-position: center 55% !important;
 }
 
 @media (max-aspect-ratio: 4/5) {
@@ -154,8 +154,8 @@ header.white-bg .menu-icon span {
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 144% !important;
-        object-position: 48% bottom !important;
+        height: 115% !important;
+        object-position: 30% 60% !important;
     }
 }
 
