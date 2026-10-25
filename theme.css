@@ -364,8 +364,8 @@ header.white-bg .menu-icon span {
 .footer-logo img {
     height: var(--logo-h) !important;
     width: auto;
-    /* soft light halo so the dark wordmark reads on navy, no panel */
-    filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.18));
+    /* footer uses logo-footer.png: brighter swooshes and light wordmark for navy */
+    filter: none;
 }
 
 .scroll-down { border-radius: 50%; }
